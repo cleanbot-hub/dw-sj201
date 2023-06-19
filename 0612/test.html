@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+var a=1; //최소 값 
+var b=50; // 최대 값 
+var success=0;
+var user =parseInt(prompt("사용자님 1부터 50까지의 숫자를 입력해주시면 컴퓨터가 정답을 맞출거예요"));
+var com=Math.floor(Math.random() * 50)+1;
+
+
+
+while(com !== user){
+    if(com<user){
+        alert("컴퓨터님이 입력한 숫자를 좀 더 높게 불러보세요"+com);
+        a=com+1; // 범위의 최소값을 업데이트 
+    } else { 
+        alert("컴퓨터님이 입력한 숫자를 좀 더 낮게 불러보세요"+com);
+        b=com -1;
+    }
+    com=Math.floor(Math.random() * (a-b+1)) + b;
+    success++;
+
+}
+
+document.write("사용자가 낸 숫자는 " + user + "<br>" + "컴퓨터가 낸 숫자는 " + com + "입니다<br>" + "컴퓨터가 정답을 맞추는 데 " + success + "회 시도하였습니다.");
+</script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

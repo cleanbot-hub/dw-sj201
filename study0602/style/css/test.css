@@ -1,0 +1,79 @@
+#logo{
+    position: absolute;
+width: 1118px;
+height: 155px;
+
+background: #D9D9D9;
+
+}
+
+
+
+#header{
+    width:1080px;
+    height: 600px;
+    margin:0 auto;
+    flex-direction: row;
+}
+
+#section-image{
+    width:150px;
+    height: 450px;
+    background:blue;
+    margin-top:10px;
+    border-radius: 5px;    
+}
+
+
+
+
+.section-left-iamge{
+    width:150px;
+    height: 450px;
+    background:blue;
+    margin-top:10px;
+    border-radius: 5px;    
+}
+
+.section-right-iamge{
+    width:150px;
+    height: 450px;
+    background:blue;
+    margin-top:10px;
+    border-radius: 5px;    
+}
+
+
+
+
+#header-center-1{
+    width:400px;
+    height: 200px;
+    background:blue;
+    margin-top:10px;
+    padding:10px;
+    
+    
+}
+
+#header-center-2{
+    width:400px;
+    height: 200px;
+    background:blue;
+    padding:10px;
+    margin-top:10px;
+}
+
+#header-center-3{
+    width:400px;
+    height: 200px;
+    background:blue;
+    padding:10px;
+    margin-top:10px;
+}
+
+
+.section-right{
+    width:150px;
+    float:right;
+}
