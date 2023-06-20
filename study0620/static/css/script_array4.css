@@ -23,5 +23,13 @@ body{
 #search{
     border: 0;
     outline: none;
+    height: 40px;
+    font-size:35px;
+    width:90%;
 
+}
+#search_box i{
+    font-size:30px;
+    width:10%;
+    text-align:center;
 }
