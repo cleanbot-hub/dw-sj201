@@ -23,24 +23,27 @@ window.onload = function() {
     guessButton.addEventListener('click', function() {
         var guess = guessInput.value.trim().toLowerCase();
         var correctGuess = false;
-
+    
         for (var i = 0; i < images.length; i++) {
             var imageName = images[i].src.split('/').pop().split('.')[0].toLowerCase();
-
+    
             if (imageName === guess) {
                 correctGuess = true;
                 images[i].style.border = '3px solid green';
+                break; // 올바른 이미지를 찾았으므로 반복문 종료
             } else {
                 images[i].style.border = '1px solid black';
             }
         }
-
+    
         if (correctGuess) {
             alert('Correct guess!');
         } else {
             alert('Wrong guess! Try again.');
         }
-
+    
         guessInput.value = '';
     });
+
+       
 };
