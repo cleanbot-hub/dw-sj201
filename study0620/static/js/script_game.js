@@ -37,9 +37,9 @@ window.onload = function() {
         }
     
         if (correctGuess) {
-            alert('Correct guess!');
+            alert('정답입니다 !!!');
         } else {
-            alert('Wrong guess! Try again.');
+            alert('다시 시도 해보세요.');
         }
     
         guessInput.value = '';
