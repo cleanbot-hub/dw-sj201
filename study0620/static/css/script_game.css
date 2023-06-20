@@ -26,14 +26,7 @@
     height: 100px;
     margin: 0 auto;
     text-align: center;
-    margin-top: 50%;
-    
-}
-
-#guess-input {
-    margin-top: 10px;
-}
-
-#guess-button {
-    margin-top: 10px;
+    align-items: center;
+   display: flex;
+   font-size:30px;
 }
