@@ -5,4 +5,6 @@ const name=["이순신","최무선","강감찬","김유신","김춘추","이사�
 
 window.onload=function(){
 
+    
+
 }
