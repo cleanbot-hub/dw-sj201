@@ -42,10 +42,46 @@
 //     document.write(number[i] + "<br>");
 // }
 
+/* 
+var let const 차이점 
+var 타입은 재선언이 가능하고 데이터의 수정이 가능하다.
+var a=10;
+var a=20; 재선언 
+a=30; 데이터 수정 
 
-window.onload=function(){ //html 문서의 내용이 브라우저에 모두 표시되면 (load)
+let 타입은 재선언이 안되고 
+let b=10;
+let b=30; 재선언 불가 - 오류 
+b=50; 데이터 수정 가능 
 
-}
+const 타입은 재선언 불가 , 데이터 수정 불가 
+const c=10;
+const c=30; 재선언 불가 
+c=50; 데이터 수정 불가 
+*/
+
+
+const name=["이순신","강감찬","최무선","장영실","이성계","정도전"];
+
+//html 문서의 내용이 브라우저에 모두 표시되면 (load)
+//태그가 만들어진 다음에 동작는 다음 
+window.onload=function(){ 
+
+    var list= document.getElementById("list");
+    
+    var out=""; // name 배열의 값을 하나씩 담아줄 출력할 내용의 변수를 설정 
+                // div에 innerHTML 로 넣어줄 것인데 반복문안에서 innerHTML을 
+                // 사용하면 덮어쓰기가 되기 때문에 out 변수에 출력할 내용을 
+                // 모아둔다.
+
+        // alert(name[0]);
+
+      for(var i=0; i<name.length; i++){
+        out += "<span>"+name[i]+"</span>";
+      }          
+      // out 변수 안에는 <span> 이순신 </span><span>강감찬</span><span>최무선</span><span>장영실</span><span>이성계</span><span>정도전</span>
+        list.innerHTML=out;    
+    }
 
 // 
 
