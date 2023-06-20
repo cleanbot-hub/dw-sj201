@@ -22,13 +22,12 @@
 }
 
 #start {
+    display:flex;
     width: 100px;
     height: 100px;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 50%;
-    transform: translateY(-50%);
 }
+
+
 
 #guess-input {
     margin-top: 10px;
