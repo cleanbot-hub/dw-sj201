@@ -17,8 +17,20 @@ window.onload=function(){
 
     let srh_bt=document.getElementById("search_btn");
     srh_bt.addEventListener("click", search_name); // search_btn에 이벤트를 등록 시켜라 !!
-// addEventListener('이벤트명' ,동작할 함수)
-}
+    let input=document.getElementById("search");
+    input.addEventListener("keypress",function(e){
+                  if(e.keyCode ==13) // 오타 조심 
+                  search_name();
+    }); 
+};
+    // keypress    e 매개변수 
+
+// addEventListener('이벤트명' ,동작할 함수) 
+// 키보드를 누르고 있는 상태 keydown 
+// 키보드를 누르고 떼면 keyup 
+// 키보드를 눌렀다 keyfresh 
+
+
 function search_name(){
         let input=document.getElementById("search") //    input 태그의 search 를 가져온다   
         let word = input.value;     // 
@@ -35,5 +47,8 @@ function search_name(){
             }       // 배열 안에서의 묹
          }
          res.innerHTML=out;
+         input.value=""; // input 태그의 내용을 지우기 
+         input.focus(); // input 태그에 마우스 커서 놓기 다음 검색을 위해 
+         
         }
 
