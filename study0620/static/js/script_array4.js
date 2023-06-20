@@ -1,7 +1,9 @@
 // 문자열에서 특정 문자열의 위치를 찾는 방법 - indexOf
 // indexOf는 해당 문자열의 위치(인덱스)를 알려준다.
 // 배열에서도 indexOf를 사용하여 값을 찾을 수 있다 .
-
+// indexOf함수로 일치하는 데이터를 찾았다면 인덱스를 반환 
+// 인덱스는 0 부터 시작 
+// 일치하는 데이터를 찾지못하면 -1을 반환  
 
 
 const name=["이순신","최무선","강감찬","김유신","김춘추","이사부","을지문덕","정도전","정약용",
@@ -18,6 +20,12 @@ window.onload=function(){
 // addEventListener('이벤트명' ,동작할 함수)
 }
 function search_name(){
-    alert("검색?");
-}
+        let input=document.getElementById("search") //    input 태그의 search 를 가져온다   
+        let word = input.value;     // 
+        
+       // for(var i=0; i<name.length; i++){
+            if(name.indexOf(word) != -1 );
+                alert("찾았다")
+        }
+   // }
 
