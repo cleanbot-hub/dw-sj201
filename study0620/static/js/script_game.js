@@ -37,7 +37,7 @@ window.onload = function() {
         }
     
         if (correctGuess) {
-            alert('정답입니다 !!!');
+            alert("입력 한"+imageName);
         } else {
             alert('다시 시도 해보세요.');
         }
