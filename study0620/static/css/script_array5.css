@@ -61,3 +61,19 @@ body{
     font-size:40px;
     text-align: center;
 }
+
+button{
+    width:150px;
+    height: 150px;
+    
+}
+
+#divbtn{
+    width:50%;
+    height: 150px;
+    display:flex;
+    justify-content: center;
+    border : 1px solid black;
+    
+}
+
