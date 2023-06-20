@@ -43,6 +43,10 @@
 // }
 
 
+window.onload=function(){ //html 문서의 내용이 브라우저에 모두 표시되면 (load)
+
+}
+
 // 
 
 
