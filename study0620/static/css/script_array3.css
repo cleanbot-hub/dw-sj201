@@ -1,0 +1,6 @@
+#list span{    /* div 태그 안에 span 태그를 주겠다 */
+    display: inline-block;
+    padding:10px 30px;
+    border:1px solid black;
+    margin-right:20px;
+}
