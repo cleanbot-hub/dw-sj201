@@ -22,10 +22,18 @@ window.onload=function(){
 function search_name(){
         let input=document.getElementById("search") //    input 태그의 search 를 가져온다   
         let word = input.value;     // 
+
+        let res = document.getElementById("search_result"); // res 변수에 seatch_result 를 가져온다 
+        var out="";
         
-       // for(var i=0; i<name.length; i++){
-            if(name.indexOf(word) != -1 );
-                alert("찾았다")
+
+        for(var i=0; i<name.length; i++){
+            if(name[i].indexOf(word) != -1){ //변수[i].indexOf(word) != -1) 
+                out+="<p>"+name[i]+"</p>";
+                
+
+            }       // 배열 안에서의 묹
+         }
+         res.innerHTML=out;
         }
-   // }
 
