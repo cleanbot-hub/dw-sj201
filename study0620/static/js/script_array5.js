@@ -82,8 +82,8 @@ function same_search(){
             setTimeout(function(){
             cmp_num= new Array();
             let pic=document.getElementsByClassName("back");
-            for(var i=0; i<pic.length; i++){
-                pic[i].style.display="none";
+            for(var i=0; i<choice.length; i++){
+                pic[choice[i]].style.display="none";
             }
             }, 500);
         }
