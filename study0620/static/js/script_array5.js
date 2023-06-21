@@ -28,8 +28,8 @@ function image_init(){
     }
     var img = document.getElementsByClassName("picture");
     for( var i=0; i<img.length; i++){
-        img[image_position[i]].style.background="url("+(path+image_name[i%6])+") no-repeat center";
-        img[image_position[i]].style.backgroundSize="contain";
+        img[i].style.background="url("+(path+image_name[image_position[i]%6])+") no-repeat center";
+        img[i].style.backgroundSize="contain";
     }
 }
 function game_start(){
@@ -53,10 +53,45 @@ function game_start(){
 function compare_img(){
     if(!isStart){ return;}
 
+
+    if(count ==30){
+
+    alert("다음 기회에 도전하세요");
+    isStart=false;
+    return;
+
+    }
+
+
+    var cnt = document.getElementById("count");
+    cnt.innerText = ++count;
+
+
     var child_div = this.firstChild;
     child_div.style.display="block";
 
     
+    let div = document.getElementsByClassName("picture");
+    for(var i=0; i<div.length; i++){
+        if(div[i] === child_div)
+        selectImg.push[i];
+    }
+     
+    if(selectImg.length == 2){
+        if(image_position[selectImg[0]]%6 == image_position[selectImg[1]]%6){
+
+                selectImg=new Array();
+                isSame[selectImg[0]] = true;
+                isSame[selectImg[1]] = true;
+                end_count++;
+            
+        }else{
+    
+        }
+    
+    
+        }
+
     
 }
 function search_Element(obj){
