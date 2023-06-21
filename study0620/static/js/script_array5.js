@@ -64,9 +64,14 @@ function same_search(){
         }
 
         // 클릭 횟수 증가 시키기 
+        if(step == 20){ // 20번 클릭하면 더이상 진행이 되지 않게 
+            alert("다음기회에 도전하세요");
+            show=false;
+            return;
+        }
         var count = document.getElementById("count");
         count.innerText= ++step;
-
+       
 
 
         var child = this.children[0]; // this td  // child 변수는 td 태그의 자식인 span 이다 .
