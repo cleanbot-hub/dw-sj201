@@ -1,4 +1,9 @@
 
+
+
+
+
+
 let show=false; // startButton 버튼 클릭 유무 
 let cmp_num=new Array(); // 두개의 숫자를 비교하기 위한 배열 저장 
 let choice = new Array(); // 클릭한 두개의 span 태그 인덱스 저장 배열 
@@ -35,53 +40,53 @@ function init() {
 
 
 
-// 중복없이 랜덤 값 넣기 
+// // 중복없이 랜덤 값 넣기 
 
 
 
 
 window.onload=function(){
 
-    init(); // 초기화 함수 실행 
+//     init(); // 초기화 함수 실행 
 
 
-    let start1=document.getElementById("startButton");
-    start1.addEventListener("click",startButton);
-    let pic = document.getElementsByClassName("picture"); // 배열에 첫번째 주소
-    for(var i=0; i<pic.length; i++){ // 배열 
-        pic[i].addEventListener("click",same_search); // 8개의 td에 클릭 이벤트 등록 
-       // pic[i].innerHTML=num[i%4];
+//     let start1=document.getElementById("startButton");
+//     start1.addEventListener("click",startButton);
+//     let pic = document.getElementsByClassName("picture"); // 배열에 첫번째 주소
+//     for(var i=0; i<pic.length; i++){ // 배열 
+//         pic[i].addEventListener("click",same_search); // 8개의 td에 클릭 이벤트 등록 
+//        // pic[i].innerHTML=num[i%4];
 
-    }
+//     }
         
-}
+// }
 
-function same_search(){
-    if(!show){ // show 변수가 false 라면 not 연산에 의해 true가 적용 
-            // show 변수가 true 라면 not 연산에 의해 false 가 적용
+ function same_search(){
+     if(!show){ // show 변수가 false 라면 not 연산에 의해 true가 적용 
+//             // show 변수가 true 라면 not 연산에 의해 false 가 적용
         alert("START 버튼을 클릭 하세요 ");
-        return; // START 버튼을 클릭하지 않았으면 same_search 함수를 실행 시키지 않는다 
+         return; // START 버튼을 클릭하지 않았으면 same_search 함수를 실행 시키지 않는다 
         }
 
-        // 클릭 횟수 증가 시키기 
+         // 클릭 횟수 증가 시키기 
         if(step == 20){ // 20번 클릭하면 더이상 진행이 되지 않게 
-            alert("다음기회에 도전하세요");
-            show=false;
+             alert("다음기회에 도전하세요");
+           show=false;
             return;
-        }
-        var count = document.getElementById("count");
-        count.innerText= ++step;
+         }
+         var count = document.getElementById("count");
+         count.innerText= ++step;
        
 
 
-        var child = this.children[0]; // this td  // child 변수는 td 태그의 자식인 span 이다 .
-        child.style.display="inline";
+         var child = this.children[0]; // this td  // child 변수는 td 태그의 자식인 span 이다 .
+         child.style.display="inline";
         
       
 
-        let span=document.getElementsByClassName("back");
+         let span=document.getElementsByClassName("back");
             for(var i=0; i<span.length; i++){
-                if(span[i]===child)
+                 if(span[i]===child)
                     choice.push(i); // 클릭한 td의 span 태그 인덱스를 배열에 저장 
         }
 
@@ -89,31 +94,31 @@ function same_search(){
 
         cmp_num.push(parseInt(child.innerText)); // 클릭한 td>span 의 숫자를 배열에 저장 
         
-        if(cmp_num.length == 2){ // 배열에 숫자 2개가 저장 되어 있다면 비교 
+         if(cmp_num.length == 2){ // 배열에 숫자 2개가 저장 되어 있다면 비교 
             
             if(cmp_num[0] == cmp_num[1]){
                 
                 cmp_num=new Array();
-                choice = new Array();
+                 choice = new Array();
                 end++; // 같은 숫자 찾으면 end 변수 1씩 증가 
 
         }else{ 
-            setTimeout(function(){
-                cmp_num= new Array();
-                let pic=document.getElementsByClassName("back");
+             setTimeout(function(){
+                 cmp_num= new Array();
+                 let pic=document.getElementsByClassName("back");
                 for(var i=0; i<choice.length; i++){
-                    pic[choice[i]].style.display="none";
-                }
-                choice= new Array();
-            }, 500);
-        }
-        // this.style.background="red"; 클릭하면 빨간색으로 변한다  
-    }
-        if(end==4){
-            alert("게임 끝 ");
-            show=false;
-        }
-}
+                     pic[choice[i]].style.display="none";
+                 }
+                 choice= new Array();
+             }, 500);
+         }
+         // this.style.background="red"; 클릭하면 빨간색으로 변한다  
+     }
+         if(end==4){
+             alert("게임 끝 ");
+             show=false;
+         }
+ }
     // 자식 태그 가져오는 방법 : 
     // children - 모든 자식 태그를 htmlcollextion의 배열로 가져온다 
     // childNodes - 모든 자식 태그를 nodeList의 배열로 가져온다 
@@ -152,6 +157,18 @@ function startButton() {
     },2000);
      
 }
+}
+
+
+/*
+var elements = document.getElementsByTagName('a');
+for (var i = 0; i < elements.length; i++) {
+  elements[i].innerHTML = '<img src="image' + num[i % 4] + '.jpg" alt="Image ' + num[i % 4] + '">';
+  elements[elements.length - i - 1].innerHTML = '<img src="image' + num[i % 4] + '." alt="Image ' + num[i % 4] + '">';
+}
+
+
+*/
 
 
 
@@ -211,4 +228,4 @@ function startButton() {
 
 // function  same_search(){
     
-// }
+//// 
