@@ -1,5 +1,6 @@
 
- 
+let show=false; // startButton 버튼 클릭 유무 
+
 let num = new Array(); // 화면에 표시 되는 숫자 저장  
 let a = new Array(); // 숫자가 출력 될 위치 저장 배열 
 
@@ -47,7 +48,12 @@ window.onload=function(){
 }
 
 function same_search(){
-
+    if(!show){ // show 변수가 false 라면 not 연산에 의해 true가 적용 
+            // show 변수가 true 라면 not 연산에 의해 false 가 적용
+        alert("START 버튼을 클릭 하세요 ");
+        return; // START 버튼을 클릭하지 않았으면 same_search 함수를 실행 시키지 않는다 
+        }
+    
 
 }
 
@@ -64,8 +70,9 @@ function startButton() {
         for(var i=0; i<pic.length; i++){
             pic[i].style.display="none";
         }
-        },2000);
-
+        show = true; // startButton 버튼 클릭 했다라는 의미         
+    },2000);
+    
 }
 
 
