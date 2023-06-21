@@ -53,9 +53,16 @@ function same_search(){
         alert("START 버튼을 클릭 하세요 ");
         return; // START 버튼을 클릭하지 않았으면 same_search 함수를 실행 시키지 않는다 
         }
-    
-
 }
+
+// getElementById() 또는 getElementByClassName() 등 사용하면 
+// 태그의 객체라는 것이 반환된다. 태그의 객체를 변수에 담아서 사용 
+// 자바스크립트에서는 html 태그를 element 요소 or 객체 
+// 객체를 표현 하는 방법 중 자신을 의미 하는 this 
+// same_search 함수를 실행 시킨 건 td 태그 
+// 즉 td 라는 객체에 의해 same_search 함수가 실행 됨 
+// same_search함수 안에서 this 라고 사용 하면 same_search 함수를 실행 
+// td 태그를 의미한다 
 
 function startButton() {
     let a = document.getElementsByClassName("back"); // span 태그의 back 에 출력 되도록 
