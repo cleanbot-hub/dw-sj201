@@ -79,21 +79,35 @@ function compare_img(){
      
     if(selectImg.length == 2){
         if(image_position[selectImg[0]]%6 == image_position[selectImg[1]]%6){
-
-                selectImg=new Array();
                 isSame[selectImg[0]] = true;
                 isSame[selectImg[1]] = true;
+                 selectImg=new Array();
                 end_count++;
             
         }else{
-    
-        }
-    
-    
+                setTimeout(function(){
+                    selectImg = new Array();
+                    let pic= document.getElementsByClassName("pictrue");
+                    for(var i=0; i<isSame.length; i++){
+                        if(!isSame[i]){
+                            pic[i].style.display="none";
+                        }
+                    }
+                }, 1000);
+            }
     }
 
     
 }
+
+if(end_count == 6){
+    alert("게임 끝");
+    isStart=false;
+}
+
+
+
+
 function search_Element(obj){
 
 }
