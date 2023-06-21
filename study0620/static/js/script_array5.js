@@ -90,7 +90,7 @@ function compare_img(){
         }
     
     
-        }
+    }
 
     
 }
