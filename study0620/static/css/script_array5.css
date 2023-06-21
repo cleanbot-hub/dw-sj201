@@ -69,13 +69,13 @@ button{
 }
 
 #startButton{
-    width:100px;
-    height: 150px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border : 1px solid black;
+    width: 100px;
+    height: 100px;
     margin: 0 auto;
-    
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+   font-size:30px;
 }
 
