@@ -58,16 +58,24 @@ function same_search(){
         var child = this.children[0]; // this td  
         child.style.display="inline";
         
-        cmp_num.push(parseInt(child.innerText));
-        if(cmp_num.length == 2){
-            if(cmp_num[0] == cmp_num[1])
-            alert("같다");
-            else 
-            alert("같지않다");
+        cmp_num.push(parseInt(child.innerText)); // 클릭한 td>span 의 숫자를 배열에 저장 
+        
+        if(cmp_num.length == 2){ // 배열에 숫자 2개가 저장 되어 있다면 비교 
+            
+            if(cmp_num[0] == cmp_num[1]){
+                alert("같다");
+        }else{ 
+            setTimeout(function(){
+            cmp_num= new Array();
+            let pic=document.getElementsByClassName("back");
+            for(var i=0; i<pic.length; i++){
+                pic[i].style.display="none";
+            }
+            }, 500);
         }
         // this.style.background="red"; 클릭하면 빨간색으로 변한다  
     }
-
+ }
     // 자식 태그 가져오는 방법 : 
     // children - 모든 자식 태그를 htmlcollextion의 배열로 가져온다 
     // childNodes - 모든 자식 태그를 nodeList의 배열로 가져온다 
