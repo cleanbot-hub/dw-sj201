@@ -62,7 +62,7 @@ function startButton() {
     setTimeout(function(){
         let pic=document.getElementsByClassName("back");
         for(var i=0; i<pic.length; i++){
-            pic[i].style.display
+            pic[i].style.display="none";
         }
         },2000);
 
