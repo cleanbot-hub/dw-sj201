@@ -53,8 +53,23 @@ function same_search(){
         alert("START 버튼을 클릭 하세요 ");
         return; // START 버튼을 클릭하지 않았으면 same_search 함수를 실행 시키지 않는다 
         }
-        this.style.background="red"; 
+        
+        var child = this.children[0]; // td 자식들을 배열로 저장 
+        child.style.display="inline";
+        // this.style.background="red"; 클릭하면 빨간색으로 변한다  
     }
+
+    // 자식 태그 가져오는 방법 : 
+    // children - 모든 자식 태그를 htmlcollextion의 배열로 가져온다 
+    // childNodes - 모든 자식 태그를 nodeList의 배열로 가져온다 
+    // firstChild - 첫번째 자식태그 
+    // lastChild  - 마지막 자식 태그 
+
+
+
+
+
+
 
 // getElementById() 또는 getElementByClassName() 등 사용하면 
 // 태그의 객체라는 것이 반환된다. 태그의 객체를 변수에 담아서 사용 
