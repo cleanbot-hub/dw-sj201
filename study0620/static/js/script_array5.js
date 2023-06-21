@@ -1,6 +1,7 @@
 
 let show=false; // startButton 버튼 클릭 유무 
 let cmp_num=new Array(); // 두개의 숫자를 비교하기 위한 배열 저장 
+let choice = new Array(); // 클릭한 두개의 span 태그 인덱스 저장 배열 
 
 let num = new Array(); // 화면에 표시 되는 숫자 저장  
 let a = new Array(); // 숫자가 출력 될 위치 저장 배열 
@@ -55,15 +56,28 @@ function same_search(){
         return; // START 버튼을 클릭하지 않았으면 same_search 함수를 실행 시키지 않는다 
         }
         
-        var child = this.children[0]; // this td  
+        var child = this.children[0]; // this td  // child 변수는 td 태그의 자식인 span 이다 .
         child.style.display="inline";
         
+      
+
+        let span=document.getElementsByClassName("back");
+            for(var i=0; i<span.length; i++){
+                if(span[i]===child);
+                choice.push(i); // 클릭한 td의 span 태그 인덱스를 배열에 저장 
+        }
+
+
+
         cmp_num.push(parseInt(child.innerText)); // 클릭한 td>span 의 숫자를 배열에 저장 
         
         if(cmp_num.length == 2){ // 배열에 숫자 2개가 저장 되어 있다면 비교 
             
             if(cmp_num[0] == cmp_num[1]){
-                alert("같다");
+                
+                cmp_num=new Array();
+
+
         }else{ 
             setTimeout(function(){
             cmp_num= new Array();
