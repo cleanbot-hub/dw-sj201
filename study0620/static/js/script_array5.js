@@ -59,10 +59,14 @@ function startButton() {
         a[i].innerHTML = randomNumber;
         a[a.length - i - 1].innerHTML=randomNumber;
     }
-    
+    setTimeout(function(){
+        let pic=document.getElementsByClassName("back");
+        for(var i=0; i<pic.length; i++){
+            pic[i].style
+        }
+        },2000);
+
 }
-
-
 
 
 
