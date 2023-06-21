@@ -53,7 +53,8 @@ function same_search(){
         alert("START 버튼을 클릭 하세요 ");
         return; // START 버튼을 클릭하지 않았으면 same_search 함수를 실행 시키지 않는다 
         }
-}
+        this.style.background="red"; 
+    }
 
 // getElementById() 또는 getElementByClassName() 등 사용하면 
 // 태그의 객체라는 것이 반환된다. 태그의 객체를 변수에 담아서 사용 
@@ -79,7 +80,7 @@ function startButton() {
         }
         show = true; // startButton 버튼 클릭 했다라는 의미         
     },2000);
-    
+     
 }
 
 
