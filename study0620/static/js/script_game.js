@@ -1,3 +1,5 @@
+
+
 window.onload = function() {
     var startButton = document.getElementById('start');
     var imgList = document.getElementById('imglist');
@@ -5,6 +7,7 @@ window.onload = function() {
     // 이미지 숨기기
     imgList.style.display = 'none';
 
+ 
     startButton.addEventListener('click', function() {
         // 이미지 보이기
         imgList.style.display = 'table';
