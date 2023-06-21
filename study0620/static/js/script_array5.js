@@ -98,8 +98,8 @@ function init(){ //초기화
 
 window.onload=function(){
     init(); //초기화 함수 실행
-    let start = document.getElementById("startButton");
-    start.addEventListener("click",play);
+    let start = document.getElementById("startButton"); // startButton id를 가져와서 
+    start.addEventListener("click",play); // 클릭 이벤트를 가져온다 실행함수는 play 함수 
 
    let pic = document.getElementsByClassName("picture");
    for( var i=0; i<pic.length; i++){
