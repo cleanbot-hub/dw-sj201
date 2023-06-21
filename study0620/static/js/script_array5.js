@@ -2,6 +2,7 @@
 let show=false; // startButton 버튼 클릭 유무 
 let cmp_num=new Array(); // 두개의 숫자를 비교하기 위한 배열 저장 
 let choice = new Array(); // 클릭한 두개의 span 태그 인덱스 저장 배열 
+let end=0; // 4가 되면 게임 끝 
 
 let num = new Array(); // 화면에 표시 되는 숫자 저장  
 let a = new Array(); // 숫자가 출력 될 위치 저장 배열 
@@ -77,6 +78,7 @@ function same_search(){
                 
                 cmp_num=new Array();
                 choice = new Array();
+                end++; // 같은 숫자 찾으면 end 변수 1씩 증가 
 
         }else{ 
             setTimeout(function(){
@@ -90,7 +92,11 @@ function same_search(){
         }
         // this.style.background="red"; 클릭하면 빨간색으로 변한다  
     }
- }
+        if(end==4){
+            alert("게임 끝 ");
+            show=false;
+        }
+}
     // 자식 태그 가져오는 방법 : 
     // children - 모든 자식 태그를 htmlcollextion의 배열로 가져온다 
     // childNodes - 모든 자식 태그를 nodeList의 배열로 가져온다 
