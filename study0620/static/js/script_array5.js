@@ -3,6 +3,7 @@ let show=false; // startButton 버튼 클릭 유무
 let cmp_num=new Array(); // 두개의 숫자를 비교하기 위한 배열 저장 
 let choice = new Array(); // 클릭한 두개의 span 태그 인덱스 저장 배열 
 let end=0; // 4가 되면 게임 끝 
+let step=0; // 클릭 횟수 제한을 위한 변수 
 
 let num = new Array(); // 화면에 표시 되는 숫자 저장  
 let a = new Array(); // 숫자가 출력 될 위치 저장 배열 
@@ -25,7 +26,11 @@ function init() {
             i--;
         }
     }
+            var count = document.getElementById("count");
+            count.innerText=0;
+
 }
+
 
 
 
@@ -38,6 +43,7 @@ function init() {
 window.onload=function(){
 
     init(); // 초기화 함수 실행 
+
 
     let start1=document.getElementById("startButton");
     start1.addEventListener("click",startButton);
@@ -56,7 +62,13 @@ function same_search(){
         alert("START 버튼을 클릭 하세요 ");
         return; // START 버튼을 클릭하지 않았으면 same_search 함수를 실행 시키지 않는다 
         }
-        
+
+        // 클릭 횟수 증가 시키기 
+        var count = document.getElementById("count");
+        count.innerText= ++step;
+
+
+
         var child = this.children[0]; // this td  // child 변수는 td 태그의 자식인 span 이다 .
         child.style.display="inline";
         
