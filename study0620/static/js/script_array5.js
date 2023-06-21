@@ -84,7 +84,10 @@ function init(){ //초기화
         }
     }
 
-    board.push(Math.floor(Math.random()*8) );
+
+    // td가 8개여서 random ()*8 을 사용한다 indexOf에서는 0부터 시작함
+
+    board.push(Math.floor(Math.random()*8)); 
     for(var i=1; i<=7; i++){
         var temp = Math.floor(Math.random()*8);
         if ( board.indexOf(temp) == -1){
