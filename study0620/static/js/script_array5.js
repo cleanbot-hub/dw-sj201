@@ -57,7 +57,14 @@ function same_search(){
         
         var child = this.children[0]; // this td  
         child.style.display="inline";
-        alert(child.innerText);
+        
+        cmp_num.push(parseInt(child.innerText));
+        if(cmp_num.length == 2){
+            if(cmp_num[0] == cmp_num[1])
+            alert("같다");
+            else 
+            alert("같지않다");
+        }
         // this.style.background="red"; 클릭하면 빨간색으로 변한다  
     }
 
