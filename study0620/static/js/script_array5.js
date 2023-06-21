@@ -1,5 +1,6 @@
 
 let show=false; // startButton 버튼 클릭 유무 
+let cmp_num=new Array(); // 두개의 숫자를 비교하기 위한 배열 저장 
 
 let num = new Array(); // 화면에 표시 되는 숫자 저장  
 let a = new Array(); // 숫자가 출력 될 위치 저장 배열 
@@ -54,8 +55,9 @@ function same_search(){
         return; // START 버튼을 클릭하지 않았으면 same_search 함수를 실행 시키지 않는다 
         }
         
-        var child = this.children[0]; // td 자식들을 배열로 저장 
+        var child = this.children[0]; // this td  
         child.style.display="inline";
+        alert(child.innerText);
         // this.style.background="red"; 클릭하면 빨간색으로 변한다  
     }
 
