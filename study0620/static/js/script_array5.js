@@ -52,7 +52,7 @@ function same_search(){
 }
 
 function startButton() {
-    let a = document.getElementsByClassName("picture");
+    let a = document.getElementsByClassName("back"); // span 태그의 back 에 출력 되도록 
     for (var i = 0; i < a.length; i++) {
         var randomNumber=Math.floor(Math.random()*7)+1;
         
