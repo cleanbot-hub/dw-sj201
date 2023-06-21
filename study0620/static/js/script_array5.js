@@ -7,7 +7,7 @@ let num = new Array(); // 화면에 표시 되는 숫자 저장
 let a = new Array(); // 숫자가 출력 될 위치 저장 배열 
 
 function init() {
-    for (var i = 1; i <= 3; i++) {
+    for (var i = 0; i <= 3; i++) {
         var temp = Math.floor(Math.random() * 10) + 1;
         if (num.indexOf(temp) == -1) {
             num.push(temp);
@@ -63,8 +63,8 @@ function same_search(){
 
         let span=document.getElementsByClassName("back");
             for(var i=0; i<span.length; i++){
-                if(span[i]===child);
-                choice.push(i); // 클릭한 td의 span 태그 인덱스를 배열에 저장 
+                if(span[i]===child)
+                    choice.push(i); // 클릭한 td의 span 태그 인덱스를 배열에 저장 
         }
 
 
@@ -76,15 +76,16 @@ function same_search(){
             if(cmp_num[0] == cmp_num[1]){
                 
                 cmp_num=new Array();
-
+                choice = new Array();
 
         }else{ 
             setTimeout(function(){
-            cmp_num= new Array();
-            let pic=document.getElementsByClassName("back");
-            for(var i=0; i<choice.length; i++){
-                pic[choice[i]].style.display="none";
-            }
+                cmp_num= new Array();
+                let pic=document.getElementsByClassName("back");
+                for(var i=0; i<choice.length; i++){
+                    pic[choice[i]].style.display="none";
+                }
+                choice= new Array();
             }, 500);
         }
         // this.style.background="red"; 클릭하면 빨간색으로 변한다  
@@ -116,8 +117,8 @@ function startButton() {
     for (var i = 0; i < a.length; i++) {
         var randomNumber=Math.floor(Math.random()*7)+1;
         
-        a[i].innerHTML = randomNumber;
-        a[a.length - i - 1].innerHTML=randomNumber;
+        a[i].innerHTML = num[i%4];
+        a[a.length - i - 1].innerHTML=num[i%4];
     }
     setTimeout(function(){
         let pic=document.getElementsByClassName("back");
