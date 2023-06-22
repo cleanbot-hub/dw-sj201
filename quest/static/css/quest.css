@@ -3,6 +3,7 @@
     height: 200px;
     margin :0 auto;
     padding:50px;
+    
 }
 #num{
     width:300px;
@@ -13,18 +14,32 @@
 }
 
 #result{
-    width:100%;
+    width:160;
     height: 50px;
-    display:flex;
-    justify-content: center;
-
+    text-align: center;
+    margin: 0 auto;
 }
+
+
+div{
+    padding:20px;
+}
+
+#result1{
+    width:160px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
 button{
     width:100%;
     height: 50px;
     display:flex;
     justify-content: center;
     align-items: center;
+    
 }
 #title{
     width:300px;
