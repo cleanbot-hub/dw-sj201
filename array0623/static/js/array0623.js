@@ -121,13 +121,25 @@ function make_num(){
     var even=0, odd=0; // even 짝 , odd 홀 
     var total=0;
     for(var i=0; i<lucky_num.length; i++){
+        total += lucky_num[i];
         if(lucky_num[i]%2 === 0){
             even++;
         }else
             odd++;
     }
 
-    out += "<td colspan='7'>홀/짝 : "+odd+"/"+even+"</td>";
+
+        // 산술적 복합성 값 구하기 
+        (a,b,c,d,e)
+
+
+
+
+
+
+    out += "<td colspan='7'>"+
+    "총합 : " +total+" "+
+    "홀/짝 : "+odd+"/"+even+"</td>";
 
 
 
