@@ -19,7 +19,7 @@
     - element.classList.contains('클래스이름');
     - 해당 클래스 이름이 있다면 true 없다면 false 
      
-    
+
 
 */
 
@@ -32,6 +32,10 @@ window.onload=function(){
     var icon = document.getElementsByClassName("strapIcon");
     icon[0].addEventListener("click", function(){
         var list = this.nextSibling;
+        var isActive = list.classList.contains("list_active");
+        if(isActive)
+         list.classList.toggle("list_active");
+        else
         list.classList.add("list_active");
     });
 
