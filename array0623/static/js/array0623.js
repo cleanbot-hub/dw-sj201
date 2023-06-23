@@ -86,6 +86,10 @@ function win_confirm(){
 
 
 function make_num(){
+    
+    var out="<table class='makeTable'>";
+    for(var n=1; n<6; n++){
+
     let lucky_num = new Array();
     lucky_num.push(Math.floor(Math.random()*45)+1); // 0번 부터 시작 
     for(var i=1; i<6; i++) {
@@ -98,14 +102,21 @@ function make_num(){
         
     }
 
+    lucky_num.sort(function(a,b){return a-b;})
+
+
+
+
     // 로또 숫자를 태그에 담아주기 
-    var out="<table class='makeTable'>";
+   
     out += "<tr>";
+
+    out+="<td class='numTd'>"+n+".</td>"
     for(var i=0; i<lucky_num.length; i++){
         out += "<td class='numTd'>"+lucky_num[i]+"</td>";
     }
     out += "</tr>";
-
+    } // 5번 반복하는 for 문 끝 
     out += "</table>";
 
 
