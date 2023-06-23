@@ -8,7 +8,9 @@ ul{
     list-style-type:none;
 }
 
-
+a{
+  text-decoration: none;
+}
 
 
 #wrap{
@@ -88,6 +90,9 @@ ul{
     font-size: 30px;
     cursor: pointer;
 }
+
+
+
 
 
 /*

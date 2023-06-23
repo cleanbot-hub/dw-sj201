@@ -34,27 +34,40 @@
     div 크기에 영향을 준다. 하지만 dataset은 영향을 주지 않는다. 
 
 
+   window.innerWidth;  브라우저의 화면 너비
+   window.innerHeight; 브라우저의 화면  높이
+   window.outerWidth;  브라우저의 전체 너비 
+   window.outerHeight; 브라우저의 전체 높이  
+    
+   브라우저의 크기가 변경 되면 동작하는 함수  - resize();
 
 
 
 
 
-    */
-
-
-
+*/
+window.onresize=function(){
+    var wd = window.innerWidth;
+    if(wd >= 786){
+        var list = document.getElementsByClassName("menu_list")[0];
+        list.style.display="none";
+        list.dataset.show='1';
+    }
+}
 
 window.onload=function(){
-    // 화면이 전부 로딩 되면 시작 하는 함수 
+   
 
     var icon = document.getElementsByClassName("strapIcon");
     icon[0].addEventListener("click", open_close);
-    }
+
+    content=document.querySelector("#content");
+}
 
 
 
 function open_close(){
-    var list = this.nextSibling;
+    var list = document.getElementsByClassName("strapIcon")[0].nextSibling;
     var show  = list.dataset.show;
     if(show==1) {
         list.style.display="block";
@@ -64,6 +77,46 @@ function open_close(){
         list.dataset.show='1';
     }
 
+}
+let content=null;
+
+function win_confirm(){
+    alert("당첨 확인 클릭");
+}
+
+
+function make_num(){
+    let lucky_num = new Array();
+    lucky_num.push(Math.floor(Math.random()*45)+1); // 0번 부터 시작 
+    for(var i=1; i<6; i++) {
+       var num = Math.floor(Math.random()*45)+1;
+        if(lucky_num.indexOf(num)=== -1){
+            lucky_num.push(num);
+        }else{
+            i--;
+        }
+        
+    }
+
+    // 로또 숫자를 태그에 담아주기 
+    var out="<table class='makeTable'>";
+    out += "<tr>";
+    for(var i=0; i<lucky_num.length; i++){
+        out += "<td class='numTd'>"+lucky_num[i]+"</td>";
+    }
+    out += "</tr>";
+
+    out += "</table>";
+
+
+     // 출력 
+      content.innerHTML=out;
+    }
+
+function num_count(){
+    alert("출현횟수");
+}
+
 
 
     // var isActive = list.classList.contains("list_active");
@@ -71,5 +124,5 @@ function open_close(){
     //  list.classList.toggle("list_active");
     // else
     // list.classList.add("list_active");
-}
+
 
