@@ -116,6 +116,21 @@ function make_num(){
         out += "<td class='numTd'>"+lucky_num[i]+"</td>";
     }
     out += "</tr>";
+
+    // 짝, 홀 갯수 , 총합 
+    var even=0, odd=0; // even 짝 , odd 홀 
+    var total=0;
+    for(var i=0; i<lucky_num.length; i++){
+        if(lucky_num[i]%2 === 0){
+            even++;
+        }else
+            odd++;
+    }
+
+    out += "<td colspan='7'>홀/짝 : "+odd+"/"+even+"</td>";
+
+
+
     } // 5번 반복하는 for 문 끝 
     out += "</table>";
 
