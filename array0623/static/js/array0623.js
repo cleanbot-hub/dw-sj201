@@ -37,7 +37,7 @@
 
 
 
-    
+
 
     */
 
@@ -48,26 +48,28 @@ window.onload=function(){
     // 화면이 전부 로딩 되면 시작 하는 함수 
 
     var icon = document.getElementsByClassName("strapIcon");
-    icon[0].addEventListener("click", function(){
-        var list = this.nextSibling;
-        var show  = list.dataset.show;
-        if(show==1) {
-            list.style.display="block";
-            list.dataset.show='0';
-        }else{
-            list.style.display="none";
-            list.dataset.show='1';
-        }
+    icon[0].addEventListener("click", open_close);
+    }
 
 
 
-        // var isActive = list.classList.contains("list_active");
-        // if(isActive)
-        //  list.classList.toggle("list_active");
-        // else
-        // list.classList.add("list_active");
-    });
+function open_close(){
+    var list = this.nextSibling;
+    var show  = list.dataset.show;
+    if(show==1) {
+        list.style.display="block";
+        list.dataset.show='0';
+    }else{
+        list.style.display="none";
+        list.dataset.show='1';
+    }
 
+
+
+    // var isActive = list.classList.contains("list_active");
+    // if(isActive)
+    //  list.classList.toggle("list_active");
+    // else
+    // list.classList.add("list_active");
 }
-
 
