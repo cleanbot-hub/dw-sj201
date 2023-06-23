@@ -57,6 +57,10 @@ ul{
     width:100%;
 }
 
+.list_active{
+    display:block;
+}
+
 
 .menu_icon{
         display:none;
