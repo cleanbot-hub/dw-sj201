@@ -3,9 +3,8 @@ window.onload=function(){
 
     var icon = document.getElementsByClassName("strapIcon");
     icon[0].addEventListener("click", function(){
-    var list = document.getElementsByClassName("menu_list");
-    list[0].style.display="block";
-
+        var list = this.nextSibling;
+        list.style.display="block";
     });
 
 }
