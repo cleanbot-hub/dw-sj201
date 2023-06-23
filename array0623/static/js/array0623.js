@@ -130,7 +130,12 @@ function make_num(){
 
 
         // 산술적 복합성 값 구하기 
-        (a,b,c,d,e)
+        var ac= new Array();
+        for(var i=lucky_num.length-1; i>1; i--){
+            for(var k=i-1; i>=0; i--){
+                ac.push(lucky_num[i] - lucky_num[k]);
+        }  
+    }
 
 
 
