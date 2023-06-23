@@ -20,9 +20,9 @@
     - 해당 클래스 이름이 있다면 true 없다면 false 
      
 
+     data-show="1" < data-하고싶은이름="태그의 변수이름 지정">  
 
 
-    
 
 
 */
@@ -36,11 +36,22 @@ window.onload=function(){
     var icon = document.getElementsByClassName("strapIcon");
     icon[0].addEventListener("click", function(){
         var list = this.nextSibling;
-        var isActive = list.classList.contains("list_active");
-        if(isActive)
-         list.classList.toggle("list_active");
-        else
-        list.classList.add("list_active");
+        var show  = list.dataset.show;
+        if(show==1) {
+            list.style.display="block";
+            list.dataset.show='0';
+        }else{
+            list.style.display="none";
+            list.dataset.show='1';
+        }
+
+
+
+        // var isActive = list.classList.contains("list_active");
+        // if(isActive)
+        //  list.classList.toggle("list_active");
+        // else
+        // list.classList.add("list_active");
     });
 
 }
