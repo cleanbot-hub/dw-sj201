@@ -55,7 +55,11 @@ ul{
     position: absolute;
     background:#fff;
     width:100%;
+    font-size:30px;
 }
+
+
+
 
 .list_active{
     display:block;
@@ -78,9 +82,6 @@ ul{
         이상 : min-width 
         웹 제작을 pc 우선으로 제작 시 max-width
         모바일 우선으로 제작 시 min-width  
-
-
-
 
 
 
