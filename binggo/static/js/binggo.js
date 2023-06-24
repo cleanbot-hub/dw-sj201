@@ -36,19 +36,9 @@ function createBingoGrid(numbers) {
                 this.classList.toggle("cell-selected");
 
                 var lineBingo = checkLineBingo();
-                if (lineBingo && (achievedLineBingos.length < 5 || achievedLineBingos.indexOf(lineBingo) === -1)) {
+                if (lineBingo && (achievedLineBingos.length < 2 || achievedLineBingos.indexOf(lineBingo) === -1)) {
                     achievedLineBingos.push(lineBingo);
-                    if (achievedLineBingos.length === 1) {
-                        alert("1 Line Bingo!");
-                    } else if (achievedLineBingos.length === 2) {
-                        alert("2 Lines Bingo!");
-                    } else if (achievedLineBingos.length === 3) {
-                        alert("3 Lines Bingo!");
-                    } else if (achievedLineBingos.length === 4) {
-                        alert("4 Lines Bingo!");
-                    } else if (achievedLineBingos.length === 5) {
-                        alert("5 Lines Bingo! Game Over");
-                    }
+                    alert("Bingo");
                 }
             });
         }
