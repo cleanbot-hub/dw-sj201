@@ -7,7 +7,13 @@ function start() {
 
     // Create a 5x5 bingo grid and populate it with the generated numbers
     createBingoGrid(numbers);
-}
+
+
+   
+
+
+
+  }
 
 function generateRandomNumbers(count, min, max) {
     var numbers = [];
@@ -34,6 +40,9 @@ function createBingoGrid(numbers) {
         if (index < numbers.length) {
             cells[i].innerText = numbers[index];
             index++;
+            cells[i].addEventListener("click", function() {
+                this.classList.toggle("cell-selected");
+            });
         }
     }
 }
