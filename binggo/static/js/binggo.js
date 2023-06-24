@@ -50,7 +50,7 @@ function createBingoGrid(numbers) {
                 var lineBingo = checkLineBingo();
                 if (lineBingo && achievedLineBingos.indexOf(lineBingo) === -1) {
                     achievedLineBingos.push(lineBingo);
-                    alert("Line bingo achieved!");
+                    alert("Binggo");
                 }
             });
         }
