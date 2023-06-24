@@ -1,11 +1,6 @@
 function start() {
-    // Generate an array of random unique numbers between 1 and 50
     var numbers = generateRandomNumbers(25, 1, 50);
-
-    // Clear the existing grid
     clearGrid();
-
-    // Create a 5x5 bingo grid and populate it with the generated numbers
     createBingoGrid(numbers);
 }
 
@@ -30,11 +25,6 @@ function clearGrid() {
 function createBingoGrid(numbers) {
     var index = 0;
     var cells = document.getElementsByClassName("cell");
-
-    // Array to keep track of selected cells
-    var selectedCells = [];
-
-    // Array to keep track of achieved line bingos
     var achievedLineBingos = [];
 
     for (var i = 0; i < cells.length; i++) {
@@ -42,22 +32,29 @@ function createBingoGrid(numbers) {
             cells[i].innerText = numbers[index];
             index++;
 
-            // Add click event listener to each cell
             cells[i].addEventListener("click", function() {
                 this.classList.toggle("cell-selected");
 
-                // Check if a line bingo has been achieved
                 var lineBingo = checkLineBingo();
-                if (lineBingo && achievedLineBingos.indexOf(lineBingo) === -1) {
+                if (lineBingo && (achievedLineBingos.length < 5 || achievedLineBingos.indexOf(lineBingo) === -1)) {
                     achievedLineBingos.push(lineBingo);
-                    alert("Binggo");
+                    if (achievedLineBingos.length === 1) {
+                        alert("1 Line Bingo!");
+                    } else if (achievedLineBingos.length === 2) {
+                        alert("2 Lines Bingo!");
+                    } else if (achievedLineBingos.length === 3) {
+                        alert("3 Lines Bingo!");
+                    } else if (achievedLineBingos.length === 4) {
+                        alert("4 Lines Bingo!");
+                    } else if (achievedLineBingos.length === 5) {
+                        alert("5 Lines Bingo! Game Over");
+                    }
                 }
             });
         }
     }
 
     function checkLineBingo() {
-        // Check rows for a line bingo
         for (var row = 0; row < 5; row++) {
             var rowBingo = true;
             for (var col = 0; col < 5; col++) {
@@ -73,7 +70,6 @@ function createBingoGrid(numbers) {
             }
         }
 
-        // Check columns for a line bingo
         for (var col = 0; col < 5; col++) {
             var colBingo = true;
             for (var row = 0; row < 5; row++) {
@@ -89,7 +85,6 @@ function createBingoGrid(numbers) {
             }
         }
 
-        // Check diagonals for a line bingo
         var diagonal1Bingo = true;
         var diagonal2Bingo = true;
         for (var i = 0; i < 5; i++) {
@@ -114,6 +109,3 @@ function createBingoGrid(numbers) {
         return null;
     }
 }
-
-
-
