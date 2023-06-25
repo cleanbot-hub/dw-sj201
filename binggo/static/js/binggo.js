@@ -130,5 +130,6 @@ function checkBingo() {
     } else {
       alert("Bingo! Game over! 5 bingos achieved!");
     }
+    return; // 종료
   }
 }
