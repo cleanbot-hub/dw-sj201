@@ -2,12 +2,14 @@
 
 var selectedCells = []; // Array to track selected cells
 var bingoCount = 0; // Count of achieved bingos
+var gameStarted = false; // Indicates whether the game has started
 
 function start() {
   var numbers = generateRandomNumbers(25, 1, 50);
   clearGrid();
   createBingoGrid(numbers);
   bingoCount = 0; // Reset the bingo count
+  gameStarted = true; // Set gameStarted to true
 }
 
 // Generate random numbers within a given range without duplicates
@@ -31,6 +33,7 @@ function clearGrid() {
   }
   selectedCells = []; // Reset selected cells array
   bingoCount = 0; // Reset the bingo count
+  gameStarted = false; // Reset gameStarted to false
 }
 
 // Create the bingo grid
@@ -44,14 +47,18 @@ function createBingoGrid(numbers) {
       index++;
 
       cells[i].addEventListener("click", function () {
-        if (!this.classList.contains("cell-selected")) {
-          this.classList.add("cell-selected");
-          selectedCells.push(this.id);
-          checkBingo();
+        if (gameStarted) { // Check if the game has started
+          if (!this.classList.contains("cell-selected")) {
+            this.classList.add("cell-selected");
+            selectedCells.push(this.id);
+            checkBingo();
+          } else {
+            this.classList.remove("cell-selected");
+            selectedCells = selectedCells.filter((cell) => cell !== this.id);
+            checkBingo();
+          }
         } else {
-          this.classList.remove("cell-selected");
-          selectedCells = selectedCells.filter((cell) => cell !== this.id);
-          checkBingo();
+          alert("Please start the game first!"); // Show alert if the game hasn't started
         }
       });
     }
