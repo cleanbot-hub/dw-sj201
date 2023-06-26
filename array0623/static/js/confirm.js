@@ -1,4 +1,4 @@
-import { fileLoad} from "./fileLoad";
+
 
 
 
@@ -25,21 +25,23 @@ window.onload=function(){
                     lotto.push(temp[i].split("\t"));//tab을 분리하라.
                 }
                 //alert(str.split("\n")[0]); 인덱스 0인 자료 출력 -> 1073회차 당첨번호만 알림창에 뜬다.
-            
-            
-            
-            
-            
+        
             });
             reader.readAsText(files[0]);
         });
 
         var opt="";
         for(var i=1073; i>1; i--)
-        opt+="<option>"+i+"</option>"
+        opt+= "<option>"+i+"</option>"
         drwNo.innerHTML=opt;
-        
-}
+        drwNo.addEventListener("change", select_count);
+    }    
+        let sel_count=0; // 발표회차 선택
+        function select_count(){
+            sel_count=this.selectedIndex;
+    }
+ 
+
 function data_default(){
 
 }
