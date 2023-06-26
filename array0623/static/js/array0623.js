@@ -46,6 +46,15 @@
 
 
 */
+
+
+let lotto=new Array(); // 역대 당첨 번호 저장 될 배열
+
+
+
+
+
+
 window.onresize=function(){
     var wd = window.innerWidth;
     if(wd >= 786){
@@ -71,7 +80,9 @@ window.onload=function(){
         // 첫번재 파일 참조를 해야 내가 선택한 파일을 읽을 수 있다 .
        let reader = new FileReader();
        reader.addEventListener("load",function(e){
-                alert(reader.result);
+                var str = reader.result;
+                lotto = str.split("\n");
+                alert(lotto[1]);
         });
         reader.readAsText(files[0]);
     });
