@@ -46,6 +46,12 @@ function data_default(){
 
 }
 
-function data_search(){
+function data_Search(){
+ //결과확인 버튼을 클릭하면 input태그에 입력한 숫자를 모두 선택번호 td에 
+ // 출력하기
+
+    var input =document.getElementsByClassName("input1");
+    var num_arr=NewArray();
+    input.innerHTML("btnSearch");
 
 } 
