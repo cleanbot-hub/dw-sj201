@@ -132,6 +132,24 @@ a{
 .mynum::-webkit-inner-spin-button{
     -webkit-appearance: none; margin:0;
 }
+
+#bt{
+    position: relative;
+    width:320px;
+    margin: 0 auto;
+    text-align: right;
+    top:-20px;
+}
+
+#bt button{
+    border:0;
+    background:#227adf;
+    font-size:25px;
+    padding:5px 20px;
+    color:#eee;
+}
+
+
 /*
     -webkit : 구글 사파리브라우저에 적용 
     -moz: 파이어폭스에 적용 

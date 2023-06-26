@@ -71,7 +71,8 @@ function win_confirm() {
     
     out +="<div id='result'></div>";
     content.innerHTML = out;
-  }
+    
+}
   
 
 function make_num(){ //번호생성부분,랜덤숫자이용해서번호등장
