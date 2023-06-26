@@ -132,7 +132,14 @@ a{
 .mynum::-webkit-inner-spin-button{
     -webkit-appearance: none; margin:0;
 }
+/*
+    -webkit : 구글 사파리브라우저에 적용 
+    -moz: 파이어폭스에 적용 
+    -ms : 잇지 , 익스플로러 
+    -o : 오페아 적용 
 
+
+*/
 
 
 
