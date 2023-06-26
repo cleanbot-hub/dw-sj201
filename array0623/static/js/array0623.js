@@ -60,19 +60,19 @@ function open_close(){
 
 let content=null;
 
-function win_confirm() {
-    var out = "<div id='input_box'>";
-    var input = "";
-    for (var i = 1; i <= 6; i++) {
-      input += "<input type='number' class='mynum'>";
-    }
-    out += input + "</div>";
-    out += "<div id='bt'><button onclick='check()'>확인</button></div>";
+// function win_confirm() {
+//     var out = "<div id='input_box'>";
+//     var input = "";
+//     for (var i = 1; i <= 6; i++) {
+//       input += "<input type='number' class='mynum'>";
+//     }
+//     out += input + "</div>";
+//     out += "<div id='bt'><button onclick='check()'>확인</button></div>";
     
-    out +="<div id='result'></div>";
-    content.innerHTML = out;
+//     out +="<div id='result'></div>";
+//     content.innerHTML = out;
     
-}
+// }
   
 
 function make_num(){ //번호생성부분,랜덤숫자이용해서번호등장
@@ -156,9 +156,9 @@ function make_num(){ //번호생성부분,랜덤숫자이용해서번호등장
     content.innerHTML = out;
 }
 
-function num_count(){ 
-    alert("출현횟수");
-}
+// function num_count(){ 
+//     alert("출현횟수");
+// }
 
 //배열, 실행할 함수 내용을 직접 써서 사용가능 -> 기존에는("사용하고자하는기능",사용하고자하는기능의 함수)
 /*
