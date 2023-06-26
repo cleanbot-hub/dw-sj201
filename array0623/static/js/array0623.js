@@ -86,7 +86,7 @@ window.onload=function(){
                 lotto.push(temp[i].split("\t"));
                 
                 }
-                alert(lotto[0][3]);
+                // alert(lotto[0][3]);
         });
         reader.readAsText(files[0]);
     });
@@ -118,7 +118,7 @@ function make_num(){
         alert("로또 파일을 먼저 열어 주세요 ");
         return;
     }
-    
+
     var out="<table class='makeTable'>";
     for(var n=1; n<6; n++){
 
@@ -171,6 +171,19 @@ function make_num(){
         }  
     }
     // 역대 당첨 번호와 비교하기 
+    //lotto는 2차원 배열 - 1차원 배열이 두개 있기 때문에 인덱스도 두개다.
+    // i 변수에는 첫번째 인덱스를 k 변수에는 두번째 인덱스를 표현한다 .
+
+
+
+
+
+    for(var i in lotto){ // 회차 0   부터 1072 까지 
+        for(var k=2; k<=7;){  //  
+            lotto[i][k]
+        }
+    }
+
 
 
 
