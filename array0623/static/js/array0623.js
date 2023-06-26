@@ -67,7 +67,7 @@ function win_confirm() {
       input += "<input type='number' class='mynum'>";
     }
     out += input + "</div>";
-  
+    out += "<div> <button>확인</button></div>";
     content.innerHTML = out;
   }
   
