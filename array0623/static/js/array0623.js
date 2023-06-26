@@ -69,10 +69,12 @@ window.onload=function(){
         let target= e.target; // 선택 된 파일 참조 
         let files = target.files; // 선택 되 파일은 배열의 형식으로 저장 된다 .
         // 첫번재 파일 참조를 해야 내가 선택한 파일을 읽을 수 있다 .
-        alert(files[0]);
-    
+       let reader = new FileReader();
+       reader.addEventListener("load",function(e){
+                alert(reader.result);
+        });
+        reader.readAsText(files[0]);
     });
-
 }
 
 
