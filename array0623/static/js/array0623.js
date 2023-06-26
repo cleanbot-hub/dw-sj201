@@ -60,9 +60,17 @@ function open_close(){
 
 let content=null;
 
-function win_confirm(){//당첨확인 버튼을 누르면 자바스크립트 내 해당하는 함수로 이동한다
-    alert("당첨 확인 클릭");
-}
+function win_confirm() {
+    var out = "<div id='input_box'>";
+    var input = "";
+    for (var i = 1; i <= 6; i++) {
+      input += "<input type='number' class='mynum'>";
+    }
+    out += input + "</div>";
+  
+    content.innerHTML = out;
+  }
+  
 
 function make_num(){ //번호생성부분,랜덤숫자이용해서번호등장
     if(lotto.length==0){
