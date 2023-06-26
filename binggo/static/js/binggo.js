@@ -5,7 +5,7 @@ var bingoCount = 0; // 달성한 빙고의 개수
 var gameStarted = false; // 게임이 시작되었는지를 나타내는 변수
 
 function start() {
-  var numbers = generateRandomNumbers(25, 1, 50);
+  var numbers = generateRandomNumbers(25, 1, 50); // 곧 배우게 될 내용 
   clearGrid();
   createBingoGrid(numbers);
   bingoCount = 0; // 빙고 개수 초기화
