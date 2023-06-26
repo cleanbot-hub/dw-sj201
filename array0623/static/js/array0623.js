@@ -52,6 +52,7 @@ window.onresize=function(){
         var list = document.getElementsByClassName("menu_list")[0];
         list.style.display="none";
         list.dataset.show='1';
+
     }
 }
 
@@ -62,6 +63,16 @@ window.onload=function(){
     icon[0].addEventListener("click", open_close);
 
     content=document.querySelector("#content");
+
+    var file = document.querySelector("#lotto");
+    file.addEventListener("input",function(e){
+        let target= e.target; // 선택 된 파일 참조 
+        let files = target.files; // 선택 되 파일은 배열의 형식으로 저장 된다 .
+        // 첫번재 파일 참조를 해야 내가 선택한 파일을 읽을 수 있다 .
+        alert(files[0]);
+    
+    });
+
 }
 
 
@@ -132,12 +143,14 @@ function make_num(){
         // 산술적 복합성 값 구하기 
         var ac= new Array();
         for(var i=lucky_num.length-1; i>1; i--){
-            for(var k=i-1; i>=0; i--){
-                ac.push(lucky_num[i] - lucky_num[k]);
+            for(var k=i-1; k>=0; k--){
+                var tmp =lucky_num[i] - lucky_num[k];
+                if(ac.indexOf(tmp) == -1)
+                ac.push(tmp);
         }  
     }
+    // 역대 당첨 번호와 비교하기 
 
-        
 
 
 
