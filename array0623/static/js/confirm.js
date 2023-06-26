@@ -1,3 +1,7 @@
+import { fileLoad} from "./fileLoad";
+
+
+
 window.onload=function(){
     var drwNo = document.querySelector("#drwNo");
     var btnDefault = document.querySelector("#btnDefault");
@@ -16,4 +20,4 @@ function data_default(){
 
 function data_search(){
 
-}
+} 
