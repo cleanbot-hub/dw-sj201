@@ -51,7 +51,11 @@ function data_Search(){
  // 출력하기
 
     var input =document.getElementsByClassName("input1");
+    var res=document.getElementsByClassName("resultNumber");
     var num_arr=NewArray();
-    input.innerHTML("btnSearch");
+    for(var i=0; i<=4; i++){
+        num_arr.push(input1[i].value);
+    }
+    res[0].innerHTML=num_arr;
 
 } 
