@@ -60,6 +60,7 @@ function selectNumber(cellId) {
 // 컴퓨터가 숫자를 자동으로 선택하는 함수
 // 컴퓨터가 숫자를 자동으로 선택하는 함수
 
+// 컴퓨터가 숫자를 자동으로 선택하는 함수
 function computerSelectNumber() {
   if (!userTurn) {
     var availableNumbers = computerNumbers.filter(function (number) {
@@ -75,13 +76,13 @@ function computerSelectNumber() {
       var selectedCell = document.getElementById(selectedCellId);
 
       selectedCell.classList.add("cell-selected");
-selectedCell.classList.add("computer-grid"); // 컴퓨터 선택을 나타내는 클래스 추가
-selectedCells.push(selectedCellId);
-checkBingo();
+      selectedCell.classList.add("computer-selected"); // 컴퓨터 선택을 나타내는 클래스 추가
+      selectedCells.push(selectedCellId);
+      checkBingo();
 
-selectedCell.innerText = selectedNumber; // 숫자 표시
+      selectedCell.innerText = selectedNumber; // 숫자 표시
 
-alert("컴퓨터가 숫자 " + selectedNumber + "를 선택했습니다."); // 컴퓨터 턴 알림 및 선택한 숫자 알림 추가
+      alert("컴퓨터가 숫자 " + selectedNumber + "를 선택했습니다."); // 컴퓨터 턴 알림 및 선택한 숫자 알림 추가
     }
 
     userTurn = true; // 컴퓨터 턴 종료, 사용자 턴으로 변경
