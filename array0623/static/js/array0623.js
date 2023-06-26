@@ -81,8 +81,12 @@ window.onload=function(){
        let reader = new FileReader();
        reader.addEventListener("load",function(e){
                 var str = reader.result;
-                lotto = str.split("\n");
-                alert(lotto[1]);
+                var temp = str.split("\n");
+                for( var i in temp){
+                lotto.push(temp[i].split("\t"));
+                
+                }
+                alert(lotto[0][3]);
         });
         reader.readAsText(files[0]);
     });
@@ -110,6 +114,10 @@ function win_confirm(){
 
 
 function make_num(){
+    if(lotto.length==0){
+        alert("로또 파일을 먼저 열어 주세요 ");
+        return;
+    }
     
     var out="<table class='makeTable'>";
     for(var n=1; n<6; n++){
