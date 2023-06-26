@@ -14,8 +14,7 @@ function generateRandomNumbers(count, min, max) {
   return numbers;
 }
 
-// 게임 시작 시 초기화 및 컴퓨터 숫자 선택
-// 게임 시작 시 초기화 및 컴퓨터 숫자 선택
+
 // 게임 시작 시 초기화 및 컴퓨터 숫자 선택
 function start() {
   var userNumbers = generateRandomNumbers(25, 1, 50);
