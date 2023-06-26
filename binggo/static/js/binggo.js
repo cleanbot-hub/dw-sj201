@@ -17,7 +17,7 @@ function generateRandomNumbers(count, min, max) {
 
 // 게임 시작 시 초기화 및 컴퓨터 숫자 선택
 function start() {
-  var userNumbers = generateRandomNumbers(25, 1, 50);
+  var userNumbers = generateRandomNumbers(25, 1, 50); // 안배운거지만 이런게 있다 
   computerNumbers = generateRandomNumbers(25, 1, 50); // 'var' 키워드 제거
   
   clearGrid();
@@ -32,7 +32,7 @@ function start() {
 
 
 
-var userTurn = true;
+var userTurn = true; //
 
 // 사용자가 숫자 선택 시 컴퓨터가 숫자 선택
 
@@ -49,16 +49,14 @@ function selectNumber(cellId) {
       setTimeout(function() {
         computerSelectNumber();
         alert("컴퓨터의 턴입니다.");
-      }, 1000);
+      }, 200);
     }      
   } else {
     alert("먼저 게임을 시작해주세요!");
   }
 }
 
-// 컴퓨터가 숫자를 자동으로 선택하는 함수
-// 컴퓨터가 숫자를 자동으로 선택하는 함수
-// 컴퓨터가 숫자를 자동으로 선택하는 함수
+
 
 // 컴퓨터가 숫자를 자동으로 선택하는 함수
 function computerSelectNumber() {
