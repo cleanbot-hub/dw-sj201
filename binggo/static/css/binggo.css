@@ -13,11 +13,11 @@ cursor: pointer;
 }
 
 .cell-selected {
-background-color: yellow;
+background: yellow;
 }
 
 .computer-cell {
-background-color: lightgray;
+background: skyblue;
 }
 
 h1, h2 {
@@ -59,3 +59,4 @@ padding: 20px;
 width: 800px;
 margin: 0 auto;
 }
+
