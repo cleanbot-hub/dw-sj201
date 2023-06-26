@@ -46,16 +46,21 @@ function data_default(){
 
 }
 
-function data_Search(){
+function data_search(){
  //결과확인 버튼을 클릭하면 input태그에 입력한 숫자를 모두 선택번호 td에 
  // 출력하기
+    for(var line=1; line<=5; line++){
 
-    var input =document.getElementsByClassName("input1");
-    var res=document.getElementsByClassName("resultNumber");
-    var num_arr=NewArray();
-    for(var i=0; i<=4; i++){
-        num_arr.push(input1[i].value);
+    var input =document.getElementsByClassName("input"+line);
+    var num_arr = new Array();
+  
+    for(var i=0; i<input.length; i++){
+        if(input[i].value!='')
+        num_arr.push(input[i].value);
     }
-    res[0].innerHTML=num_arr;
-
-} 
+    if( num_arr.length==6){
+    var resN = document.getElementsByClassName("resultNumber");
+    resN[line-1].innerHTML=num_arr;
+        }
+    } 
+}
