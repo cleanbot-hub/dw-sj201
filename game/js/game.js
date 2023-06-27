@@ -96,11 +96,15 @@ window.onload=function(){
     function bingo_check(){
         var end=0;
         var row=0,col=0
+        var click_num=0;
             // 클릭 한 곳의 칸 체크 표시 하기 ,  
            var td=document.querySelectorAll(".Gnum");        
                 for(var i=0; i<td.length; i++){
                     if(td[i] == this){
                     td[i].classList.add("Gnum_check"); // 클릭 한 곳 클래스 추가 
+                    click_num=bingo[i];
+                    bingo[i]=0;
+                        break;// 클릭에 대한 동작이 끝났으므로 반복문 종료 
                     }
 
                 }
