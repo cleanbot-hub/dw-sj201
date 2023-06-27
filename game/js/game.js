@@ -21,7 +21,7 @@ window.onload=function(){
             for(var k=1; k<=Bcol; k++){ // 칸 
                 out += "<td class='Gnum'></td>"; // 칸을 표현 해주는 td
             }
-            out += "</tr>"
+            out += "</tr>";
         }
         board.innerHTML=out;
 
@@ -47,3 +47,37 @@ window.onload=function(){
     }
 
 
+    function init(){
+        // 25개 숫자 중복 없이 랜덤하게 생성 
+        for(var i=0; i<25; i++){
+            var tmp=Math.floor(Math.random()*50)+1;
+            if(bingo.indexOf(tmp) == -1)
+                bingo.push(tmp);
+                else 
+                 i--;
+        }
+        // td 클릭 이벤트 등록과 25개 숫자 td에 출력  
+        
+
+
+
+
+
+
+    }
+
+
+
+    function start(){
+        if(!game_state){
+            alert("게임이 진행중입니다");
+            return;
+        }
+        init();
+        game_state=true;
+    }
+
+
+    function bingo_check(){
+
+    }
