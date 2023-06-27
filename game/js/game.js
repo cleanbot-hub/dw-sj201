@@ -95,10 +95,14 @@ window.onload=function(){
 
     function bingo_check(){
         var end=0;
-        var col=0,row=0,cross=[];
-        for(var i=0; i<=bingo.length;i++){
-            for(var k=0;k<5;k++){
-
+        var row=0,col=0
+            // 클릭 한 곳의 칸 체크 표시 하기 ,  
+           var td=document.querySelectorAll(".Gnum");        
+                for(var i=0; i<td.length; i++){
+                    if(td[i] == this){
+                    td[i].classList.add("Gnum_check");
+                }
+                }
             }
-        }
-    }
+        
+    
