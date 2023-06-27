@@ -119,7 +119,8 @@ window.onload=function(){
             
                 //state_board의 과일에 클릭한 과일 배경색 바꾸고 
                 // 직접 클릭해서 배경색 변경 할 수 있게 
-                        
+               var stat=document.querySelectorAll(".stnum");
+               stat[click_num-1].classList.add("st_check");         
 
 
             }
