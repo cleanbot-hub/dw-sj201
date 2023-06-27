@@ -88,6 +88,7 @@ var num645 = document.getElementsByClassName("num_645");
       var bonus_str="<span>"+lotto[sel_count][8]+"</span>"; // 보너스에 관한 내용 변수 
       var win_cnt=0; // 일치여부 갯수 저장 변수
       var isBonus=false; // 보너스 번호가 있는 지 확인 하는 변수 
+      var rank=0; // 등수 구하기 
       for (var i = 0; i < input.length; i++) {
         if (input[i].value != "") {
           var val = input[i].value;
@@ -106,6 +107,18 @@ var num645 = document.getElementsByClassName("num_645");
             }
         }
         }
+       
+       switch(win_cnt){
+        case 6: rank=1; break; //당첨번호 6개 일치
+        case 5: if(isBonus) rank=2; // 당첨번호 5개에 보너스 
+                else rank=3; break; // 당첨번호 일치가 5개만 
+        case 4 : rank=4; break; // 당첨번호 일치가 4개 
+        case 3 : rank=5; break; // 당첨번호일치가 3개
+            default:
+                rank="X"
+       }
+       
+       
         if(isBonus){
             bonus_str = "<strong class='red'>"+lotto[sel_count][8]+"</strong>";
             win_cnt = win_cnt!=6 ? win_cnt+"+Bonus" : win_cnt;
