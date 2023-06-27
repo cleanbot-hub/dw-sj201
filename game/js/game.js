@@ -81,7 +81,7 @@ window.onload=function(){
 
         var stat=document.querySelectorAll(".stnum");             // stnum에 대한 클릭 이벤트 
         for( var i=0; i<stat.length; i++){
-            stat[i].addEventListener("click, state_check");
+            stat[i].addEventListener("click", state_check);
         }
         
         
@@ -125,5 +125,9 @@ window.onload=function(){
             }
         
     function state_check(){
-
+        if(this.classList.contains("st_check")) // st_check 클래스가 있냐 ? 
+                this.classList.toggle("st_check"); // st_check 클래스가 있다면 삭제 
+        else
+                this.classList.add("st_check"); // 없다면 클래스 추가 
+        
     }
