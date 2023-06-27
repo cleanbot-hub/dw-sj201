@@ -4,7 +4,7 @@ const Bcol=5;
 
 
 let game_state = false; // 시작 여부 확인 
-let binggo=new Array(); // 빙고 숫자 배열 
+let bingo=new Array(); // 빙고 숫자 배열 
 
 
 
