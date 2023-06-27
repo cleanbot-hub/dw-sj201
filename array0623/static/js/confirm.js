@@ -1,83 +1,126 @@
+window.onload = function () {
+
+var num645 = document.getElementsByClassName("num_645");
+    for(var i=0; i<num645.length; i++){
+        num645[i].addEventListener("keyup",function(e){ // 입력한 값 keyup 
+            
+            if(e.keyCode<48 || e.keyCode >57 && e.keyCode<97 || e.keyCode>105){
+                return;
+            } // 숫자카와 키패드 숫자 제외한 모든 키를 무시하기 위한 if 문 
+            
+            
+            var n = parseInt(this.value);
+            if(!(1<=n && n<=45)){
+                alert("1~45 숫자만 입력 하세요 ");
+                this.value='';
+                this.focus();
+            }
+    });
 
 
+}
+    
 
 
-window.onload=function(){
+    // 여기에 input 에 키보드로 입력 이벤트를 등록 시키기 
+    // 키보드 이벤트는 press 가 일반적이기는 한데 .. 
+    // 모든 input에 이벤트 등록 해야 함 
+
+
     var drwNo = document.querySelector("#drwNo");
     var btnDefault = document.querySelector("#btnDefault");
-    var btnSearch=document.querySelector("#btnSearch");
-    btnDefault.addEventListener("click",data_default);
-    btnSearch.addEventListener("click",data_search);
-    var file = document.querySelector("#lotto"); //css에서의 id가 lotto인걸 가져오기
-        file.addEventListener("input", function(e){
-            let target = e.target;//선택된 파일참조
-            let files = target.files;//선택 된 파일은 배열의 형식으로 저장된다. 
-            //첫번째 파일 참조를 해야 내가 선택한 파일을 찾을 수 있다.
-            //alert(files[0]); 파일선택하면 알림창이 뜬다.
-            let reader=new FileReader();
-            reader.addEventListener("load", function(){
-                var str = reader.result;
-                //alert(reader.result); txt파일 내용이 알림창에 뜬다.
-                var temp=str.split("\n");// split("\n") \n(new line -> enter) 분리하라. 
-
-                for(var i in temp){//for(var i=0; i<temp.length;i++)과 같은 조건
-                    //배열을 사용할 때 더 유용한 for문
-                    lotto.push(temp[i].split("\t"));//tab을 분리하라.
-                }
-                //alert(str.split("\n")[0]); 인덱스 0인 자료 출력 -> 1073회차 당첨번호만 알림창에 뜬다.
+    var btnSearch = document.querySelector("#btnSearch");
+    
+    btnDefault.addEventListener("click", data_default);
+    btnSearch.addEventListener("click", data_search);
+    
+    var file = document.querySelector("#lotto");
+    file.addEventListener("input", function (e) {
+      let target = e.target;
+      let files = target.files;
+      
+      let reader = new FileReader();
+      reader.addEventListener("load", function () {
+        var str = reader.result;
+        var temp = str.split("\n");
         
-            });
-            reader.readAsText(files[0]);
-        });
-
-        var opt="";
-        for(var i=1073; i>1; i--)
-        opt+= "<option>"+i+"</option>"
-        drwNo.innerHTML=opt;
-        drwNo.addEventListener("change", select_count);
-    }    
-        let sel_count=0; // 발표회차 선택
-        function select_count(){ // select 태그의 값을 변경하면 실행 되는 함수 
-            sel_count=this.selectedIndex;
+        for (var i in temp) {
+          lotto.push(temp[i].split("\t"));
+        }
+      });
+      
+      reader.readAsText(files[0]);
+    });
+    
+    var opt = "";
+    for (var i = 1073; i > 1; i--) {
+      opt += "<option>" + i + "</option>";
     }
- 
-
-function data_default(){
-
-}
-
-function data_search(){
- //결과확인 버튼을 클릭하면 input태그에 입력한 숫자를 모두 선택번호 td에 
- // 출력하기
-    if(lotto.length==0){
-        alert("로또 파일을 먼저 열어주세요");
-        return;
-    }
-    let win_num=new Array();
-    for(var i=2; i<7; i++){
-        win_num.push(parseInt(lotto[sel_count][i]));
-    }
- 
-    for(var line=1; line<=5; line++){
-
-    var input =document.getElementsByClassName("input"+line);
-    var num_arr = new Array();
+    drwNo.innerHTML = opt;
+    drwNo.addEventListener("change", select_count);
+  };
   
-    for(var i=0; i<input.length; i++){
-        if(input[i].value!=''){
-            var val = input[i].value;
-            if(win_num.indexOf(parseInt(val))== -1){
-
-            num_arr.push("<span>"+input[i].value+"</span>");
-        }else { 
-                num_arr.push("<strong class='red'>"+val+"</strong>");
-            
-        }
-        }
+  
+  let sel_count = 0;
+  
+  function select_count() {
+    sel_count = this.selectedIndex;
+  }
+  
+  function data_default() {
+    // TODO: Implement default data functionality
+  }
+  
+  function data_search() {
+    if (lotto.length == 0) {
+      alert("Please open a Lotto file first");
+      return;
     }
-    if( num_arr.length==6){
-    var resN = document.getElementsByClassName("resultNumber");
-    resN[line-1].innerHTML=num_arr;
+    
+    let win_num = new Array();
+    for (var i = 2; i < 7; i++) { // win_num 배열에 저장 
+      win_num.push(parseInt(lotto[sel_count][i]));
+    }
+    
+    for (var line = 1; line <= 5; line++) {
+      var input = document.getElementsByClassName("input" + line);
+      var num_arr = new Array();
+      var bonus_str="<span>"+lotto[sel_count][8]+"</span>"; // 보너스에 관한 내용 변수 
+      var win_cnt=0; // 일치여부 갯수 저장 변수
+      var isBonus=false; // 보너스 번호가 있는 지 확인 하는 변수 
+      for (var i = 0; i < input.length; i++) {
+        if (input[i].value != "") {
+          var val = input[i].value;
+          i
+          if (win_num.indexOf(parseInt(val)) == -1) { // 내가 입력한 번호는 당첨 x
+            num_arr.push("<span>" + input[i].value + "</span>");
+          } else { // 내가 입력한 번호가 당첨번호 라면 
+            num_arr.push("<strong class='red'>" + val + "</strong>");
+            win_cnt++; //당첨번호 몇 개인지
+        }      
+
+        //보너스 번호 일치여부 (lotto[sel_count][0])
+        if(val == parseInt(lotto[sel_count][8])){
+            isBonus=true;
+            //당첨번호6개가 아니다. (즉 1등 당첨이 아니라면)
+            }
         }
-    } 
-}
+        }
+        if(isBonus){
+            bonus_str = "<strong class='red'>"+lotto[sel_count][8]+"</strong>";
+            win_cnt = win_cnt!=6 ? win_cnt+"+Bonus" : win_cnt;
+        }
+        if( num_arr.length==6){
+            var resN = document.getElementsByClassName("resultNumber");
+            resN[line-1].innerHTML=num_arr;
+            // 여기에 보너스번호 출력코드 작성
+            // resultBonus
+            var bonus = document.getElementsByClassName("resultBonus");
+            bonus[line-1].innerHTML=bonus_str;
+            //여기에 일치 갯수 출력코드 작성  resultNumberSu
+            var NumberSu = document.getElementsByClassName("resultNumberSu");
+            NumberSu[line-1].innerText=win_cnt;
+
+        }
+            }
+        }
