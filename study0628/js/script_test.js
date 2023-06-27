@@ -5,9 +5,6 @@ const fruit = [
   '퍼그', '파피용', '시바견', '비숑프리제', '스코티쉬테리어'
 ];
 
-
-
-
 let game_state = false;
 let path = './image/';
 let image_name = ['beagle.png', 'bichonfrize.png', 'bordercollie.png', 'chihuahua.png', 'dachshund.png',
@@ -16,17 +13,15 @@ let image_name = ['beagle.png', 'bichonfrize.png', 'bordercollie.png', 'chihuahu
 ];
 let image_position = [];
 let isStart = false;
+let round = 1;
 let count = 0;
-let end_count = 0;
-let isSame = [];
-let selectImg = [];
+let selectedImgs = [];
 
 window.onload = function () {
   var start_bt = document.getElementById('start');
   start_bt.addEventListener('click', game_start);
-  var count = document.getElementById('count');
-  count.innerText = 0;
-  
+  var countElement = document.getElementById('count');
+  countElement.innerText = count;
 }
 
 function image_init() {
@@ -42,25 +37,81 @@ function image_init() {
   }
 
   // Update the background images for the picture elements
-  var img = document.getElementsByClassName('picture');
-  for (var i = 0; i < img.length; i++) {
-    img[i].style.background = 'url(' + (path + image_name[image_position[i] % 20]) + ') no-repeat center';
-    img[i].style.backgroundSize = 'contain';
+  var pictureElements = document.getElementsByClassName('picture');
+  for (var i = 0; i < pictureElements.length; i++) {
+    pictureElements[i].style.background = 'url(' + (path + image_name[image_position[i] % 20]) + ') no-repeat center';
+    pictureElements[i].style.backgroundSize = 'contain';
   }
 }
 
 function game_start() {
   if (isStart) {
-    // return;
+    return;
   }
   image_init();
   isStart = true;
 }
 
-function compare_img() {
-  // Function body
+function select_image() {
+  if (!isStart) {
+    return;
+  }
+  var pictureElement = this;
+  var index = getIndex(pictureElement);
+
+  if (selectedImgs.includes(index)) {
+    return;
+  }
+
+  pictureElement.style.border = '2px solid red';
+  selectedImgs.push(index);
+
+  count++;
+  var countElement = document.getElementById('count');
+  countElement.innerText = count;
+
+  if (count === 30) {
+    game_over();
+  }
 }
 
-function search_Element(obj) {
-  // Function body
+function getIndex(pictureElement) {
+  var pictureElements = document.getElementsByClassName('picture');
+  for (var i = 0; i < pictureElements.length; i++) {
+    if (pictureElements[i] === pictureElement) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+function game_over() {
+  isStart = false;
+
+  // Display the selected images and their names
+  var stateBoard = document.getElementById('state_board');
+  stateBoard.innerHTML = '';
+
+  for (var i = 0; i < selectedImgs.length; i++) {
+    var rowIndex = Math.floor(i / 5);
+    var columnIndex = i % 5;
+
+    var name = fruit[image_position[selectedImgs[i]] % 20];
+
+    if (columnIndex === 0) {
+      var rowElement = document.createElement('tr');
+      stateBoard.appendChild(rowElement);
+    }
+
+    var cellElement = document.createElement('td');
+    cellElement.innerText = name;
+    rowElement.appendChild(cellElement);
+  }
+
+  // Show game over message
+  var loadingElement = document.getElementById('loading');
+  loadingElement.style.display = 'none';
+
+  var stateElement = document.getElementById('state');
+  stateElement.style.display = 'block';
 }
