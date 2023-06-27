@@ -27,22 +27,25 @@ window.onload=function(){
 }
 
 
-function image_init(){
-    image_position.push(Math.floor(Math.random()*12));
-    for(var i=1; i<12; i++){
-        var tmp=Math.floor(Math.random()*12);
-        if( image_position.indexOf(tmp) == -1){
-            image_position.push(tmp);
-        }else{
-            --i;
-        }
+function image_init() {
+    // Clear the image_position array
+    image_position = [];
+  
+    // Randomly select 20 unique image positions
+    while (image_position.length < 20) {
+      var randomPosition = Math.floor(Math.random() * 20);
+      if (!image_position.includes(randomPosition)) {
+        image_position.push(randomPosition);
+      }
     }
+  
+    // Update the background images for the picture elements
     var img = document.getElementsByClassName("picture");
-    for( var i=0; i<img.length; i++){
-        img[i].style.background="url("+(path+image_name[image_position[i]%6])+") no-repeat center";
-        img[i].style.backgroundSize="contain";
+    for (var i = 0; i < img.length; i++) {
+      img[i].style.background = "url(" + (path + image_name[image_position[i] % 6]) + ") no-repeat center";
+      img[i].style.backgroundSize = "contain";
     }
-}
+  }
 function game_start(){
     if(isStart){
         return;
