@@ -137,3 +137,4 @@ window.onload=function(){
                 this.classList.add("st_check"); // 없다면 클래스 추가 
         
     }
+    
