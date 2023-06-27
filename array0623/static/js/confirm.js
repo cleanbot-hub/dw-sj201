@@ -109,13 +109,13 @@ var num645 = document.getElementsByClassName("num_645");
         }
        
        switch(win_cnt){
-        case 6: rank=1; break; //당첨번호 6개 일치 1등
-        case 5: if(isBonus) rank=2; // 당첨번호 5개에 보너스 2등 
+        case 6:    rank=1; break; //당첨번호 6개 일치 1등
+        case 5:    if(isBonus) rank=2; // 당첨번호 5개에 보너스 2등 
                 else rank=3; break; // 당첨번호 일치가 5개만 3등 
         case 4 : rank=4; break; // 당첨번호 일치가 4개 4등 
         case 3 : rank=5; break; // 당첨번호일치가 3개 5등 
-            default:
-                rank="X" // 당첨번호가 2개 이하면 X  
+        default:
+            rank="X" // 당첨번호가 2개 이하면 X  
             
        }
        
