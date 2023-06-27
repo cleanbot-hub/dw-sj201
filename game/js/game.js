@@ -1,0 +1,44 @@
+
+const Brow=5;
+const Bcol=5;
+
+
+
+
+
+
+
+
+
+window.onload=function(){
+    var board=document.querySelector("#board"); // board 라는 테이블 에 5줄 5칸 짜리 테이블 만들기
+    var out="";
+        for(var i=1; i<=Brow; i++){ // 줄 
+            out += "<tr>"; // 칸을 표현 해주는 
+            for(var k=1; k<=Bcol; k++){ // 칸 
+                out += "<td class='Gnum'></td>"; // 칸을 표현 해주는 td
+            }
+            out += "</tr>"
+        }
+        board.innerHTML=out;
+
+
+
+
+
+
+
+        var state = document.querySelector("#state_board"); // state_board 테이블에도 만들어주기
+        var out="";
+        for(var i=0; i<=1; i++){
+            out += "<tr>";
+            for(var k=1; k<=25; k++){
+                out +="<td class='stnum'>"+(i*25+k)+"</td>";
+            }
+            out += "</tr>";
+        }
+        state.innerHTML=out;
+
+
+
+    }
