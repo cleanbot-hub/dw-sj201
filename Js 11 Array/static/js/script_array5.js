@@ -18,7 +18,7 @@ window.onload=function(){
 
 function image_init(){
     image_position.push(Math.floor(Math.random()*12));
-    for(var i=1; i<12; i++){
+    for(var i=1; i<20; i++){
         var tmp=Math.floor(Math.random()*12);
         if( image_position.indexOf(tmp) == -1){
             image_position.push(tmp);
@@ -28,7 +28,7 @@ function image_init(){
     }
     var img = document.getElementsByClassName("picture");
     for( var i=0; i<img.length; i++){
-        img[i].style.background="url("+(path+image_name[image_position[i]%6])+") no-repeat center";
+        img[i].style.background="url("+(path+image_name[image_position[i]%10])+") no-repeat center";
         img[i].style.backgroundSize="contain";
     }
 }
