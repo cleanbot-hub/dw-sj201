@@ -64,9 +64,6 @@ window.onload=function(){
             td[i].innerText=bingo[i];
         }
 
-
-
-
     }
 
 
