@@ -142,12 +142,12 @@ window.onload=function(){
 
 
 
-                    if(row==5 ) end++; // 한줄에 0이 5개 라면 1줄 빙고  
+                    if(row==5) end++; // 한줄에 0이 5개 라면 1줄 빙고  
                     if(col==5) end++; // 세로방향 한줄에 0이 5개 라면 1줄 빙고 
                     row=0;
                     col=0;
                 }
-                
+
                 if(end==5){
                     alert("빙고!!! 당신의 승리입니다");
                     game_state=false;
