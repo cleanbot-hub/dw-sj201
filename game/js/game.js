@@ -100,9 +100,11 @@ window.onload=function(){
            var td=document.querySelectorAll(".Gnum");        
                 for(var i=0; i<td.length; i++){
                     if(td[i] == this){
-                    td[i].classList.add("Gnum_check");
+                    td[i].classList.add("Gnum_check"); // 클릭 한 곳 클래스 추가 
+                    }
+
                 }
-                }
+            
             }
         
     
