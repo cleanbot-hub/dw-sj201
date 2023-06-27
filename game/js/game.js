@@ -1,4 +1,19 @@
 
+
+const fruit=['수박','사과','귤','참외','토마토'
+,'키위','감','배','포도','무화과'
+,'석류','대추','망고','유자','자두',
+'딸기','복숭아','바나나','멜론','라임',
+'구아바','홍옥','용과','페피노','체리',
+'레몬','자몽','살구','파파야','코코넛',
+'홍시','복분자','머루','잣','밤',
+'낑강','한라봉','두꾸','산딸기','뱀딸기',
+'앵두','레드향','신고','람부탄','두리안'
+,'으름','거봉','여주','만다린','모과'
+
+
+]
+
 const Brow=5;
 const Bcol=5;
 
@@ -36,7 +51,7 @@ window.onload=function(){
         for(var i=0; i<=1; i++){
             out += "<tr>";
             for(var k=1; k<=25; k++){
-                out +="<td class='stnum'>"+(i*25+k)+"</td>";
+                out +="<td class='stnum'>"+(fruit[i*25+k-1])+"</td>";
             }
             out += "</tr>";
         }
@@ -61,7 +76,7 @@ window.onload=function(){
         var td = document.querySelectorAll(".Gnum");
         for( var i=0; i<td.length; i++){
             td[i].addEventListener("click",bingo_check);
-            td[i].innerText=bingo[i];
+            td[i].innerText=fruit[bingo[i]-1];
         }
 
     }
