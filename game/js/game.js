@@ -59,7 +59,10 @@ window.onload=function(){
         // td 클릭 이벤트 등록과 25개 숫자 td에 출력  
 
         var td = document.querySelectorAll(".Gnum");
-        
+        for( var i=0; i<td.length; i++){
+            td[i].addEventListener("click",bingo_check);
+            td[i].innerText=bingo[i];
+        }
 
 
 
@@ -69,7 +72,7 @@ window.onload=function(){
 
 
     function start(){
-        if(!game_state){
+        if(game_state){
             alert("게임이 진행중입니다");
             return;
         }
