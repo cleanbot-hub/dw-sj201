@@ -57,8 +57,8 @@ window.onload=function(){
                  i--;
         }
         // td 클릭 이벤트 등록과 25개 숫자 td에 출력  
-        
 
+        
 
 
 
