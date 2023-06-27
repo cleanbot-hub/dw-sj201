@@ -79,6 +79,14 @@ window.onload=function(){
             td[i].innerText=fruit[bingo[i]-1];
         }
 
+        var stat=document.querySelectorAll(".stnum");
+        for( var i=0; i<stat.length; i++){
+            stat[i].addEventListener("click, state_check");
+        }
+        
+        
+        // stnum에 대한 클릭 이벤트 
+
     }
 
 
@@ -109,6 +117,11 @@ window.onload=function(){
 
                 }
             
+                //state_board의 과일에 클릭한 과일 배경색 바꾸고 
+                // 직접 클릭해서 배경색 변경 할 수 있게 
+
+
+
             }
         
     
