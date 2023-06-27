@@ -37,7 +37,7 @@ window.onload=function(){
         drwNo.addEventListener("change", select_count);
     }    
         let sel_count=0; // 발표회차 선택
-        function select_count(){
+        function select_count(){ // select 태그의 값을 변경하면 실행 되는 함수 
             sel_count=this.selectedIndex;
     }
  
