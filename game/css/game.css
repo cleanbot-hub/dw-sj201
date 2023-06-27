@@ -1,6 +1,7 @@
 *{
     padding:0;
     margin:0;
+    box-sizing: border-box;
 }
 
 #wrap{
@@ -23,4 +24,48 @@
     background:#be3455;
     color:#fff;
 
+
+}
+
+
+#game_board{
+    margin-top:30px;
+}
+
+#board{
+    border-spacing: 0;
+    margin: 0 auto;
+}
+
+.Gnum{             
+    width:100px;
+    height: 100px;
+    font-size:35px;
+    text-align: center;
+    border: 1px solid #999;
+}
+
+.Gnum:hover{
+    background:#e5ccaf;
+}
+
+.Gnum_check{background:skyblue;}
+
+
+
+#state_board{margin: 50px auto;}
+
+
+
+.stnum{
+    width:35px;
+    height: 35px;
+    text-align: center;
+    border:1px solid #999;
+}
+
+
+.st_check{
+    background:#be3455;
+    color:#fff;
 }
