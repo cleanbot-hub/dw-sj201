@@ -125,8 +125,15 @@ window.onload=function(){
 
 
                //5 빙고 찾기 
+                for(var i=0; i<Brow; i++){ // 줄 
+                    for(var k=0; k<Bcol; k++){ // 칸 
+                    if (bingo[i*5+k] == 0); // 가로 방향으로 한 쿨씩 0이 몇개 인가 확인 
+                    row++; // 한칸에 0이  있을 때마다 1싹 증가 
+    
+                    }
+                }
 
-            
+                
 
             }
         
@@ -137,4 +144,3 @@ window.onload=function(){
                 this.classList.add("st_check"); // 없다면 클래스 추가 
         
     }
-    
