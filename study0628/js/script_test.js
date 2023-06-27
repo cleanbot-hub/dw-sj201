@@ -10,6 +10,12 @@ let image_name=["beagle.png","bichonfrize.png","bordercollie.png","chihuahua.png
 "frenchbulldog.png","goldenretriever.png","jindo.png","maltese.png","mixdog.png","papillon.png","pomeranian.png","poodle.png","pug.png","schnauzer.png","scottishterrier.png",
 "shibaInu","shihtzu","welshcorgi","yorkshireterrier"];
 let image_position=new Array();
+let isStart=false;
+let count=0;
+let end_count=0;
+let isSame=[];
+let selectImg=new Array();
+
 
 
 window.onload=function(){
