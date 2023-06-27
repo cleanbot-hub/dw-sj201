@@ -94,10 +94,11 @@ window.onload=function(){
 
 
     function bingo_check(){
+        var end=0;
         var col=0,row=0,cross=[];
         for(var i=0; i<=bingo.length;i++){
             for(var k=0;k<5;k++){
-                
+
             }
         }
     }
