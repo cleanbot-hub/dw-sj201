@@ -123,6 +123,11 @@ window.onload=function(){
                stat[click_num-1].classList.add("st_check");         
 
 
+
+               //5 빙고 찾기 
+
+            
+
             }
         
     function state_check(){
