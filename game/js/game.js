@@ -128,7 +128,7 @@ window.onload=function(){
                var cross=[0,0]; // 대각선 방향 체크하기 위한 배열  
                for(var i=0; i<Brow; i++){ // 줄 
                     for(var k=0; k<Bcol; k++){ // 칸 
-                    if (bingo[i*5+k] == 0); // 가로 방향으로 한 쿨씩 0이 몇개 인가 확인 
+                    if (bingo[i*5+k] == 0)// 가로 방향으로 한 쿨씩 0이 몇개 인가 확인 
                     row++; // 한칸에 0이  있을 때마다 1싹 증가 
                     if(bingo[k*5+i] == 0) // 세로방향으로 한줄씩 0이 몇개인가 
                         col++; // 세로방향 한칸에 0이 있을때 마다 1씩 증가 
@@ -155,7 +155,7 @@ window.onload=function(){
                     var td = document.querySelectorAll(".Gnum");
                     for( var i=0; i<td.length; i++){
                         td[i].removeEventListener("click",bingo_check);
-                        td[i].innerText=fruit[bingo[i]-1];
+                       
                     }
             
                     var stat=document.querySelectorAll(".stnum");             // stnum에 대한 클릭 이벤트 
