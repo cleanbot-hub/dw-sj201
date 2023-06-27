@@ -53,13 +53,13 @@ window.onload=function(){
             var tmp=Math.floor(Math.random()*50)+1;
             if(bingo.indexOf(tmp) == -1)
                 bingo.push(tmp);
-                else 
+            else 
                  i--;
         }
         // td 클릭 이벤트 등록과 25개 숫자 td에 출력  
 
+        var td = document.querySelectorAll(".Gnum");
         
-
 
 
 
