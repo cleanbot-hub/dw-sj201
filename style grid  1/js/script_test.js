@@ -99,10 +99,15 @@ function gameEnd() {
   isStart = false;
 
   // Display the selected images and their names
-  var stateBoard = document.getElementById('state_board');
-  stateBoard.innerHTML = '';
+  var stateTable = document.getElementById('state_table');
+  stateTable.innerHTML = '';
 
-  for (var i = 0; i < selectedImages.length; i++) {
+  var totalSelected = selectedImages.length;
+  var totalElement = document.createElement('p');
+  totalElement.innerText = 'Total Selected Images: ' + totalSelected;
+  stateTable.parentNode.insertBefore(totalElement, stateTable.nextSibling);
+
+  for (var i = 0; i < totalSelected; i++) {
     var rowIndex = Math.floor(i / 5);
     var columnIndex = i % 5;
 
@@ -110,12 +115,16 @@ function gameEnd() {
 
     if (columnIndex === 0) {
       var rowElement = document.createElement('tr');
-      stateBoard.appendChild(rowElement);
+      stateTable.appendChild(rowElement);
     }
 
-    var cellElement = document.createElement('td');
-    cellElement.innerText = name;
-    rowElement.appendChild(cellElement);
+    var stageCellElement = document.createElement('td');
+    stageCellElement.innerText = 'Stage ' + (rowIndex + 1);
+    rowElement.appendChild(stageCellElement);
+
+    var imageCellElement = document.createElement('td');
+    imageCellElement.innerText = name;
+    rowElement.appendChild(imageCellElement);
   }
 
   // Show game over message
