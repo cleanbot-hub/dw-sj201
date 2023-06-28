@@ -1,28 +1,34 @@
 .item{
-   
+font-size: 50px;
 border: 1px solid black;
 }
 
 #container{
-  
-    display: grid;
-    /* grid-template-columns:repeat(5,200px);   */
-    /* grid-template-columns: repeat(5, 1fr); */
-    grid-template-columns: repeat(auto-fit, minmax(200px,auto));
-    grid-template-rows: repeat(5,200px);
     
+    display:grid;
+    /* grid-template-columns:repeat(5, 200px);  repeat 반복 (자식수, 크기)
+    grid-template-columns: repeat(5, 1fr);  fr 사용가능한 공간의 비율(분수)
+    grid-template-rows:repeat(5, 200px); 5개의 아이템에 5분1 크기로 너비 부여 */
+
+    grid-template-columns:repeat(auto-fit,minmax(200px,auto));
+    grid-auto-rows:minmax(100px, auto);
+    /* grid-template-rows:repeat(5, 200px); */
+
+    gap:20px;
+    grid-template-areas:
+    "head head head"
+    "sideA main sideB"
+    " . . . "
+    "foot foot foot"
+    ;
+
 }
 
-.item:first{
-    grid-column-start:1;
-    grid-column-end:3;
-}
-.item:nth-child(4){
-    grid-column-start: 2;
-    grid-column-end:4;
-}
 
-.item:nth-child(3){
-    grid-row-start:3;
-    grid-row-end:5;
-}
+
+
+.item:nth-child(1){grid-area:head;}
+.item:nth-child(2){grid-area:sideA;}
+.item:nth-child(3){grid-area:main;}
+.item:nth-child(4){grid-area:sideB;}
+.item:nth-child(5){grid-area:foot;}
