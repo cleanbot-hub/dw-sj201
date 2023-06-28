@@ -12,7 +12,13 @@ border: 1px solid black;
     grid-template-rows: repeat(5,200px);
     
 }
+
+.item:first{
+    grid-column-start:1;
+    grid-column-end:3;
+}
 .item:nth-child(4){
     grid-column-start: 2;
     grid-column-end:4;
 }
+
