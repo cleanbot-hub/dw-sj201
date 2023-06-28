@@ -75,11 +75,12 @@ function select_image() {
   var countElement = document.getElementById('count');
   countElement.innerText = count;
 
-  if (count === 30) {
-    game_over();
-  } else {
-    currentImgIndex++;
-    show_next_image();
+  if (count === 16) {
+    move_to_semifinals();
+  } else if (count === 8) {
+    move_to_finals();
+  } else if (count === 4) {
+    move_to_championship();
   }
 }
 
@@ -93,66 +94,65 @@ function getIndex(pictureElement) {
   return -1;
 }
 
-function show_next_image() {
+function move_to_semifinals() {
+  // Hide the remaining Round of 16 images
   var pictureElements = document.getElementsByClassName('picture');
-  pictureElements[currentImgIndex - 1].style.display = 'none'; // Hide the previous image
-  pictureElements[currentImgIndex].style.display = 'block'; // Show the next image
+  for (var i = 0; i < pictureElements.length; i++) {
+    if (!selectedImgs.includes(i)) {
+      pictureElements[i].style.display = 'none';
+    }
+  }
+
+  // Reset the selected images and count
+  selectedImgs = [];
+  count = 0;
+
+  // Update the round number
+  round = 2;
+
+  // Show the Semifinals message
+  var roundElement = document.getElementById('round');
+  roundElement.innerText = 'Semifinals';
 }
 
-function game_over() {
-  isStart = false;
-
-  // Display the selected images and their names
-  var stateBoard = document.getElementById('state_board');
-  stateBoard.innerHTML = '';
-
-  for (var i = 0; i < selectedImgs.length; i++) {
-    var rowIndex = Math.floor(i / 5);
-    var columnIndex = i % 5;
-
-    var name = fruit[image_position[selectedImgs[i]] % 20];
-
-    if (columnIndex === 0) {
-      var rowElement = document.createElement('tr');
-      stateBoard.appendChild(rowElement);
+function move_to_finals() {
+  // Hide the remaining Semifinals images
+  var pictureElements = document.getElementsByClassName('picture');
+  for (var i = 0; i < pictureElements.length; i++) {
+    if (!selectedImgs.includes(i)) {
+      pictureElements[i].style.display = 'none';
     }
-
-    var cellElement = document.createElement('td');
-    cellElement.innerText = name;
-    rowElement.appendChild(cellElement);
   }
 
-  // Show game over message
-  var loadingElement = document.getElementById('loading');
-  loadingElement.style.display = 'none';
+  // Reset the selected images and count
+  selectedImgs = [];
+  count = 0;
 
-  var stateElement = document.getElementById('state');
-  stateElement.style.display = 'block';
+  // Update the round number
+  round = 3;
 
-  // Display the last selected image
-  var lastSelectedIndex = selectedImgs[selectedImgs.length - 1];
-  var lastSelectedImage = document.getElementsByClassName('picture')[lastSelectedIndex];
-  var lastSelectedImageName = fruit[image_position[lastSelectedIndex] % 20];
+  // Show the Finals message
+  var roundElement = document.getElementById('round');
+  roundElement.innerText = 'Finals';
+}
 
-  var lastSelectedDiv = document.createElement('div');
-  lastSelectedDiv.classList.add('last-selected');
-  lastSelectedDiv.style.background = 'url(' + (path + image_name[image_position[lastSelectedIndex] % 20]) + ') no-repeat center';
-  lastSelectedDiv.style.backgroundSize = 'contain';
-  lastSelectedDiv.innerText = lastSelectedImageName;
-
-  stateElement.appendChild(lastSelectedDiv);
-
-  // Show the championship round
-  if (selectedImgs.length > 1) {
-    var championshipRoundElement = document.getElementById('championship_round');
-    championshipRoundElement.style.display = 'block';
-
-    var finalistImage1 = document.getElementById('finalist_image_1');
-    finalistImage1.style.background = 'url(' + (path + image_name[image_position[selectedImgs[0]] % 20]) + ') no-repeat center';
-    finalistImage1.style.backgroundSize = 'contain';
-
-    var finalistImage2 = document.getElementById('finalist_image_2');
-    finalistImage2.style.background = 'url(' + (path + image_name[image_position[selectedImgs[1]] % 20]) + ') no-repeat center';
-    finalistImage2.style.backgroundSize = 'contain';
+function move_to_championship() {
+  // Hide the remaining Finals images
+  var pictureElements = document.getElementsByClassName('picture');
+  for (var i = 0; i < pictureElements.length; i++) {
+    if (!selectedImgs.includes(i)) {
+      pictureElements[i].style.display = 'none';
+    }
   }
+
+  // Reset the selected images and count
+  selectedImgs = [];
+  count = 0;
+
+  // Update the round number
+  round = 4;
+
+  // Show the Championship message
+  var roundElement = document.getElementById('round');
+  roundElement.innerText = 'Championship';
 }
