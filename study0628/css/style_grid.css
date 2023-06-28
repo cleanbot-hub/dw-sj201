@@ -22,3 +22,7 @@ border: 1px solid black;
     grid-column-end:4;
 }
 
+.item:nth-child(3){
+    grid-row-start:3;
+    grid-row-end:5;
+}
