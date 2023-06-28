@@ -4,9 +4,10 @@ border: 1px solid black;
 }
 
 #container{
-    width:800px;
+  
     display: grid;
     /* grid-template-columns:repeat(5,200px);   */
-    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-columns: repeat(5, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(200px,auto));
     grid-template-rows: repeat(5,200px);
 }
