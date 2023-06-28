@@ -16,6 +16,7 @@ let isStart = false;
 let round = 1;
 let count = 0;
 let selectedImgs = [];
+let currentImgIndex = 0;
 
 window.onload = function () {
   var start_bt = document.getElementById('start');
@@ -39,9 +40,13 @@ function image_init() {
   // Update the background images for the picture elements
   var pictureElements = document.getElementsByClassName('picture');
   for (var i = 0; i < pictureElements.length; i++) {
+    pictureElements[i].style.border = 'none'; // Reset border style
     pictureElements[i].style.background = 'url(' + (path + image_name[image_position[i] % 20]) + ') no-repeat center';
     pictureElements[i].style.backgroundSize = 'contain';
+    pictureElements[i].addEventListener('click', select_image);
   }
+
+  currentImgIndex = 0; // Reset the current image index
 }
 
 function game_start() {
@@ -72,6 +77,9 @@ function select_image() {
 
   if (count === 30) {
     game_over();
+  } else {
+    currentImgIndex++;
+    show_next_image();
   }
 }
 
@@ -83,6 +91,12 @@ function getIndex(pictureElement) {
     }
   }
   return -1;
+}
+
+function show_next_image() {
+  var pictureElements = document.getElementsByClassName('picture');
+  pictureElements[currentImgIndex - 1].style.display = 'none'; // Hide the previous image
+  pictureElements[currentImgIndex].style.display = 'block'; // Show the next image
 }
 
 function game_over() {
@@ -114,4 +128,31 @@ function game_over() {
 
   var stateElement = document.getElementById('state');
   stateElement.style.display = 'block';
+
+  // Display the last selected image
+  var lastSelectedIndex = selectedImgs[selectedImgs.length - 1];
+  var lastSelectedImage = document.getElementsByClassName('picture')[lastSelectedIndex];
+  var lastSelectedImageName = fruit[image_position[lastSelectedIndex] % 20];
+
+  var lastSelectedDiv = document.createElement('div');
+  lastSelectedDiv.classList.add('last-selected');
+  lastSelectedDiv.style.background = 'url(' + (path + image_name[image_position[lastSelectedIndex] % 20]) + ') no-repeat center';
+  lastSelectedDiv.style.backgroundSize = 'contain';
+  lastSelectedDiv.innerText = lastSelectedImageName;
+
+  stateElement.appendChild(lastSelectedDiv);
+
+  // Show the championship round
+  if (selectedImgs.length > 1) {
+    var championshipRoundElement = document.getElementById('championship_round');
+    championshipRoundElement.style.display = 'block';
+
+    var finalistImage1 = document.getElementById('finalist_image_1');
+    finalistImage1.style.background = 'url(' + (path + image_name[image_position[selectedImgs[0]] % 20]) + ') no-repeat center';
+    finalistImage1.style.backgroundSize = 'contain';
+
+    var finalistImage2 = document.getElementById('finalist_image_2');
+    finalistImage2.style.background = 'url(' + (path + image_name[image_position[selectedImgs[1]] % 20]) + ') no-repeat center';
+    finalistImage2.style.backgroundSize = 'contain';
+  }
 }
