@@ -1,0 +1,17 @@
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size:30px;
+}
+
+#container{
+    display: grid;
+
+}
+
+.item{
+    border: 1px solid #c8c8c8;
+}
+
