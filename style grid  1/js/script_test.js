@@ -5,74 +5,84 @@ const fruit = [
   '퍼그', '파피용', '시바견', '비숑프리제', '스코티쉬테리어'
 ];
 
-let game_state = false;
+let isStart = false;
+let imagePosition = [];
 let path = './image/';
-let image_name = ['beagle.png', 'bichonfrize.png', 'bordercollie.png', 'chihuahua.png', 'dachshund.png',
+let imageNames = ['beagle.png', 'bichonfrize.png', 'bordercollie.png', 'chihuahua.png', 'dachshund.png',
   'frenchbulldog.png', 'goldenretriever.png', 'jindo.png', 'maltese.png', 'mixdog.png', 'papillon.png', 'pomeranian.png', 'poodle.png', 'pug.png', 'schnauzer.png', 'scottishterrier.png',
   'shibaInu.png', 'shihtzu.png', 'welshcorgi.png', 'yorkshireterrier.png'
 ];
-let image_position = [];
-let isStart = false;
-let round = 1;
 let count = 0;
-let selectedImgs = [];
+let selectedImages = [];
 
-window.onload = function () {
-  var start_bt = document.getElementById('start');
-  start_bt.addEventListener('click', game_start);
+window.onload = function() {
+  var startButton = document.getElementById('start');
+  startButton.addEventListener('click', gameStart);
   var countElement = document.getElementById('count');
   countElement.innerText = count;
 }
 
-function image_init() {
-  // Clear the image_position array
-  image_position = [];
+function imageInit() {
+  // Clear the imagePosition array
+  imagePosition.length = 0;
 
   // Randomly select 20 unique image positions
-  while (image_position.length < 20) {
+  while (imagePosition.length < 20) {
     var randomPosition = Math.floor(Math.random() * 20);
-    if (!image_position.includes(randomPosition)) {
-      image_position.push(randomPosition);
+    if (!imagePosition.includes(randomPosition)) {
+      imagePosition.push(randomPosition);
     }
   }
 
   // Update the background images for the picture elements
   var pictureElements = document.getElementsByClassName('picture');
   for (var i = 0; i < pictureElements.length; i++) {
-    pictureElements[i].style.background = 'url(' + (path + image_name[image_position[i] % 20]) + ') no-repeat center';
+    pictureElements[i].style.background = 'url(' + (path + imageNames[imagePosition[i]]) + ') no-repeat center';
     pictureElements[i].style.backgroundSize = 'contain';
+    pictureElements[i].addEventListener('click', selectImage);
   }
 }
 
-function game_start() {
+function gameStart() {
   if (isStart) {
     return;
   }
-  image_init();
+  imageInit();
   isStart = true;
 }
 
-function select_image() {
+function selectImage() {
   if (!isStart) {
     return;
   }
   var pictureElement = this;
   var index = getIndex(pictureElement);
 
-  if (selectedImgs.includes(index)) {
+  if (selectedImages.includes(index)) {
     return;
   }
 
   pictureElement.style.border = '2px solid red';
-  selectedImgs.push(index);
+  selectedImages.push(index);
 
   count++;
   var countElement = document.getElementById('count');
   countElement.innerText = count;
 
   if (count === 30) {
-    game_over();
+    gameEnd();
+  } else if (selectedImages.length === 1) {
+    setTimeout(nextStage, 1000);
   }
+}
+
+function nextStage() {
+  selectedImages = [];
+  var pictureElements = document.getElementsByClassName('picture');
+  for (var i = 0; i < pictureElements.length; i++) {
+    pictureElements[i].style.border = 'none';
+  }
+  imageInit();
 }
 
 function getIndex(pictureElement) {
@@ -85,18 +95,18 @@ function getIndex(pictureElement) {
   return -1;
 }
 
-function game_over() {
+function gameEnd() {
   isStart = false;
 
   // Display the selected images and their names
   var stateBoard = document.getElementById('state_board');
   stateBoard.innerHTML = '';
 
-  for (var i = 0; i < selectedImgs.length; i++) {
+  for (var i = 0; i < selectedImages.length; i++) {
     var rowIndex = Math.floor(i / 5);
     var columnIndex = i % 5;
 
-    var name = fruit[image_position[selectedImgs[i]] % 20];
+    var name = fruit[imagePosition[selectedImages[i]]];
 
     if (columnIndex === 0) {
       var rowElement = document.createElement('tr');
