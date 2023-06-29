@@ -9,7 +9,7 @@
     width:960px;
     display:grid;
     grid-template-columns: repeat(6,1fr);
-    grid-template-rows: 140px 100px 680px 400px 550px 280px 200px;
+    grid-template-rows: 140px 100px 680px 400px 550px 280px 36px;
 }
 
 #nav{
@@ -48,13 +48,13 @@ h1{
     align-items: center;
 }
 
-#category ul{
+#menu ul{
     display:grid;
     grid-template-columns: repeat(5,1fr);
     list-style-type: none;
 }
 
-#category ul li:nth-child(1){
+#menu ul li:nth-child(1){
     text-decoration: underline;
     text-underline-offset: 5px;
 }
@@ -152,6 +152,19 @@ h1{
     padding:10px;
 }
 
+.icon{
+    display: grid;
+    width:960px;
+    height: 100px;
+    padding:10px;
+    grid-template-columns: repeat(4,1fr);
+    justify-self: center;
+    align-items: center;
+    
+}
+
+
+
 #section5{
     background: rgb(223, 223, 223);
     grid-column:1/7;
@@ -181,7 +194,7 @@ h1{
     align-items: center;
     grid-column:1/7;
     grid-template-columns: 4fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 2fr;
 }
 
 .sns{
@@ -204,4 +217,24 @@ h1{
 .sns > div > i{
     align-self: center;
     justify-self: center;
+}
+
+.up{
+    width:960px;
+    display:grid;
+    justify-content: center;
+    grid-template-columns: repeat(1);
+    gap:10px;
+}
+
+.up > div {
+    display:grid;
+    width:100%px;
+    height: 100%px;
+    border-radius: 100%;;
+    background:rgb(245,245,245);
+}
+.up > div > i{
+    align-self: center;
+    justify-content: center;
 }
