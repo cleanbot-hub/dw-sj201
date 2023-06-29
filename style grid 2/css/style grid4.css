@@ -12,3 +12,8 @@ body{
     width:90%;
     margin:20px auto;
 }
+#header{
+    display:flex;
+    align-items: center;
+    gap:20px;
+}
