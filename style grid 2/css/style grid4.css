@@ -58,9 +58,11 @@ body{
 .progress_short{
     background:#3c456e;
     border-radius: 8px;
+    padding:10px;
 }
 .grape{
     grid-column: 1/4;
     background:#3c456e;
     border-radius: 8px;
+    padding:10px;
 }
