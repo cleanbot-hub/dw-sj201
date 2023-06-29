@@ -136,6 +136,12 @@ h1{
     color:rgb(197, 197, 197);
 }
 
+
+.logos > i:nth-child(1):hover{
+    color:black;
+    background: white;
+}
+
 #Clients{
     align-self: self-end;
     text-align: center;
