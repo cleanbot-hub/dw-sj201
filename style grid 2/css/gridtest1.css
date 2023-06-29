@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-#container{
+#container{ /* #container #header #section1 #menu #section #section2 #section3 #section4 #My_Services #section5 #footer 부모  */
     margin:0 auto;
     width:960px;
     display:grid;
