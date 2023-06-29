@@ -58,6 +58,7 @@ h1{
 #menu ul li{
     width:100px;
     height: 38px;
+    text-align: center;
 }
 
 #menu ul li:nth-child(1){
