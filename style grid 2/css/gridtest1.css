@@ -48,10 +48,16 @@ h1{
     align-items: center;
 }
 
+
+
 #menu ul{
     display:grid;
     grid-template-columns: repeat(5,1fr);
     list-style-type: none;
+}
+#menu ul li{
+    width:100px;
+    height: 38px;
 }
 
 #menu ul li:nth-child(1){
@@ -74,37 +80,37 @@ h1{
 }
 
 .images:nth-child(1){
-    background: url(../image/pic1.jpg);
+    background: url(../image/1.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .images:nth-child(2){
-    background: url(../image/pic1.jpg);
+    background: url(../image/8.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .images:nth-child(3){
-    background: url(../image/pic1.jpg);
+    background: url(../image/7.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .images:nth-child(4){
-    background: url(../image/pic1.jpg);
+    background: url(../image/4.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .images:nth-child(5){
-    background: url(../image/pic1.jpg);
+    background: url(../image/5.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .images:nth-child(6){
-    background: url(../image/pic1.jpg);
+    background: url(../image/6.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
 }
