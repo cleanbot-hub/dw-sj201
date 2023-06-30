@@ -1,82 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>질문을 입력해보세요!</title>
-    <link rel="stylesheet" href="./gpt.css">
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var chatLog = document.getElementById("chat-log");
-            var userMessageInput = document.getElementById("user-message");
-            var sendButton = document.getElementById("send-button");
-                    // ChatGPT API 키
-        var apiKey = "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";
-
-// OpenAI API 호출 함수
-async function getBotResponse(userMessage) {
-    const apiUrl = "https://api.openai.com/v1/engines/davinci-codex/completions";
-    const prompt = `Q: ${userMessage}\nA:`;
-    const temperature = 4;
-    const maxTokens = 80;
-
-    const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${apiKey}`
-        },
-        body: JSON.stringify({
-            model: "text-davinci-003",
-            prompt: prompt,
-            temperature: temperature,
-            max_tokens: maxTokens
-        })
-    });
-
-    const data = await response.json();
-    const botResponse = data.choices && data.choices.length > 0 ? data.choices[0].text.trim() : "No response";
-    return botResponse;
-}
-
-sendButton.addEventListener("click", async function() {
-    var userMessage = userMessageInput.value;
-
-    // 사용자 메시지를 채팅 로그에 추가
-    var userMessageElement = document.createElement("div");
-    userMessageElement.className = "message user";
-    userMessageElement.textContent = "사용자: " + userMessage;
-    chatLog.appendChild(userMessageElement);
-
-    try {
-        // ChatGPT API 호출하여 챗봇 응답 가져오기
-        var botResponse = await getBotResponse(userMessage);
-
-        // 챗봇 응답 추가
-        var botResponseElement = document.createElement("div");
-        botResponseElement.className = "message bot";
-        botResponseElement.textContent = "도우미: " + botResponse;
-        chatLog.appendChild(botResponseElement);
-
-        // 사용자 입력 필드 초기화
-        userMessageInput.value = "";
-
-        // 채팅 로그를 스크롤하여 가장 최근 메시지 표시
-        chatLog.scrollTop = chatLog.scrollHeight;
-    } catch (error) {
-        console.error("ChatGPT API 호출 중 오류가 발생했습니다:", error);
+  <title>질문-답변</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
     }
-});
-});
-</script>
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .input-group {
+      margin-bottom: 10px;
+    }
+    .question-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .answer-output {
+      border: 1px solid #ccc;
+      padding: 10px;
+      font-size: 16px;
+      height: 300px;
+    }
+    .submit-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="chat-container">
-        <div id="chat-log" class="chat-log"></div>
-        <div class="user-input">
-            <input type="text" id="user-message" placeholder="메시지를 입력하세요">
-            <button id="send-button">전송</button>
-        </div>
+  <div class="container">
+    <div class="input-group">
+      <input type="text" id="question-input" class="question-input" placeholder="질문을 입력하세요...">
     </div>
+    <button id="submit-button" class="submit-button">답변 가져오기</button>
+    <div id="answer-output" class="answer-output"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+   function handleResponse(data) {
+      var answer = data.choices[0].text.trim();
+      $("#answer-output").text(answer);
+    }
+
+    function handleError(error) {
+      $("#answer-output").text("에러 발생: " + error);
+    }
+
+    $(document).ready(function() {
+      var apiUrl = "https://api.openai.com/v1/engines/davinci/completions";
+      var apiKey = "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"; // 여기에 OpenAI API 키를 넣어주세요.
+      var questionInput = $("#question-input");
+      var submitButton = $("#submit-button");
+
+      submitButton.click(function() {
+        var question = questionInput.val();
+
+        $.ajax({
+          url: apiUrl,
+          method: "POST",
+          dataType: "json",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + apiKey
+          },
+          data: JSON.stringify({
+            prompt: question,
+            temperature: 0,
+            max_tokens: 60,
+            top_p: 1.0,
+            frequency_penalty: 0.0,
+            presence_penalty: 0.0
+          }),
+          success: function(response) {
+            handleResponse(response);
+          },
+          error: function(xhr, status, error) {
+            var errorMessage = "An error occurred: ";
+            if (xhr.responseJSON && xhr.responseJSON.error) {
+              errorMessage += xhr.responseJSON.error.message;
+            } else {
+              errorMessage += error;
+            }
+            handleError(errorMessage);
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

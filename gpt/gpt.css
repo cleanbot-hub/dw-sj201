@@ -1,22 +1,11 @@
-.chat-container {
-    width: 400px;
-    height: 500px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    overflow-y: scroll;
-    margin: 0 auto;
-  }
-  
-  .chat-log {
-    height: 90%;
-    margin-bottom: 10px;
-  }
-  
-  .user-input input {
-    width: 70%;
-    padding: 5px;
-  }
-  
-  .user-input button {
-    padding: 5px 10px;
-  }
+.message {
+  margin: 10px;
+}
+
+.user {
+  color: blue;
+}
+
+.bot {
+  color: green;
+}
