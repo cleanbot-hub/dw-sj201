@@ -1,3 +1,4 @@
-div:nth-child(1){
-    text-transform: uppercase;
+div:nth-child(2){
+    font-weight: 800;
+    font-size: 40px;
 }
