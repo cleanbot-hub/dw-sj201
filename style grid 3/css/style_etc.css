@@ -1,4 +1,15 @@
-h5{
-    position: fixed;
+
+#box1,#box3{
+    position: relative;
+    border: 1px solid black;
+    width:200px;
+    height: 200px;
+}
+#box2{
+    position: absolute;
     top:100px;
+    left:300px;
+    background: pink;
+    width:200px;
+    height:100px;
 }
