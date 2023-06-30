@@ -1,3 +1,9 @@
-p{
-    border-left: 1px dotted black;
+h1{
+    width:600px;
+    height: 200px;
 }
+h1:nth-child(2){
+
+    text-align: center;
+}
+
