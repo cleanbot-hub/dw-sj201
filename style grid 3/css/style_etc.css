@@ -5,19 +5,25 @@
     justify-content: center;
 }
 
-#box1, #box2, #box3, #box4, #box5, #box6, #box7 {
+#box1, #box2, #box3, #box6, #box7 {
     border: 1px solid black;
-    width: 200px;
+    width: 125px;
     height: 50px;
+}
+
+#box4, #box5{
+    width:200px;
+    height: 50px;
+    border: 1px solid black;
 }
 
 #box6 {
     margin-top: 100px;
-    margin-left: -700px; 
+    margin-left: -580px; 
     display: block;
 }
 
 #box7 {
-    margin-left: -700px; 
+    margin-left: -580px; 
     display: block;
 }
