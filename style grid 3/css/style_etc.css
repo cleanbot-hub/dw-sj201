@@ -1,9 +1,6 @@
-h1{
-    width:600px;
-    height: 200px;
-}
-h1:nth-child(2){
 
-    text-align: center;
+h1:nth-child(2){
+    margin:100px 50px;
+    
 }
 
