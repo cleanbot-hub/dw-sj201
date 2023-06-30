@@ -7,3 +7,9 @@ h1:nth-child(2){
     background-color: red;
 }
 
+body{
+    background:url(../image/logo.png);
+    background-repeat: repeat-y;
+    
+   
+}
