@@ -1,6 +1,10 @@
-var x=5;
-var y=10;
-var sum=x+y;
+window.onload=function(){
+    오빠야();
+}
 
-document.write("x:",x+" "+"y:"+y+"<br>");
-document.write("x+y ="+sum);
+function 오빠야(){
+    var res = document.getElementById("res");
+    res.innerHTMl="알려줘서 고마워";
+    
+
+}
