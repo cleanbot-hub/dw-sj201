@@ -1,4 +1,4 @@
-const fruit = [
+const dog = [
   '말티즈', '푸들', '포메라니안', '믹스견', '치와와',
   '시추', '골든리트리버', '진돗개', '요크셔테리어', '비글',
   '월시코기', '닥스훈트', '슈나우저', '보더콜리', '프렌치불독',
@@ -99,15 +99,13 @@ function gameEnd() {
   isStart = false;
 
   // Display the selected images and their names
+  var totalSelectedImagesElement = document.getElementById('totalSelectedImages');
+  totalSelectedImagesElement.innerText = 'Total Selected Images: ' + selectedImages.length;
+
   var stateTable = document.getElementById('state_table');
   stateTable.innerHTML = '';
 
-  var totalSelected = selectedImages.length;
-  var totalElement = document.createElement('p');
-  totalElement.innerText = 'Total Selected Images: ' + totalSelected;
-  stateTable.parentNode.insertBefore(totalElement, stateTable.nextSibling);
-
-  for (var i = 0; i < totalSelected; i++) {
+  for (var i = 0; i < selectedImages.length; i++) {
     var rowIndex = Math.floor(i / 5);
     var columnIndex = i % 5;
 
@@ -127,7 +125,6 @@ function gameEnd() {
     rowElement.appendChild(imageCellElement);
   }
 
-  // Show game over message
   var loadingElement = document.getElementById('loading');
   loadingElement.style.display = 'none';
 
