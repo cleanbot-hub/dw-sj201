@@ -12,14 +12,14 @@ let imageNames = ['1.png', '2.png', '3.png', '4.png', '5.png',
   '6.png', 'goldenretriever.png', 'jindo.png', 'maltese.png', 'mixdog.png', 'papillon.png', 'pomeranian.png', 'poodle.png', 'pug.png', 'schnauzer.png', 'scottishterrier.png',
   'shibaInu.png', 'shihtzu.png', 'welshcorgi.png', 'yorkshireterrier.png'
 ];
-let count = 0;
+let round = 1;
 let selectedImages = [];
 
 window.onload = function() {
   var startButton = document.getElementById('start');
   startButton.addEventListener('click', gameStart);
   var countElement = document.getElementById('count');
-  countElement.innerText = count;
+  countElement.innerText = '현재 강: ' + round;
 }
 
 function imageInit() {
@@ -65,24 +65,25 @@ function selectImage() {
   pictureElement.style.border = '2px solid red';
   selectedImages.push(index);
 
-  count++;
-  var countElement = document.getElementById('count');
-  countElement.innerText = count;
-
-  if (count === 30) {
-    gameEnd();
-  } else if (selectedImages.length === 1) {
-    setTimeout(nextStage, 1000);
+  if (selectedImages.length === 2) {
+    round++;
+    var countElement = document.getElementById('count');
+    countElement.innerText = '현재 강: ' + round;
+    setTimeout(nextRound, 1000);
   }
 }
 
-function nextStage() {
+function nextRound() {
   selectedImages = [];
   var pictureElements = document.getElementsByClassName('picture');
   for (var i = 0; i < pictureElements.length; i++) {
     pictureElements[i].style.border = 'none';
   }
   imageInit();
+  
+  if (round === 16) {
+    gameEnd();
+  }
 }
 
 function getIndex(pictureElement) {
@@ -108,8 +109,8 @@ function gameEnd() {
   stateTable.parentNode.insertBefore(totalElement, stateTable.nextSibling);
 
   for (var i = 0; i < totalSelected; i++) {
-    var rowIndex = Math.floor(i / 5);
-    var columnIndex = i % 5;
+    var rowIndex = Math.floor(i / 2);
+    var columnIndex = i % 2;
 
     var name = fruit[imagePosition[selectedImages[i]]];
 
