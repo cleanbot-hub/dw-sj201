@@ -65,7 +65,7 @@ function selectImage() {
   pictureElement.style.border = '2px solid red';
   selectedImages.push(index);
 
-  if (selectedImages.length === 2) {
+  if (selectedImages.length === 1) {
     round++;
     var countElement = document.getElementById('count');
     countElement.innerText = '현재 강: ' + round;
@@ -80,7 +80,7 @@ function nextRound() {
     pictureElements[i].style.border = 'none';
   }
   imageInit();
-  
+
   if (round === 16) {
     gameEnd();
   }
@@ -134,4 +134,25 @@ function gameEnd() {
 
   var stateElement = document.getElementById('state');
   stateElement.style.display = 'block';
+
+  // Display the last selected image
+  var lastSelectedImage = document.getElementById('last_selected_image');
+  lastSelectedImage.style.background = 'url(' + (path + imageNames[imagePosition[selectedImages[totalSelected - 1]]]) + ') no-repeat center';
+  lastSelectedImage.style.backgroundSize = 'contain';
+}
+
+// 추가: 게임이 종료되면 초기화 함수 호출
+function resetGame() {
+  round = 1;
+  selectedImages = [];
+  var countElement = document.getElementById('count');
+  countElement.innerText = '현재 강: ' + round;
+  var stateTable = document.getElementById('state_table');
+  stateTable.innerHTML = '';
+  var lastSelectedImage = document.getElementById('last_selected_image');
+  lastSelectedImage.style.background = '';
+  var loadingElement = document.getElementById('loading');
+  loadingElement.style.display = 'block';
+  var stateElement = document.getElementById('state');
+  stateElement.style.display = 'none';
 }
