@@ -45,6 +45,13 @@ window.onload=function(){
     title.innerHTML=round+"강 " +count+"/"+(round/2);
 
     순서섞기();
+    // 이미지 클릭 이벤트 등록 
+
+    var left=태그선택("left");
+    var right=태그선택("right");
+    left.addEventListener("click",선택);
+    right.addEventListener("click",선택);    
+
     var left=태그선택("leftimg");
     var right=태그선택("rightimg");
     var leftText=태그선택("leftText");
