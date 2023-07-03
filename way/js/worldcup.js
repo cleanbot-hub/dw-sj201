@@ -1,7 +1,7 @@
 // 기본 배열 , 모든 이미지를 다 가지고 있는 기본 배열, 실제 게임에 사용 안함 
 const image=['1.png', '2.png', '3.png', '4.png', '5.png',
 '6.png', 'goldenretriever.png', 'jindo.png', 'maltese.png', 'mixdog.png', 'papillon.png', 'pomeranian.png', 'poodle.png', 'pug.png', 'schnauzer.png', 'scottishterrier.png',
-'shibaInu.png', 'shihtzu.png', 'welshcorgi.png', 'yorkshireterrier.png','cat1.png','cat2.png','cat3.png'
+'shibaInu.png', 'shihtzu.png', 'welshcorgi.png', 'yorkshireterrier.png','cat1.png','cat2.png','cat3.png','gom.png'
 
 
 ];
