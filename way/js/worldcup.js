@@ -44,7 +44,7 @@ window.onload=function(){ // 처음 시작 할 때 필요한 것 만 이 안에 
     var title = 태그선택("title");
     title.innerHTML=round+"강 " +count+"/"+(round/2);
 
-    토너먼트1 =image.map((i)=>i) //배열 얕은 복사 
+    토너먼트1 =Array(round).fill().map((arr,i) => i);
     순서섞기();
     show();
     // 이미지 클릭 이벤트 등록 
@@ -70,6 +70,7 @@ function 선택(){
         순서=new Array();
         순서섞기();
         토너먼트1 = 토너먼트2.map((i)>=i);
+        토너먼트2=new Array();
     }
 
     count++;
@@ -85,9 +86,9 @@ function show(){
     var leftText=태그선택("leftText");
     var rightText=태그선택("rightText");
 
-    left.src="./image/"+토너먼트1[순서[count*2-2]]; // image 인덱스 배열에 있는 것은 0부터 
-    right.src="./image/"+토너먼트1[순서[count*2-1]]; // image
-    leftText.innerHTML=kind[순서[count*2-2]];
-    rightText.innerHTML=kind[순서[count*2-1]];
+    left.src="./image/"+image[토너먼트1[순서[count*2-2]]]; // image 인덱스 배열에 있는 것은 0부터 
+    right.src="./image/"+image[토너먼트1[순서[count*2-1]]]; // image
+    leftText.innerHTML=kind[토너먼트1[순서[count*2-2]]];
+    rightText.innerHTML=kind[토너먼트1[순서[count*2-1]]];
 }
 
