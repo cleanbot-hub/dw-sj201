@@ -56,10 +56,13 @@ window.onload=function(){ // 처음 시작 할 때 필요한 것 만 이 안에 
 }
 
 
-function final(id){
+function final(id,nid){
 
-    
-
+    var n = 태그선택(nid);
+    n.style.display="none";
+    var 최종 = 태그선택(id);
+    최종.style.width="100%";
+    최종.style.height="100vw";
 
 
 }
@@ -68,11 +71,13 @@ function final(id){
 function 선택(){
     if(this == 태그선택("left") ) {
         토너먼트2.push([토너먼트1[순서[count*2-2]]]);
-        if(round==2) final("left");
+       
     }else{
         토너먼트2.push([토너먼트1[순서[count*2-1]]]);
-        if(round==2) final("right");
+        
     }
+    if(round==2) 
+    final("left","right");
 
     if(count == round/2 ){
         round= round/2;
