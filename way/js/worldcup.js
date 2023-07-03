@@ -56,11 +56,22 @@ window.onload=function(){ // 처음 시작 할 때 필요한 것 만 이 안에 
 }
 
 
+function final(id){
+
+    
+
+
+
+}
+
+
 function 선택(){
     if(this == 태그선택("left") ) {
-        토너먼트2.push(image[순서[count*2-2]]);
+        토너먼트2.push([토너먼트1[순서[count*2-2]]]);
+        if(round==2) final("left");
     }else{
-        토너먼트2.push(image[순서[count*2-1]]);
+        토너먼트2.push([토너먼트1[순서[count*2-1]]]);
+        if(round==2) final("right");
     }
 
     if(count == round/2 ){
