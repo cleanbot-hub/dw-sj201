@@ -10,7 +10,7 @@ const image=['1.png', '2.png', '3.png', '4.png', '5.png',
 let 토너먼트1=new Array(); // 현재 토너먼트
 let 토너먼트2=new Array(); // 다음 토너먼트 (현재 토너먼트에서 선택 한 것 )
 let 순서=new Array();
-let round = 32; // 처음은 32강 
+let round = 24; // 처음은 32강 
 let count =1; // 현재 순서 (처음은 1번)
 
 function 순서섞기(){
