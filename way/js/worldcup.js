@@ -64,7 +64,6 @@ function 선택(){
     }
 
     if(count == round/2 ){
-        alert("24강 끝");
         round= round/2;
         count=0;
         순서=new Array();
