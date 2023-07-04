@@ -15,7 +15,8 @@
 
 .forward {
     
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
    
     align-items: center;
 }
@@ -66,5 +67,6 @@
 
 .box{
     width:100px;
+    padding:150px;
     
 }
