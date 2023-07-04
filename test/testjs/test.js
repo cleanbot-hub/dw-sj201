@@ -162,3 +162,5 @@ function updateTrainArrival(station) {
   document.getElementById("remaining3").innerText = remainingStations3;
   document.getElementById("remaining4").innerText = remainingStations4;
 }
+
+
