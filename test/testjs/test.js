@@ -19,7 +19,6 @@ window.onload = function train() {
     ++a;
 
     document.getElementById("station1").innerText = a;
-    updateTrainArrival(a, 1);
 
   }, 1000);
 
@@ -52,7 +51,6 @@ window.onload = function train() {
       st[b].style.width = '50px';
       ++b;
       document.getElementById("station2").innerText = b;
-      updateTrainArrival(b, 2);
     }, 1000);
 
     setTimeout(function () {
@@ -85,7 +83,6 @@ window.onload = function train() {
       st[c].style.width = '40px';
       ++c;
       document.getElementById("station3").innerText = c;
-      updateTrainArrival(c, 3);
     }, 1000);
 
     setTimeout(function () {
@@ -118,7 +115,6 @@ window.onload = function train() {
       st[d].style.width = '40px';
       ++d;
       document.getElementById("station4").innerText = d;
-      updateTrainArrival(d, 4);
     }, 1000);
 
     setTimeout(function () {
@@ -145,7 +141,7 @@ window.onload = function train() {
   }, 9000);
 }
 
-// 클릭 이벤트 핸들러
+// 클릭 이벤트 핸들러 추가
 var cells = document.getElementsByClassName("cells");
 for (var i = 0; i < cells.length; i++) {
   cells[i].addEventListener("click", function () {
@@ -155,9 +151,14 @@ for (var i = 0; i < cells.length; i++) {
 }
 
 // 열차 도착 표시 업데이트 함수
-function updateTrainArrival(station, trainNumber) {
-  var remainingStations = 40 - station;
-  var trainName = "열차" + trainNumber;
-  var message = trainName + "의 도착까지 " + remainingStations + " 정거장 남았습니다.";
-  console.log(message);
+function updateTrainArrival(station) {
+  var remainingStations1 = 40 - station;
+  var remainingStations2 = 40 - station;
+  var remainingStations3 = 40 - station;
+  var remainingStations4 = 40 - station;
+
+  document.getElementById("remaining1").innerText = remainingStations1;
+  document.getElementById("remaining2").innerText = remainingStations2;
+  document.getElementById("remaining3").innerText = remainingStations3;
+  document.getElementById("remaining4").innerText = remainingStations4;
 }
