@@ -4,14 +4,17 @@
 }
 
 #subway {
+    
     margin: 0 auto;
     width: 1000px;
     height: 40px;
     display: flex;
     justify-content: center;
+    
 }
 
 .forward {
+    
     display: flex;
    
     align-items: center;
@@ -26,5 +29,42 @@
     border: 1px solid black;
     text-align: center;
     font-weight: bold;
+    
+}
+
+#state{
+    
+    padding:30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+#station1{
+    width:30px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#station2{
+    width:30px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+#station3{
+    width:30px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#station4{
+    width:30px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+
+.box{
+    width:100px;
     
 }
