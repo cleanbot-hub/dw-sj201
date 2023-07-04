@@ -15,7 +15,7 @@ async function getBotResponse(userMessage) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Authorization": "Bearer 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",
+      "Authorization": "Bearer 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",
       "OpenAI-Organization": "org-zQoSn0cFVbmKA0We6HOH1jym"
     },
     body: JSON.stringify({
