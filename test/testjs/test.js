@@ -1,51 +1,49 @@
-const 역 = [
-  "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
-  "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
-  "21", "22", "23", "24", "25", "26", "27", "28", "29", "30",
-  "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"
-];
+// Initial state
+let currentStation = 1;
+let currentTrain = 1;
 
-const 운영 = 4;
-
-let 현재위치 = 0;
-
-const 역요소들 = document.querySelectorAll('.station');
-for (let i = 0; i < 역요소들.length; i++) {
-  const 역요소 = 역요소들[i];
-  역요소.addEventListener('click', function () {
-      const 역이름 = 역[i];
-      const 정거장수 = 계산_정거장수(i);
-      const 메시지 = `열차는 ${정거장수} 정거장 후에 도착합니다.`;
-      document.getElementById('info').textContent = 메시지;
-  });
+// Display train info when a station is clicked
+function showTrainInfo(station) {
+    const stationNumber = parseInt(station.innerText);
+    const stationsAway = Math.abs(currentStation - stationNumber);
+    const info = `The nearest train is ${stationsAway} stations away.`;
+    alert(info);
 }
 
-function 이동() {
-  const 역요소들 = document.querySelectorAll('.station');
-  for (let i = 0; i < 역요소들.length; i++) {
-      const 역요소 = 역요소들[i];
-      if ((i >= 현재위치 && i < 현재위치 + 운영) || (i >= 현재위치 + 역.length - 운영 && i < 현재위치 + 역.length)) {
-          역요소.classList.add('current-position');
-      } else {
-          역요소.classList.remove('current-position');
-      }
-  }
+// Update train position every 3 seconds
+setInterval(updateTrainPosition, 3000);
 
-  const 열차요소들 = document.querySelectorAll('.train');
-  for (let i = 0; i < 열차요소들.length; i++) {
-      const 열차요소 = 열차요소들[i];
-      const 열차위치 = (현재위치 + i) % 역.length;
-      열차요소.style.left = `${열차위치 * 60}px`;
+// Move train to the next station every 4 seconds
+setInterval(moveTrain, 4000);
 
-      const 메시지 = `열차 ${i + 1}은 현재 ${역[열차위치]}역에 위치해 있습니다.`;
-      const infoTrainElement = document.getElementById(`info-train${i + 1}`);
-      if (infoTrainElement) {
-          infoTrainElement.textContent = 메시지;
-      }
-  }
+// Function to update the train position
+function updateTrainPosition() {
+    const trainElement = document.getElementById(`train${currentTrain}`);
+    const stationElements = document.getElementsByClassName('station');
 
-  현재위치 = (현재위치 + 1) % 역.length;
+    // Reset train position
+    trainElement.style.top = '0';
+    trainElement.style.left = '0';
+
+    // Find the current station element
+    const currentStationElement = Array.from(stationElements).find(element => parseInt(element.innerText) === currentStation);
+
+    // Set train position based on the current station
+    trainElement.style.top = currentStationElement.offsetTop + 'px';
+    trainElement.style.left = currentStationElement.offsetLeft + 'px';
 }
 
-이동();
-setInterval(이동, 3000);
+// Function to move the train to the next station
+function moveTrain() {
+    const stationElements = document.getElementsByClassName('station');
+    const numStations = stationElements.length;
+
+    // Increment the current station and wrap around if necessary
+    currentStation = (currentStation % numStations) + 1;
+
+    // Increment the current train and wrap around if necessary
+    currentTrain = (currentTrain % 4) + 1;
+
+    // Update the train position
+    updateTrainPosition();
+}
