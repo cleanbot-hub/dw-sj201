@@ -15,6 +15,7 @@
 .station{
     width:120px;
     text-align: center;
+    position: relative;
 }
 .mark{
     position: relative;
@@ -35,15 +36,36 @@
     background:#fff;
 }
 
-.w95{
-    width:95%;
+.w95{width:95%;}
+.w95-top{
     border-top-right-radius: 33px;
 }
-.left{
+.w95-bottom{
+    border-bottom-right-radius: 33px;
+}
+.w95-top-right{
+    left:5%;
+    border-top-left-radius: 33px;
+}
+
+.w95-bottom-right{
+    left:5%;
+    border-bottom-left-radius: 33px;
+}
+
+.rad{
     width:120px;
     height: 80.3px;
     position: absolute;
-    top:25px;
-    border: 5px solid blue;
-    border-radius: 11px;
+    top:25.4px;
+    border:5px solid greenyellow;
+    border-radius:11px;
 }
+
+.left{
+    border-style:none solid none none;
+}
+.right{
+    border-style:none solid none solid;
+}
+    
