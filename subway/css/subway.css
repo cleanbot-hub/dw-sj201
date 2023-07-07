@@ -26,10 +26,24 @@
     top:7px;
     background:greenyellow;
     z-index:-1;
+    
 }
 
 
 
 .fa-regular{
     background:#fff;
+}
+
+.w95{
+    width:95%;
+    border-top-right-radius: 33px;
+}
+.left{
+    width:120px;
+    height: 80.3px;
+    position: absolute;
+    top:25px;
+    border: 5px solid blue;
+    border-radius: 11px;
 }
