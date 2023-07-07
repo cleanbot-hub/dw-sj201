@@ -23,24 +23,85 @@ const st_name = [
 ];
 
 const train=[0,0,0,0];
-const train_color=["t-greenyellow","t-skyblue","t-slateblue","t-chocolate"];
+const train_color=["","t-greenyellow","t-skyblue","t-slateblue","t-chocolate"];
 
 
 window.onload = function () {
     station[0]=1;
   map_draw(); // 지하철 지도 그리기
   train_active(); // 지하철 움직이기 
+
 }
 
 function train_active(){
-  setInterval(
+    station[0]=1;
+    map_draw();
+    setInterval(
         function(){
-        station[train[0]++]==0;
-        station[train[0]]==1;
-        map_draw; 
-    }
-  ,4000);
+            station[Math.abs(train[0]++)]=0;
+            station[Math.abs(train[0])]=1;
+            map_draw();
+            if(train[0]==39){ // 마지막역 도착
+                station[Math.abs(train[0])]=0;
+                map_draw();
+                setTimeout(function(){
+                    train[0]=-40;
+                },500);
+            }
+        }
+    ,500);
+    setTimeout(train2,1000);
+    setTimeout(train3,2500);
+    setTimeout(train4,3500);
 }
+function train2(){
+    station[0]=2;
+    setInterval(
+        function(){
+            station[Math.abs(train[1]++)]=0;
+            station[Math.abs(train[1])]=2;
+            if(train[1]==39){ // 마지막역 도착
+                station[Math.abs(train[1])]=0;
+                setTimeout(function(){
+                    train[1]=-40;
+                },500);
+            }
+        }
+    ,500);
+}
+function train3(){
+    station[0]=3;
+    setInterval(
+        function(){
+            station[Math.abs(train[2]++)]=0;
+            station[Math.abs(train[2])]=3;
+            if(train[2]==39){ // 마지막역 도착
+                station[Math.abs(train[2])]=0;
+                setTimeout(function(){
+                    train[2]=-40;
+                },500);
+            }
+        }
+    ,500);
+}
+function train4(){
+    station[0]=4;
+    setInterval(
+        function(){
+            station[Math.abs(train[3]++)]=0;
+            station[Math.abs(train[3])]=4;
+            if(train[3]==39){ // 마지막역 도착
+                station[Math.abs(train[3])]=0;
+                setTimeout(function(){
+                    train[3]=-40;
+                },500);
+            }
+        }
+    ,500);
+}
+
+  
+  
 
 
 
@@ -81,7 +142,7 @@ function make(t) {
 
         var out = "";
         out += "<div class='station'>";
-        out += "<div class='train " + (station[t] == 1 ? 't-greenyellow' : '') + "'><i class='fa-solid fa-train-subway'></i></div>";
+        out += "<div class='train " +(train_color[station[t]])+"'> <i class='fa-solid fa-train-subway'></i></div>";
         out += "<div class='mark'><div class='rail " + w95 + "'></div>" +
                "<span class='stop'><i class='fa-regular fa-square'></i></span>";
         
