@@ -20,7 +20,6 @@ function map_draw(){ // 지도 그리기 위한 함수
         out += "<div class='station'>";
         out += "<div class='train'><i class='fa-solid fa-train-subway'></i></div>";
         out += "<div class='mark'><div class='rail'></div>"+
-        "<span class='stop hide'><i class='fa-solid fa-square'></i></span>"+
         "<span class='stop'><i class='fa-regular fa-square'></i><sapn>"+
         "</div>";
         out += "<div class='name'></div>" + st_name[i] + "</div></div>";
