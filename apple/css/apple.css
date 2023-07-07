@@ -1,0 +1,44 @@
+#wrap{
+    width:1795px;
+    height: 795px;
+}
+
+#header{
+    width:1080px;
+    height: 104px;
+    display:flex;
+    margin: 0 auto;
+}
+
+.menubar{
+    display:flex;
+    list-style-type:none ;
+    padding:20px;
+    width:351px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+
+}
+.menubar > li{
+    margin:30px;
+}
+
+
+
+
+
+.userbar{
+    display:flex;
+    list-style-type:none;
+    justify-content: right;
+    align-items: center;
+    margin-left:auto;
+    width:351px;
+    padding:20px;
+}
+
+.userbar > li{
+    margin:30px;
+}
