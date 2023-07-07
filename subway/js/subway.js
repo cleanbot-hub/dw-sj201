@@ -27,12 +27,30 @@ function info(idx){
     var modal=document.querySelector("#modal");
     modal.style.display="block";
     var bg = document.querySelector("#bg");
+
+    var train_num = find_train(idx);
+
+
     bg.innerHTML="<div class='info'>"+
     "<div> <b>역 명 : " + st_name[idx] + "</b></div>"+
     "<div><b>진입차량 : " + idx + "번차량</b></div>"+
     "</div>";
 
 }
+
+    function find_train(idx){
+        if(train[0]<0){
+            for(var i=idx+1; i<station.length; i++){
+                if(station[i]!=0)
+                    return station[i];
+            }
+        }else{
+            for(var i=idx-1; i>=0; i--){
+                if(station[i]!=0)
+                return station[i];
+            }
+        }
+    }
 
 function train_active(){
     station[0]=1;
