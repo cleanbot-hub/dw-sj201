@@ -24,7 +24,14 @@ window.onload=function(){
 }
 
 function info(idx){
-    alert(idx);
+    var modal=document.querySelector("#modal");
+    modal.style.display="block";
+    var bg = document.querySelector("#bg");
+    bg.innerHTML="<div class='info'>"+
+    "<div> <b>역 명 : " + st_name[idx] + "</b></div>"+
+    "<div><b>진입차량 : " + idx + "번차량</b></div>"+
+    "</div>";
+
 }
 
 function train_active(){
