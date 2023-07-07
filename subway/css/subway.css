@@ -1,42 +1,35 @@
 *{
     padding:0;
     margin:0;
-    box-sizing: border-box;
 }
-
 #map{
-    width:1200px;
+    width:1000px;
     margin:0 auto;
     display:flex;
-    flex-wrap: wrap;
-    row-gap:20px;
-
+    flex-wrap:wrap;
+    row-gap:20px;/*줄 간격*/
 }
 .station{
-    width:120px;
+    width:100px;
     text-align: center;
-    position: relative;
+    position:relative;
 }
-.mark{
-    position: relative;
+.mark{/*mark를 줘야 rail설정가능 여기가 부모.*/
+    position:relative;
 }
-.rail{
-    position: absolute;
+.rail{/*mark의 자식*/
+    position:absolute;
     width:100%;
-    height: 5px;
-    top:7px;
-    background:greenyellow;
+    height:5px;
+    top:9px;
+    background:#FFBB00;
     z-index:-1;
-    
 }
-
-
-
 .fa-regular{
-    background:#fff;
+    background:white; /*위에 rail 선이 아이콘 뒤로간다.*/
 }
-
-.w95{width:95%;}
+/*border-top-right-radius 오른쪽상단에만굴곡이들어감*/
+.w95{ width: 95%;}/*w95 == rail*/
 .w95-top{
     border-top-right-radius: 33px;
 }
@@ -47,25 +40,21 @@
     left:5%;
     border-top-left-radius: 33px;
 }
-
 .w95-bottom-right{
     left:5%;
     border-bottom-left-radius: 33px;
 }
-
 .rad{
-    width:120px;
-    height: 80.3px;
-    position: absolute;
-    top:25.4px;
-    border:5px solid greenyellow;
-    border-radius:11px;
+    width:95px;
+    height:80px;
+    position:absolute;
+    top:28px;
+    border:5px solid #FFBB00;
+    border-radius: 11px;
 }
+.left{border-style:none solid none none;}
+.right{border-style:none none none solid;}
 
-.left{
-    border-style:none solid none none;
+.train{
+    color:#fff;
 }
-.right{
-    border-style:none solid none solid;
-}
-    
