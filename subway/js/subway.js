@@ -37,8 +37,16 @@ function map_draw() {
 
 function make(t) {
     var w95="";
-    if(t==9 || t==10 || t==19 || t==20 || t==29 || t==30)
-    w95="w95";
+    if((t%10==9 || t%10==0) &&t!=0)
+        w95 += "w95";
+    if(t==9 || t==29 || t==19)
+        w95 += " w95-top";
+    if(t==10||t==30||t==20)
+        w95 += " w95-bottom";
+    if(t==19||t==20)
+        w95 += "-right";
+    
+    
 
   var out = "";
   out += "<div class='station'>";
