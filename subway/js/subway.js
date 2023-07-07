@@ -44,8 +44,7 @@ function train_active(){
     
 
    
-    
-    
+   
     setInterval(
         function(){
             station[Math.abs(train[0]++)]=0;
