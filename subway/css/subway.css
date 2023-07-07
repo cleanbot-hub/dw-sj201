@@ -1,6 +1,7 @@
 *{
     padding:0;
     margin:0;
+    box-sizing: border-box;
 }
 
 #map{
@@ -8,5 +9,8 @@
     margin:0 auto;
     display:flex;
     flex-wrap: wrap;
-    
+
+}
+.station{
+    width:100px;
 }
