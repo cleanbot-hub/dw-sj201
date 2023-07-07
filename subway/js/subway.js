@@ -10,6 +10,9 @@
 
 let station = new Array(40).fill(0);
 
+// 1번 차량은 1, 2 번 차량은 2, 3번 차량은 3, 4번 차량은 4로 
+// station 배열에 표기 한다 .
+
 const st_name = [
   "상수역", "은선역", "예림역", "향숙역", "영주역", "선양역", "상준역",
   "승겹역", "승겸역", "수호역", "민지역", "태균역", "길원역", "철환역",
@@ -24,6 +27,7 @@ const train_color=["t-greenyellow","t-skyblue","t-slateblue","t-chocolate"];
 
 
 window.onload = function () {
+    station[0]=1;
   map_draw(); // 지하철 지도 그리기
   train_active(); // 지하철 움직이기 
 }
@@ -31,7 +35,9 @@ window.onload = function () {
 function train_active(){
   setInterval(
         function(){
-        train[0]++; 
+        station[train[0]++]==0;
+        station[train[0]]==1;
+        map_draw; 
     }
   ,4000);
 }
@@ -73,11 +79,12 @@ function make(t) {
     
     
 
-  var out = "";
-  out += "<div class='station'>";
-  out += "<div class='train'><i class='fa-solid fa-train-subway'></i></div>";
-  out += "<div class='mark'><div class='rail "+w95+"'></div>" +
-    "<span class='stop'><i class='fa-regular fa-square'></i></span>";
+        var out = "";
+        out += "<div class='station'>";
+        out += "<div class='train " + (station[t] == 1 ? 't-greenyellow' : '') + "'><i class='fa-solid fa-train-subway'></i></div>";
+        out += "<div class='mark'><div class='rail " + w95 + "'></div>" +
+               "<span class='stop'><i class='fa-regular fa-square'></i></span>";
+        
 
   
     out += "</div>";
