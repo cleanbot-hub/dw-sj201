@@ -1,3 +1,13 @@
+/*
+
+
+
+
+
+*/
+
+
+
 let station = new Array(40).fill(0);
 
 const st_name = [
@@ -14,8 +24,19 @@ const train_color=["t-greenyellow","t-skyblue","t-slateblue","t-chocolate"];
 
 
 window.onload = function () {
-  map_draw();
+  map_draw(); // 지하철 지도 그리기
+  train_active(); // 지하철 움직이기 
 }
+
+function train_active(){
+  setInterval(
+        function(){
+        train[0]++; 
+    }
+  ,4000);
+}
+
+
 
 function map_draw() {
   var map = document.querySelector("#map");
