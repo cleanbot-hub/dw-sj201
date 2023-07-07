@@ -15,4 +15,6 @@ window.onload=function(){
 }
 function map_draw(){ // 지도 그리기 위한 함수 
     var map=document.querySelectorAll("#map"); // $("#map")
+    var out="";
+    
 }
