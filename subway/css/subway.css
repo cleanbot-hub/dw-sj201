@@ -58,3 +58,18 @@
 .train{
     color:#fff;
 }
+
+.t-greenyellow{ /*  1번차량 */
+    color:greenyellow;
+}
+
+.t-skyblue{   /*  2번차량 */
+    color:skyblue;
+}
+
+.t-slateblue{ /*  3번차량 */
+color:slateblue;
+}
+.t-chocolate{ /*  4번차량 */
+color:chocolate;
+}

@@ -5,9 +5,13 @@ const st_name = [
   "승겹역", "승겸역", "수호역", "민지역", "태균역", "길원역", "철환역",
   "유성온천역", "중앙로역", "서대전역", "대전역", "판암역", "용문역", "시청역", "정부청사역",
   "현충원역", "탄방역", "갈마역", "용산역", "오룡역", "부산역", "대구역", "조치원역", "세종역",
-  "청주역", "신탄진역", "중리동역", "반석역", "월드컵경기장역", "지족역", "계림역",
+  "청주역", "신탄진역", "중리동역", "반석역", "월드컵역", "지족역", "계림역",
   "천안역", "대동역"
 ];
+
+const train=[0,0,0,0];
+const train_color=["t-greenyellow","t-skyblue","t-slateblue","t-chocolate"];
+
 
 window.onload = function () {
   map_draw();
@@ -61,3 +65,11 @@ function make(t) {
   out += "<div class='name'>" + st_name[t] + "</div></div>";
   return out;
 }
+
+
+
+
+
+
+//greenyellow  skyblue slateblue chocolate;
+
