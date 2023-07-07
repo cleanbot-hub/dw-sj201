@@ -16,5 +16,12 @@ window.onload=function(){
 function map_draw(){ // 지도 그리기 위한 함수 
     var map=document.querySelectorAll("#map"); // $("#map")
     var out="";
+    for(var i=0; i<station.length; i++){ 
+        out += "<div class='station'>";
+        out += "<div class='train'></div>";
+        out += "<div class='mark'></div>";
+        out += "<div class='name'></div>" + st_name[i] + "</div></div>";
     
+    }
+
 }
