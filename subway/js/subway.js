@@ -36,14 +36,24 @@ window.onload = function () {
 function train_active(){
     station[0]=1;
     map_draw();
+    
+    setInterval(function(){
+        map_draw();
+
+    },3000);
+    
+
+   
+    
+    
     setInterval(
         function(){
             station[Math.abs(train[0]++)]=0;
             station[Math.abs(train[0])]=1;
-            map_draw();
+        
             if(train[0]==39){ // 마지막역 도착
                 station[Math.abs(train[0])]=0;
-                map_draw();
+             
                 setTimeout(function(){
                     train[0]=-40;
                 },500);

@@ -8,6 +8,7 @@
     display:flex;
     flex-wrap:wrap;
     row-gap:20px;/*줄 간격*/
+    padding:250px;
 }
 .station{
     width:100px;
