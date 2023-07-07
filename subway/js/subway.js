@@ -30,7 +30,10 @@ window.onload = function () {
     station[0]=1;
   map_draw(); // 지하철 지도 그리기
   train_active(); // 지하철 움직이기 
+}
 
+function info(){
+    alert("역클릭");
 }
 
 function train_active(){
@@ -152,7 +155,7 @@ function make(t) {
         var out = "";
         out += "<div class='station'>";
         out += "<div class='train " +(train_color[station[t]])+"'> <i class='fa-solid fa-train-subway'></i></div>";
-        out += "<div class='mark'><div class='rail " + w95 + "'></div>" +
+        out += "<div class='mark' onclick='info()' data-idx='"+t+"'><div class='rail " + w95 + "'></div>" +
                "<span class='stop'><i class='fa-regular fa-square'></i></span>";
         
 
