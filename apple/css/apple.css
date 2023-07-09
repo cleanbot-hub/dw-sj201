@@ -8,17 +8,20 @@
     height: 104px;
     display:flex;
     margin: 0 auto;
+    border: 1px solid black;
+    box-sizing: border-box;
+   
 }
 
 .menubar{
     display:flex;
     list-style-type:none ;
     padding:20px;
-    width:351px;
+    width:500px;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-
+    
 
 }
 .menubar > li{
@@ -41,4 +44,15 @@
 
 .userbar > li{
     margin:30px;
+}
+
+
+#section{
+    width:600px;
+    height: 200px;
+    padding:20px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid black;
+    margin-top:100px;
 }
