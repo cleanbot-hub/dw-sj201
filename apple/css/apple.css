@@ -56,3 +56,18 @@
     border: 1px solid black;
     margin-top:100px;
 }
+
+
+#imgbox{
+    width:1000px;
+    margin-top:150px;
+    margin: 0 auto;
+    padding:30px;
+}
+
+
+#imgbox img{
+    width:130px;
+    height: 500px;
+    
+}
