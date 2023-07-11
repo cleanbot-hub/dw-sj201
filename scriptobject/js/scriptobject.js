@@ -11,3 +11,29 @@ window.onload = function(){
     body[0].appendChild(node); // 만든 태그를 누구 밑에 ?
 
 }
+
+function exit(){
+    window.close();
+}
+
+
+let child="";
+
+function winopen(){
+    child =  window.open("./child.html","_blank","width=500px,height=400px");
+}
+
+function child_close(){
+    child.window.close();
+}
+
+function child_write(){
+    child.document.getElementById("message").innerText="머리카락 휘날리며 와 ";
+}
+
+function child_getName(){
+
+    var name = child.document.getElementById("name").value;
+    document.getElementById("name").innerHTML=name;
+    
+}
