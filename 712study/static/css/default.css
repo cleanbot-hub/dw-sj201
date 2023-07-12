@@ -15,4 +15,16 @@ a:visited{color:transparent;}
 #wrap{
     position: relative;
     max-width:1600px;
+    margin:0 auto;
+    background: #fff;
+}
+
+#header{
+    position: absolute;
+    top:0;
+    width:100%;
+}
+
+#banner{
+
 }
