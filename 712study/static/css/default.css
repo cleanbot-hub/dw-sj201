@@ -1,0 +1,18 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+ul,ol{
+    list-style-type: none;
+}
+
+input{outline: none; border:0}
+a{text-decoration: none;}
+a:visited{color:transparent;}
+
+#wrap{
+    position: relative;
+    max-width:1600px;
+}
