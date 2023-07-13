@@ -66,3 +66,12 @@
     position: relative;
     min-height: 200px;
 }
+
+#slider .viewport{
+    overflow: hidden;
+    position: relative;
+}
+
+#slider .viewport .eventslide{
+    display:flex;
+}
