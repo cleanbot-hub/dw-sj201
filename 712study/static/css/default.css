@@ -198,10 +198,43 @@ a:visited{
 
 
 #nav{
+/*
+-webkit-gradient(linear, left top, left bottom, color stop
+(20%, rgba(0,0,0,0.6), to (rgba(0,0,0,0) ));
 
+*/
+
+
+
+
+background: linear-gradient(rgba(0,0,0,0.6) 20%,
+rgba(0,0,0,0) 100%);
+height: 80px;
 }
 
 
 #banner{
 
+}
+
+
+.main_menu{
+    display:flex;
+    color:#fff;
+    max-width: 1000px;
+    margin:0 auto;
+    justify-content: space-between;
+}
+
+.main_menu .toplink a{
+    color:#fff;
+}
+
+
+
+
+
+
+.sub-block{
+    display:none;
 }
