@@ -71,3 +71,79 @@
     height: 500px;
     
 }
+
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px; /* 적절한 높이로 조정해주세요 */
+    
+    
+}
+
+.event {
+    position: relative;
+ 
+    width: 200px; /* 적절한 크기로 조정해주세요 */
+    height: 200px; /* 적절한 크기로 조정해주세요 */
+}
+
+.hand, .search, .setting, .act, .watch {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px; /* 적절한 크기로 조정해주세요 */
+    height: 50px; /* 적절한 크기로 조정해주세요 */
+    transform: translate(-50%, -50%);
+}
+
+.hand i, .search i, .setting i, .act i, .watch i {
+    font-size: 24px; /* 아이콘 크기를 조정해주세요 */
+}
+
+.hand {
+    transform: translate(-50%, -50%) rotate(45deg) translateX(-70px);
+}
+
+.search {
+    transform: translate(-50%, -50%) rotate(135deg) translateX(-70px);
+}
+
+.setting {
+    transform: translate(-50%, -50%) rotate(225deg) translateX(-70px);
+}
+
+.act {
+    transform: translate(-50%, -50%) rotate(315deg) translateX(-70px);
+}
+
+.watch{
+    text-align: center;
+    justify-content: center;
+}
+
+
+.hand i:hover{
+    background:red;
+}
+
+
+.search i:hover{
+    background:green;
+}
+
+
+.setting i:hover{
+    background:yellowgreen;
+}
+
+.act i:hover{
+    background:rebeccapurple;
+}
+
+.watch i:hover{
+    background:cyan;
+}
+
