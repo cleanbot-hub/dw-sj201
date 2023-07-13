@@ -238,16 +238,21 @@ height: 80px;
 
 .main.menu .toplink{
     position: relative;
+    padding:30px 0;
 }
 
-.main_menu .toplink a:hover ~ .sub-block{
+.main_menu .toplink .sub-block{
+    display:none;
+}
 
+.main_menu .toplink:hover .sub-block{
+    display: flex;
 }
 
 
 
 .sub-block{
-    display:none;
+   
     position: absolute;
     display: flex;
     top:40px;
