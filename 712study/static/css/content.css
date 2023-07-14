@@ -127,6 +127,12 @@
     color:white;
 }
 
+#slider .direction-nav .next:hover, #slider .direction-nav .prev:hover{
+    background:#e68a00;
+    cursor: pointer;
+}
+
+
 
 
 .homebottom{
