@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+                <script> 
+                // 1~9 중에서 숫자 하나를 입력 받아 입력한 숫자에 맞는 구구단 출력 되게 하시오 . 
+
+            // var a = prompt("단수를 입력하세요"); // 단수를 입력 받음
+
+            // for (var i = 1; i <= 9; i++) { // 1에서 9 까지 포함한 숫자
+            // var result = a * i; // result 라는 변수에 a * i 를 곱함 
+  
+            // document.write("<div>" + a + " x " + i + " = " + result + "</div>");
+            // }
+
+
+            // var  = prompt("단수를 입력하세요"); // 단수를 입력 받음
+
+            // 1부터 120 까지 3씩 증가해서 출력 
+            // for (var i=1; i<=120; i=i+3){
+            //     document.write("<div>"+i+"</div>");
+            // }
+
+
+                // 정수 하나를 입력 하고 , 입력한 숫자를 시작 값으로 하여 12번 반복 하는 반복문 만들기 
+                // var number = parseInt(prompt("숫자를 입력하세요:"));
+                // for (var i = number; i < number + 12; i++) {
+                // document.write("<div>" + i + "</div>");
+                // }
+
+        
+                //     var count=0;
+                // for (var i=1;i<=100;i++) {
+                //     if(i%4 == 0);
+                //     count++;
+                //     document.write("<div style>1~100 중에서 4의 배수는 "+count+"개"</div>);
+                
+                // }
+
+
+                    // 동전 앞면 뒷면 맞추기 게임을 10판 한다 10번 해서 내가 몇번 이기고 몇번 졌는 지 
+
+                    // var win=0, lose=0;
+                    // for(var i=1; i<=10; i++){
+                    //     var coin=Math.floor(Math.random()*2)+1;
+                    //     var user=parseInt(prompt("1.앞면 2.뒷면"+ "입력한 횟수 :"+i));
+                    //     if(coin==user){
+                    //         document.write("정답<br>");
+                    //         win++;
+                    //     }else{
+                    //         document.write("실패<br>");
+                    //         lose++;
+                    //     }
+                    // }
+                    // document.write("정답 횟수  : " +win+" 실패 :"+lose);
+
+
+
+
+
+                    // 주사위 던지기 게임 10판 
+                    // 컴퓨터와 내기 주사위를 던진다. 숫자가 큰 쪽이 승리 , 같은 숫자면 비김 
+                    // 10판 해서 내가 몇번 이기고 지고 비겼는 지 출력하시오 . 
+                    //         var winCount=0;
+                    //         var loseCount=0;
+                    //         var drawCount=0;
+                  
+                    // for(var i=1; i<=10; i++){
+                    //     var dice1=Math.floor(Math.random()*6)+1;
+                    //     var dice2=Math.floor(Math.random()*6)+1;
+                        
+                        
+                    //     if (dice1 < dice2) {
+                            
+                    //         document.write("승리<br>" + dice1 + " vs " + dice2);
+                    //         winCount++;
+                    //         } else if (dice1 == dice2) {
+                    //             document.write("비김 <br>" + dice1 + " vs " + dice2);
+                    //                 drawCount++;
+                    //         } else {
+                    //         document.write("패배<br> " + dice1 + " vs " + dice2);
+                    //         loseCount++;
+                              
+                            
+                                    
+                    //             }
+                                
+
+                    //             document.write("내가 이긴 횟수 " + winCount +"내가 진 횟 수 : "+loseCount+"내가 비김 횟수 : "+drawCount +"<br>" );
+                             
+
+                              
+                    //         }
+
+
+                                        // var i=1;
+                                        // while(true){
+                                        //     if(i==100)
+                                        //         break; // break 는 제어문을 중단 시키는 방법이다 .         
+                                        //         i++;    
+                                        // }   
+
+                            // 
+
+
+
+
+                                                    // while(true){
+                                                    //     var num=parseInt(prompt("정수입력"));
+                                                    //     if(num==0) 
+                                                    //     break;
+                                                      
+                                                    // }
+
+
+
+                                                        // UP & DOWN 게임 
+                                                    
+
+
+
+                                                      
+                                                        var com=Math.floor(Math.random()*50)+1;
+                                                       
+
+                                                        while(true){
+                                                            var num = parseInt(prompt("1부터 50까지 랜덤 숫자 "));
+
+                                                            if(com== num){
+                                                                document.write("입력하신 숫자는 "+com +" 정답입니다");
+                                                                break;
+        
+                                                            }
+                                                            if(num < com){
+                                                                alert("UP");
+                                                            
+                                                            }else if(num > com){
+                                                                alert("Down");
+                                                            
+                                            
+                                                                
+                                                            }
+                                                        }
+
+                
+                                                        
+                
+                </script>
+
+
+
+
+</head>
+<body>
+    
+</body>
+</html>

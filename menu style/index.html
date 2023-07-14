@@ -1,0 +1,162 @@
+<!-- a 태그 : 링크, 페이지 이동을 위한 태그 -->
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대전 동물원 </title>
+
+    <style>
+        body{
+            padding:0;
+            margin: 0;
+        }
+        #wrap { 
+        width:1080;
+        }
+        #wrap tr td{
+            border:0px solid black;
+            position:relative;
+        }
+        .head{
+            width:1200px; height: 50px;
+            text-align: right;
+            font-size:15px;
+            color:gray;
+            
+        }
+        .logo_wrap{width:50px;}
+        .logo_wrap img{height: 50px; height:80px;
+        }
+        
+        
+        /* #menu_list tr td{
+            border:0;
+            padding:30px;
+        } */
+    
+    .menu_list{
+        list-style-type:none;
+        padding:0px;
+        width:1080px;
+        
+    }
+    
+    .menu_list_title{
+        float:left;
+        padding:10;
+        margin:50px;
+        font-weight: 600px;
+        font-size: 24px;
+        cursor: pointer;
+    }
+    .content_wrap{
+        background-image:url('../image/animal0524.jpeg');
+        height: 590px;
+        width:1800px;
+
+         
+    }
+        .content_Text{
+        position:absolute;
+        top:0; 
+        left:200px;
+        list-style-type: none;
+        padding:0;
+        margin:0;
+        font-size:32;
+        font-weight: 900px;
+        font-family:'imapact';
+        padding-left:150px;
+    }
+        .mainText{
+        font-size:96px;
+        margin:28px 0px 40px 0px;  /*위 오른쪽 아래 왼쪽 시계방향*/
+        }
+
+
+        .subText{
+            letter-spacing:5px;
+            margin:90px 0px;  /* 위아래 오른쪽왼쪽*/
+        }
+        .underText{
+            text-decoration: underline;
+            text-underline-offset: 10px;
+         }
+         .grayText{
+            /*color:gray;*/
+            opacity:0.6; /* 투명도 값 범위 : 0 ~ 1 0과 가까워 질수록 투명해진다 */
+         }
+
+         .contetn_Wrap_Text
+         {
+            width:200px;
+            height:100px;
+            font-size:96px;
+            font-weight:900px;
+         }
+
+
+</style>
+
+
+</head>
+<body>
+                        <table id="wrap">
+                            
+                            <tr> 
+                                <td colspan="2" class="head">
+                                    로그인 / 사이트맵 / 고객센터
+                                </td>
+                                </tr>
+
+                            <tr>
+                                <td class="logo_wrap">
+                                    <a href="">
+                                    <img src="../image/animallogo.png" alt="로고이미지">
+                                    </a>
+
+                                </td>
+
+                
+                        <tr>        
+                            <td class="menu_wrap">
+            
+
+                                    <ul class="menu_list">
+                                    <li class="menu_list_title">O! World?!</li>
+                                    <li class="menu_list_title"> 이용정보</li>
+                                    <li class="menu_list_title">브랜드지원</li>   
+                                    <li class="menu_list_title">축제 및 이벤트</li>            
+                                    <li class="menu_list_title">즐길거리</li>
+                                 
+                                    </ul>
+                            </td>
+                            </tr>
+
+                            <tr> 
+             
+            
+            
+                                <td colspan="2" class="content_wrap">
+                            </td>
+                            </tr>
+                        
+                        
+                            </table>
+
+
+
+</body>
+</html>
+
+
+

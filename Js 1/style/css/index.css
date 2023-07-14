@@ -1,0 +1,29 @@
+div{
+    width:50px;
+    height:50px;
+}
+
+
+.box1{
+    background-color: orange;
+    width:30%;
+}
+
+.box2{
+    width:30rem;
+    background:violet;
+}
+.box3{
+    width:30vw;
+    background:indigo;
+}
+.box4{
+    width:30em;
+    background:palegreen;
+}
+
+.box5{
+    width:30px;
+    background:chartreuse;
+}
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body>
+    <h1>색상 누르기</h1>
+    <div id="colorBox"></div>
+    <button onclick="selectColor()">누르기</button>
+
+</body>
+</html>
+
+<script>
+ var selectedColor = '';
+
+window.onload = function() {
+    var colors = ["red", "blue", "green", "yellow", "orange", "purple", "pink", "brown"];
+    selectedColor = colors[Math.floor(Math.random() * colors.length)];
+    var colorBox = document.getElementById("colorBox");
+    colorBox.style.backgroundColor = selectedColor;
+};
+
+function selectColor() {
+    window.opener.applyColor(selectedColor);
+    window.close();
+    
+}
+
+
+</script>

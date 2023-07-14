@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+.askQuestion{
+  width:300px;
+  height: 100px;
+  border: 1px solid black;
+  background:red
+
+}
+
+  </style>
+  <script>
+  let key = "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"; // Open AI 사이트에서 발급받은 API 키입력
+  function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
+    if (msg.startsWith("?")) {
+      let question = msg.substr(1).trim(); // 물음표 이후의 질문 내용 추출
+      if (question !== "") {
+        getResponse(question)
+          .then(answer => {
+            displayAnswer("[답변]<br>" + answer); // 답변 출력
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }
+    }
+  }
+  async function getResponse(question) {
+    const apiUrl = "https://api.openai.com/v1/engines/davinci-codex/completions";
+    const headers = {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + key
+    };
+    const data = {
+      "prompt": question,
+      "max_tokens": 100,
+      "temperature": 0.6,
+      "n": 1
+    };
+
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+    const answer = result.choices[0].text;
+
+    return answer;
+  }
+
+  function displayAnswer(answer) {
+    let answerOutput = document.getElementById("answerOutput");
+    answerOutput.innerHTML = answer;
+  }
+</script>
+
+</head>
+<body>
+  
+  <textarea id="questionInput" placeholder="질문을 입력하세요"></textarea>
+  <button onclick="askQuestion()">질문하기</button>
+  <div id="answerOutput"></div>
+
+  <script>
+    function askQuestion() {
+      let questionInput = document.getElementById("questionInput");
+
+      let question = questionInput.value;
+      if (question !== "") {
+        getResponse(question)
+          .then(answer => {
+            displayAnswer("[답변]<br>" + answer);
+            questionInput.value = "";
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }
+    }
+  </script>
+
+
+
+
+</body>
+</html>
+
+
+
+  
+
+

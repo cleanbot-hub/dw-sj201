@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/css/javascript.css">
+   
+<script>
+
+
+var r=parseInt(prompt("반지름을 입력하시오 !"));
+
+//prompt 함수는 브라우저에서 입력창으 제공하는 기능을 가지고 있다 
+//prompt 로 입력 한 내용은 반드시 , 무조건 ! 문자열이다.
+// 문자열 -> 숫자 변환 하는 방법 : Number(),parseInt()
+
+document.write(typeof(r));
+
+
+var area=r*r*3.14;
+var dist=r*2*3.14;
+
+document.write("원의 반지름은" + r + "입니다<br>" )
+document.write("원의 넓이는 : " + area + "<br>");
+document.write("원의 둘레는  : " +  dist);
+
+
+
+// 반지름 * 반지름 * 3.14
+// 지름 * 2 * 3.14
+
+
+</script>
+
+
+
+</head>
+<body>
+    
+</body>
+</html>
