@@ -24,6 +24,10 @@
                         var pre = document.getElementsByClassName("prev")[0];
                         var next= document.getElementsByClassName("next")[0];
                         pre.addEventListener("click",function(){
+                            //trans var slideview = document.getElementsByClassName("eventslide")[0];
+                            // slideview.style.transform="translate3d(0px,0px,0px)";
+                            
+                            
                             var slideview = document.getElementsByClassName("eventslide")[0];
                             var now_left = slideview.style.left.split("px")[0];
                             if(now_left == 0) return;
@@ -34,6 +38,10 @@
                         });
 
                         next.addEventListener("click",function(){
+                            //trans  var slideview = document.getElementsByClassName("eventslide")[0];
+                            //  slideview.style.transform="translate3d(-936,0px,0px)";
+                            
+                            
                             var slideview = document.getElementsByClassName("eventslide")[0];
                             var now_left = slideview.style.left.split("px")[0];
                             if(now_left == -936) return;
