@@ -90,13 +90,21 @@
     color: #333;
     border-top: 2px solid #ddd;
     margin-top:4px;
+    display: inline-block;
+    width:100%;
 
 }
 
 #slider .viewport .eventslide .slide_item p{
-
+    margin-top:0.2em;
+    font-size:0.9em;
+    line-height: 1.2em;   
 }
 
+/* 슬라이드 왼쪽 오른쪽 버튼 */
+#slider .direction-nav{
+
+}
 
 
 
