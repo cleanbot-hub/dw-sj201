@@ -132,12 +132,18 @@
     cursor: pointer;
 }
 
+#slider .viewport .eventslide{
+    position: relative;
+}
+
+
+
 /*
     하나씩 슬라이드 이동 
     ul 태그에 position:relative; left:312px;
 
     한번에 이동 
-    ul 태그에 transform: translate3d(-
+    ul 태그에 transform: translate3d(-936px,0px,0px);
 */
 
 
