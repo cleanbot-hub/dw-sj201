@@ -54,13 +54,9 @@
 
 
 
-.homebottom{
 
-}
 
-.homesocial{
 
-}
 #slider{
     margin:15px 14px;
     position: relative;
@@ -74,5 +70,15 @@
 
 #slider .viewport .eventslide{
     display:flex;
+    column-gap: 20px;
+    
 }
 
+
+.homebottom{
+
+}
+
+.homesocial{
+
+}
