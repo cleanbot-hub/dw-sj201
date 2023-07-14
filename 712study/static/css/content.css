@@ -71,8 +71,34 @@
 #slider .viewport .eventslide{
     display:flex;
     column-gap: 20px;
-    
+    width:2496px;
 }
+#slider .viewport .eventslide .slide_item{
+    width:292px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+#slider .viewport .eventslide .slide_item a h4{
+    color:#690;
+    font-size:1.35em;
+
+}
+
+#slider .viewport .eventslide .slide_item b{
+    color: #333;
+    border-top: 2px solid #ddd;
+    margin-top:4px;
+
+}
+
+#slider .viewport .eventslide .slide_item p{
+
+}
+
+
+
 
 
 .homebottom{
