@@ -24,9 +24,13 @@
                         var pre = document.getElementsByClassName("prev")[0];
                         var next= document.getElementsByClassName("next")[0];
                         pre.addEventListener("click",function(){
-                          
+                            var slideview = document.getElementsByClassName("eventslide")[0];
+                            var now_left = slideview.style.left.split("px")[0];
+                            if(now_left == 0) return;
+                            var left=Number(now_left) + 312;
+                            slideview.style.left=left+"px";
 
-                        
+
                         });
 
                         next.addEventListener("click",function(){
