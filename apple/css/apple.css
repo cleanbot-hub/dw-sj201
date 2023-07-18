@@ -393,13 +393,13 @@
     
 } */
 
-#chat-input{
+/* #chat-input{
     cursor: pointer;
-}
+} */
 .chat-box-toggle {
     float: right;
     margin-right: 15px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .chat-box-header {
