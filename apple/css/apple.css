@@ -36,8 +36,14 @@
 }
 #nav{
     width:1500px;
+    box-sizing: border-box;
     
 }
+
+#nav li {
+        box-sizing: content-box; /* Reset box-sizing for the list items */
+    }
+
 
 
 .main_menu li{
@@ -242,3 +248,91 @@
     height: 50px;
     z-index: 1;
 }
+
+ .online_menu,.offline_menu {
+        display: none; /* Hide the menus by default */
+        /* Add any additional styling */
+       
+    }
+
+    .info_button:hover .online_menu,
+    .info_button:hover .offline_menu {
+        display: block; /* Show the menus when hovering over the button */
+        
+        }
+
+
+   .online_menu a,.offline_menu a{
+    color:white;
+   }     
+
+
+
+
+   .point_1,.point_2,.point_3,.point_4{
+    display:none;
+   }
+
+   .point_button:hover .point_1{
+    display:block;
+   }
+
+   .point_button:hover .point_2{
+    display:block;
+   }
+
+   .point_button:hover .point_3{
+    display:block;
+   }
+
+   .point_button:hover .point_4{
+    display:block;
+   }
+
+
+   .point_1 a, .point_2 a, .point_3 a{
+    color:white;
+   }
+
+   .point_4 a{
+    color:black;
+   }
+
+
+   .point_button{
+    width:185px;
+   }
+
+
+
+   .info_button{
+    width:140px;
+   }
+
+
+   
+ 
+
+   .service_1{
+    display:none;
+   }
+
+   .service:hover .service_1{
+    display:block;
+   }
+
+   .service_1 a{
+    color:white;
+   }
+
+   .page_1{
+    display:none;
+   }
+
+   .mypage:hover .page_1{
+    display:block;
+   }
+
+   .page_1 a{
+    color:white;
+   }
