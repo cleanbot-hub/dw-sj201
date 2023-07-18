@@ -1,172 +1,244 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
 #wrap{
-    width:1795px;
-    height: 795px;
+    width:1920px;
+    min-width:900px;
+    
 }
 
 #header{
-    width:1080px;
-    height: 104px;
-    display:flex;
-    margin: 0 auto;
-    border: 1px solid black;
-    box-sizing: border-box;
+    
+    width: 1920px;
+    height: 150px;
+    background: black;
+    display: flex;
    
 }
 
-.menubar{
-    display:flex;
-    list-style-type:none ;
-    padding:20px;
-    width:700px;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    
-
-}
-.menubar > li{
-    margin:30px;
-}
-
-
-
-
-
-.userbar{
-    display:flex;
-    list-style-type:none;
-    justify-content: right;
-    align-items: center;
-    margin-left:auto;
-    width:351px;
-    padding:20px;
-}
-
-.userbar > li{
-    margin:30px;
-}
-
-
-#section{
-    width:600px;
-    height: 200px;
-    padding:20px;
-    margin: 0 auto;
-    text-align: center;
-    border: 1px solid black;
-    margin-top:100px;
-}
-
-
-#imgbox{
-    width:1000px;
-    margin-top:150px;
-    margin: 0 auto;
-    padding:30px;
-}
-
-
-#imgbox img{
-    width:130px;
-    height: 500px;
-    
-}
-
-
-#footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 300px; /* 적절한 높이로 조정해주세요 */
-    
-    
-}
-
-.event {
-    position: relative;
- 
-    width: 200px; /* 적절한 크기로 조정해주세요 */
-    height: 200px; /* 적절한 크기로 조정해주세요 */
-}
-
-.hand, .search, .setting, .act, .watch {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50px; /* 적절한 크기로 조정해주세요 */
-    height: 50px; /* 적절한 크기로 조정해주세요 */
-    transform: translate(-50%, -50%);
-}
-
-.hand i, .search i, .setting i, .act i, .watch i {
-    font-size: 24px; /* 아이콘 크기를 조정해주세요 */
-}
-
-.hand {
-    transform: translate(-50%, -50%) rotate(45deg) translateX(-70px);
-}
-
-.search {
-    transform: translate(-50%, -50%) rotate(135deg) translateX(-70px);
-}
-
-.setting {
-    transform: translate(-50%, -50%) rotate(225deg) translateX(-70px);
-}
-
-.act {
-    transform: translate(-50%, -50%) rotate(315deg) translateX(-70px);
-}
-
-.watch{
-    text-align: center;
-    justify-content: center;
-}
-
-
-.hand i:hover{
-    background:red;
-}
-
-
-.search i:hover{
-    background:green;
-}
-
-
-.setting i:hover{
-    background:yellowgreen;
-}
-
-.act i:hover{
-    background:rebeccapurple;
-}
-
-.watch i:hover{
-    background:cyan;
-}
-
-
-
-#login-info{
-    width:300px;
+#logo img{
+    width: 200px;
     height: 150px;
-    border: 1px solid black;
-    margin:0 auto;
-    float:right;
+}
+
+.main_menu{
+   
+    display: flex;
+    /* justify-content: space-between;  */
+    gap:300px;
+     color:white;
+     margin-top: 50px;
+     font-size: 20px;
+}
+#nav{
+    width:1500px;
+    
+}
+
+
+.main_menu li{
+    list-style: none;
+    
+}
+
+
+.userinfor{
+    display: flex;
+}
+
+.side{
+    width:250px;
+    position: relative;
+    float: left;
+
+}
+.login{
+    width:250px;
+    padding:10px;
+    position: relative;
+
+}
+.login_box{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+.input{
+    position: relative;
+    width:100%;
+}
+.input input{
+    width:100%;
+    height: 20px;
+    font-size:17px;
+    outline: none;
+}
+.input label{
+    position: absolute;
+    top:3px;
+    left:5px;
+    font-size: 14px;
+    opacity: 0.5;
+}
+.input input:focus ~ label{
+    opacity: 0;
+}
+
+.login_bt{width:100%;}
+
+.login_bt a{
+    display:block;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    color:#fff;
+    text-align: center;
+    background:#222845;
+    border-radius: 3px;
+    padding: 5px 0;
+}
+
+.Join_find{
+    display:flex;
+    font-size: 10px;
+    justify-content: space-between;
+    padding:10px 0;
+}
+.Join_find a{
+    text-decoration: none;
+    color:white;
+    
+}
+
+
+
+
+
+.label{
+    color:white;
+}
+
+
+
+.content_body{
+    width:1920px;
+    height:452px ;
+    padding:250px;
+    
+}
+
+
+.content_body h1{
+    font-size: 50px;
+    text-align: center;
+}
+
+#ct_img{
+    width:1920px;
+    
+}
+
+.img1 img{
+    width:1920px;
+    height: 1080px;
+}
+
+.img2 img{
+    width:1920px;
+    height: 1080px;
+}
+
+.img3 img{
+    width:1920px;
+    height: 1080px;
+}
+
+.img4 img{
+    width:1920px;
+    height: 1080px;
+}
+
+#footer{
+    width:1920px;
+    height: 300px;
+    background:black;
+    color:white;
+    
+    
+    
+}
+.ft_1{
+    display: flex;
+    width:1000px;
+    justify-content: space-between;
+    list-style: none;
     padding:20px;
+    margin-left: 50px;
+}
+
+.ft_2{
+    display: flex;
+    width:1000px;
+    justify-content: space-between;
+    list-style: none;
+    padding:20px;
+    margin-left: 50px;
+}
+
+.ft_3{
+    display:flex;
+    width:1000px;
+    justify-content: space-between;
+    list-style: none;
+    padding:20px;
+    margin-left: 50px;
+}
+
+.ft_4{
+    list-style: none;
+    padding:20px;
+    margin-left: 50px;
+}
+
+.section{
+   
+    display: flex;
+            flex-direction: column;
+            right: 0;
+            margin: 0 auto;
     
 }
 
-#login-info .checkpw .btn{
-    width: 150px;
-    margin:40px;
 
+.section img:nth-child(1) {
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 130px; /* Adjust the desired vertical position */
+    right: 20px; /* Adjust the desired horizontal position */
+    z-index: 2;
+    opacity: 0.7;
     
 }
 
 
-
-
-
+.top{
+    position: absolute;
+    display: flex;
+            flex-direction: column;
+            right: 0;
+            margin: 0 auto;
+}
+.top img{
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+}
