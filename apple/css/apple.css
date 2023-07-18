@@ -388,10 +388,14 @@
     box-shadow: 0px 5px 35px 9px #ccc;
 }
 
-.section:hover .chat-box{
+/* #chatbot-toggle:hover + .chat-box{
     display: block;
-}
+    
+} */
 
+#chat-input{
+    cursor: pointer;
+}
 .chat-box-toggle {
     float: right;
     margin-right: 15px;
