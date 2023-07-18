@@ -12,101 +12,92 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
     
-    $(function() {
-        var INDEX = 0; 
-        $("#chat-submit").click(function(e) {
-            e.preventDefault();
-            var msg = $("#chat-input").val(); 
-            if(msg.trim() == ''){
-                return false;
+    var INDEX = 0; 
+    document.getElementById("chat-submit").addEventListener("click", function(e) {
+        e.preventDefault();
+        var msg = document.getElementById("chat-input").value; 
+        if (msg.trim() === '') {
+            return false;
+        }
+        generate_message(msg, 'self');
+        var buttons = [
+            {
+                name: 'Existing User',
+                value: 'existing'
+            },
+            {
+                name: 'New User',
+                value: 'new'
             }
-            generate_message(msg, 'self');
-            var buttons = [
-                {
-                    name: 'Existing User',
-                    value: 'existing'
-                },
-                {
-                    name: 'New User',
-                    value: 'new'
-                }
-            ];
-            setTimeout(function() {      
-                generate_message(msg, 'user');  
-            }, 1000)
-        })
+        ];
+        setTimeout(function() {      
+            generate_message(msg, 'user');  
+        }, 1000);
+    });
+    
+    function generate_message(msg, type) {
+        INDEX++;
+        var chatLogs = document.querySelector(".chat-logs");
         
-        function generate_message(msg, type) {
-            INDEX++;
-            var str="";
-            str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
-            str += "          <span class=\"msg-avatar\">";
-            str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
-            str += "          <\/span>";
-            str += "          <div class=\"cm-msg-text\">";
-            str += msg;
-            str += "          <\/div>";
-            str += "        <\/div>";
-            $(".chat-logs").append(str);
-            $("#cm-msg-"+INDEX).hide().fadeIn(300);
-            if(type == 'self'){
-                $("#chat-input").val(''); 
-            }    
-            $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
-        }  
+        var div = document.createElement("div");
+        div.id = "cm-msg-" + INDEX;
+        div.className = "chat-msg " + type;
         
-        function generate_button_message(msg, buttons){    
-            /* Buttons should be object array 
-            [
-                {
-                    name: 'Existing User',
-                    value: 'existing'
-                },
-                {
-                    name: 'New User',
-                    value: 'new'
-                }
-            ]
-            */
-            INDEX++;
-            var btn_obj = buttons.map(function(button) {
-                return  "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
-            }).join('');
-            var str="";
-            str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
-            str += "          <span class=\"msg-avatar\">";
-            str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
-            str += "          <\/span>";
-            str += "          <div class=\"cm-msg-text\">";
-            str += msg;
-            str += "          <\/div>";
-            str += "          <div class=\"cm-msg-button\">";
-            str += "            <ul>";   
-            str += btn_obj;
-            str += "            <\/ul>";
-            str += "          <\/div>";
-            str += "        <\/div>";
-            $(".chat-logs").append(str);
-            $("#cm-msg-"+INDEX).hide().fadeIn(300);   
-            $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
-            $("#chat-input").attr("disabled", true);
+        var msgAvatar = document.createElement("span");
+        msgAvatar.className = "msg-avatar";
+        var img = document.createElement("img");
+        img.src = "./image/chat.png";
+        msgAvatar.appendChild(img);
+        
+        var cmMsgText = document.createElement("div");
+        cmMsgText.className = "cm-msg-text";
+        cmMsgText.innerText = msg;
+        
+        div.appendChild(msgAvatar);
+        div.appendChild(cmMsgText);
+        
+        chatLogs.appendChild(div);
+        fadeInElement(div);
+        
+        if (type === 'self') {
+            document.getElementById("chat-input").value = ''; 
         }
         
-        $(document).delegate(".chat-btn", "click", function() {
-            var value = $(this).attr("chat-value");
-            var name = $(this).html();
-            $("#chat-input").attr("disabled", false);
+        scrollToBottom(chatLogs);
+    }
+    
+    function fadeInElement(element) {
+        element.style.opacity = 0;
+        var tick = function() {
+            element.style.opacity = +element.style.opacity + 0.01;
+            if (+element.style.opacity < 1) {
+                (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+            }
+        };
+        tick();
+    }
+    
+    function scrollToBottom(element) {
+        element.scrollTop = element.scrollHeight;
+    }
+    
+    document.addEventListener("click", function(event) {
+        var target = event.target;
+        if (target.classList.contains("chat-btn")) {
+            var value = target.getAttribute("chat-value");
+            var name = target.innerHTML;
+            document.getElementById("chat-input").disabled = false;
             generate_message(name, 'self');
-        })
-        
-        $("#chat-circle").click(function() {    
-            $("#chat-circle").toggle('scale');
-            $(".chat-box").toggle('scale');
-        })
-        
-        $(".chat-box-toggle").click(function() {
-            $("#chat-circle").toggle('scale');
-            $(".chat-box").toggle('scale');
-        })
+        }
+    });
+    
+    document.getElementById("chat-circle").addEventListener("click", function() {    
+        document.getElementById("chat-circle").style.display = "none";
+        document.querySelector(".chat-box").style.display = "block";
+    });
+    
+    document.querySelector(".chat-box-toggle").addEventListener("click", function() {
+        document.getElementById("chat-circle").style.display = "block";
+        document.querySelector(".chat-box").style.display = "none";
     });
 });
