@@ -6,6 +6,7 @@
     <title>A point </title>
     <link rel="stylesheet" href="./css/apple.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
     <script src="./js/apple.js"></script>
 </head>
 <body>
@@ -115,11 +116,27 @@
         
         </div>
 
-        <div class="section">
+        <div class="section" id="chatbot-toggle">
             <img src="./image/chat.png">
+        </div>
+
+
+        <div class="chat-box">
             
-          
-    
+            <div class="chat-box-header">
+                ChatBot
+                <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+            </div>
+            <div class="chat-box-body">
+                <div class="chat-box-overlay"></div>
+                <div class="chat-logs"></div>
+            </div>
+            <div class="chat-input">
+                <form>
+                    <input type="text" id="chat-input" placeholder="Send a message..." />
+                    <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
+                </form>
+            </div>
         </div>
 
         <div class="top">
