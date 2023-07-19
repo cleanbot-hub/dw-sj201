@@ -120,10 +120,6 @@
     
 }
 
-
-
-
-
 .label{
     color:white;
 }
@@ -173,9 +169,7 @@
     height: 300px;
     background:black;
     color:white;
-    
-    
-    
+   
 }
 .ft_1{
     display: flex;
@@ -264,6 +258,7 @@
 
    .online_menu a,.offline_menu a{
     color:white;
+    font-size: 15px;
    }     
 
 
@@ -271,6 +266,9 @@
 
    .point_1,.point_2,.point_3,.point_4{
     display:none;
+    background: black;
+    font-size: 15px;
+    
    }
 
    .point_button:hover .point_1{
@@ -292,6 +290,8 @@
 
    .point_1 a, .point_2 a, .point_3 a{
     color:white;
+    font-size: 15px;
+    
    }
 
    .point_4 a{
@@ -300,7 +300,7 @@
 
 
    .point_button{
-    width:185px;
+    width:200px;
    }
 
 
@@ -323,18 +323,22 @@
 
    .service_1 a{
     color:white;
+    font-size: 15px;
    }
 
    .page_1{
     display:none;
+    font-size: 15px;
    }
 
    .mypage:hover .page_1{
     display:block;
+    font-size: 15px;
    }
 
    .page_1 a{
     color:white;
+    font-size: 15px;
    }
 
 

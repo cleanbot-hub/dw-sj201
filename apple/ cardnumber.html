@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계좌추가하기</title>
+    <style>
+
+        *{
+            padding:0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        
+        #wrap{
+            width:1920px;
+            min-width:900px;
+            
+        }
+        
+        #header{
+            
+            width: 1920px;
+            height: 150px;
+            background: black;
+            display: flex;
+           
+        }
+        #bt{
+            width:50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            
+        }
+        #bt button{
+            background:blue;
+            color:white;
+            width:100px;
+            height: 50px;
+            font-size: 25px;
+        }
+        
+        .cardnumberadd{
+            width:1600px;
+            height: 900px;
+            text-align: center;
+            margin: 0 auto;
+            padding:100px;
+        }
+
+</style>        
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        </div>
+
+
+        <div class="cardnumberadd">
+            <h1>결제수단 등록</h1>
+
+            <div class="cardradio">
+                <label>
+                <input type="radio"></input>    
+                    신용/체크카드
+                
+                </label>
+
+                <label>
+                    <input type="radio"></input>    
+                       계좌
+                    
+                    </label>
+
+                    <label>
+                        <input type="radio"></input>    
+                          휴대폰
+                        
+                        </label>
+                
+
+            </div>
+
+            <div class="cardcheck">
+                <label>
+                    <input type="checkbox"></input>
+                    전자 금융 거래 이용약관 동의 (필수)</label>
+
+                <label>
+
+                    <input type="checkbox"></input>
+                    개인정보 수집 및 이용동의 (필수)    
+
+                </label>
+                
+                <label>
+
+                    <input type="checkbox"></input>
+                    개인정보 제공 및 위탁동의 (필수)      
+
+                </label>
+
+                <label>
+
+                    <input type="checkbox"></input>
+                    개인정보처리방침  (필수)       
+
+                </label>
+                <div id="bt">
+                  <button>확인</button>   
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+  
+
+
+</body>
+</html>
