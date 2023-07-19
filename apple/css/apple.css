@@ -264,15 +264,11 @@
 
 
 
-   .point_1,.point_2,.point_3,.point_4{
+   .point_2,.point_3,.point_4{
     display:none;
     background: black;
     font-size: 15px;
     
-   }
-
-   .point_button:hover .point_1{
-    display:block;
    }
 
    .point_button:hover .point_2{
@@ -288,7 +284,7 @@
    }
 
 
-   .point_1 a, .point_2 a, .point_3 a{
+   .point_2 a, .point_3 a{
     color:white;
     font-size: 15px;
     

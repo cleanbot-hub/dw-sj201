@@ -41,25 +41,34 @@
             height: 50px;
             font-size: 25px;
         }
-        
-        .cardnumberadd{
-            width:1600px;
-            height: 900px;
-            text-align: center;
-            margin: 0 auto;
-            padding:100px;
+        .cardradio{
+            display: flex;
+            justify-content: center;
+            gap:10px;
         }
+        .cardcheck{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap:10px;
+        }
+       
+        h1{
+            text-align: center;
+        }
+      
 
 </style>        
 </head>
 <body>
     <div id="wrap">
         <header id="header"></header>
+
         </div>
 
-
+        <h1>결제수단 등록</h1>
         <div class="cardnumberadd">
-            <h1>결제수단 등록</h1>
+           
 
             <div class="cardradio">
                 <label>
@@ -79,39 +88,20 @@
                           휴대폰
                         
                         </label>
-                
+                </div>
 
             </div>
-
+           
             <div class="cardcheck">
-                <label>
-                    <input type="checkbox"></input>
-                    전자 금융 거래 이용약관 동의 (필수)</label>
-
-                <label>
-
-                    <input type="checkbox"></input>
-                    개인정보 수집 및 이용동의 (필수)    
-
-                </label>
-                
-                <label>
-
-                    <input type="checkbox"></input>
-                    개인정보 제공 및 위탁동의 (필수)      
-
-                </label>
-
-                <label>
-
-                    <input type="checkbox"></input>
-                    개인정보처리방침  (필수)       
-
-                </label>
+                <label><input type="checkbox"></input> 전자 금융 거래 이용약관 동의 (필수)</label>
+                <label><input type="checkbox"></input>개인정보 수집 및 이용동의 (필수)</label>
+                <label> <input type="checkbox"></input>개인정보 제공 및 위탁동의 (필수)</label> 
+                <label><input type="checkbox"></input>개인정보처리방침  (필수)</label>
                 <div id="bt">
                   <button>확인</button>   
                 </div>
             </div>
+           
 
 
         </div>
