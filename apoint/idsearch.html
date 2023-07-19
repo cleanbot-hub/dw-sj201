@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>아이디 찾기</title>
 <style>
-   * {
+  * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 #wrap {
-  width: 1920px;
+  width: 100%; /* Change the width to 100% to make it responsive */
   min-width: 900px;
 }
 
 #header {
-  width: 1920px;
+  width: 100%; /* Change the width to 100% to make it responsive */
   height: 150px;
   background: black;
   display: flex;
+  justify-content: center; /* Center align the logo */
 }
 
 .find h1 {
@@ -29,13 +30,17 @@
 }
 
 .radio1 {
-  width: 50%; /* Set the width to 50% for equal width */
+  width: 600px;
   text-align: center;
+  padding-left: 75px;
+  margin: 0 auto; /* Center align the radio buttons */
 }
 
 .radio2 {
-  width: 50%; /* Set the width to 50% for equal width */
-  margin: 0 auto;
+  width: 600px;
+  text-align: left;
+  margin: 0 auto; /* Center align the radio buttons */
+  margin-right:500px;
 }
 
 #input_p {
@@ -46,6 +51,7 @@
 
 .input_p {
   width: 250px;
+  margin: 0 auto;
 }
 
 .input {
@@ -57,6 +63,7 @@
   width: 200px;
   height: 150px;
 }
+
 </style>
 
 </head>
