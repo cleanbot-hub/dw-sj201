@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포인트 적립현황</title>
+    <title>아이디찾기</title>
     <style>
-  *{
+   *{
     padding:0;
     margin: 0;
     box-sizing: border-box;
@@ -190,25 +190,70 @@ h1{
             <section class="bar-graph bar-graph-horizontal bar-graph-one">
                 <div class="bar-one">
                   <span class="year">CU</span>
-                  <div class="bar" data-percentage="6900P"></div>
+                  <div class="bar" data-percentage="+6900P"></div>
                 </div>
                 <div class="bar-two">
                   <span class="year">메가박스</span>
-                  <div class="bar" data-percentage="7100P"></div>
+                  <div class="bar" data-percentage="+7100P"></div>
                 </div>
                 <div class="bar-three">
                   <span class="year">쿠팡</span>
-                  <div class="bar" data-percentage="7400P"></div>
+                  <div class="bar" data-percentage="+7400P"></div>
                 </div>
                 <div class="bar-four">
                   <span class="year">애플페이</span>
-                  <div class="bar" data-percentage="7600P"></div>
+                  <div class="bar" data-percentage="+7600P"></div>
                 </div>
               </section>
             </div>
+            <style>
+              table tr td{
+                border-bottom: 1px dashed black;
+                width:400px;
+                height:100px;
+              }
+              #list{
+                text-align: center;
+                font-size: 25px;
+              }
+              #list td:nth-child(3){
+                color:red;
+                font-weight: 900;
+              }
+              #list td:nth-child(4){
+                color:#2e515f;
+                font-weight: 900;
+              }
+              #pt_list #list{
+                margin-left: 150px;
+                margin-top: 20px;
+              }
 
-
-
-
+            </style>
+            <div id="pt_list">
+              <h1>포인트 사용내역</h1>
+                <div id="list">
+                  <table>
+                    <tr>
+                      <td>2023.07.19</td>
+                      <td>CU 대전선화점</td>
+                      <td>400p 적립</td>
+                      <td>보유포인트 500p</td>
+                    </tr>
+                    <tr>
+                      <td>2023.07.13</td>
+                      <td>CU 대전선화점</td>
+                      <td>400p 적립</td>
+                      <td>보유포인트 500p</td>
+                    </tr>
+                    <tr>
+                      <td>2023.07.19</td>
+                      <td>CU 대전선화점</td>
+                      <td>400p 적립</td>
+                      <td>보유포인트 500p</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
 </body>
 </html>
