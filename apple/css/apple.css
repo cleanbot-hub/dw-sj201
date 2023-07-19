@@ -220,7 +220,8 @@
     width: 100px;
     height: 100px;
     position: fixed;
-    top: 130px; /* Adjust the desired vertical position */
+    top:200px;
+    bottom: 155px; /* Adjust the desired vertical position */
     right: 20px; /* Adjust the desired horizontal position */
     z-index: 2;
     opacity: 0.7;
