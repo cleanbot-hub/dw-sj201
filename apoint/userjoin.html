@@ -100,7 +100,7 @@
 
         
 
-        <form name="joinf" id="joinf" method="get" action="join_save.html">
+        <form name="joinf" id="joinf" method="get" action="success.html">
             <div id="join_wrap">
                 <div class="join_box">
                     <div class="title">
@@ -131,3 +131,39 @@
 
 </body>
 </html>
+
+
+    <script>
+    function check() {
+        var idInput = document.getElementById('id');
+        var pwInput = document.getElementById('pw');
+        var emailInput = document.getElementById('email');
+        var telInput = document.getElementById('tel');
+        var birthInput = document.getElementById('birth');
+        
+        if (idInput.value === '' || pwInput.value === '' || emailInput.value === '' || telInput.value === '' || birthInput.value === '') {
+            alert('필수 정보를 모두 입력해주세요!');
+        } else {
+            // Perform your join logic here
+            document.getElementById('joinf').submit();
+        }
+
+    }
+        function cancel() {
+        var idInput = document.getElementById('id');
+        var pwInput = document.getElementById('pw');
+        var emailInput = document.getElementById('email');
+        var telInput = document.getElementById('tel');
+        var birthInput = document.getElementById('birth');
+        
+        idInput.value = '';
+        pwInput.value = '';
+        emailInput.value = '';
+        telInput.value = '';
+        birthInput.value = '2000-01-01';
+    }
+
+
+
+   
+</script>
