@@ -101,3 +101,39 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector(".chat-box").style.display = "none";
     });
 });
+
+function closePopup() {
+    var popup = document.querySelector('#popup');
+    popup.style.display = 'none';
+}
+
+function hidePopupForOneDay() {
+    var popup = document.querySelector('#popup');
+    popup.style.display = 'none';
+
+    var now = new Date();
+    var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    document.cookie = "popup=hidden; expires=" + expires.toUTCString() + "; http://127.0.0.1:5500/apoint/index.html";
+}
+
+function checkPopupCookie() {
+    var popup = document.querySelector('#popup');
+    var popupCookie = getCookie("popup");
+
+    if (popupCookie === "hidden") {
+        popup.classList.add("hide");
+    }
+}
+
+function getCookie(name) {
+    var cookies = document.cookie.split("; ");
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].split("=");
+        if (cookie[0] === name) {
+            return cookie[1];
+        }
+    }
+    return "";
+}
+
+checkPopupCookie();
