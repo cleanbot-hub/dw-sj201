@@ -70,73 +70,113 @@
 
 </head>
 <body>
-    <div id="wrap">
-        <header id="header">
-        
-            <div id="logo">
-                <a href="index.html">
-                    <img src="./image/logo.png">
-                </a>
-            </div>
-        </header>
-                    
-            
-       
-
-
-
+  <div id="wrap">
+    <header id="header">
+    
+        <div id="logo">
+            <a href="index.html">
+                <img src="./image/logo.png">
+            </a>
+        </div>
+    </header>
+                
         
     <div class="find">
         <h1>아이디 찾기</h1>
 
-    <div class="radio1">
-    <input class="radio" type="radio">회원정보에 등록한 휴대전화번호로 인증하기</input>    
-    </div>
-    
-    <div class="input">
+        <div class="radio1">
+            <label>
+                <input class="radio" type="radio" name="verificationMethod1">
+                회원정보에 등록한 휴대전화번호로 인증하기
+            </label>
+        </div>
+        
+        <div class="input">
 
-    <div class="input_p">
-        <input type="text" id="input_p" placeholder="이름">
-    </div>
-    
-    <div class="input_p">    
-        <input type="text" id="input_p" placeholder="휴대폰번호">
-        <button id="input_ps">인증번호요청하기</button>
-    </div>
+            <div class="input_p">
+                <input type="text" id="input_p" placeholder="이름">
+            </div>
+            
+            <div class="input_p">    
+                <input type="text" id="input_p" placeholder="휴대폰번호">
+                <button id="input_ps">인증번호요청하기</button>
+            </div>
 
-    <div class="input_p">    
-        <input type="text" id="input_p" placeholder="인증번호 6자리">
-        <button id="input_ps">인증하기</button>
-    </div>
+            <div class="input_p">    
+                <input type="text" id="input_p" placeholder="인증번호 6자리">
+                <button id="input_ps">인증하기</button>
+            </div>
 
+        </div>
 
-    <div class="radio2">
-        <input class="radio" type="radio">본인 이메일로 인증하기</input>
+        <div class="radio2">
+            <label>
+                <input class="radio" type="radio" name="verificationMethod2">
+                본인 이메일로 인증하기
+            </label>
         </div>
         
         <div class="input">
     
-        <div class="input_p">
-            <input type="text" id="input_p" placeholder="이름">
-        </div>
-        
-        <div class="input_p">    
-            <input type="text" id="input_p" placeholder="이메일주소">
-            <button id="input_ps">인증번호요청하기</button>
-        </div>
+            <div class="input_p">
+                <input type="text" id="input_p" placeholder="이름">
+            </div>
+            
+            <div class="input_p">    
+                <input type="text" id="input_p" placeholder="이메일주소">
+                <button id="input_ps">인증번호요청하기</button>
+            </div>
     
-        <div class="input_p">    
-            <input type="text" id="input_p" placeholder="인증번호">
-            <button id="input_ps">인증하기</button>
-        </div>
+            <div class="input_p">    
+                <input type="text" id="input_p" placeholder="인증번호">
+                <button id="input_ps">인증하기</button>
+            </div>
 
+        </div>
     </div>
-    
-
-    </div>
-    
-
 
 
 </body>
 </html>
+
+
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    var radioButtons = document.querySelectorAll('.radio');
+    var submitButtons = document.querySelectorAll('#input_ps');
+
+    for (var i = 0; i < radioButtons.length; i++) {
+      radioButtons[i].addEventListener('click', handleRadioButtonClick);
+    }
+
+    for (var j = 0; j < submitButtons.length; j++) {
+      submitButtons[j].addEventListener('click', handleFormSubmit);
+    }
+  });
+
+  function handleRadioButtonClick(event) {
+    var radioButton = event.target;
+    var inputFields = radioButton.parentNode.parentNode.querySelectorAll('input[type="text"]');
+    var buttons = radioButton.parentNode.parentNode.querySelectorAll('button');
+
+    for (var i = 0; i < inputFields.length; i++) {
+      inputFields[i].value = ''; // Clear input field
+      inputFields[i].disabled = !radioButton.checked; // Enable/disable input field based on radio button state
+    }
+
+    for (var j = 0; j < buttons.length; j++) {
+      buttons[j].disabled = !radioButton.checked; // Enable/disable button based on radio button state
+    }
+  }
+
+  function handleFormSubmit(event) {
+    var button = event.target;
+    var inputField = button.previousElementSibling;
+    var inputValue = inputField.value;
+
+    if (!inputValue) {
+      alert('값을 입력해주세요!'); // Show alert if input field is empty
+    }
+  }
+</script>

@@ -89,8 +89,8 @@
             </div>
             
             <div class="input_p">    
-                <input type="text" id="input_p" placeholder="휴대폰번호">
-                <button id="input_ps">인증번호요청하기</button>
+                <input type="text" id="input_n" placeholder="휴대폰번호">
+                <button id="input_request">인증번호요청하기</button>
                 <button id="input_ps">인증하기</button>
             </div>
     
@@ -100,3 +100,45 @@
     
     </body>
     </html>
+
+    <script>
+     window.addEventListener('DOMContentLoaded', function () {
+            var requestButton = document.getElementById('input_request');
+            requestButton.addEventListener('click', handleRequestButton);
+
+            var verifyButton = document.getElementById('input_ps');
+            verifyButton.addEventListener('click', handleVerifyButton);
+        });
+
+        function handleRequestButton(event) {
+            event.preventDefault();
+            var phoneInput = document.getElementById('input_n');
+            var phoneValue = phoneInput.value;
+
+            if (!phoneValue) {
+                alert('휴대폰 번호를 입력해주세요!');
+            } else {
+                simulateSendingMessage(phoneValue);
+            }
+        }
+
+        function handleVerifyButton(event) {
+            event.preventDefault();
+            var idInput = document.getElementById('input_p');
+            var phoneInput = document.getElementById('input_n');
+
+            var idValue = idInput.value;
+            var phoneValue = phoneInput.value;
+
+            if (!idValue || !phoneValue) {
+                alert('아이디와 휴대폰 번호를 입력해주세요!');
+            } else {
+                alert('아이디: ' + idValue + '\n휴대폰 번호: ' + phoneValue + '\n비밀번호가 휴대폰 번호로 전송되었습니다.');
+            }
+        }
+
+        function simulateSendingMessage(phoneNumber) {
+            // 이 부분은 서버 측의 기능으로 대체되어야 합니다.
+            alert('휴대폰 번호 ' + phoneNumber + '로 인증 메시지를 전송했습니다.');
+        }
+    </script>

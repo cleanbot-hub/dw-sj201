@@ -95,19 +95,13 @@
             </div>
         </header>
            
-                  
             
-            
-        
-
-
-
         <h1>분실신고</h1>
             <div class="missing">
                 <div class="title">
                     <label>이름</label>
                     <label>카드번호</label>
-                    <label>통신사</label>
+                    <label>전화번호</label>
                 </div>
                 <div class="input_box">
                     <input type="text" name="id" id="id">
@@ -117,9 +111,49 @@
         </div>
         <div id="button">
             <button id="cancel">취소</button>
-            <button id="ms_bt">분실신고</button>
+            <button id="ms_bt" onclick="reportMissing()">분실신고</button>
         </div>
     </div>
-    </div>
+    
 </body>
 </html>
+
+<script>
+    function reportMissing() {
+        var name = document.getElementById('id').value;
+        var cardNumber = document.getElementById('cn').value;
+        var telecom = document.getElementById('tel').value;
+
+        // Validate if all fields are filled
+        if (!name || !cardNumber || !telecom) {
+            alert('필수 정보를 모두 입력해주세요.');
+            return;
+        }
+
+        // Show the entered values in an alert
+        var message = '이름: ' + name + '\n' +
+                      '카드번호: ' + cardNumber + '\n' +
+                      '전화번호: ' + telecom;
+        alert(message);
+
+        // Confirm the user's choice before redirecting
+        var result = confirm('분실신고처리를 하시겠습니까?');
+        if (result) {
+            alert('예를 선택했습니다.');
+            alert('분실신고 처리가 완료가 되어 홈페이지로 이동합니다');
+            window.location.href = 'index.html';
+        } else {
+            alert('아니오를 선택했습니다.');
+        }
+
+        // Reset the input fields
+        document.getElementById('id').value = '';
+        document.getElementById('cn').value = '';
+        document.getElementById('tel').value = '';
+    }
+
+    document.getElementById('cancel').addEventListener('click', function() {
+        // Redirect to the main page when the "취소" button is clicked
+        window.location.href = 'index.html';
+    });
+</script>

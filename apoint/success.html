@@ -10,6 +10,8 @@
             margin:0; 
             box-sizing: border-box;
             background: url("./image/1.png");
+            background-repeat: no-repeat;
+            background-image: 100%;
         }
         #wrap{
             width:1980px;
@@ -20,36 +22,55 @@
             height: 150px;
             background: black;
             display: flex;
+            position: relative; /* Add position: relative*/
+        } 
+       
         
-        }
         .find{
             width:1920px;
             margin-top:300px;
             text-align: center;
             color:white;
+            background: none;
+            
+        }
+        .find h1{
+            background: none;
         }
         #button{
             display:flex;
             width: 100%;
             justify-content: center;
-            
+            text-align: center;
+            background: none;
         }
+       
         .bt{
-            width: 188px;
+            width: 233px;
             height: 86px;
             margin-right: 45px;
             font-size: 20px;
             color: #fff;
             opacity: 0.9;
-        }
-        .bt:nth-child(1){
             background: #082A83;
+            
+        }
+        .bt:nth-child(2){
+            background: white;
+            color:black;
+            background: none;
         }
 
         #logo img{
-    width: 200px;
-    height: 150px;
-}
+            width: 200px;
+            height: 150px;
+            background: black;
+            position: absolute; /* Add position: absolute*/
+            top: 0; /* Position the logo at the top */
+            left: 0; /* Position the logo at the left */
+            z-index: 1; /*Add a higher z-index to the logo to keep it above the background image */ 
+        }
+     
     </style>
 </head>
 <body>
@@ -61,16 +82,28 @@
                     <img src="./image/logo.png">
                 </a>
             </div>
+        </header>
 
-        <div class="find">
-            <h1>TEST 님!</h1>
-            <h1>회원가입이 완료되었습니다.</h1>
+            <div class="find">
+                <h1 id="completion_message">님, 회원가입이 완료되었습니다.</h1>
+           
+                <div id="button">
+                    <a href="login.html"><button  class="bt">로그인하러가기</button></a>
+                    <a href="index.html"><button class="bt">메인화면으로</button></a>
+                </div>
+            </div>
        
-        <div id="button">
-            <button class="bt">로그인하러가기</button>
-            <button class="bt">메인화면으로</button>
-        </div>
     </div>
-  </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var id = urlParams.get('id');
+            
+            var completionMessage = document.getElementById('completion_message');
+            completionMessage.textContent = id + completionMessage.textContent;
+        });
+    </script>
 </body>
 </html>
