@@ -115,3 +115,18 @@
 </div>
 </body>
 </html>
+
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var loginButton = document.getElementById('login_bt');
+        loginButton.addEventListener('click', function() {
+            var idInput = document.getElementById('id');
+            var pwInput = document.getElementById('pw');
+            
+            if (idInput.value === '') {
+                alert('아이디를 입력해주세요!');
+            }else if( pwInput.value === '')
+                alert('비밀번호를 입력하세요');
+        });
+    });
+</script>
