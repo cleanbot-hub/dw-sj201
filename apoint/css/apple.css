@@ -593,6 +593,13 @@
     font-size:30px;
 }
 
+.popup p img{
+    width:500px;
+    height:230px ;
+}
+
+
+
 .popup_1{
     width: 700px;
     height: 800px;

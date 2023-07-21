@@ -102,83 +102,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-function closePopup() {
-    var popup = document.querySelector('#popup');
-    popup.style.display = 'none';
-}
-
 function hidePopupForOneDay() {
-    var popup = document.querySelector('#popup');
-    popup.style.display = 'none';
-
-    var now = new Date();
-    var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    document.cookie = "popup=hidden; expires=" + expires.toUTCString() + "; http://127.0.0.1:5500/apoint/index.html";
-}
-
-function checkPopupCookie() {
-    var popup = document.querySelector('#popup');
-    var popupCookie = getCookie("popup");
-
-    if (popupCookie === "hidden") {
-        popup.classList.add("hide");
-    }
-}
-
-function getCookie(name) {
-    var cookies = document.cookie.split("; ");
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].split("=");
-        if (cookie[0] === name) {
-            return cookie[1];
-        }
-    }
-    return "";
-}
-
-checkPopupCookie();
-
-
-
-
-
-
-
-function closePopup_1() {
-    var popup = document.querySelector('#popup_1');
-    popup.style.display = 'none';
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
 }
 
 function hidePopupday() {
-    var popup = document.querySelector('#popup_1');
-    popup.style.display = 'none';
-
-    var now = new Date();
-    var expires = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    document.cookie = "popup=hidden; expires=" + expires.toUTCString() + "; http://127.0.0.1:5500/apoint/index.html";
+    var popup_1 = document.getElementById("popup_1");
+    popup_1.style.display = "none";
 }
 
-function checkPopupCookie() {
-    var popup = document.querySelector('#popup');
-    var popupCookie = getCookie("popup");
-
-    if (popupCookie === "hidden") {
-        popup.classList.add("hide");
-    }
+function closePopup() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
 }
 
-function getCookie(name) {
-    var cookies = document.cookie.split("; ");
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i].split("=");
-        if (cookie[0] === name) {
-            return cookie[1];
-        }
-    }
-    return "";
+function closePopup_1() {
+    var popup_1 = document.getElementById("popup_1");
+    popup_1.style.display = "none";
 }
-
-checkPopupCookie();
-
 
 
