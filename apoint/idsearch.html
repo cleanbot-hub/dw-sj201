@@ -72,14 +72,14 @@
   
       <div class="find">
           <h1>아이디 찾기</h1>
-  
+        
           <div class="radio1">
             <label>
               <input class="radio" type="radio" name="verificationMethod" value="phone">
               회원정보에 등록한 휴대전화번호로 인증하기
             </label>
           </div>
-          
+          <!--이름,휴대폰번호,인증번호6자리 입력 부분-->
           <div class="input">
               <div class="input_p">
                   <input type="text" id="nameInput" placeholder="이름">
@@ -102,7 +102,7 @@
               본인 이메일로 인증하기
             </label>
           </div>
-  
+  <!--인증번호부분-->
           <div class="input">
               <div class="input_p">
                   <input type="text" id="nameInput" placeholder="이름">
@@ -146,12 +146,12 @@
         var buttons = radioButton.parentNode.parentNode.querySelectorAll('button');
     
         for (var i = 0; i < inputFields.length; i++) {
-          inputFields[i].value = ''; // Clear input field
-          inputFields[i].disabled = !radioButton.checked; // Enable/disable input field based on radio button state
+          inputFields[i].value = ''; // 초기화
+          inputFields[i].disabled = !radioButton.checked; // 라디오 버튼 비교해서 입력인지 아닌지
         }
     
         for (var j = 0; j < buttons.length; j++) {
-          buttons[j].disabled = !radioButton.checked; // Enable/disable button based on radio button state
+          buttons[j].disabled = !radioButton.checked; // 라디오 버튼 비교해서 입력인지 아닌지
         }
       }
     
@@ -161,9 +161,9 @@
         var inputValue = inputField.value;
     
         if (!inputValue) {
-          alert('값을 입력해주세요!'); // Show alert if input field is empty
+          alert('값을 입력해주세요!'); // 값이 비어있으면 알림표시
         } else {
-          alert('인증번호 요청을 처리합니다: ' + inputValue); // Display value in alert for testing
+          alert('인증번호 요청을 처리합니다: ' + inputValue); 
         }
       }
     
@@ -173,9 +173,9 @@
         var inputValue = inputField.value;
     
         if (!inputValue) {
-          alert('값을 입력해주세요!'); // Show alert if input field is empty
+          alert('값을 입력해주세요!'); // 값이 비어있으면 알림표시
         } else {
-          alert('인증을 처리합니다: ' + inputValue); // Display value in alert for testing
+          alert('인증을 처리합니다: ' + inputValue);
         }
       }
     </script>

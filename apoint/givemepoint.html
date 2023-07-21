@@ -9,11 +9,13 @@
     <style>
 :root {
   --tileSize: 90px;
+  /*tile" 클래스가 있는 모든 요소는 "--tileSize" 변수에 지정된 대로 너비와 높이가 90픽셀입니다.
+  일관성을 유지하고 루트 수준에서 변수 값을 간단히 수정하여 한 번에 여러 요소를 더 쉽게 업데이트하려는 경우에 특히 유용할 수 있습니다*/
 }
 html, body {
   margin: 0;
   font-family: sans-serif;
-  cursor: default;
+  cursor: default;/*마우스 커서 : 기본값 (화살표)*/
 }
 #app {
   width: 100vw;
@@ -42,10 +44,11 @@ html, body {
     inset 0 5px 10px -2px gray(0,.2),
     inset 0 -25px 30px -5px gray(0,.1),
     inset 0 -5px 10px -2px gray(0,.2);
+    /*inset 박스 안쪽에 그림자를 표현 , 그림자속성 수평,수직,흐림,확산반경*/
 }
 .SlotMachine-payline {
   position: absolute;
-  top: calc(var(--tileSize) * 1 * 1.1666);
+  top: calc(var(--tileSize) * 1 * 1.1666); /*90*1*1.1666=104.994px 사용*/
   height: 1px;
   width: 100%;
   background: gray(0, 0.3);

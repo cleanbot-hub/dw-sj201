@@ -6,70 +6,77 @@
     <title>오프라인 가맹점</title>
     <style>
 
-        *{
-            padding:0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        
-        
-        #wrap{
-            width:1920px;
-            min-width:900px;
-            
-        }
-        
-        #header{
-            width: 1920px;
-            height: 150px;
-            background: black;
-            display: flex;
-           
-        }
-        
-        
-        
-        #offline_store{
-            width:1600px;
-            height: 2000px;
-            margin:0 auto;
-            padding:150px;
-        }
-        
-        .location{
-          width:800px;
-          margin: 0 auto;
-          
-        }
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    /* 모든 요소의 패딩, 마진, 상자 크기 설정 */
+}
 
-        .location img{
-            width:800px;
-        }
-       
-        h1{
-            width:800px;
-            text-align: center;
-            padding:30px;
-            word-spacing:1em;
-        }
-        h2{
-            width: 700px;
-            text-align: center;
-            padding: 20px;
-        }
-        #logo img{
+#wrap{
+    width: 1920px;
+    min-width: 900px;
+    /* 화면 너비 1920px, 최소 너비 900px로 설정 */
+}
+
+#header{
+    width: 1920px;
+    height: 150px;
+    background: black;
+    display: flex;
+    /* 헤더 스타일링 */
+}
+
+#offline_store{
+    width: 1600px;
+    height: 2000px;
+    margin: 0 auto;
+    padding: 150px;
+    /* 오프라인 상점 스타일링 */
+}
+
+.location{
+    width: 800px;
+    margin: 0 auto;
+    /* 위치 스타일링 */
+}
+
+.location img{
+    width: 800px;
+    /* 위치 이미지 스타일링 */
+}
+
+h1{
+    width: 800px;
+    text-align: center;
+    padding: 30px;
+    word-spacing: 1em;
+    /* 제목 스타일링 */
+}
+
+h2{
+    width: 700px;
+    text-align: center;
+    padding: 20px;
+    /* 부제목 스타일링 */
+}
+
+#logo img{
     width: 200px;
     height: 150px;
+    /* 로고 이미지 스타일링 */
 }
+
        
         </style>
 </head>
 
 <body>
 
+    <!-- 헤더 전체적인 wrap-->
     <div id="wrap">
         <header id="header">
-        
+            
             <div id="logo">
                 <a href="index.html">
                     <img src="./image/logo.png">
@@ -77,42 +84,43 @@
             </div>
         </header>
         
+        <!-- offline_store 영역-->
         <div id="offline_store">
-           
-
+            
+            
             <div class="location">
                 
-           
+                
                 <h1>
                     오프라인 가맹점
                 </h1> 
-            
-            <img src="./image/location1.png">
-            
-            
+                
+                <img src="./image/location1.png">
+                
+                
                 <h2>1. CU선화점 700m</h2>
                 <h2>2. 세븐일레븐 대전선화행복점 1km</h2>
                 <h2>3. 메가커피앤마카롱 1.5km</h2>
-
-
+                
+                
             </div>
             
-           
             
-                 
-            </div>
-
+            
             
         </div>
-
-
-
+        
         
     </div>
-
-
-
-
     
+    
+    
+    
+</div>
+
+
+
+
+
 </body>
 </html>
