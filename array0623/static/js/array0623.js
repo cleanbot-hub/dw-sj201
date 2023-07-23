@@ -76,10 +76,10 @@ let content=null;
   
 
 function make_num(){ //번호생성부분,랜덤숫자이용해서번호등장
-    if(lotto.length==0){
-        alert("로또 파일을 먼저 열어주세요"); //파일 선택 안하고, 출현횟수 클릭 시 알림창
-        return;
-    }
+    // if(lotto.length==0){
+    //     alert("로또 파일을 먼저 열어주세요"); //파일 선택 안하고, 출현횟수 클릭 시 알림창
+    //     return;
+    // }
 
     var out="<table class='makeTable'>";
 
