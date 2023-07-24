@@ -77,6 +77,13 @@
         width: 200px;
         height: 150px;
         }
+        .cardplus{
+            width:800px;
+            height: 313px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+     
     </style>
 </head>
 <body>
@@ -97,6 +104,7 @@
                     <label>전화번호</label>
                     <label>주소</label>
                     <label>우편번호</label>
+                    <label>카드유형</label>
                 </div>
                 <!--이름~우편번호 입력칸-->
                 <div class="input_box">
@@ -106,6 +114,7 @@
                     <input type="text" name="tel" id="tel">
                     <input type="text" name="add" id="add">
                     <input type="text" name="post" id="post">
+                    <input type="text" name="cardplus" id="cardplus" placeholder="카드형:색깔,토큰형">
                 </div>
         </div>
         <!--확인 취소 버튼-->
@@ -114,6 +123,9 @@
             <a href="card.html"><button id="cancel">취소</button></a>
         </div>
     </div>
+    <div class="cardplus">
+        <img src="./image/cardplus.png">
+        </div>
 </body>
 </html>
 
