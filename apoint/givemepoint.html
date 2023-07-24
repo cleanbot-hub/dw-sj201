@@ -514,35 +514,16 @@ html, body {
               <div class="SlotMachine-button is-spin" v-on:click="spin()">Spin</div>
               <div class="SlotMachine-button is-win" :class="{ 'has-win': win > 0 }" v-on:click="takeWin()">Take Win</div>
             </div>
-            <div class="Legend">
-              <div class="Legend-item">
-                <div class="Legend-itemTitle">Bar</div>
-                <img class="Legend-itemImage" src="https://cdn4.iconfinder.com/data/icons/casino-games/512/bar-512.png" />
-              </div>
-              <div class="Legend-item">
-                <div class="Legend-itemTitle">Melon</div>
-                <img class="Legend-itemImage" src="https://cdn4.iconfinder.com/data/icons/slot-machines/512/Watermelon-512.png" />
-              </div>
-              <div class="Legend-item">
-                <div class="Legend-itemTitle">Grapes</div>
-                <img class="Legend-itemImage" src="https://cdn4.iconfinder.com/data/icons/slot-machines/512/Grapes-512.png" />
-              </div>
-              <div class="Legend-item">
-                <div class="Legend-itemTitle">Cherry</div>
-                <img class="Legend-itemImage" src="https://cdn4.iconfinder.com/data/icons/slot-machines/512/Cherry-512.png" />
-              </div>
-              <div class="Legend-item">
-                <div class="Legend-itemTitle">Lemon</div>
-                <img class="Legend-itemImage" src="https://cdn4.iconfinder.com/data/icons/slot-machines/512/Lemon-512.png" />
-              </div>
-              <div class="Legend-tip">3 in a row</div>
-              <div class="Legend-credit">T=0.50</div>
+            
+              
             </div>
           </div>`
         })
+        
         new Vue({
           el: '#app'
         })
     </script>
+
 </body>
 </html>
