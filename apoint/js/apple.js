@@ -90,6 +90,9 @@ document.addEventListener("DOMContentLoaded", function() {
             generate_message(name, 'self');
         }
     });
+
+
+    
     
     document.getElementById("chat-circle").addEventListener("click", function() {    
         document.getElementById("chat-circle").style.display = "none";
