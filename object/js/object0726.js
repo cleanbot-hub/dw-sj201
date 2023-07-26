@@ -48,6 +48,6 @@ window.onload=function(){
 document.write( pen.name );
 document.write( pen.color.split(",") );
 
-}
+};
 
 
