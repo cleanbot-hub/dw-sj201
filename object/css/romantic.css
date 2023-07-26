@@ -64,6 +64,28 @@ label{display: inline-block;}
    transform:rotate(-45deg);
     
 }
+
+.bt a:after{
+    content: "";
+    background:pink;
+    border-radius: 50%;
+    width:50px;
+    height: 50px;
+    position: absolute;
+    top:0;
+    left:25px;
+}
+
+.bt a::before{
+    content: "";
+    background:pink;
+    border-radius: 50%;
+    width:50px; height: 50px;
+    position: absolute;
+    top:-25px;
+    left:0;
+}
+
 #output_wrap{
     width:100%;
     margin:50px;
