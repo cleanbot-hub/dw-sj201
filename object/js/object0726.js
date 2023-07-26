@@ -55,13 +55,6 @@ document.write( pen.color.split(",") );
 
 
 
-var func = function()
-{ 
-    alert("ㅁㅇㄴㅇㄴㅁㅇㅁ");
-}
-
-
-func();
 
 // 객체 생성 2번째 방법 
 
@@ -76,16 +69,6 @@ function person(name, age, addr) {
 // 함수 -> 메서드 
 // 함수 - 독립적으로 실행되는 코드의 집합체 
 // 메서드 - 객체에 귀속되어 객체에 의해 실행 되는 코드의 집합체 
-
-
-
-
-
-
-
-
-
-
 
 const p = new Array();
 p.push(new person("빵빵이", 27, "동구"));
