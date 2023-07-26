@@ -62,13 +62,36 @@ function person(name, age, addr) {
     this.name = name;
     this.age = age;
     this.addr = addr;
-    this.output=function(){
-            document.write("ㅇㅇ");
-    }
+
+}
+
+person.prototype.group="201호";
+
+
+
+person.prototype.output=function(){
+    document.write("<br>"+this.name+"너는 할 수 있다.");
+}
+
+
+var div = document.getElementById("box");
+
+div.prototype.out=function(){
+    
 }
 // 함수 -> 메서드 
 // 함수 - 독립적으로 실행되는 코드의 집합체 
 // 메서드 - 객체에 귀속되어 객체에 의해 실행 되는 코드의 집합체 
+// 객체에 메서드를 정의 하면 모든 객체에 메서드가 생성된다 .
+// 객체가 100개라면 메서드도 100개 된다.
+// 문제점 . 모든 객체의 속성의 값은 다르지만 메서드의 내용은 동일하다 .
+// 동일한 내용의 메서드를 다수 생성하여 사용하는 방법은 비효율적이다.
+// 컴퓨터의 메모리 공간만 쓸데 없이 차지한다.
+// 해결책 . 메서드를 하나만 생성이 되도록 만든다 . 
+// 객체를 1000개 생성해도 메서드는 1개만 존재하게 만든다 .
+
+
+
 
 const p = new Array();
 p.push(new person("빵빵이", 27, "동구"));
