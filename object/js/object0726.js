@@ -38,7 +38,15 @@ let 빵빵 = new Object(); // 객체 생성
 //객체는 object 또는 객체라고 부른다. 
 // 속성은 attribute 라고 한다 (영어로 ), 값은 value 
 
+let pen= new Object();
+pen.name="삼색볼펜";
+pen.color="red,blue,black";
+pen.made="korea";
+pen.company="빵빵";
 
-
+window.onload=function(){
+document.write(pen.name);
+document.write(pen.color.split(","));
+}
 
 
