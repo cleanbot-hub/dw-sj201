@@ -44,10 +44,68 @@ pen.color="red,blue,black";
 pen.made="korea";
 pen.company="빵빵";
 
-window.onload=function(){
+
+
+
+window.onload= function(){
 document.write( pen.name );
 document.write( pen.color.split(",") );
 
 };
+
+
+
+var func = function()
+{ 
+    alert("ㅁㅇㄴㅇㄴㅁㅇㅁ");
+}
+
+
+func();
+
+// 객체 생성 2번째 방법 
+
+function person(name, age, addr) {
+    this.name = name;
+    this.age = age;
+    this.addr = addr;
+    this.output=function(){
+            document.write("ㅇㅇ");
+    }
+}
+// 함수 -> 메서드 
+// 함수 - 독립적으로 실행되는 코드의 집합체 
+// 메서드 - 객체에 귀속되어 객체에 의해 실행 되는 코드의 집합체 
+
+
+
+
+
+
+
+
+
+
+
+const p = new Array();
+p.push(new person("빵빵이", 27, "동구"));
+p.push(new person("김빵빵", 23, "서구"));
+p.push(new person("이빵빵", 31, "서구"));
+
+window.onload=function(){
+    document.write(p[0].name);
+    document.write(p[1].name);
+    p[0].output();
+};
+
+
+// 객체 생성 3번째 방법 
+
+const baby = {
+    firstname:"신",
+    lastname:"향선",
+    age : 2
+}
+
 
 
