@@ -45,8 +45,9 @@ pen.made="korea";
 pen.company="빵빵";
 
 window.onload=function(){
-document.write(pen.name);
-document.write(pen.color.split(","));
+document.write( pen.name );
+document.write( pen.color.split(",") );
+
 }
 
 
