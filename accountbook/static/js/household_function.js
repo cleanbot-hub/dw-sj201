@@ -72,6 +72,23 @@ window.onload=function(){
         });
 
 
+
+        var income_method = document.getElementsByName("income_method");
+        income_method[0].addEventListener("click",function(){
+            document.querySelector("#mybank").classList.add("hide");
+        });
+        income_method[1].addEventListener("click",function(){
+            document.querySelector("#mybank").classList.remove("hide");
+            
+
+        });
+
+
+
+
+
+
+
         var income_bt = document.querySelector("#income_bt");
         income_bt.addEventListener("clcik",function(){
             var ex = document.getElementsByClassName("expense")[0];
