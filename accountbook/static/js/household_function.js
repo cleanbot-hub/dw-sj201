@@ -25,7 +25,7 @@ window.onload=function(){
     var wDate = document.querySelector("#wdate");
     wDate.value=year+"-"+month+"-"+date+" "+hour+":"+minute;
 
-    var cate = document.querySelector("#wcategory");
+    var cate = document.querySelector("#category");
 
     for(var i=0; i<category.length; i++){
         var opt = document.createElement("option");
@@ -75,6 +75,7 @@ window.onload=function(){
         var inc = document.getElementsByClassName("income")[0];
         ex.classList.add("hide");
         inc.classList.remove("hide");
+        isIncome=true;// 수입 클릭 했으니까
     })
 
     //지출버튼 클릭시
@@ -84,6 +85,7 @@ window.onload=function(){
         var inc = document.getElementsByClassName("income")[0];
         ex.classList.remove("hide");
         inc.classList.add("hide");
+        isIncome=false; // 지출 클릭 했으니까
     })
 
 
@@ -99,9 +101,8 @@ window.onload=function(){
             var wday = document.querySelector("#wdate").value;
             wday=wday.split("T")[0]+" "+wday.split("T")[1];
             var money = document.querySelector("#wmoney").value;
-            var cate= document.querySelector("#categiry");
+            var cate= document.querySelector("#category");
             cate = cate.options[cate.selectedIndex].value;
             var detail = document.querySelector("#wdetail").value;
         }
 
-        
