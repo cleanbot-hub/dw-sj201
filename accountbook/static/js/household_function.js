@@ -120,6 +120,7 @@ window.onload=function(){
         account_update(parseInt(money)); // 통장 잔액 변동 
         
         
+        
         }
 
         function account_update(money){ 
@@ -127,7 +128,10 @@ window.onload=function(){
                 var use_bank = way.split("-")[1];
                 for(var i=0; i<bank.length; i++){
                     if(bank[i].bank=== use_bank){ // 사용 한 은행 찾기
-                        bank[i].bank 
+                        if(isIncome)
+                            bank[i].money += money;
+                        else 
+                            bank[i].money -= money;
                     }
                 }
 
