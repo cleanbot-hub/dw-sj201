@@ -102,8 +102,11 @@ window.onload=function(){
 
 
 
-
-
-
-
+        // 등록 버튼 클릭 시 
+        document.querySelector("#write_bt").addEventListener("click",add);
     }
+
+
+        function add(){
+            
+        }
