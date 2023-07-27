@@ -111,3 +111,9 @@ select{
    font-size:40px;
    font-weight: 700;
 }
+
+
+
+.hide{
+    display: none;
+}
