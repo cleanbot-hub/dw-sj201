@@ -22,7 +22,10 @@ function house(date, money, category, detail, way,getcome){
 house.prototype.won=function(){ // 돈을 천단위로 콤마를 찍어주고 앞에  ₩ 표시
     return "₩ "+this.money.toLocaleString();
 }
+
 house.prototype.getMay=function(){ // 수입이든 지출이든 현금은 그냥 현금이고 계좌와 카드는 어디인지 
     this.way.split("-").length >1 ? this.way.split("-")[1] :this.way;
 }
+
+
 

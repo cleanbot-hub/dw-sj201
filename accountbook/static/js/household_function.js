@@ -1,5 +1,6 @@
 // household_function.js
 
+// 여기는 
 
 function two_digit(num){
     return num<10 ? "0"+num : num ;
@@ -89,5 +90,11 @@ window.onload=function(){
 
 
         function add(){
+            var wday = document.querySelector("#wdate").value;
+            wday=wday.split("T")[0]+" "+wday.split("T")[1];
+            var money = document.querySelector("#wmoney").value;
+            var cate= document.querySelector("#categiry");
+            cate = cate.options[cate.selectedIndex].value;
+            var detail = document.querySelector("#wdetail").value;
 
         }
