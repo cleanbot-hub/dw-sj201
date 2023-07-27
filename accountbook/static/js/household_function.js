@@ -4,7 +4,7 @@
 let isIncome=false; // 수입 이냐 지출 이냐 false 면 지출 , true면 수입 
 let way=""; // 현금 이냐 계좌냐 카드냐 
 
-
+let keep= new Array();
 
 // 전역변수 정의 한 곳 끝 
 
@@ -117,9 +117,9 @@ window.onload=function(){
                     way += "-"+mycard.options[mycard.selectedIndex].value;
                 }
             }
-        account_update(parseInt(money)); // 통장 잔액 변동 
-        
-        
+        var balance = account_update(parseInt(money)); // 통장 잔액 변동 
+        keep.push( new house(wday,money,cate,detail,way,isIncome?"수입":"지출",balance ) );
+            console.log(keep);
         
         }
 
@@ -129,9 +129,9 @@ window.onload=function(){
                 for(var i=0; i<bank.length; i++){
                     if(bank[i].bank=== use_bank){ // 사용 한 은행 찾기
                         if(isIncome)
-                            bank[i].money += money;
+                          return  bank[i].money += money;
                         else 
-                            bank[i].money -= money;
+                        return bank[i].money -= money;
                     }
                 }
 
