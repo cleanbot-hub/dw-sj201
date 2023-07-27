@@ -43,5 +43,21 @@ window.onload=function(){
         opt.innerText=category[i];
         cate.appendChild(opt);
     }
-   
+ 
+    var mycard=document.querySelector("#mycard");
+    for(var i in card){
+        var opt = document.createAttribute("option");
+        opt.setAttribute("value",card[i].bank);
+        opt.innerText=card[i].name;
+        mycard.appendChild(opt);
+    }
+
+    var mybank=document.querySelector("#mybank");
+    for(var i in bank){
+        var opt = document.createAttribute("option");
+        opt.setAttribute("value",bank[i].bank);
+        opt.innerText=bank[i].name;
+        mybank.appendChild(opt);
+    }
+
 }
