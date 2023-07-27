@@ -119,6 +119,7 @@ window.onload=function(){
             }
         var balance = account_update(parseInt(money)); // 통장 잔액 변동 
         keep.push( new house(wday,money,cate,detail,way,isIncome?"수입":"지출",balance ) );
+            
             console.log(keep);
         
         }
