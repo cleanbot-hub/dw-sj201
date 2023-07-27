@@ -102,5 +102,4 @@ window.onload=function(){
             var cate= document.querySelector("#categiry");
             cate = cate.options[cate.selectedIndex].value;
             var detail = document.querySelector("#wdetail").value;
-
         }
