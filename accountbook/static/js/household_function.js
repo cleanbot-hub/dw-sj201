@@ -129,14 +129,15 @@ window.onload=function(){
                 var index = keep.length-1;
                 console.log(keep[index]);
                 var tr = document.createElement("tr");
-                var td ="<td>"+keep[index].date+"</td><td>"+(keep[index].getcome=='수입'?keep[index].won():'')+
-                "</td><td>"+(keep[index].getcome=='지출'?keep[index].won():'')+"</td><td>"+keep[index].detail+
+                var td ="<td>"+keep[index].date+"</td><td>"+(keep[index].getcome=='수입'?keep[index].won():'')+"</td>"+
+                "<td>"+(keep[index].getcome=='지출'?keep[index].won():'')+"</td><td>"+keep[index].detail+
                 "</td><td>"+keep[index].category+"</td><td>"+keep[index].getWay()+"</td>";
-
+            
                 tr.innerHTML=td;
                 tbody.appendChild(tr);
+            }
         
-        }
+        
 
         function account_update(money){ 
                 if(way==="현금") return;
