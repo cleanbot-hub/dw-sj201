@@ -71,9 +71,25 @@ window.onload=function(){
 
         });
 
-        
+
+        var income_bt = document.querySelector("#income_bt");
+        income_bt.addEventListener("clcik",function(){
+            var ex = document.getElementsByClassName("expense")[0];
+            var inc = document.getElementsByClassName("income")[0];
+            ex.classList.add("hide");
+            inc.classList.remove("hide");
+        });
 
 
 
 
-    }
+        var expense_bt = document.querySelector("#expense_bt");
+        expense_bt.addEventListener("clcik",function(){
+            var ex = document.getElementsByClassName("expense")[0];
+            var inc = document.getElementsByClassName("income")[0];
+            ex.classList.remove("hide");
+            inc.classList.add("hide");
+
+    });
+
+}
