@@ -117,5 +117,9 @@ window.onload=function(){
                     way += "-"+mycard.options[mycard.selectedIndex].value;
                 }
             }
+            account_update(parseInt(money)); // 통장 잔액 변동 
         }
 
+        function account_update(money){ 
+
+        }
