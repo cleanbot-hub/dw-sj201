@@ -53,8 +53,8 @@ window.onload=function(){
     // 결제방법중에서 카드선택이냐 현금 선택이냐
     var payment = document.getElementsByName("payment");
     payment[0].addEventListener("click",function(){
-        way="현금";
         document.querySelector("#mycard").classList.add("hide");
+        way="현금";
     });
     payment[1].addEventListener("click",function(){
         document.querySelector("#mycard").classList.remove("hide");
@@ -102,11 +102,20 @@ window.onload=function(){
 
 
         function add(){
-            var wday = document.querySelector("#wdate").value;
+            var wday = document.querySelector("#wdate").value; // 선택한 날짜
             wday=wday.split("T")[0]+" "+wday.split("T")[1];
-            var money = document.querySelector("#wmoney").value;
+            var money = document.querySelector("#wmoney").value; // 입력한 금액
             var cate= document.querySelector("#category");
-            cate = cate.options[cate.selectedIndex].value;
-            var detail = document.querySelector("#wdetail").value;
+            cate = cate.options[cate.selectedIndex].value; // 선택한 분류 
+            var detail = document.querySelector("#wdetail").value; // 입력한 내용 
+            if(way!="현금"){ //계좌나 카드를 선택 했다면 
+                if(isIncome){ // 수입을 선택 했다면 
+                    var mybank = document.querySelector("#mybank");
+                    way += "-"+mybank.options[mybank.selectedIndex].value;
+                }else{
+                    var mycard = document.querySelector("#mycard");
+                    way += "-"+mycard.options[mycard.selectedIndex].value;
+                }
+            }
         }
 
