@@ -44,20 +44,36 @@ window.onload=function(){
         cate.appendChild(opt);
     }
  
-    var mycard=document.querySelector("#mycard");
-    for(var i in card){
-        var opt = document.createAttribute("option");
-        opt.setAttribute("value",card[i].bank);
-        opt.innerText=card[i].name;
+            var mycard = document.querySelector("#mycard");
+        for (var i in card) {
+        var opt = document.createElement("option");
+        opt.setAttribute("value", card[i].bank);
+        opt.innerText = card[i].name;
         mycard.appendChild(opt);
-    }
-
-    var mybank=document.querySelector("#mybank");
-    for(var i in bank){
-        var opt = document.createAttribute("option");
-        opt.setAttribute("value",bank[i].bank);
-        opt.innerText=bank[i].name;
-        mybank.appendChild(opt);
-    }
-
 }
+
+        var mybank = document.querySelector("#mybank");
+        for (var i in bank) {
+        var opt = document.createElement("option");
+        opt.setAttribute("value", bank[i].bank);
+        opt.innerText = bank[i].name;
+        mybank.appendChild(opt);
+}
+
+
+        var payment = document.getElementsByName("payment");
+        payment[0].addEventListener("click",function(){
+            document.querySelector("#mycard").classList.add("hide");
+        });
+        payment[1].addEventListener("click",function(){
+            document.querySelector("#mycard").classList.remove("hide");
+            
+
+        });
+
+        
+
+
+
+
+    }
