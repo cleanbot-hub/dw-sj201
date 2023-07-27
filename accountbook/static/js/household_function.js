@@ -4,9 +4,13 @@ const category=["편의점","카페","음식점","문화생활","여행","교통
 "온라인쇼핑","경조사","기부","교육","의료","유흥","미용","통신비","급여","기타수입","로또","월세"];
 
 
-const card={};
+const card=[{name:"IBK기업은행체크카드",bank:"ibk"},
+{name:"신한체크카드",bank:"sh"},
+{name:"카카오체크카드",bank:"kakao"}];
 
-const bank={};
+const bank=[{name:"IBK기업은행",bank:'ibk',money:100000},
+{name:"신한은행",bank:'sh',money:1000000},
+{name:"카카오뱅크",bank:'kakao',money:6000000}];
 
 function two_digit(num){
     return num<10 ? "0"+num : num ;
