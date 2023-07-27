@@ -15,7 +15,7 @@ window.onload=function(){
     var hour = two_digit(today.getHours());
     var minute = two_digit(today.getMinutes());
 
-    var wDate = document.querySelector("#wDate");
+    var wDate = document.querySelector("#wdate");
     wDate.value=year+"-"+month+"-"+date+" "+hour+":"+minute;
 
     var cate = document.querySelector("#wcategory");
