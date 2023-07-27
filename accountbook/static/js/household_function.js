@@ -123,5 +123,12 @@ window.onload=function(){
         }
 
         function account_update(money){ 
+                if(way==="현금") return;
+                var use_bank = way.split("-")[1];
+                for(var i=0; i<bank.length; i++){
+                    if(bank[i].bank=== use_bank){ // 사용 한 은행 찾기
+                        bank[i].bank 
+                    }
+                }
 
         }
