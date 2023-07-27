@@ -127,6 +127,7 @@ window.onload=function(){
                 tbody=document.getElementById("right_t");
 
                 var index = keep.length-1;
+                console.log(keep[index]);
                 var tr = document.createElement("tr");
                 var td ="<td>"+keep[index].date+"</td><td>"+(keep[index].getcome=='수입'?keep[index].won():'')+
                 "</td><td>"+(keep[index].getcome=='지출'?keep[index].won():'')+"</td><td>"+keep[index].detail+
