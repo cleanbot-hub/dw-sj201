@@ -53,19 +53,23 @@ window.onload=function(){
     // 결제방법중에서 카드선택이냐 현금 선택이냐
     var payment = document.getElementsByName("payment");
     payment[0].addEventListener("click",function(){
+        way="현금";
         document.querySelector("#mycard").classList.add("hide");
     });
     payment[1].addEventListener("click",function(){
         document.querySelector("#mycard").classList.remove("hide");
+        way="카드";
     });
 
     // 수입중에서 은행입금이냐 현금받았냐
     var income_method = document.getElementsByName("income_method");
     income_method[0].addEventListener("click",function(){
         document.querySelector("#mybank").classList.remove("hide");
+        way="계좌";
     });
     income_method[1].addEventListener("click",function(){
         document.querySelector("#mybank").classList.add("hide");
+        way="현금";
     });
 
     // 수입버튼 클릭시

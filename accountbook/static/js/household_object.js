@@ -29,3 +29,4 @@ house.prototype.getMay=function(){ // 수입이든 지출이든 현금은 그냥
 
 
 
+
