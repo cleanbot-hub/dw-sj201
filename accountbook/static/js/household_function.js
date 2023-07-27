@@ -1,6 +1,12 @@
 // household_function.js
 
-// 여기는 
+// 여기는 전역 변수 정의 한 곳 입니다 . 
+let isIncome=false; // 수입 이냐 지출 이냐 false 면 지출 , true면 수입 
+let way=""; // 현금 이냐 계좌냐 카드냐 
+
+
+
+// 전역변수 정의 한 곳 끝 
 
 function two_digit(num){
     return num<10 ? "0"+num : num ;
