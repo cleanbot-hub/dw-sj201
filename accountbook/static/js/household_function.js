@@ -84,11 +84,6 @@ window.onload=function(){
         });
 
 
-
-
-
-
-
         var income_bt = document.querySelector("#income_bt");
         income_bt.addEventListener("click",function(){
             var ex = document.getElementsByClassName("expense")[0];
