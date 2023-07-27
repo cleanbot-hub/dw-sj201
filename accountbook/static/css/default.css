@@ -75,6 +75,8 @@ button:hover {
 
 #hold_bt_wrap{
     text-align: center;
+    border-bottom: 3px solid black;
+    padding:20px;
 }
 
 #wcategory{
@@ -96,7 +98,7 @@ button:hover {
 }
 
 .item{
-    width:300px;
+    min-width:100px;
 }
 
 select{
