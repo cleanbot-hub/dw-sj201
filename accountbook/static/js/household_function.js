@@ -7,7 +7,8 @@ window.onload=function(){
     var date = today.getDate(); // 일
     var hour=today.getHours(); // 시간
     var minute=today.getMinutes();//분
-   
+    
+    month = month<10 ? "0" +month : month;
    
     var wdate= document.querySelector("#wdate");
     wdate.value=year+"-"+month+"-"+date+" "+hour+":"+minute;
