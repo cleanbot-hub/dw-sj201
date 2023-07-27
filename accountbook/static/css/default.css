@@ -110,6 +110,10 @@ select {
     display: none;
 }
 
+.hide{
+    display: none;
+}
+
 /* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
     /* Adjust styles for screens up to 768px wide (e.g., tablets) */
