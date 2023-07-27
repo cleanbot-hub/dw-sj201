@@ -104,7 +104,7 @@ window.onload=function(){
         function add(){
             var wday = document.querySelector("#wdate").value; // 선택한 날짜
             wday=wday.split("T")[0]+" "+wday.split("T")[1];
-            var money = document.querySelector("#wmoney").value; // 입력한 금액
+            var money = document.querySelector("#wmoney").value; // 입력한 금액 문자열로 저장
             var cate= document.querySelector("#category");
             cate = cate.options[cate.selectedIndex].value; // 선택한 분류 
             var detail = document.querySelector("#wdetail").value; // 입력한 내용 
@@ -117,7 +117,9 @@ window.onload=function(){
                     way += "-"+mycard.options[mycard.selectedIndex].value;
                 }
             }
-            account_update(parseInt(money)); // 통장 잔액 변동 
+        account_update(parseInt(money)); // 통장 잔액 변동 
+        
+        
         }
 
         function account_update(money){ 
