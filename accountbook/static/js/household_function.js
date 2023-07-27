@@ -103,3 +103,5 @@ window.onload=function(){
             cate = cate.options[cate.selectedIndex].value;
             var detail = document.querySelector("#wdetail").value;
         }
+
+        
