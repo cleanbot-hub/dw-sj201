@@ -105,5 +105,7 @@ select{
 
 .item:nth-child(1){
     text-align: center;
-   padding:20px;
+   
+   font-size:40px;
+   font-weight: 700;
 }
