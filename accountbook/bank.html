@@ -5,22 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .a{
+            border: 1px solid black;
+            text-align: left;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-   <!-- 4시 40분 20초 부터 시작 하여 완료된 사람 고 홈 
+   <!-- 
     bank 객체 - 속성 (bank_name, money, account_num)
     
+    계좌번호는 xxx-xx-xxxxx 형식으로 저장 
     입력 하여 bank 객체로 저장하기
     저장된 bank 객체들 출력하기 
+    -->
 
+    <lable class="item_title">은행이름</lable>
+    <input type="text" name="payment" id="payment">
     
+    <label class="item_title">잔액</label>
+    <input type="text" name="money" id="money">
+
+    <label class="item_title">계좌번호</label>
+    <input type="text" name="account_num" id="account_num">
 
 
+    <button id="btn">저장</button>
 
+    <div class="a">
 
--->
+    </div>
 
 
     
 </body>
 </html>
+
+
+<script> 
+   var bankObjects = [];
+
+        document.getElementById('btn').addEventListener('click', function() {
+            var payment = document.getElementById('payment').value;
+            var money = document.getElementById('money').value;
+            var accountNum = document.getElementById('account_num').value;
+
+            var accountNumString =
+                accountNum.substr(0, 3) + "-" +
+                accountNum.substr(3, 2) + "-" +
+                accountNum.substr(5);
+
+            var bankObject = {
+                bank_name: payment,
+                money: money,
+                account_num: accountNumString
+            };
+
+            bankObjects.push(bankObject);
+            displayBankObjects();
+        });
+
+        function displayBankObjects() {
+            var displayText = "";
+            for (var i = 0; i < bankObjects.length; i++) {
+                displayText += "은행이름: " + bankObjects[i].bank_name + "<br>" +
+                    "잔액: " + bankObjects[i].money + "<br>" +
+                    "계좌번호: " + bankObjects[i].account_num + "<br><br>";
+            }
+
+            var aElement = document.querySelector('.a');
+            aElement.innerHTML = displayText;
+        }
+
+
+</script>
