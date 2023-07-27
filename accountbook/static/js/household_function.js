@@ -4,6 +4,9 @@ const category=["편의점","카페","음식점","문화생활","여행","교통
 "온라인쇼핑","경조사","기부","교육","의료","유흥","미용","통신비","급여","기타수입","로또","월세"];
 
 
+const card={};
+
+const bank={};
 
 function two_digit(num){
     return num<10 ? "0"+num : num ;
