@@ -2,5 +2,5 @@
 
 window.onload=function(){
     var today = new Date();
-    alert(today);
+    alert(today.getFullYear());
 }
