@@ -10,10 +10,11 @@ const bank=[{name:"IBK기업은행",bank:'ibk',money:100000},
 {name:"신한은행",bank:'sh',money:1000000},
 {name:"카카오뱅크",bank:'kakao',money:6000000}];
 
-function house(date, money, category, detail,way){
-    this.date=date;
-    this.money=money;
-    this.category=category;
-    this.detail=detail;
-    this.way=way;
+function house(date, money, category, detail, way,getcome){
+    this.date=date; // 날짜 
+    this.money=money; // 금액
+    this.category=category; // 분류 
+    this.detail=detail; // 내역 
+    this.way=way; // 방식 - 현금,계좌(어디은행),카드(어디카드)
+    this.getcome=getcome; // 수입이냐 지출이냐 그것이 문제로다
 }
