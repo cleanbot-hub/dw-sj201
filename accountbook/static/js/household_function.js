@@ -99,4 +99,11 @@ window.onload=function(){
             ex.classList.remove("hide");
             inc.classList.add("hide");
         });
-}
+
+        
+
+
+
+
+
+    }
