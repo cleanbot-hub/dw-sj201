@@ -1,17 +1,19 @@
+<!--  index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가계부</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./static/css/default.css">
-    <link rel="stylesheet" href="./static/css/household.css">
-    <script src="./static/js/household_function.js"></script>
-    <script src="./static/js/household_object.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="./static/css/default.css">
+<link rel="stylesheet" href="./static/css/household.css">
+
+<script src="./static/js/household.object.js"></script>
+<script src="./static/js/household_function.js"></script>
 </head>
 <body>
-
+    
     <div id="house_wrap">
         <header id="header">
             <div id="hold_input">
@@ -54,14 +56,14 @@
             <button id="write_bt">등록</button>
         </section>
         <section id="hold_list_wrap">
-            
+
             <div id="list_left">
                 <table class="left_table">
                     <thead>
                         <tr>
                             <th class="day">날짜</th>
                             <th class="income_money">수입</th>
-                            <th class="expense_money">지출</th> 
+                            <th class="expense_money">지출</th>
                             <th class="detail">내용</th>
                             <th class="category">분류</th>
                             <th class="how">결제방법</th>
@@ -70,13 +72,13 @@
                     <tbody id="left_t"></tbody>
                 </table>
             </div>
-            <div id="list_right">
+            <div id="right_left">
                 <table class="right_table">
                     <thead>
                         <tr>
                             <th class="day">날짜</th>
                             <th class="income_money">수입</th>
-                            <th class="expense_money">지출</th> 
+                            <th class="expense_money">지출</th>
                             <th class="detail">내용</th>
                             <th class="category">분류</th>
                             <th class="how">결제방법</th>
@@ -85,14 +87,11 @@
                     <tbody id="right_t"></tbody>
                 </table>
             </div>
-
         </section>
         <section id="loan_wrap">  <!-- 대출 내역-->
 
         </section>
     </div>
-
-
 
 </body>
 </html>
