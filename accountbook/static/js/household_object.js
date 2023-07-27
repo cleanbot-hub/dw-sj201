@@ -18,3 +18,11 @@ function house(date, money, category, detail, way,getcome){
     this.way=way; // 방식 - 현금,계좌(어디은행),카드(어디카드)
     this.getcome=getcome; // 수입이냐 지출이냐 그것이 문제로다
 }
+
+house.prototype.won=function(){ // 돈을 천단위로 콤마를 찍어주고 앞에  ₩ 표시
+    return "₩ "+this.money.toLocaleString();
+}
+house.prototype.getMay=function(){ // 수입이든 지출이든 현금은 그냥 현금이고 계좌와 카드는 어디인지 
+    this.way.split("-").length >1 ? this.way.split("-")[1] :this.way;
+}
+
