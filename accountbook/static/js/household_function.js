@@ -1,16 +1,5 @@
 // household_function.js
 
-const category=["편의점","카페","음식점","문화생활","여행","교통","마트","관리비","세금",
-"온라인쇼핑","경조사","기부","교육","의료","유흥","미용","통신비","급여","기타수입","로또","월세"];
-
-
-const card=[{name:"IBK기업은행체크카드",bank:"ibk"},
-{name:"신한체크카드",bank:"sh"},
-{name:"카카오체크카드",bank:"kakao"}];
-
-const bank=[{name:"IBK기업은행",bank:'ibk',money:100000},
-{name:"신한은행",bank:'sh',money:1000000},
-{name:"카카오뱅크",bank:'kakao',money:6000000}];
 
 function two_digit(num){
     return num<10 ? "0"+num : num ;
@@ -20,20 +9,14 @@ function two_digit(num){
 
 window.onload=function(){
     var today = new Date();
-    var year = today.getFullYear(); //년도
-    var month = two_digit(today.getMonth()+1); // 월
-    var date = two_digit(today.getDate()); // 일
-    var hour=two_digit(today.getHours()); // 시간
-    var minute=two_digit(today.getMinutes());//분
-    
-    // month = month<10 ? "0" +month : month;
-    // date = date<10 ? "0" +date: date;
-    // hour = hour<10 ? "0" +hour : hour;
-    // minute = minute<10 ? "0" +minute:minute;
-   
-    var wdate= document.querySelector("#wdate");
-    wdate.value=year+"-"+month+"-"+date+" "+hour+":"+minute;
-    
+    var year = today.getFullYear();
+    var month = two_digit(today.getMonth()+1);
+    var date = two_digit(today.getDate());
+    var hour = two_digit(today.getHours());
+    var minute = two_digit(today.getMinutes());
+
+    var wDate = document.querySelector("#wDate");
+    wDate.value=year+"-"+month+"-"+date+" "+hour+":"+minute;
 
     var cate = document.querySelector("#wcategory");
 
@@ -43,70 +26,68 @@ window.onload=function(){
         opt.innerText=category[i];
         cate.appendChild(opt);
     }
- 
-            var mycard = document.querySelector("#mycard");
-        for (var i in card) {
+
+    var mycard = document.querySelector("#mycard");
+    for(var i in card){
         var opt = document.createElement("option");
-        opt.setAttribute("value", card[i].bank);
-        opt.innerText = card[i].name;
+        opt.setAttribute("value",card[i].bank);
+        opt.innerText=card[i].name;
         mycard.appendChild(opt);
-}
+    }
 
-        var mybank = document.querySelector("#mybank");
-        for (var i in bank) {
+    var mybank = document.querySelector("#mybank");
+    for(var i in bank){
         var opt = document.createElement("option");
-        opt.setAttribute("value", bank[i].bank);
-        opt.innerText = bank[i].name;
+        opt.setAttribute("value",bank[i].bank);
+        opt.innerText=bank[i].name;
         mybank.appendChild(opt);
-}
+    }
+ 
+    // 결제방법중에서 카드선택이냐 현금 선택이냐
+    var payment = document.getElementsByName("payment");
+    payment[0].addEventListener("click",function(){
+        document.querySelector("#mycard").classList.add("hide");
+    });
+    payment[1].addEventListener("click",function(){
+        document.querySelector("#mycard").classList.remove("hide");
+    });
 
+    // 수입중에서 은행입금이냐 현금받았냐
+    var income_method = document.getElementsByName("income_method");
+    income_method[0].addEventListener("click",function(){
+        document.querySelector("#mybank").classList.remove("hide");
+    });
+    income_method[1].addEventListener("click",function(){
+        document.querySelector("#mybank").classList.add("hide");
+    });
 
-        var payment = document.getElementsByName("payment");
-        payment[0].addEventListener("click",function(){
-            document.querySelector("#mycard").classList.add("hide");
-        });
-        payment[1].addEventListener("click",function(){
-            document.querySelector("#mycard").classList.remove("hide");
-            
+    // 수입버튼 클릭시
+    var income_bt = document.querySelector("#income_bt");
+    income_bt.addEventListener("click",function(){
+        var ex = document.getElementsByClassName("expense")[0];
+        var inc = document.getElementsByClassName("income")[0];
+        ex.classList.add("hide");
+        inc.classList.remove("hide");
+    })
 
-        });
-
-
-
-        var income_method = document.getElementsByName("income_method");
-        income_method[0].addEventListener("click",function(){
-            document.querySelector("#mybank").classList.add("hide");
-        });
-        income_method[1].addEventListener("click",function(){
-            document.querySelector("#mybank").classList.remove("hide");
-            
-
-        });
-
-
-        var income_bt = document.querySelector("#income_bt");
-        income_bt.addEventListener("click",function(){
-            var ex = document.getElementsByClassName("expense")[0];
-            var inc = document.getElementsByClassName("income")[0];
-            ex.classList.add("hide");
-            inc.classList.remove("hide");
-        });
-        
-        var expense_bt = document.querySelector("#expense_bt");
-        expense_bt.addEventListener("click",function(){
-            var ex = document.getElementsByClassName("expense")[0];
-            var inc = document.getElementsByClassName("income")[0];
-            ex.classList.remove("hide");
-            inc.classList.add("hide");
-        });
+    //지출버튼 클릭시
+    var expense_bt = document.querySelector("#expense_bt");
+    expense_bt.addEventListener("click",function(){
+        var ex = document.getElementsByClassName("expense")[0];
+        var inc = document.getElementsByClassName("income")[0];
+        ex.classList.remove("hide");
+        inc.classList.add("hide");
+    })
 
 
 
         // 등록 버튼 클릭 시 
         document.querySelector("#write_bt").addEventListener("click",add);
-    }
+        
+    
+        }
 
 
         function add(){
-            
+
         }
