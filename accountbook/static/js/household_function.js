@@ -28,8 +28,13 @@ window.onload=function(){
     wdate.value=year+"-"+month+"-"+date+" "+hour+":"+minute;
     
 
+    var cate = document.querySelector("#wcategory");
 
-    wdate.addEventListener("change",function(){
-        alert(this.value);
-    });
+    for(var i=0; i<category.length; i++){
+        var opt = document.createElement("option");
+        opt.setAttribute("value",category[i]);
+        opt.innerText=category[i];
+        cate.appendChild(opt);
+    }
+   
 }
