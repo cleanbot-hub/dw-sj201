@@ -146,8 +146,6 @@ select {
     display: flex;
     grid-template-columns: 1fr 2fr;
     column-gap:10px;
-    width:100%;
-    justify-content: center;
     
 }
 
@@ -167,3 +165,4 @@ select {
 #left_t, #right_t{
     border-bottom: 1px solid #eee;
 }
+
