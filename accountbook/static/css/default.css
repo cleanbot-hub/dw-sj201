@@ -8,6 +8,8 @@ ul, ol {
     list-style-type: none;
 }
 
+a{text-decoration: none;}
+
 /* Style the header */
 #header {
     padding: 20px;
@@ -106,9 +108,7 @@ select {
     font-weight: 700;
 }
 
-.income {
-    display: none;
-}
+
 
 .hide{
     display: none;
