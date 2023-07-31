@@ -49,5 +49,34 @@ $("#box3").mouseover(function(){
 })
 </script>
 
+
+<style>
+    #box4{width:100px; height: 100px; position: relative; background:pink;}
+    
+</style>
+
+<fieldset>
+    <legend>jquery 애니메이션4- 여러개 순차적용</legend>
+    <button id="ani3">적용</button>
+    <div id="box4"></div>
+</fieldset>
+
+
+<script>
+    $("#ani3").click(function(){
+        var box = $("#box4");
+        box.animate( {width:"300px",opacity:"0.5"},2000);
+        box.animate({left:"200px",width:"100px"},1000);
+        box.animate({height:"300px",opacity:"1"},"slow");
+        box.animate({top:"200px",height:"100px"},"fast");
+        box.animate({left:"0"},4000);
+        box.animate({top:"0"});
+    })
+
+</script>
+
+
+
+
 </body>
 </html>

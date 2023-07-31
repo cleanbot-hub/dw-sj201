@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!--
+        주메뉴 
+        HTML,CSS ,Javascript 
+
+        각 주 메뉴의 서브메뉴 
+        html -> div , form, input,legend,filedset
+        css -> position, background, opactiry, transform
+        javascript -> 변수 , 함수 , 배열 , 제어문 
+
+        처음 화면에는 주메뉴만 보인다 . 
+        각 주메뉴를 클릭 하면 해당 메뉴의 서브 메뉴가 펼쳐져서 보여야 한다. 
+        (배경색 각각 다르게 줘서 만들고 최대한 css 적용 해보기) 
+    -->
+
+<style> 
+#nav{width:600px; margin:0 auto; font-size: 30px;}
+#nav .menu{
+    list-style: none;
+    display:flex;
+    justify-content: space-between;
+}
+
+.menu1, .menu2 , .menu3{
+    display: none;
+}
+
+
+.menu1{
+    background:gold;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.menu2{
+    background:yellowgreen;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+}
+.menu3{
+    background:skyblue;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.html, .css, .javascript{
+    width:300px;
+    height:140px;
+    text-align: center;
+}
+
+</style>
+    <nav id="nav">
+        <ul class="menu">
+            <li class="html">html
+                <div class="menu1">
+                    <a href="">div</a>
+                </div>
+                <div class="menu1">
+                    <a href="">form</a>
+                </div>
+                <div class="menu1">
+                    <a href="">input</a>
+                </div>
+                <div class="menu1">
+                    <a href="">legend</a>
+                </div>
+
+                <div class="menu1">
+                    <a href="">filedset</a>
+                </div>
+            </li>
+
+
+            <li class="css">CSS
+                <div class="menu2">
+                   <a href="">position</a> 
+                </div>
+                <div class="menu2">
+                    <a href="">background</a> 
+                 </div>
+                 <div class="menu2">
+                    <a href="">opactiry</a> 
+                 </div>
+
+                 <div class="menu2">
+                    <a href="">transform</a> 
+                 </div>
+
+            </li>
+
+
+            <li class="javascript">javascript
+
+                <div class="menu3">
+                    <a href="">변수</a>
+                </div>
+
+                <div class="menu3">
+                    <a href="">함수</a>
+                </div>
+
+                <div class="menu3">
+                    <a href="">배열</a>
+                </div>
+
+                <div class="menu3">
+                    <a href="">제어문</a>
+                </div>
+
+
+            </li>
+
+
+            </ul>
+
+
+            <script>
+                $(".html").click(function(){
+                    $(".menu1").slideToggle();
+                });
+                
+
+
+
+
+
+                $(".css").click(function(){
+                    $(".menu2").slideToggle();
+                });
+
+
+                $(".javascript").click(function(){
+                    $(".menu3").slideToggle();
+                });
+
+            </script>
+
+</body>
+</html>
