@@ -23,11 +23,15 @@ $(function(){
 
     });
 
+    $("#left_bt").click(function(){
+        $("#gallery").animate({scrollLeft: "-=103"}, "slow");
+    });
+    
+    $("#right_bt").click(function(){
+        $("#gallery").animate({scrollLeft: "+=103"}, "slow");
 
-    // $("#left_bt").click(function(){
-        
-    // })
-  
+    });
+ 
 
 
 });
