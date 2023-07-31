@@ -31,7 +31,13 @@
 }
 
 #gallery{
+    width:1200px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap:10px;
+}
+
+#gallery .img_box{
+    overflow:hidden;
+    width:250px;
 }
