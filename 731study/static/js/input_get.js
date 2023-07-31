@@ -24,6 +24,10 @@ $(function(){
     });
 
 
+    $("#left_bt").click(function(){
+        
+    })
+  
 
 
 });
