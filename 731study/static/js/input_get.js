@@ -9,7 +9,9 @@ $(function(){
 });
 
 
-
+    $("#3n").click(function(){
+            $("gallery").css("grid-template-column","repeat(3,1fr)");
+    })
 
 
 

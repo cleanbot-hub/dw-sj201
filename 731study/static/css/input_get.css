@@ -32,17 +32,32 @@
 
 #gallery{
     width:1200px;
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:10px;
+    
 }
 
 #gallery .img_box{
     overflow:hidden;
-    width:250px;
+   
 }
 
 
 #gallery .img_box img{
     width:100%;
 }
+
+
+.grid-4n{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+
+}
+
+.grid-3n{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+
+}
+
+
