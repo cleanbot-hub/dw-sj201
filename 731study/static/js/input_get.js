@@ -3,7 +3,7 @@ $(function(){
 
     $("#setImage").click(function(){
         var data= $("#imageName").val();
-        $("#gallery").append("<img src='"+data+"'>");
+        $("#gallery").append("<div class='img_box'><img src='"+data+"'></div>");
        
 
 });
