@@ -18,7 +18,10 @@ $(function(){
     });
 
 // 슬라이드 
-    $("")
+    $("#slide").click(function(){
+        $("#gallery").slideToggle();
+
+    });
 
 
 
