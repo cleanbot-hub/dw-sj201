@@ -6,7 +6,7 @@
 $(function(){
     // document.getElementById("box1").innerHTML="<b>빵빵</b>";
     // document.querySelector("#box1").innerText="<b>빵빵아옥지얌</>";
-    $("#box1").html("<b>이야</b><br>");
+    $("#box1").html("<b>보이기</b><br>");
 
     // $("#box1").text("이야아");
 
@@ -14,7 +14,11 @@ $(function(){
     // d.addEventListener("click",function(){});
 
     $("#box1").click(function(){
-        alert("이야야야야!");
+        // $("#box2").hide(3000); 해당 태그를 감추기 
+        // 해당 태그를 보이기 
+        $("#box2").show(3000);
+      
+
     })
 
 })
