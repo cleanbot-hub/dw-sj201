@@ -44,20 +44,16 @@
 
 .menu1{
     background:gold;
-    border-top:1px solid black;
-    border-bottom: 1px solid black;
     
 }
 
 .menu2{
     background:yellowgreen;
-    border-top:1px solid black;
-    border-bottom: 1px solid black;
+   
 }
 .menu3{
     background:skyblue;
-    border-top:1px solid black;
-    border-bottom: 1px solid black;
+    
 }
 
 .html, .css, .javascript{
@@ -65,6 +61,21 @@
     height:140px;
     text-align: center;
 }
+
+
+.html a{
+    color:black;
+}
+
+
+.css a{
+    color:black;
+}
+
+.javascript a{
+    color:black;
+}
+
 
 </style>
     <nav id="nav">
@@ -137,17 +148,9 @@
                 $(".html").click(function(){
                     $(".menu1").slideToggle();
                 });
-                
-
-
-
-
-
                 $(".css").click(function(){
                     $(".menu2").slideToggle();
                 });
-
-
                 $(".javascript").click(function(){
                     $(".menu3").slideToggle();
                 });
