@@ -41,3 +41,8 @@
     overflow:hidden;
     width:250px;
 }
+
+
+#gallery .img_box img{
+    width:100%;
+}
