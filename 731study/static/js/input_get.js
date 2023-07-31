@@ -4,18 +4,27 @@ $(function(){
     $("#setImage").click(function(){
         var data= $("#imageName").val();
         $("#gallery").append("<div class='img_box'><img src='"+data+"'></div>");
-       
+    });
+
+    $("#3n").click(function(){      
+        $("#gallery").removeClass("grid-4n");
+        $("#gallery").addClass("grid-3n");
+        // $("#gallery").css("grid-template-columns", "repeat(3, 1fr)");
+    });
+
+    $("#4n").click(function(){
+        $("#gallery").removeClass("grid-3n");
+        $("#gallery").addClass("grid-4n");
+    });
+
+
+    $("")
+
+
+
 
 });
 
-
-    $("#3n").click(function(){
-            $("gallery").css("grid-template-column","repeat(3,1fr)");
-    })
-
-
-
-})
 
 
 // append 선택한 태그의 마지막에 추가 
