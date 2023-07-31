@@ -9,4 +9,11 @@ $(function(){
     $("#box1").html("<b>이야</b>");
     // $("#box1").text("이야아");
 
+    // var d = document.getElementById("box1");
+    // d.addEventListener("click",function(){});
+
+    $("#box1").click(function(){
+        alert("이야야야야!");
+    })
+
 })
