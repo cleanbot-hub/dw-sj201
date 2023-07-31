@@ -62,6 +62,10 @@
 }
 .slide-active{
     position: relative;
+    overflow: hidden;
+}
+.slide-active #slide_box{
+    display:flex;
 }
 .slide-active #slide_bt{
     position: absolute;
@@ -82,7 +86,6 @@
 .slide-off #slide_bt{
     display:none;
 }
-
 
 
 

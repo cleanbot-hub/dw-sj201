@@ -9,29 +9,28 @@ $(function(){
     $("#3n").click(function(){      
         $("#gallery").removeClass("grid-4n");
         $("#gallery").addClass("grid-3n");
+        $("#gallery").removeClass("slide-active");
+        $("#gallery").addClass("slide-off");
+        
         // $("#gallery").css("grid-template-columns", "repeat(3, 1fr)");
     });
 
     $("#4n").click(function(){
         $("#gallery").removeClass("grid-3n");
         $("#gallery").addClass("grid-4n");
+        $("#gallery").removeClass("slide-active");
+        $("#gallery").addClass("slide-off");
     });
 
 // 슬라이드 
     $("#slide").click(function(){
-        $("#gallery").slideToggle();
+        $("#gallery").removeClass("slide-off");
+        $("#gallery").addClass("slide-active");
+
 
     });
 
-    $("#left_bt").click(function(){
-        $("#gallery").animate({scrollLeft: "-=103"}, "slow");
-    });
-    
-    $("#right_bt").click(function(){
-        $("#gallery").animate({scrollLeft: "+=103"}, "slow");
-
-    });
- 
+   
 
 
 });
