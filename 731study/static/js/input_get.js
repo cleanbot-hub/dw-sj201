@@ -17,7 +17,7 @@ $(function(){
         $("#gallery").addClass("grid-4n");
     });
 
-
+// 슬라이드 
     $("")
 
 

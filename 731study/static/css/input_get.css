@@ -59,5 +59,21 @@
     gap:15px;
 
 }
-
-
+.slide-active{
+    position: relative;
+}
+.slide-active #slide_bt{
+    position: absolute;
+    top:50%;
+}
+.slide-active #slide_bt #left_bt{
+    left:-10px;
+    background:#fff;
+    border-radius: 10px;
+}
+.slide-active #slide_bt #right_bt{
+    right:-10px;
+    background:#fff;
+    font-size:30px;
+    border-radius: 10px;
+}
