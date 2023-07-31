@@ -27,9 +27,7 @@
         $("#box2").animate({width:"200px", left:"300px"});
     });
 
-    $("#box3").mouseover(function(){
-            $(this).animate( {width:"+=20px"});
-    })
+ 
 </script>
 
 
@@ -45,7 +43,11 @@
     <legend>jquery 애니메이션3 - 증가</legend>
     <div id="box3"></div>
 </fieldset>
-
+<script>
+$("#box3").mouseover(function(){
+    $(this).animate( {width:"+=20px"});
+})
+</script>
 
 </body>
 </html>
