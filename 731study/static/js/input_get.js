@@ -15,9 +15,12 @@ $(function(){
 
     // removeClass- 선택한 태그에 지정한 클래스 삭제 
     // addClass - 선택한 태그에 지정한 클래스 추가
+
+
+    let ri=1;
     $(function(){
         $("#setImage").click(function(){
-            var data = $("#imageName").val();
+            var data = $("#imageName").val()+(ri++);
             
             $("#gallery").append("<div class='img_box'><img src='"+data+"'></div>");
         });
