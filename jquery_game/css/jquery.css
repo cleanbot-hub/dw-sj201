@@ -12,4 +12,10 @@
     padding:150px;
     border: 1px solid black;
     text-align: center;
+    
+}
+
+#text1,#sign,#text2{
+    text-align: center;
+    font-size:30px;
 }
