@@ -3,21 +3,30 @@
     margin:0;
     box-sizing: 0;
 }
-
-
+table{border-collapse:collapse; width:100%; font-family: arial, sans-serif;}
+td,th{
+    border:1px solid #ddd;
+    text-align: center;
+    padding:8px;
+}
+tr:nth-child(even){
+    background:#ddd;
+}
 
 #wrap{
-    width:100%;
-    text-align: center;
+    width:800px;
+   margin:50px auto;
 }
 
-#data_sheet th{
-    border-bottom: 1px solid black;
-    font-size:40px;
-}
 
-#mydata tr td{
-    border-bottom: 1px solid black;
+#search_wrap{
     padding:10px;
-    font-size:30px;
 }
+
+#search_word{
+    width:50%;
+    height: 40px;
+    font-size:20px;
+    padding:3px 10px;
+}
+
