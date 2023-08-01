@@ -1,6 +1,41 @@
 *{
-padding:0;
-margin:0;
-box-sizing: border-box;
-
+    padding: 0;
+    margin:0;
+    box-sizing: 0;
 }
+#data_list{
+    display:flex;
+    flex-direction: flex;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);;
+}
+
+li{
+    border:1px solid #ddd;
+    text-align: center;
+    padding:8px;
+}
+li:nth-child(even){
+    background:#ddd;
+}
+
+#wrap{
+    width:800px;
+    margin:50px auto;
+   
+}
+
+
+#search_wrap{
+    padding:10px;
+}
+
+#keyword{
+    width:50%;
+    height: 40px;
+    font-size:20px;
+    padding:3px 10px;
+}
+
+
+   
