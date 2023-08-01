@@ -13,13 +13,7 @@ $(function(){
             // 텍스트는 배열 이다 indexOf
 
             // 
-            $(this).toggle($(this).text().indexOf(word) > -1);
-            
+            $(this).toggle($(this).text().indexOf(word) > -1);    
         });
-    
     });
-
-
-
-
 });
