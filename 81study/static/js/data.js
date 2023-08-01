@@ -12,7 +12,7 @@ $(function(){
             // tr 안에 있는 text 에서 글씨가 포함 되어 있냐 안되냐
             // 텍스트는 배열 이다 indexOf
 
-            // 
+            // #mydata tr의 텍스트를 가져온다 텍스트는 배열이고 배열이 -1 경우 false
             $(this).toggle($(this).text().indexOf(word) > -1);    
         });
     });
