@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="./js/jquery.js"></script>
     <link rel="stylesheet" href="./css/jquery.css">
 </head>
 <body>
-        <div id="wrap">
+        <!-- <div id="wrap">
             <input type="text" id="text1" placeholder="숫자">
             <input type="text" id="sign" placeholder="부등호">
             <input type="text" id="text2" placeholder="숫자">
 
         </div>
 
-        <div id="result"></div>
-</body>
+        <div id="result"></div> -->
+
+        <input type="file" id="data" accept=".txt" onchange="handleFileSelect(event)">
+        <ul id="list"></ul>
+    
+  
+
+       
+   
+
+
+  
+    
+
+
+    </body>
 </html>

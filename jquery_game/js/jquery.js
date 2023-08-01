@@ -1,32 +1,27 @@
-$(function() {
-    function updateResult() {
-        var text1Value = parseFloat($('#text1').val()) || 0;
-        var text2Value = parseFloat($('#text2').val()) || 0;
-        var sign = $('#sign').val();
-        var result;
+function handleFileSelect(event) {
+  const file = event.target.files[0];
+  if (file && file.type.match('text.*')) {
+      const reader = new FileReader();
 
-        switch (sign) {
-            case '+':
-                result = text1Value + text2Value;
-                break;
-            case '-':
-                result = text1Value - text2Value;
-                break;
-            case '*':
-                result = text1Value * text2Value;
-                break;
-            case '/':
-                result = text2Value !== 0 ? text1Value / text2Value : 'Cannot divide by zero';
-                break;
-            default:
-                result = 'Invalid operator';
-        }
+      reader.onload = function(e) {
+          const contents = e.target.result;
+          showFileContents(contents);
+      };
 
-        $('#result').text('Result: ' + result);
-    }
+      reader.readAsText(file);
+  } else {
+      alert('텍스트 파일 (.txt)을 선택해주세요.');
+  }
+}
 
-    // Listen for changes in text1, text2, and sign inputs
-    $('#text1, #text2, #sign').on('input', function () {
-        updateResult();
-    });
-});
+function showFileContents(contents) {
+  const list = document.getElementById('list');
+  list.innerHTML = '';
+
+  const lines = contents.split('\n');
+  for (let line of lines) {
+      const li = document.createElement('li');
+      li.textContent = line;
+      list.appendChild(li);
+  }
+}

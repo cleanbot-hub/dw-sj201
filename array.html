@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 태그로 입력 받기</title>
+</head>
+<body>
+    
+    <input type="text" id="fruit">
+    <button id="crt">등록</button>
+
+    <div id="result"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function(){
+            consts =["딸기","수박","키위","메론","바나나","포도"];
+
+         
+            function addFruit(fruit) {
+                var resultDiv = $("#result");
+                var newTd = $("<td>").text(fruit);
+                if (resultDiv.children("td").length % 2 === 1) {
+                    newTd.css("background-color", "skyblue");
+                }
+                resultDiv.append(newTd);
+            }
+
+           
+            $("#crt").on("click", function(){
+                var fruit = $("#fruit").val();
+                if (fruit) {
+                    addFruit(fruit);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
