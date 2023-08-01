@@ -7,9 +7,6 @@ $(function () {
         $("#data_list .data").each(function () {
             //attribbute 속성의 값을 제어하기 위해 attr 사용 
             $(this).toggle($(this).find("img").attr("alt").indexOf(keyword) > -1);
-
-            
-            
         });
     });
 });
