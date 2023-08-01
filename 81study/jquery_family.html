@@ -1,5 +1,7 @@
 
 <!-- jquery_family.html-->
+<!-- 부모 자식 하위 태그들은 상위 태그에 영향을 받게 된다 영향을 받지 않는 경우 도 있다 -->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,22 +9,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jquery_family</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script>
+    $(function(){ 
+        // parent() -상위 태그 (부모) 선택 
+        // parents() - 상위 모든 태그 (html 태그 까지 선택 )
+        // parents("p") - 상위 태그 들 중에서 p 태그만 선택 
+        // parents("#i") - 상위 태그들 중에서 아이디가 i 인 태그 선택 
+        // parentsUntil("div")- 현재 태그와 div 태그 사이의 부모들 선택    
+        
+        
+        
+        var parent = $("#child1_1").parents("#origin"); 
+           parent.css("background","pink");
+           
+
+            $(".grandchild").parentsUntil("#origin").css("background","green");
+
+            // children () - 자식 태그들 선택 
+            // children("p") - 자식태그 들 중에 p 태그만 선택 
+            // children(":first") , children().first() - 첫번째 자식 선택   
+            // children(":eq(3)") , children().eq(3) - 네번째 자식 선택 인덱스 형식 
+            // children().last() - 마지막 자식 
+            $("#parent2").children(":eq(1)").css("font-size","20px");
+            
+            // find 하위태그 전체를 검색 할 수 있다 , find 누구를 찾을것인지 입력 검색 해야 함 * 전부를 의미 all  
+            // 특정 태그 특정 아이디 찾을 수 있다 .
+            $("#parent2").find(".child_li").css("background","lightblue"); 
+
+            // siblings() - 형제들 선택
+            // next() - 다음 형제 태그 선택
+            // prev() - 이전 형제 태그 선택 
+            // nextAll() - 뒤에 있는 모든 형제 태그 선택 
+            // prevAll() - 앞에 있는 모든 형제 태그 선택 
+            // nextUntil("a") - 뒤에 있는 형제 들 중 a 태그와 나 사이의 모든 형제 
+            // prevUntil("a") - 앞에 있는 형제 들 중 a 태그와 나사이의 모든 형제
+
+            $("#child1_1").click(function(){
+                //$(this).siblings("#child1_2").children("span:eq(1)").css("display","block");
+                $(this).next().children("span:eq(1)").css("color","red");
+            });
+    
+            // 선택자 - div , p , ul , li ,#box , list_slide 등 
+    
+            // $("선택자").first()- 선택자 중에서 첫번째 태그 선택  
+            $("li").first().css("color","red");
+            // $("선택자").last()- 선택자 중에서 마지막 태그 선택  
+            $("li").last().css("color","blue");
+            // $("선택자").eq(3)- 선택자 중에서 3번 인덱스 ( 네번째 태그 선택 ) 
+            $("li").eq(2).css("color","yellow");
+            
+            
+            
+
+            // $("선택자").filter("선택자2") - 선택자 중에서 선택자 2인 모든 태그 
+            $("li").filter(".child_li").css("background","orange");
+            // $("선택자").not("선택자2") - 선택자 중에서 선택자2 제외한 모든 태그 
+            $("li").not(".child_li").css("background","brown");
+            
+    
+    
+        });
+
+</script>
 </head>
 <body>
         <div id="origin">
-            <div id="parent1">
-                <b id="child1_1"></b>
+            <div id="parent1" style="font-size: 50px;">
+                <b id="child1_1">child1_1</b>
                 <p id="child_2">
                     <span class="grandchild">나 증손이야(딸)</span>
                     <span class="grandchild">나 증손이야(아들)</span>
                 </p>
             </div>
             <div id="parent2">
-                <div id="child2_1"></div>
+                <div id="child2_1">으앗 </div>
                 <ul id="child2_2">
                     <li class="child_li">공부공부공부</li>
                     <li class="child_li">공부해서 남주나?</li>
                     <li class="child_li">방법이 잘못되었으면 다른방법으로...</li>
+                    <li>좋으니 사랑해서</li>
+                    <li>사랑을 시작할 때</li>
                 </ul>
             </div>
         </div>

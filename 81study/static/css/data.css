@@ -1,0 +1,15 @@
+#wrap{
+    width:100%;
+    text-align: center;
+}
+
+#data_shee th{
+    border-bottom: 1px solid black;
+    font-size:40px;
+}
+
+#mydata tr td{
+    border-bottom: 1px solid black;
+    padding:10px;
+    font-size:30px;
+}
