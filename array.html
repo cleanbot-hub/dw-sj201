@@ -50,7 +50,7 @@
 
         </div>
         <input type="text" id="num" placeholder="내용을 입력 하세요">
-        <button id="crt">등록</button>
+        <button id="crt">찾기</button>
         <div id="result"></div>
     </div>
     
@@ -78,7 +78,7 @@
         function addFruit(num) {
           var resultDiv = $("#result");
           if (!consts.includes(num)) {
-            alert("해당 숫자는 등록할 수 없습니다.");
+            alert("해당 내용은 데이터에 없습니다.");
             return;
           }
       
