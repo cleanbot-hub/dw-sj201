@@ -1,7 +1,17 @@
+let re =0;
 $(function(){
-
+    $.getJSON("http://krdrive.ipdisk.co.kr:8000/test/data.php",function(data){
+        chat_show(data);
+    });
+    re = setTimeout(function(){
+        location.reload();
+    },10000);
 });
 
+$(document).on("keyup",function(){
+    if(re!=0);
+    clearTimeout(re);
+});
 
 function send(){
     var send_data = {writer:$("#writer").val(), content:$("#content").val()};
@@ -17,7 +27,7 @@ function send(){
         var data = this.response;
         if(data==="fail")
             alert("다시입력하세요");
-            else chat_show(data);
+            else chat_show(JSON.parse(data));
     };
     xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlHttp.send("x="+send_data); // send() - 서버에 데이터 보내는 곳 , 보내는 형식은 Json 형식 이여야만 한다 .
@@ -25,7 +35,7 @@ function send(){
 }   
 
 function chat_show(data){
-    data = JSON.parse(data);
+    
 
     var out="";
     $.each(data,function(i,item){
