@@ -54,16 +54,16 @@
 
   $("#num").on("keydown", function(event) {
     if (event.keyCode === 13) {
-      var fruit = $("#num").val();
-      if (fruit) {
-        addFruit(fruit);
+      var num = $("#num").val();
+      if (num) {
+        addFruit(num);
       }
     }
   });
 
-  function addFruit(fruit) {
+  function addFruit(num) {
     var resultDiv = $("#result");
-    if (!consts.includes(fruit)) {
+    if (!consts.includes(num)) {
       alert("해당 숫자는 등록할 수 없습니다.");
       return;
     }
@@ -71,16 +71,16 @@
     resultDiv.empty(); // Clear previous results
 
     for (var i = 1; i <= 100; i++) {
-      var newTd = $("<td>").text(fruit + "x" + i + "=" + (fruit * i));
+      var newTd = $("<td>").text(num + "x" + i + "=" + (num * i));
       var newTr = $("<tr>").append(newTd);
 
-      if (fruit === "1") {
+      if (num === "1") {
         newTd.addClass("color-red"); 
-      } else if (fruit === "2") {
+      } else if (num === "2") {
         newTd.addClass("color-blue"); 
-      } else if (fruit === "3") {
+      } else if (num === "3") {
         newTd.addClass("color-cyan"); 
-      } else if (fruit === "4") {
+      } else if (num === "4") {
         newTd.addClass("color-pink"); 
       }
 
@@ -92,15 +92,15 @@
   }
 
   $("#crt").on("click", function() {
-    var fruit = $("#num").val();
-    if (fruit === "1") {
-      addFruit(fruit);
-    } else if (fruit === "2") {
-      addFruit(fruit);
-    } else if (fruit === "3") {
-      addFruit(fruit);
-    } else if (fruit === "4") {
-      addFruit(fruit);
+    var num = $("#num").val();
+    if (num === "1") {
+      addFruit(num);
+    } else if (num === "2") {
+      addFruit(num);
+    } else if (num === "3") {
+      addFruit(num);
+    } else if (num === "4") {
+      addFruit(num);
     }
   });
 });
