@@ -32,6 +32,11 @@ function send(){
     xmlHttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlHttp.send("x="+send_data); // send() - 서버에 데이터 보내는 곳 , 보내는 형식은 Json 형식 이여야만 한다 .
 
+
+    re = setTimeout(function(){
+        location.reload();
+    },10000);
+
 }   
 
 function chat_show(data){
@@ -47,4 +52,6 @@ function chat_show(data){
     $("#chat_list").html(out);
     $("#content").val('');
     $("#content").focus();
+
+
 }
