@@ -50,11 +50,12 @@
             // $("#list").html("<tr><td>"+data.person[0].name+"</td><td>"+data.person[0].notebook+"</td><td>"+data.person[0].age+"</td></tr>");
           
         $.each(data.person, function(i,item){ // i는 배열의 인덱스 , item은 배열의 각 공간 
-
+                if(item.age>=20 && item.notebook==="삼성"){
                 $("#list").append("<tr><td>"+item.name+"</td><td>"+
                     item.notebook+"</td><td>"+item.age+"<td></td>");
+                }   
 
-                    
+
         });
 
 
