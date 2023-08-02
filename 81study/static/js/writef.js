@@ -1,12 +1,16 @@
 const cate = ["all", "romance", "novel", "poetry", "proverb", "diary"];
 const cate_korea = ["전체", "연애소설", "단편소설", "시", "속담", "일기"];
 
+
+
+
+
 $(function(){
     $("#keyword").on("keyup", function(){
         var word = $(this).val();
         var key = $("#key").val(); 
         var target = key === "title" ? "h3" : key === "content" ? "p" : "";
-
+            
         var type = cate_korea[cate.indexOf($("#category").val())]; 
 
         $(".story" + target).filter(function(){
