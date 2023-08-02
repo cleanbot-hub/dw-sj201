@@ -14,6 +14,12 @@
     font-size:30px;
 }
 
+#num{
+    font-size:30px;
+}
+#crt{
+    font-size:30px;
+}
 .color-red{
     color:red;
 }
@@ -31,7 +37,7 @@
 </style>
 <body>
     <div id="wrap">
-        <input type="text" id="num" placeholder="1에서 5까지 입력">
+        <input type="text" id="num" placeholder="1에서 20까지 입력">
         <button id="crt">등록</button>
         <div id="result"></div>
     </div>
@@ -39,7 +45,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
      $(function() {
-  consts = ["1", "2", "3", "4", "5"];
+  consts = ["1", "2", "3", "4", "5","6","7","8","9","10",
+  "11","12","13","14","15","16","17","18","19","20"
+
+
+
+];
 
   $("#num").on("keydown", function(event) {
     if (event.keyCode === 13) {
@@ -56,23 +67,28 @@
       alert("해당 숫자는 등록할 수 없습니다.");
       return;
     }
-    var newTd = $("<td>").text(fruit);
-    var newTr = $("<tr>").append(newTd);
 
-    if (fruit === "1") {
-      newTd.addClass("color-red"); 
-    } else if (fruit === "2") {
-      newTd.addClass("color-blue"); 
-    } else if (fruit === "3") {
-      newTd.addClass("color-cyan"); 
-    } else if (fruit === "4") {
-      newTd.addClass("color-pink"); 
-    }
+    resultDiv.empty(); // Clear previous results
 
-    if (resultDiv.children("td").length % 2 === 1) {
-      newTd.css("background-color", "skyblue");
+    for (var i = 1; i <= 100; i++) {
+      var newTd = $("<td>").text(fruit + "x" + i + "=" + (fruit * i));
+      var newTr = $("<tr>").append(newTd);
+
+      if (fruit === "1") {
+        newTd.addClass("color-red"); 
+      } else if (fruit === "2") {
+        newTd.addClass("color-blue"); 
+      } else if (fruit === "3") {
+        newTd.addClass("color-cyan"); 
+      } else if (fruit === "4") {
+        newTd.addClass("color-pink"); 
+      }
+
+      if (resultDiv.children("td").length % 2 === 1) {
+        newTd.css("background-color", "skyblue");
+      }
+      resultDiv.append(newTr);
     }
-    resultDiv.append(newTr);
   }
 
   $("#crt").on("click", function() {
@@ -80,11 +96,11 @@
     if (fruit === "1") {
       addFruit(fruit);
     } else if (fruit === "2") {
-        addFruit(fruit);
-    }  else if (fruit === "3") {
-        addFruit(fruit);
+      addFruit(fruit);
+    } else if (fruit === "3") {
+      addFruit(fruit);
     } else if (fruit === "4") {
-        addFruit(fruit);
+      addFruit(fruit);
     }
   });
 });
