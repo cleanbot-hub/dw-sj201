@@ -33,78 +33,142 @@
 .color-pink{
     color:pink;
 }
-
+.animal{
+    
+    font-size:200px;
+}
 </style>
 <body>
     <div id="wrap">
+        <div id="infor">
+            <p>물고기,쥐,호랑이,개,돼지,개구리,원숭이</p>
+
+        </div>
         <input type="text" id="num" placeholder="1에서 20까지 입력">
         <button id="crt">등록</button>
         <div id="result"></div>
     </div>
     
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-     $(function() {
-  consts = ["1", "2", "3", "4", "5","6","7","8","9","10",
-  "11","12","13","14","15","16","17","18","19","20","물고기"
+   
+   
+   <script>
+    $(function() {
+        consts = [
+          "1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+          "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "물고기"
+          ,"쥐","호랑이","개","돼지","개구리","원숭이"
+        ];
+      
+        $("#num").on("keydown", function(event) {
+          if (event.keyCode === 13) {
+            var num = $("#num").val();
+            if (num) {
+              addFruit(num);
+            }
+          }
+        });
+      
+        function addFruit(num) {
+          var resultDiv = $("#result");
+          if (!consts.includes(num)) {
+            alert("해당 숫자는 등록할 수 없습니다.");
+            return;
+          }
+      
+          resultDiv.empty(); // Clear previous results
+      
+          if (num === "물고기") {
+            // Special handling for "물고기"
+            var fishSymbol = "🐟"; // You can use any fish symbol here
+            var newDiv = $("<div class='animal'>").text(fishSymbol);
+            resultDiv.append(newDiv);
+            return;
+          }
+
+          if (num === "호랑이") {
+            // Special handling for "물고기"
+            var tigerSymbol = "🐯"; // You can use any fish symbol here
+            var newDiv = $("<div class='animal'>").text(tigerSymbol);
+            resultDiv.append(newDiv);
+            return;
+          }
 
 
 
-];
+          if (num === "개") {
+            // Special handling for "물고기"
+            var dogSymbol = "🐶"; // You can use any fish symbol here
+            var newDiv = $("<div class='animal'>").text(dogSymbol);
+            resultDiv.append(newDiv);
+            return;
+          }
 
-  $("#num").on("keydown", function(event) {
-    if (event.keyCode === 13) {
-      var num = $("#num").val();
-      if (num) {
-        addFruit(num);
-      }
-    }
-  });
+          if (num === "쥐") {
+            // Special handling for "물고기"
+            var mouseSymbol = "🐭"; // You can use any fish symbol here
+            var newDiv = $("<div class='animal'>").text(mouseSymbol);
+            resultDiv.append(newDiv);
+            return;
+          }
 
-  function addFruit(num) {
-    var resultDiv = $("#result");
-    if (!consts.includes(num)) {
-      alert("해당 숫자는 등록할 수 없습니다.");
-      return;
-    }
+          if (num === "돼지") {
+            // Special handling for "물고기"
+            var figSymbol = "🐷"; // You can use any fish symbol here
+            var newDiv = $("<div class='animal'>").text(figSymbol);
+            resultDiv.append(newDiv);
+            return;
+          }
 
-    resultDiv.empty(); // Clear previous results
+          if (num === "개구리") {
+            // Special handling for "물고기"
+            var fSymbol = "🐸"; // You can use any fish symbol here
+            var newDiv = $("<div class='animal'>").text(fSymbol);
+            resultDiv.append(newDiv);
+            return;
+          }
 
-    for (var i = 1; i <= 19; i++) {
-      var newTd = $("<td>").text(num + "x" + i + "=" + (num * i));
-      var newTr = $("<tr>").append(newTd);
 
-      if (num === "1") {
-        newTd.addClass("color-red"); 
-      } else if (num === "2") {
-        newTd.addClass("color-blue"); 
-      } else if (num === "3") {
-        newTd.addClass("color-cyan"); 
-      } else if (num === "4") {
-        newTd.addClass("color-pink"); 
-      }
+          if (num === "원숭이") {
+            // Special handling for "물고기"
+            var oSymbol = "🐒"; // You can use any fish symbol here
+            var newDiv = $("<div class='animal'>").text(oSymbol);
+            resultDiv.append(newDiv);
+            return;
+          }
 
-      if (resultDiv.children("td").length % 2 === 1) {
-        newTd.css("background-color", "skyblue");
-      }
-      resultDiv.append(newTr);
-    }
-  }
+       
 
-  $("#crt").on("click", function() {
-    var num = $("#num").val();
-    if (num === "1") {
-      addFruit(num);
-    } else if (num === "2") {
-      addFruit(num);
-    } else if (num === "3") {
-      addFruit(num);
-    } else if (num === "4") {
-      addFruit(num);
-    }
-  });
-});
 
-    </script>
+
+      
+          for (var i = 1; i <= 19; i++) {
+            var newTd = $("<td>").text(num + "x" + i + "=" + (num * i));
+            var newTr = $("<tr>").append(newTd);
+      
+            if (num === "1") {
+              newTd.addClass("color-red"); 
+            } else if (num === "2") {
+              newTd.addClass("color-blue"); 
+            } else if (num === "3") {
+              newTd.addClass("color-cyan"); 
+            } else if (num === "4") {
+              newTd.addClass("color-pink"); 
+            }
+      
+            if (resultDiv.children("td").length % 2 === 1) {
+              newTd.css("background-color", "skyblue");
+            }
+            resultDiv.append(newTr);
+          }
+        }
+      
+        $("#crt").on("click", function() {
+          var num = $("#num").val();
+          addFruit(num);
+        });
+      });
+      </script>
 </body>
 </html>
