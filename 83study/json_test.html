@@ -69,7 +69,7 @@
         
         
         $("#list").empty();
-            $.getJSON("https://jsonplaceholder.typicode.com/todos",function(data){
+            $.getJSON("https://jsonplaceholder.typicode.com/todos?"+param,function(data){
         $.each(data, function(i,item){
             $("#list").append("<tr><td>"+item.userId+"</td><td>"+item.id+"</td><td>"+
                 item.title+"</td><td>"+item.completed+"</td></tr>");
