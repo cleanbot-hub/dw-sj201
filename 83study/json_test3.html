@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="./static/js/jsontest3.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/jsontest3.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+        <!--
+        url- https://jsonplaceholder.typicode.com/photos
+        img 태그에 thumbnail 이미지 보이기 
+        썸네일 이미지 클릭하면 본 이미지가 보여하고 , 제목과 앨범 id도 출력 되어야 한다 
+        photos에는 총 500개가 있다 . 이중 랜덤 하게 10개만 화면에 띄운다
+
+
+
+        -->
+    
+    
+        <div id="list">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+            <img src="" alt="" class="thumbnail">
+        </div>
+
+        <div id="modal">
+            <div id="modal_bg"></div>
+            <div id="modal_close"></div>
+            <div id="image">
+                <div class="image_box">
+                    <img id="original">
+                </div>
+                title<h3 id="title"></h3>
+                <p>albumId : <b id="albumId"></b></p> 
+            </div>
+        </div>
+    
+</body>
+</html>
