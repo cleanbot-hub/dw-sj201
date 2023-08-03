@@ -2,17 +2,11 @@
 #list{
   
     width:400px;
-   
-    
     left:50%;
- 
-
     border-radius: 15px;
     padding:10px;
-
     display:grid;
     grid-template-columns: repeat(5,1fr);
-    
     row-gap:10px;
 }
 
