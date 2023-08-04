@@ -92,26 +92,44 @@
 </html>
 
 <script>
-    $(function() {
-        $.ajax({
-            url: "https://www.seogu.go.kr/seoguAPI/3660000/getPamcStts?pageNo=1&numOfRows=1",
-            type: "GET",
-            contentType: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", 
-            dataType: "json", 
-            success: function(data) {
-             
-                if (data.response && data.response.items && data.response.items.length > 0) {
-                    $("#lsit").append(data.response.items.sn);
-                
-                } else {
-                    console.error("Data or necessary fields not available in the response.");
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error("An error occurred while fetching the data:", error);
-            }
-        });
+   $(function() {
+    $.getJSON("https://www.seogu.go.kr/seoguAPI/3660000/getPamcStts?pageNo=1", function(data) {
+      
+            const item = data.items.items[0];
+
+            // Accessing the data fields
+            const sn = item.sn;
+            const pamc_nm = item.pamc_nm;
+            const lnm_adrs = item.lnm_adrs;
+            const rn_adrs = item.rn_adrs;
+            const admd_cd = item.admd_cd;
+            const admd_nm = item.admd_nm;
+            const lgdng_cd = item.lgdng_cd;
+            const lgdng_nm = item.lgdng_nm;
+            const telno = item.telno;
+            const la = item.la;
+            const lo = item.lo;
+            const data_stdr_de = item.data_stdr_de;
+
+            // Now you can use these variables to display the data or perform any other operations.
+            // For example, updating the HTML content of specific elements:
+            $("#list").text(sn);
+            $("#pamc_nm").text(pamc_nm);
+            $("#lnm_adrs").text(lnm_adrs);
+            $("#rn_adrs").text(lnm_adrs);
+            $("#admd_cd").text(admd_cd);
+            $("#admd_nm").text(admd_nm);
+            $("#lgdng_cd").text(lgdng_cd);
+            $("#lgdng_nm").text(lgdng_nm);
+            $("#telno").text(telno);
+            $("#la").text(la);
+            $("#lo").text(lo);
+            $("#data_stdr_de").text(data_stdr_de);
+
+
     });
+});
+        
        
 
 </script>
