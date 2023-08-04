@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>current weather</h2>
+    <h3 class="time">현재시간 :</h3>
+    <h3 class="ctemp">현재온도 : </h3>
+    <h3 class="lowtemp">최저온도 :</h3>
+    <h3 class="hightemp">최고온도 :</h3>
+    <h3 class="icon">
+        
+    </h3>
+</body>
+</html>
+
+<script>
+
+    $(function(){
+
+        $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=DaeJeon&appid=46ff3e6b5a1e88d86cb04ae8dea6fea6&units=metric",function(data){
+           
+
+            $(".ctemp").append(data.main.temp);
+            $(".lowtemp").append(data.main.temp_min);
+            $(".hightemp").append(data.main.temp_max);
+            var wiconUrl ='<img src="https://openweathermap.org/img/wn/'+data.weather[0].icon +'.png">'
+            $(".icon").html(wiconUrl);
+
+            var ct = data.dt;
+
+            function convertTime(t){
+                var ot = new Date(t*1000);
+                var year = ot.getFullYear();
+                var month = ot.getMonth()+1;
+                var day = ot.getDay()-1;
+                var hr = ot.getHours();
+                var m = ot.getMinutes();
+                var s = ot.getSeconds();
+                return year+'년 '+month+'월 '+day+'일 '+hr+'시 '+m+'분 '+s;
+            }
+
+            var currentTime = convertTime(ct);
+            $(".time").append(currentTime);
+        });
+
+
+
+
+
+
+    })
+
+
+
+</script>
