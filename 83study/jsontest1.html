@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/3.0.0/fetch.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<style>
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+#list{
+     width:1000px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    align-items:center;
+    gap:10px;
+}
+
+#info{
+    margin:0 auto;
+    width:1000px;
+    background:#eee;
+    border-radius: 15px;
+    padding:10px;
+    box-shadow: 5px 5px 5px #444 ;
+    display:flex;
+    flex-direction: column;
+    row-gap:10px;
+}
+#info label{
+    display:inline-block;
+    padding-right:5px;
+}
+
+#info .info_wrap:first-child{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.info_wrap b{ 
+    font-size:17px; 
+    border-bottom:1px solid #ddd;
+    padding-left:5px;
+}
+
+.info_wrap:nth-child(3), .info_wrap:nth-child(6){
+    display:flex;
+    align-items: center;
+}
+
+
+</style>
+
+
+
+<body>
+            <div id="list">
+                 
+            </div>
+            
+            <div id="info">
+                <div class="info_wrap">
+                     <div><label>순번</label><b id="sn"></b></div>
+                      <div><label>약국명칭</label><b id="pamc_nm"></b></div>
+                      <div><label>지번주소</label><b id="lnm_adrs"></b></div>
+                      <div><label>도로명주소</label><b id="rn_adrs"></b></div>
+                      <div><label>행정동코드</label><b id="admd_cd"></b></div>
+                      <div><label>행정동명</label><b id="admd_nm"></b></div>
+                      <div><label>법정동코드</label><b id="lgdng_cd"></b></div>
+                      <div><label>법정동명</label><b id="lgdng_nm"></b></div>
+                      <div><label>전화번호</label><b id="telno"></b></div>
+                      <div><label>위도</label><b id="la"></b></div>
+                      <div><label>경도</label><b id="lo"></b></div>
+                      <div><label>데이터기준날짜</label><b id="data_stdr_de"></b></div>
+                </div>
+                
+
+            </div>
+</body>
+</html>
+
+<script>
+      function fetchAndProcessData() {
+            fetch("https://www.seogu.go.kr/seoguAPI/3660000/getPamcStts?pageNo=1&numOfRows=1")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    processData(data.response.body.items);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        }
+
+        function processData(items) {
+            $('#list').empty();
+
+            $.each(items, function (index, itemData) {
+                const newItem = $('<div></div>')
+                    .addClass('item')
+                    .attr('data-id', itemData.sn)
+                    .html(`<b>약국명칭:</b> ${itemData.pamc_nm} <br>
+                           <b>지번주소:</b> ${itemData.lnm_adrs} <br>
+                           <b>도로명주소:</b> ${itemData.rn_adrs} <br>
+                           <b>행정동코드:</b> ${itemData.admd_cd} <br>
+                           <b>행정동명:</b> ${itemData.lgdng_nm} <br>
+                           <b>법정동코드:</b> ${itemData.lgdng_cd} <br>
+                           <b>법정동명:</b> ${itemData.lgdng_nm} <br>
+                           <b>전화번호:</b> ${itemData.telno} <br>
+                           <b>위도:</b> ${itemData.la} <br>
+                           <b>경도:</b> ${itemData.lo} <br>
+                           <b>데이터기준날짜:</b> ${itemData.data_stdr_de} <br>`);
+                $('#list').append(newItem);
+            });
+        }
+
+        $(document).ready(function () {
+            if (typeof fetch === 'function') {
+                fetchAndProcessData();
+            } else {
+                console.error('Fetch API is not available in this browser.');
+            }
+        });
+</script>
+
+
+
+
