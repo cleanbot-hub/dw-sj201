@@ -6,16 +6,41 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+<style>
+
+#content{
+    
+    width:1000px;
+    height: 200px;
+    margin: 0 auto;
+    border:1px solid black;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap:10px;
+    margin:100px auto;
+    align-items: center;
+}
+
+.time{
+    width:350px;
+}
+
+
+
+
+</style>
 <body>
     
-    <h2>current weather</h2>
-    <h3 class="time">현재시간 :</h3>
-    <h3 class="ctemp">현재온도 : </h3>
-    <h3 class="lowtemp">최저온도 :</h3>
-    <h3 class="hightemp">최고온도 :</h3>
-    <h3 class="icon">
-        
-    </h3>
+    <div id="content">
+           
+            <h3 class="time">현재시간 :</h3>
+            <h3 class="ctemp">현재온도 : </h3>
+            <h3 class="speed">풍속 :</h3>
+            <h3 class="feels_like">체감온도:</h3>
+            <h3 class="humidity">습도:</h3>
+            <h3 class="name"></h3>
+            <h3 class="icon"></h3>
+    </div>
 </body>
 </html>
 
@@ -27,8 +52,11 @@
            
 
             $(".ctemp").append(data.main.temp);
-            $(".lowtemp").append(data.main.temp_min);
-            $(".hightemp").append(data.main.temp_max);
+            $(".speed").append(data.wind.speed);
+            $(".feels_like").append(data.main.feels_like);
+            $(".humidity").append(data.main.humidity);
+            $(".name").append(data.name);
+            
             var wiconUrl ='<img src="https://openweathermap.org/img/wn/'+data.weather[0].icon +'.png">'
             $(".icon").html(wiconUrl);
 

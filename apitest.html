@@ -7,9 +7,7 @@
   <title>한국토지주택공사_공공임대주택 단지정보 조회</title>
   <style>
     /* Add your CSS styles here */
-    body {
-      font-family: Arial, sans-serif;
-    }
+   
 
     table {
       width: 100%;
@@ -22,6 +20,9 @@
       padding: 10px;
       text-align: center;
     }
+
+   
+    
   </style>
 </head>
 <body>
@@ -51,7 +52,7 @@
       </tr>
     </thead>
     <tbody>
-      <!-- Table rows will be populated here -->
+     dsadas
     </tbody>
   </table>
 
@@ -59,7 +60,7 @@
     $(document).ready(function() {
       // Function to fetch data from the API
       function fetchData(brtcCode, signguCode, numOfRows, pageNo) {
-        const apiUrl = 'https://data.myhome.go.kr:443/rentalHouseList';
+        const apiUrl = 'https://data.myhome.go.kr/rentalHouseList';
         const requestData = {
           ServiceKey: 'dmf4bP1j26Vi7Fp%2B%2FDgCnRUANSLptixXrjDNHXRDoasZKn6hQiDcxhKn2IoSp4SfIavjt%2BBRwS391lEKXF5umA%3D%3D',
           brtcCode: brtcCode,
@@ -112,6 +113,8 @@
         fetchData(brtcCode, signguCode, numOfRows, pageNo);
       });
     });
+
+
   </script>
 </body>
 </html>

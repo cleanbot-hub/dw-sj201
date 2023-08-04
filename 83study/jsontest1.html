@@ -93,7 +93,7 @@
 
 <script>
    $(function() {
-    $.getJSON("https://www.seogu.go.kr/seoguAPI/3660000/getPamcStts?pageNo=1", function(data) {
+    $.getJSON("https://www.seogu.go.kr/seoguAPI/3660000/getPamcStts?pageNo=1&numOfRows=1", function(data) {
       
             const item = data.items.items[0];
 
@@ -114,17 +114,17 @@
             // Now you can use these variables to display the data or perform any other operations.
             // For example, updating the HTML content of specific elements:
             $("#list").text(sn);
-            $("#pamc_nm").text(pamc_nm);
-            $("#lnm_adrs").text(lnm_adrs);
-            $("#rn_adrs").text(lnm_adrs);
-            $("#admd_cd").text(admd_cd);
-            $("#admd_nm").text(admd_nm);
-            $("#lgdng_cd").text(lgdng_cd);
-            $("#lgdng_nm").text(lgdng_nm);
-            $("#telno").text(telno);
-            $("#la").text(la);
-            $("#lo").text(lo);
-            $("#data_stdr_de").text(data_stdr_de);
+            $("#list").text(pamc_nm);
+            $("#list").text(lnm_adrs);
+            $("#list").text(lnm_adrs);
+            $("#list").text(admd_cd);
+            $("#list").text(admd_nm);
+            $("#list").text(lgdng_cd);
+            $("#list").text(lgdng_nm);
+            $("#list").text(telno);
+            $("#list").text(la);
+            $("#list").text(lo);
+            $("#list").text(data_stdr_de);
 
 
     });
