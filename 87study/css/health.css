@@ -1,0 +1,63 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+#Hwrap{
+    width: 800px;
+    margin:0 auto;
+    position: relative;
+}
+
+#header{
+    padding:20px 0;
+    width: 100%;
+    position: relative;
+}
+
+#defaultSearch{
+    width:100%;
+    padding:0 50px;
+    padding-bottom:10px;
+    border-bottom: 2px solid #888;
+}
+#defaultSearch .searchInput{
+    display:flex;
+    height: 30px;
+    font-size:17px;
+    width:100%;
+    border:1px solid #bbb;
+    border-radius: 10px;
+    padding:0 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#searchWord{
+    border:0;
+    outline: none;
+    height: 100%;
+    width:100%;
+}
+
+#searchFilter{
+    position: relative;
+    width:100%;
+    padding: 20px 50px;
+    border-bottom: 2px solid #888;
+}
+
+#searchFilter .filterMore{
+    text-align:center;
+    position: relative;
+    top:-20px;
+    font-size:25px;
+}
+
+
+
+#searchFilter .filterDetail{
+    width:100%;
+    position: relative;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건강센터</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="./js/health.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="./image/health.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/health.css">
+</head>
+<body>
+
+    <div id="Hwrap">
+        <header id="header">
+            <div id="defaultSearch">
+                <div class="searchinput">
+                    <input type="text" name="searchWord" id="searchWord">
+                    <i class="bi bi-search"></i>
+                </div>
+            </div>
+            <div id="searchfilter">
+                <div class="filterMore">
+                    <i class="bi bi-chevron-compact-down"></i>
+                </div>
+                <div class="filterDetail hide">
+                    <h3>상세검색</h3>
+                    <div id="detailBox" class="detailContainer">
+                        <dl class="detailList">
+                            <dt class="itemDt">센터구분</dt>
+                            <dd class="itemDd">
+                                <input type="checkbox" name="classify" value="보건증진">
+                                <label>정신보건</label>
+                                <input type="checkbox" name="classify" value="건강증진">
+                                <lable>건강증진</lable>
+                            </dd>
+                        </dl>
+                        <dl class="detailList">
+                            <dt class="itemDt">지역</dt>
+                            <dd class="itemDd">
+                                <input type="checkbox" name="location" value="경기도">
+                                <label>경기도</label>
+                                <input type="checkbox" name="location" value="충청북도">
+                                <label>충청북도</label>
+                                <input type="checkbox" name="location" value="충청남도">
+                                <label>충청남도</label>
+                                <input type="checkbox" name="location" value="전라북도">
+                                <label>전라북도</label>
+                                <input type="checkbox" name="location" value="전라남도">
+                                <label>전라남도</label>
+                                <input type="checkbox" name="location" value="경상북도">
+                                <label>경상북도</label>
+                                <input type="checkbox" name="location" value="강원도">
+                                <label>강원도</label>
+                                <input type="checkbox" name="location" value="서울">
+                                <label>서울</label>
+                                <input type="checkbox" name="location" value="인천">
+                                <label>인천</label>
+                                <input type="checkbox" name="location" value="대전">
+                                <label>대전</label>
+                                <input type="checkbox" name="location" value="광주">
+                                <label>광주</label>
+                                <input type="checkbox" name="location" value="대구">
+                                <label>대구</label>
+                                <input type="checkbox" name="location" value="부산">
+                                <label>부산</label>
+                                <input type="checkbox" name="location" value="울산">
+                                <label>울산</label>
+                            </dd>
+                        </dl>
+                        <dl class="detailList">
+                            <dt class="itemDt">
+                                업무
+                            </dt>
+                            <dd class="itemDt" id="business">
+                                <!--js로 추가-->
+                            </dd>
+                        </dl>
+                        <dl class="detailList">
+                            <dt class="itemDt">간호사 수</dt>
+                            <dd class="itemDd">
+                                <input type="radio" name="nurse" value="5">
+                                <label>5명 이상</label>
+                                <input type="radio" name="nurse" value="10">
+                                <label>10명 이상</label>
+                            </dd>
+                        </dl>
+                        <dl class="detailList">
+                            <dt class="itemDt">사회 복지사 수</dt>
+                            <dd class="itemDd">
+                                <input type="radio" name="social" value="5">
+                                <label>5명 이상</label>
+                                <input type="radio" name="social" value="10">
+                                <label>10명 이상</label>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section id="section">
+
+        </section>
+    </div>
+
+
+</body>
+</html>
