@@ -35,10 +35,11 @@
            
             <h3 class="time">현재시간 :</h3>
             <h3 class="ctemp">현재온도 : </h3>
-            <h3 class="speed">풍속 :</h3>
-            <h3 class="feels_like">체감온도:</h3>
-            <h3 class="humidity">습도:</h3>
-            <h3 class="name"></h3>
+            <h3 class="speed">풍속 : </h3>
+            <h3 class="feels_like">체감온도: </h3>
+            <h3 class="humidity">습도: </h3>
+            <h3 class="name">지역 : </h3>
+            <h3 class="country">국가 : </h3>
             <h3 class="icon"></h3>
     </div>
 </body>
@@ -56,6 +57,7 @@
             $(".feels_like").append(data.main.feels_like);
             $(".humidity").append(data.main.humidity);
             $(".name").append(data.name);
+            $(".country").append(data.sys.country);
             
             var wiconUrl ='<img src="https://openweathermap.org/img/wn/'+data.weather[0].icon +'.png">'
             $(".icon").html(wiconUrl);
@@ -68,7 +70,7 @@
                 var month = ot.getMonth()+1;
                 var day = ot.getDay()-1;
                 var hr = ot.getHours();
-                var m = ot.getMinutes();
+                var m = ot.getMinutes()+4;
                 var s = ot.getSeconds();
                 return year+'년 '+month+'월 '+day+'일 '+hr+'시 '+m+'분 '+s;
             }
@@ -85,5 +87,11 @@
     })
 
 
+
+      // Fetch weather data initially
+      fetchWeatherData();
+
+// Fetch weather data every 5 minutes (you can adjust the interval as needed)
+setInterval(fetchWeatherData, 5 * 60 * 1000);
 
 </script>
