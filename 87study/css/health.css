@@ -53,6 +53,7 @@
     position: relative;
     top:-20px;
     font-size:25px;
+    cursor: pointer;
 }
 
 
@@ -93,4 +94,10 @@
 #detailBox .detailList .itemDd{
     width:560px;
     padding:5px 8px;
+}
+
+#detailBox .detailList:nth-child(2) .itemDd{
+    display:flex;
+    flex-wrap: wrap;
+    column-gap:10px;
 }
