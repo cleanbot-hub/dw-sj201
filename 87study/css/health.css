@@ -70,10 +70,27 @@
 #detailBox{
     width:100%;
     position: relative;
+    border: 1px solid #444;
 }
 
 
 #detailBox .detailList{
-    padding:8px 0;
+
     border:1px solid #999;
+    display:flex;
+    align-items: center;
+}
+
+#detailBox .detailList .itemDt{
+
+    padding:13px 0;
+    padding-left:10px;
+    width:140px;
+    background:seagreen;
+    color:#fff;
+}
+
+#detailBox .detailList .itemDd{
+    width:560px;
+    padding:5px 8px;
 }
