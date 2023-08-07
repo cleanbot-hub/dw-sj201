@@ -44,10 +44,14 @@
 }
 #searchFilter .filterMore{
     text-align: center;
+  
     position:relative;
     font-size:25px;
     cursor:pointer;
 }
+
+#searchFilter .moreDown{top:-20px;}
+#searchFilter .moreUp{top:0; border-bottom: 2px solid #888;}
 
 #searchFilter .moreDown .bi-chevron-compact-up{
     display:none;
@@ -84,7 +88,7 @@
     background:black;
     color:#fff;
 }
-#detailBox .detailList .itemDt{
+#detailBox .detailList .itemDd{
     width:500px;
     padding:5px 8px;
 }

@@ -1,6 +1,8 @@
 $(function(){
         $(".filterMore").click(function(){
-            $(".filterDetail").
+            $(this).toggleClass("moreDown");
+            $(this).toggleClass("moreUp");
+            $(".filterDetail").slideToggle();
         })
 
 
