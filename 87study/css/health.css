@@ -3,101 +3,94 @@
     margin:0;
     box-sizing: border-box;
 }
-
 #Hwrap{
-    width: 800px;
+    width:800px;
     margin:0 auto;
-    position: relative;
+    position:relative;
 }
-
 #header{
     padding:20px 0;
-    width: 100%;
-    position: relative;
+    width:100%;
+    position:relative;
 }
-
 #defaultSearch{
     width:100%;
     padding:0 50px;
     padding-bottom:10px;
     border-bottom: 2px solid #888;
 }
-#defaultSearch .searchInput{
-    display:flex;
+#defaultSearch .searchinput{
+    display: flex;
     height: 30px;
-    font-size:17px;
+    padding-bottom:10px;
     width:100%;
     border:1px solid #bbb;
     border-radius: 10px;
-    padding:0 10px;
+    padding: 0 10px;
     justify-content: space-between;
     align-items: center;
 }
-
 #searchWord{
     border:0;
-    outline: none;
+    outline:none;
     height: 100%;
     width:100%;
-}
-
+}   
 #searchFilter{
     position: relative;
     width:100%;
-    padding: 20px 50px;
-    border-bottom: 2px solid #888;
+    padding:20px 50px;
+    border-radius: 2px solid #999;
 }
-
 #searchFilter .filterMore{
-    text-align:center;
-    position: relative;
-    top:-20px;
+    text-align: center;
+    position:relative;
     font-size:25px;
-    cursor: pointer;
+    cursor:pointer;
+}
+
+#searchFilter .moreDown .bi-chevron-compact-up{
+    display:none;
+}
+#searchFilter .moreUp .bi-chevron-compact-down{
+    
+    display:none;
 }
 
 
 
-#searchFilter .filterDetail{
+#searchfilter .filterDetail{
     width:100%;
-    position: relative;
+    position:relative;
 }
-
-#searchFilter .filterDetail h3{
-    font-size:20px;
+#searchfilter .filterDetail h3{
+    font-size: 20px;
     margin-bottom:10px;
 }
-
 #detailBox{
     width:100%;
-    position: relative;
-    border: 1px solid #444;
+    position:relative;
+    border : 1px solid #444;
 }
-
-
 #detailBox .detailList{
-
     border:1px solid #999;
-    display:flex;
+    display: flex;
     align-items: center;
 }
-
 #detailBox .detailList .itemDt{
-
     padding:13px 0;
     padding-left:10px;
     width:140px;
-    background:seagreen;
+    background:black;
     color:#fff;
 }
-
-#detailBox .detailList .itemDd{
-    width:560px;
+#detailBox .detailList .itemDt{
+    width:500px;
     padding:5px 8px;
 }
-
-#detailBox .detailList:nth-child(2) .itemDd{
-    display:flex;
+#detailBox .detailList:nth-child(2) .itemDt{
+    display: flex;
     flex-wrap: wrap;
-    column-gap:10px;
+    column-gap: 10px;
 }
+.hide{display: none;}
