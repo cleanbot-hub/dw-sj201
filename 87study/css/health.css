@@ -63,11 +63,11 @@
 
 
 
-#searchfilter .filterDetail{
+#searchFilter .filterDetail{
     width:100%;
     position:relative;
 }
-#searchfilter .filterDetail h3{
+#searchFilter .filterDetail h3{
     font-size: 20px;
     margin-bottom:10px;
 }
