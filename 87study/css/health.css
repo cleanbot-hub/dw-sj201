@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 #Hwrap{
-    width:800px;
+    width:1000px;
     margin:0 auto;
     position:relative;
 }
@@ -15,7 +15,7 @@
 }
 #defaultSearch{
     width:100%;
-    padding:0 50px;
+    padding:0 200px;
     padding-bottom:10px;
     border-bottom: 2px solid #888;
 }
@@ -87,14 +87,63 @@
     width:140px;
     background:black;
     color:#fff;
+    align-self: stretch;
+    align-items: center;
+    display:flex;
 }
 #detailBox .detailList .itemDd{
-    width:500px;
-    padding:5px 8px;
+    width:760px;
+    padding:13px 8px;
 }
-#detailBox .detailList:nth-child(2) .itemDt{
+.itemDd:nth-child(2), .itemDd:nth-child(3){
     display: flex;
     flex-wrap: wrap;
     column-gap: 10px;
+    row-gap: 5px;
 }
 .hide{display: none;}
+
+#sort_wrap{
+    display:flex;
+    align-items: center;
+    padding:10px 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+
+}
+#sort_wrap div{
+    border:1px solid #aaa;
+    border-radius: 10px;
+    padding:5px 10px;
+}
+#sort_wrap div:hover{
+    background:seagreen;
+    color:#fff;
+    cursor: pointer;
+}
+
+#sort_wrap .asc .bi-caret-down-fill{display:none;}
+#sort_wrap .desc .bi-caret-up-fill{display:none;}
+
+/* ==========본문 =============*/
+
+#section{
+    width:100%;
+    display:flex;
+    flex-wrap:wrap;
+    column-gap:10px;
+    row-gap:20px;
+    
+}
+
+.item_short{
+    width:495px;
+    display:flex;
+    box-shadow: 1px 1px 3px #ddd;
+}
+
+
+.item_detail_box{
+    width:295px;
+    padding: 0 5px 0 30px;
+}
