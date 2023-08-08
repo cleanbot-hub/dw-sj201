@@ -40,17 +40,8 @@ $(async function(){
     // 전체 텍스트에 대한 검색이 아니라 
     // 업무내용에 한해서만 검색이 가능하게 변경 하시오 
             $("#searchWord").on("keyup",function(){
-
-            const word = $(this).val();
-
-            $(".item_short").filter(function(){
-            
-               var addr = $(this).find(".item_detail").children("li:eq(1)"); // 소재지 도로명 주소 
-                var task = $(this).find(".item_detail").children("li:eq(2)"); // 건강증진 업무내용 
-                var hasAddr = addr.text().indexOf(word) > -1; 
-                var hasTask = task.text().indexOf(word) > -1;
-                $(this).toggle(hasAddr || hasTask);
-            });
+                search();
+         
         });
 
             $(".sort_obj").click(function(){
@@ -79,8 +70,26 @@ $(async function(){
             
                   });
 
-                
+                    /* 상세검색 부분 */
+                    $("input[type=checkbox]").change(function(){
+                      
+                            search();
+
+                    });
             });
+
+            function search(){
+                const word = $("#searchWord").val();
+                $(".item_short").filter(function(){
+                   var addr = $(this).find(".item_detail").children("li:eq(1)"); // 소재지 도로명 주소 
+                    var task = $(this).find(".item_detail").children("li:eq(2)"); // 건강증진 업무내용 
+                    var hasAddr = addr.text().indexOf(word) > -1; 
+                    var hasTask = task.text().indexOf(word) > -1;
+                    $(this).toggle(hasAddr || hasTask);
+                });
+            }
+
+
 
 
 
