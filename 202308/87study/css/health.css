@@ -17,79 +17,73 @@
     width:100%;
     padding:0 200px;
     padding-bottom:10px;
-    border-bottom: 2px solid #888;
+    border-bottom:2px solid #888;
 }
-#defaultSearch .searchinput{
-    display: flex;
-    height: 30px;
-    padding-bottom:10px;
+#defaultSearch .searchInput{
+    display:flex;  
+    height:30px;
+    font-size:17px;
     width:100%;
     border:1px solid #bbb;
     border-radius: 10px;
-    padding: 0 10px;
+    padding:0 10px;
     justify-content: space-between;
     align-items: center;
 }
 #searchWord{
     border:0;
-    outline:none;
-    height: 100%;
+    outline: none;
+    height:100%;
     width:100%;
-}   
+}
 #searchFilter{
     position: relative;
     width:100%;
     padding:20px 50px;
-    border-radius: 2px solid #999;
+   
 }
 #searchFilter .filterMore{
     text-align: center;
-  
     position:relative;
     font-size:25px;
-    cursor:pointer;
+    cursor: pointer;
 }
-
 #searchFilter .moreDown{top:-20px;}
-#searchFilter .moreUp{top:0; border-bottom: 2px solid #888;}
-
+#searchFilter .moreUp{top:0; border-bottom:2px solid #888;}
 #searchFilter .moreDown .bi-chevron-compact-up{
     display:none;
 }
 #searchFilter .moreUp .bi-chevron-compact-down{
-    
     display:none;
 }
-
-
 
 #searchFilter .filterDetail{
     width:100%;
     position:relative;
 }
 #searchFilter .filterDetail h3{
-    font-size: 20px;
+    font-size:20px;
     margin-bottom:10px;
 }
 #detailBox{
     width:100%;
     position:relative;
-    border : 1px solid #444;
+    border:1px solid #444;
 }
 #detailBox .detailList{
-    border:1px solid #999;
-    display: flex;
+    border-top:1px solid #999;
+    display:flex;
     align-items: center;
+   
 }
 #detailBox .detailList .itemDt{
-    padding:13px 0;
+    align-self:stretch;
+    display:flex;
+    align-items:center;
     padding-left:10px;
     width:140px;
-    background:black;
+    background:seagreen;
     color:#fff;
-    align-self: stretch;
-    align-items: center;
-    display:flex;
 }
 #detailBox .detailList .itemDd{
     width:760px;
@@ -98,52 +92,49 @@
 .itemDd:nth-child(2), .itemDd:nth-child(3){
     display: flex;
     flex-wrap: wrap;
-    column-gap: 10px;
+    column-gap: 20px;
     row-gap: 5px;
 }
-.hide{display: none;}
+
+
 
 #sort_wrap{
     display:flex;
     align-items: center;
     padding:10px 20px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-
+    margin-bottom:20px;
+    border-bottom:1px solid #ddd;
+    column-gap: 20px;
 }
 #sort_wrap div{
     border:1px solid #aaa;
     border-radius: 10px;
     padding:5px 10px;
 }
-#sort_wrap div:hover{
+#sort_wrap div:hover{     cursor: pointer;
     background:seagreen;
     color:#fff;
-    cursor: pointer;
 }
+#sort_wrap .asc .bi-caret-down{ display:none;}
+#sort_wrap .desc .bi-caret-up{ display:none;}
 
-#sort_wrap .asc .bi-caret-down-fill{display:none;}
-#sort_wrap .desc .bi-caret-up-fill{display:none;}
 
-/* ==========본문 =============*/
-
+/* ============  본문 ============ */
 #section{
     width:100%;
     display:flex;
-    flex-wrap:wrap;
-    column-gap:10px;
+    flex-wrap: wrap;
+    column-gap: 10px;
     row-gap:20px;
-    
 }
-
 .item_short{
     width:495px;
     display:flex;
     box-shadow: 1px 1px 3px #ddd;
 }
-
-
 .item_detail_box{
     width:295px;
-    padding: 0 5px 0 30px;
+    padding:0 5px 0 30px;
 }
+
+.hide{display:none;}
