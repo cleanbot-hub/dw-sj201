@@ -37,8 +37,6 @@ $(async function(){
         view(data_list);
 
     
-  
-
     // 전체 텍스트에 대한 검색이 아니라 
     // 업무내용에 한해서만 검색이 가능하게 변경 하시오 
             $("#searchWord").on("keyup",function(){
@@ -66,8 +64,7 @@ $(async function(){
                     
                  
 
-                  $.getJSON("./전국건강증진센터표준데이터.json",function(data){
-                    const data_list = data.records;
+                  
                     
                     data_list.sort(function(a,b){
                         if( a[sort_type[name]] > b[sort_type[name]] ) return 1*has;
@@ -80,9 +77,9 @@ $(async function(){
                     view(data_list);
                     
             
-                });
+                  });
 
-                });
+                
             });
 
 
