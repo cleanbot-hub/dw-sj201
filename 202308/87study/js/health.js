@@ -1,95 +1,44 @@
+// 스크립트에서 배열을 생성 할 때는 const 를 많이 사용한다 
+// 배열의 주소는 변하지 않고 값만 변동 이 있기 때문에 배열의 주소 
+/*
 
-// $(function(){
-    
-//     $(".filterMore").click(function(){
-//         $(this).toggleClass("moreDown");
-//         $(this).toggleClass("moreUp");
-//         $(".filterDetail").slideToggle();
-//     });
-
-    
-//     $.getJSON("./전국건강증진센터표준데이터.json", function(data){
-//         const data_list = data.records;
-
-     
-//         function displayAllData() {
-           
-//             $("#section").empty();
-
-            
-//             $.each(data_list, function(i, item){
-               
-//                 $("#section").append(
-//                     "<div class='item_short'><div class='item_image'>" +
-//                     "<img src='https://loremflickr.com/200/200/health?random=" + i + "'></div>" +
-//                     "<div class='item_detail_box'><ul class='item_detail'>" +
-//                     "<li>" + item.건강증진센터명 + "</li><li>" + item.소재지도로명주소 + "</li>" +
-//                     "<li>" + item.건강증진업무내용 + "</li><li>" + item.건강증진센터구분 + "</li>" +
-//                     "<li>" + item.운영기관명 + "</li><li>" + item.운영기관전화번호 + "</li></ul></div></div>"
-//                 );
-//             });
-//         }
+        자바스크립트 비동기 - aysnc , await , promose 
+        자바스크립트에서 비동기 처리 3가지 방법 
+        1. 콜백 함수 - 무한 콜백 , callback hell
+        2. promise 
+        3. aysnc/await 
 
         
-//         function displaySearchResults(keyword) {
-           
-//             $("#section").empty();
-
-            
-//             $.each(data_list, function(i, item){
-              
-//                 if (item.건강증진업무내용.includes(keyword)) {
-                    
-//                     $("#section").append(
-//                         "<div class='item_short'><div class='item_image'>" +
-//                         "<img src='https://loremflickr.com/200/200/health?random=" + i + "'></div>" +
-//                         "<div class='item_detail_box'><ul class='item_detail'>" +
-//                         "<li>" + item.건강증진센터명 + "</li><li>" + item.소재지도로명주소 + "</li>" +
-//                         "<li>" + item.건강증진업무내용 + "</li><li>" + item.건강증진센터구분 + "</li>" +
-//                         "<li>" + item.운영기관명 + "</li><li>" + item.운영기관전화번호 + "</li></ul></div></div>"
-//                     );
-//                 }
-//             });
-//         }
-
         
-//         displayAllData();
+*/
 
-       
-//         $("#searchWord").on("keyup", function(){
-            
-//             const keyword = $(this).val().trim();
 
-            
-//             if (keyword === "") {
-//                 displayAllData();
-//             } else {
-//                 displaySearchResults(keyword);
-//             }
-//         });
-//     });
-// });
-$(function(){
-    $(".filterMore").click(function(){
-        $(this).toggleClass("moreDown");
-        $(this).toggleClass("moreUp");
-        $(".filterDetail").slideToggle();
-    });
+let data_list= new Object(); // json 데이터 저장할 전역변수 
 
-    $.getJSON("./전국건강증진센터표준데이터.json",function(data){
-        const data_list = data.records;
+        async function getData(){
 
-       $.each(data_list, function(i, item){
-            $("#section").append(
-"<div class='item_short'><div class='item_image'>"+
-"<img src='https://loremflickr.com/200/200/health?random="+i+"'></div>"+
-"<div class='item_detail_box'><ul class='item_detail'>"+
-"<li>"+item.건강증진센터명+"</li><li>"+item.소재지도로명주소+"</li>"+
-"<li>"+item.건강증진업무내용+"</li><li>"+item.건강증진센터구분+"</li>"+
-"<li>"+item.운영기관명+"</li><li>"+item.운영기관전화번호+"</li></ul></div></div>"
-            );
-       });
-    });
+        //             var d="";
+        //         $.getJSON("./전국건강증진센터표준데이터.json",function(data){
+        //             d=data.records;
+          
+        // });
+        //             return "d";
+        var data = await fetch("./전국건강증진센터표준데이터.json").then(function(res){return res.json();}).then(function(r){return r;})
+        console.log(data);
+        return data.records;
+    }
+
+$(async function(){
+        $(".filterMore").click(function(){
+            $(this).toggleClass("moreDown");
+            $(this).toggleClass("moreUp");
+            $(".filterDetail").slideToggle();
+        });
+        data_list = await getData();
+        view(data_list);
+
+    
+  
 
     // 전체 텍스트에 대한 검색이 아니라 
     // 업무내용에 한해서만 검색이 가능하게 변경 하시오 
@@ -104,8 +53,8 @@ $(function(){
                 var hasAddr = addr.text().indexOf(word) > -1; 
                 var hasTask = task.text().indexOf(word) > -1;
                 $(this).toggle(hasAddr || hasTask);
+            });
         });
-    });
 
             $(".sort_obj").click(function(){
                   $(this).toggleClass("asc");
@@ -129,8 +78,8 @@ $(function(){
                     });
                     
                     
+                    view(data_list);
                     
-                    $("#section").empty();
             
                 });
 
@@ -140,7 +89,7 @@ $(function(){
 
 
             function  view(data_list){
-
+                $("#section").empty();
                 $.each(data_list, function(i, item){
                     $("#section").append(
                         "<div class='item_short'><div class='item_image'>"+
