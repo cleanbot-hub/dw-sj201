@@ -91,13 +91,18 @@ $(async function(){
                 $("input[name=nurse]:checked").each(function(){ nurse.push($(this).val());});
                 $("input[name=social]:checked").each(function(){ social.push($(this).val());});
 
-                
+
 
 
 
                 $(".item_short").filter(function(){
 
                     var isShow=true;
+                    var idx = $(this).index();
+                    
+
+
+
                     if(word!=''){
                     var addr = $(this).find(".item_detail").children("li:eq(1)"); // 소재지 도로명 주소 
                     var task = $(this).find(".item_detail").children("li:eq(2)"); // 건강증진 업무내용 
@@ -105,6 +110,12 @@ $(async function(){
                     var hasTask = task.text().indexOf(word) > -1;
                     isShow= hasAddr || hasTask;
                     }
+
+                    if(classify.length!=0){
+                        if(classify.indexOf(data_list[idx].건강증진센터구분) == -1) isShow=false;
+
+                    }
+
 
                     $(this).toggle( isShow );
                 });
