@@ -93,8 +93,11 @@ $(async function(){
 
 
                 $(".item_short").filter(function(){
+
+
                     var isShow=true;
                     var idx = $(this).index();
+                    
                     if(word!=''){
                     var addr = $(this).find(".item_detail").children("li:eq(1)"); // 소재지 도로명 주소 
                     var task = $(this).find(".item_detail").children("li:eq(2)"); // 건강증진 업무내용 
