@@ -74,9 +74,20 @@ $(async function(){
                     $("input[type=checkbox]").change(function(){
                       
                             search();
+                    });
+                    $("input[type=radio]").change(function(){
+                            search();
+            
+                        });
+
+
+                    
+
+
+
+
 
                     });
-            });
 
            function search(){
     const word = $("#searchWord").val();
@@ -85,6 +96,7 @@ $(async function(){
     let task = new Array();
     let nurse = new Array();
     let social = new Array();
+    
     $("input[name=classify]:checked").each(function(){ classify.push($(this).val());});
     $("input[name=location]:checked").each(function(){ location.push($(this).val());});
     $("input[name=task]:checked").each(function(){ task.push($(this).val());});
@@ -99,9 +111,9 @@ $(async function(){
             
                     if(word!=''){
                         var addr = $(this).find(".item_detail").children("li:eq(1)");
-                        var task = $(this).find(".item_detail").children("li:eq(2)");
+                        var task1 = $(this).find(".item_detail").children("li:eq(2)");
                         var hasAddr = addr.text().indexOf(word) > -1;
-                        var hasTask = task.text().indexOf(word) > -1;
+                        var hasTask = task1.text().indexOf(word) > -1;
                         isShow= hasAddr || hasTask;
                     }
                     
@@ -116,7 +128,38 @@ $(async function(){
                             }
                         }
                     }
-            
+                        if( task.length!=0 && isShow ){ // 업무 상세 검색
+                            isShow=false;
+                            for(var i=0; i<task.length; i++){
+                                if(data_list[idx].건강증진업무내용.indexOf(task[i]) > -1){
+                                    isShow=true;
+                                    break;
+                                }
+                            }
+                        }
+                       
+                        if(nurse.length!=0 && isShow){ // 간호사수 상세검색
+                            isShow=false;
+                            if (Number(data_list[idx].간호사수) >= Number(nurse[0])) 
+                            isShow=true;
+                            else isShow=false;
+                            
+                        }
+
+
+                        if(social.length!=0 && isShow){ // 사회복지사수 상세검색
+                            isShow=false;
+                            if (Number(data_list[idx].사회복지사수) >= Number(social[0])) 
+                            isShow=true;
+                            else isShow=false;
+                            
+                        }
+
+
+
+
+
+
                     $(this).toggle( isShow );
                 });
             }

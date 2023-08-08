@@ -1,0 +1,107 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+#Hwrap{
+    width:1000px;
+    margin:0 auto;
+    position:relative;
+}
+#header{
+    padding:20px 0;
+    width:100%;
+    position:relative;
+}
+
+#defaultSearch{
+    width:100%;
+    padding:0 200px;
+    padding-bottom:10px;
+    border-bottom:2px solid #888;
+}
+#defaultSearch .searchInput{
+    display:flex;  
+    height:30px;
+    font-size:17px;
+    width:100%;
+    border:1px solid #bbb;
+    border-radius: 10px;
+    padding:0 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+#searchWord{
+    border:0;
+    outline: none;
+    height:100%;
+    width:100%;
+}
+#searchFilter{
+    position: relative;
+    width:100%;
+    padding:20px 50px;
+   
+}
+
+
+
+#detailBox{
+    width:100%;
+    position:relative;
+    border:1px solid #444;
+}
+#detailBox .detailList{
+    border-top:1px solid #999;
+    display:flex;
+    align-items: center;
+   
+}
+#detailBox .detailList .itemDt{
+    align-self:stretch;
+    display:flex;
+    align-items:center;
+    padding-left:10px;
+    width:140px;
+    background:seagreen;
+    color:#fff;
+}
+#detailBox .detailList .itemDd{
+    width:760px;
+    padding: 8px;
+}
+.itemDd:nth-child(2), .itemDd:nth-child(3){
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 35px;
+    row-gap: 3px;
+}
+
+
+#welldone{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap:20px;
+    
+}
+
+
+
+.item_short{
+    width:495px;
+    display:flex;
+    box-shadow: 1px 1px 3px #ddd;
+}
+.item_detail_box{
+    width:295px;
+    padding:0 5px 0 30px;
+}
+
+.item_detail{
+    list-style-type: none;
+}
+
+
+
