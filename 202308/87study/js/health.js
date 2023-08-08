@@ -111,11 +111,19 @@ $(async function(){
                     isShow= hasAddr || hasTask;
                     }
 
-                    if(classify.length!=0){
-                        if(classify.indexOf(data_list[idx].건강증진센터구분) == -1) isShow=false;
+                    if(classify.length!=0 && isShow){
+                        if( classify.indexOf(data_list[idx].건강증진센터구분) == -1) isShow=false;
 
                     }
+                        if(location.length!=0 && isShow){
+                            isShow=false;
+                            for(var i=0; i<location.length; i++){
+                                if( data_list[idx].소재지도로명주소.indexOf(location[i]) > -1){
+                                    isShow=true; break;
+                                }
+                            }
 
+                        }
 
                     $(this).toggle( isShow );
                 });
