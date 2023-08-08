@@ -81,11 +81,15 @@ $(async function(){
             function search(){
                 const word = $("#searchWord").val();
                 $(".item_short").filter(function(){
-                   var addr = $(this).find(".item_detail").children("li:eq(1)"); // 소재지 도로명 주소 
+                    var isShow=true;
+                    if(word!=''){
+                    var addr = $(this).find(".item_detail").children("li:eq(1)"); // 소재지 도로명 주소 
                     var task = $(this).find(".item_detail").children("li:eq(2)"); // 건강증진 업무내용 
                     var hasAddr = addr.text().indexOf(word) > -1; 
                     var hasTask = task.text().indexOf(word) > -1;
-                    $(this).toggle(hasAddr || hasTask);
+                    isShow= hasAddr || hasTask;
+                    }
+                    $(this).toggle( isShow );
                 });
             }
 
