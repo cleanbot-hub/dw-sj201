@@ -17,6 +17,11 @@ let data_list= new Object(); // json 데이터 저장할 전역변수
 
         async function getData(){
 
+        //             var d="";
+        //         $.getJSON("./전국건강증진센터표준데이터.json",function(data){
+        //             d=data.records;
+        // });
+        //             return "d";
         var data = await fetch("./전국건강증진센터표준데이터.json").then(function(res){return res.json();}).then(function(r){return r;})
         console.log(data);
         return data.records;
