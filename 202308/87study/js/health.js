@@ -80,7 +80,23 @@ $(async function(){
 
             function search(){
                 const word = $("#searchWord").val();
+                let classify = new Array();
+                let location = new Array();
+                let task = new Array();
+                let nurse = new Array();
+                let social = new Array();
+                $("input[name=classify]:checked").each(function(){ classify.push($(this).val());});
+                $("input[name=location]:checked").each(function(){ location.push($(this).val());});
+                $("input[name=task]:checked").each(function(){ task.push($(this).val());});
+                $("input[name=nurse]:checked").each(function(){ nurse.push($(this).val());});
+                $("input[name=social]:checked").each(function(){ social.push($(this).val());});
+
+                
+
+
+
                 $(".item_short").filter(function(){
+
                     var isShow=true;
                     if(word!=''){
                     var addr = $(this).find(".item_detail").children("li:eq(1)"); // 소재지 도로명 주소 
@@ -89,6 +105,7 @@ $(async function(){
                     var hasTask = task.text().indexOf(word) > -1;
                     isShow= hasAddr || hasTask;
                     }
+
                     $(this).toggle( isShow );
                 });
             }
