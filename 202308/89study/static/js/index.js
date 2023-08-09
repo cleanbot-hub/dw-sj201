@@ -1,6 +1,6 @@
 let data=[]; // json 데이터 저장할 변수 
 let fire_stat= new Object(); // 
-
+var i=50;
 
 
 async function getData(){ // fetch traffic.json 불러오기 
@@ -44,6 +44,87 @@ $(async function(){ // each 시작
 
       console.log(keys);
  
+        var cv = $("#Canvas")[0];
+        var ctx = cv.getContext("2d");
+
+
+        $("#rect").click(function(){
+            ctx.fillStyle="pink";
+            ctx.fillRect(10,10,100,150);
+        });
+        $("#circle").click(function(){
+        ctx.beginPath();
+        ctx.arc(60,100,50,0,2*Math.PI);
+        ctx.stroke();
+        ctx.fillStyle="orange";
+        ctx.fill();
+        });
+
+        var id;
+        var step=10;
+        $("#move").click(function(){
+                
+            
+            id=setInterval(function(){
+             
+                ctx.clearRect(0,0,500,500);
+                ctx.beginPath();
+                ctx.arc(i,100, 50,0,2*Math.PI);
+                ctx.stroke();
+                ctx.fillStyle="orange";
+                ctx.fill();
+                i+=step;
+                if(i==450 || i==50) step*=-1;
+                
+            },50);
+            
+
+
+            
+            });
+
     
- 
+           
+                
+                
+            
+
+        // ctx.moveTo(0,0);
+        // ctx.lineTo(100,50);
+        // ctx.stroke();
+
+        // ctx.moveTo(50,50);
+        // ctx.lineTo(50,200);
+        // ctx.stroke();
+            
+        // // 배경색 있는 사각형 
+        // ctx.fillStyle="#b281ff";
+        // ctx.fillRect(20,20,50,50);
+        
+        // //테두리만 있는 사각형 (x좌표 , y좌표,너비, 높이)
+        // ctx.strokeRect(100,50,100,50);
+
+        // //원 (x좌표 y좌표 반지름 시작각도 끝각도 방향 )
+        // ctx.beginPath();
+        // ctx.strokeStyle="red";
+        // ctx.arc(200,200,50,0,2*Math.PI);
+        // ctx.stroke();
+
+
+        // //텍스트 
+        // ctx.fillStyle="pink";
+        // ctx.font="30px Arial"
+        // ctx.fillText("눈빛교환",200,50);
+    
+        // //그라디언트 
+
+        // var grd=ctx.createLinearGradient(0,0,100,0);
+        // // createConicGradient , createRadialGradient
+        // grd.addColorStop(0,"blue");
+        // grd.addColorStop(0.9,"brown");
+        // grd.addColorStop(1,"white");
+
+        // ctx.fillStyle=grd;
+        // ctx.fillRect(50,300,100,200);
+
  });
