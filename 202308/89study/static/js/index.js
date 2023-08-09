@@ -44,44 +44,57 @@ $(async function(){ // each 시작
 
       console.log(keys);
  
-        var cv = $("#Canvas")[0];
-        var ctx = cv.getContext("2d");
+      var cv = $("#Canvas")[0];
+      var ctx = cv.getContext("2d");
+      
+      $("#rect").click(function(){
+          ctx.fillStyle = "pink";
+          ctx.fillRect(10, 10, 100, 150);
+      });
+      
+      $("#circle").click(function(){
+          ctx.beginPath();
+          ctx.arc(60, 100, 50, 0, 2 * Math.PI);
+          ctx.stroke();
+          ctx.fillStyle = "orange";
+          ctx.fill();
+      });
+      
+      var id;
+      var x = 60; // 초기 x 좌표 (원의 가운데)
+      var y = 100; // 초기 y 좌표
+      var angle = Math.random() * Math.PI * 2; // 무작위 각도
+      var speed = 5; // 이동 속도
+      
+      function drawCircle(x, y) {
+          ctx.clearRect(0, 0, 500, 500);
+          ctx.beginPath();
+          ctx.arc(x, y, 50, 0, 2 * Math.PI);
+          ctx.stroke();
+          ctx.fillStyle = "orange";
+          ctx.fill();
+      }
+      
+      $("#move").click(function(){
+          clearInterval(id);
+      
+          id = setInterval(function(){
+              x += Math.cos(angle) * speed;
+              y += Math.sin(angle) * speed;
+      
+              // 공이 화면 밖을 벗어나면 반대 방향으로 튕기도록 처리
+              if (x >= 450 || x <= 50) {
+                  angle = Math.PI - angle;
+              }
+              if (y >= 450 || y <= 50) {
+                  angle = -angle;
+              }
+      
+              drawCircle(x, y);
+          }, 50);
+      });
+      
 
-
-        $("#rect").click(function(){
-            ctx.fillStyle="pink";
-            ctx.fillRect(10,10,100,150);
-        });
-        $("#circle").click(function(){
-        ctx.beginPath();
-        ctx.arc(60,100,50,0,2*Math.PI);
-        ctx.stroke();
-        ctx.fillStyle="orange";
-        ctx.fill();
-        });
-
-        var id;
-        var step=10;
-        $("#move").click(function(){
-                
-            
-            id=setInterval(function(){
-             
-                ctx.clearRect(0,0,500,500);
-                ctx.beginPath();
-                ctx.arc(i,100, 50,0,2*Math.PI);
-                ctx.stroke();
-                ctx.fillStyle="orange";
-                ctx.fill();
-                i+=step;
-                if(i==450 || i==50) step*=-1;
-                
-            },50);
-            
-
-
-            
-            });
 
     
            
