@@ -23,7 +23,17 @@ $(async function(){ // each 시작
         }
      
      }); 
-     //console.log(fire_stat);
+
+
+        var keys = Object.keys(fire_stat);
+
+        $.each(keys, function(i,key){
+            $("#name tr").append("<td>"+key+"</td>");
+            $("#figure").prepend()
+
+        });
+
+      console.log(keys);
  
     
  
