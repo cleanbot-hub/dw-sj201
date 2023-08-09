@@ -28,8 +28,15 @@ $(async function(){ // each 시작
         var keys = Object.keys(fire_stat);
 
         $.each(keys, function(i,key){
-            $("#name tr").append("<td>"+key+"</td>");
-            $("#figure").prepend()
+            var td1= "";
+            var td2= "<tr>";
+            for(var i=1; i<=fire_stat[key].출동건수; i+=5)
+                td1+="<td class='red' width=5></td>";
+            for(var i=1; i<=fire_stat[key].환자수; i+=5)
+                td2+="<td class='blue' width=5></td>";
+            td2+="</tr>";
+            $("#gp").append("<tr><td rowspan='2'>"+key+"</td>"+td1+"</tr>");
+            $("#gp").append(td2);
 
         });
 
