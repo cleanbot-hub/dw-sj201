@@ -3,105 +3,36 @@
     margin:0;
     box-sizing: border-box;
 }
-#Hwrap{
+#wrap{
     width:1000px;
     margin:0 auto;
-    position:relative;
-}
-#header{
-    padding:20px 0;
-    width:100%;
-    position:relative;
-}
-
-#defaultSearch{
-    width:100%;
-    padding:0 200px;
-    padding-bottom:10px;
-    border-bottom:2px solid #888;
-}
-#defaultSearch .searchInput{
-    display:flex;  
-    height:30px;
-    font-size:17px;
-    width:100%;
-    border:1px solid #bbb;
-    border-radius: 10px;
-    padding:0 10px;
-    justify-content: space-between;
-    align-items: center;
-}
-#searchWord{
-    border:0;
-    outline: none;
-    height:100%;
-    width:100%;
-}
-#searchFilter{
-    position: relative;
-    width:100%;
-    padding:20px 50px;
    
 }
 
-
-
-#detailBox{
+#wrap fieldset{
     width:100%;
-    position:relative;
-    border:1px solid #444;
+    margin-top:30px;
+    padding:20px;
 }
-#detailBox .detailList{
-    border-top:1px solid #999;
+
+.search_box{
+    width:100%;
     display:flex;
     align-items: center;
-   
+    border-bottom: 1px solid #ccc;
+
 }
-#detailBox .detailList .itemDt{
-    align-self:stretch;
-    display:flex;
-    align-items:center;
-    padding-left:10px;
-    width:140px;
-    background:seagreen;
-    color:#fff;
-}
-#detailBox .detailList .itemDd{
-    width:760px;
-    padding: 8px;
-}
-.itemDd:nth-child(2), .itemDd:nth-child(3){
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 5px;
-    row-gap: 3px;
+.search_title{
+    width:150px;
 }
 
-
-#welldone{
-    width:100%;
+.search_title ~ div{
+    width:810px;
     display:flex;
     flex-wrap: wrap;
-    column-gap: 10px;
-    row-gap:20px;
-    
+    padding:10px 0;
+    gap:15px;
 }
-
-
-
-.item_short{
-    width:495px;
-    display:flex;
-    box-shadow: 1px 1px 3px #ddd;
+.chk{
+    display:inline-block;
 }
-.item_detail_box{
-    width:295px;
-    padding:0 5px 0 30px;
-}
-
-.item_detail{
-    list-style-type: none;
-}
-
-
-

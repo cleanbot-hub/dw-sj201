@@ -1,82 +1,38 @@
+<!--    fish.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-    <script src="./js/index.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <title>인공어초시설 현황 데이터 활용</title>
+<script src="./js/s.js"></script>
+<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    
-    <div id="Hwrap">
-        <header id="header">
-            <div id="defaultSearch">
-                <div class="searchInput">
-                    <input type="text" name="searchWord" id="searchWord">
-                    <i class="bi bi-search"></i>
+    <div id="wrap">
+        <fieldset>
+            <legend>인공어초 검색</legend>
+            <div class="search_box ">
+                <div class="search_title">어초종류</div>
+                <div id="fish_kind">
+                    
                 </div>
             </div>
-            <div id="searchFilter">
-                <div class="filterDetail hide">
-                    <h3>상세검색</h3>
-                    <div id="detailBox" class="detailContainer">
-                        <dl class="detailList">
-                            <dt class="itemDt">어초종류  
-                            <dd class="itemDd">
-                                <input type="checkbox" name="type" value="사각"><span>사각</span>
-                                <input type="checkbox" name="type" value="강제(어선)"><span>강제어선</span>
-                                <input type="checkbox" name="type" value="고선"><span>고선</span>
-                                <input type="checkbox" name="type" value="신요철">  <span>신요철</span>                          
-                                <input type="checkbox" name="type" value="사각전주"><span>사각전주</span>
-                                <input type="checkbox" name="type" value="강제(대형)"><span>강제(대형)</span>
-                                <input type="checkbox" name="type" value="강제(상자형)"><span>강제(상자형)</span>
-                                <input type="checkbox" name="type" value="강제(팔각반구형중형)"><span>강제(강제팔각반구형중형)</span>
-                                <input type="checkbox" name="type" value="정삼각뿔"><span>정삼각뿔</span>
-                                <input type="checkbox" name="type" value="폴리콘"><span>폴리콘</span>
-                                <input type="checkbox" name="type" value="대형전주"><span>대형전주</span>
-                                <input type="checkbox" name="type" value="패조류용세라믹"><span>패조류용세라믹</span>
-                            </dd>
-                        </dl>       
-                        <dl class="detailList">
-                            <dt class="itemDt">설치년도</dt>
-                            <dd class="itemDd">
-                                <input type="checkbox" name="year" value="1980"><span>1980년</span>
-                                <input type="checkbox" name="year" value="1990"><span>1990년</span>
-                                <input type="checkbox" name="year" value="2000"><span>2000년</span>
-                                 
-                        </dl>
-                        <dl class="detailList">
-                            <dt class="itemDt">어초수량</dt>
-                            <dd class="itemDd">
-                                <input type="checkbox" name="count" value="9"><span>10개 미만</span>
-                                <input type="checkbox" name="count" value="10"><span>10개 이상</span>
-                                <input type="checkbox" name="count" value="50"><span>50개 이상</span>
-                                <input type="checkbox" name="count" value="100"><span>100개 이상</span>
-                                <input type="checkbox" name="count" value="150"><span>150개 이상</span>
-                                <input type="checkbox" name="count" value="200"><span>200개 이상</span>
-                                <input type="checkbox" name="count" value="250"><span>250개 이상</span>
-                                <input type="checkbox" name="count" value="300"><span>300개 이상</span>
-                             
-                        </dl>
+            <div class="search_box">
+                <div class="search_title">어초수량</div>
+                <div id="fish_amount">
 
-                    </header>
+                </div>
+            </div>
+            <div class="search_box">
+                <div class="search_title">설치년도</div>
+                <div id="install_year">
 
-
-
-                    <div id="welldone">
-            
-                    </div>
-
-
-
-
-
-
-
+                </div>
+            </div>
+        </fieldset>
+        <div id="list"></div>
     </div>
-
 </body>
 </html>
