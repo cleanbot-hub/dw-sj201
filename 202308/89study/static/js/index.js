@@ -23,7 +23,7 @@ $(async function(){ // each 시작
         }
      
      }); 
-     console.log(fire_stat);
+     //console.log(fire_stat);
  
     
  
