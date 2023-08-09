@@ -19,6 +19,20 @@ $(async function(){
         kind.add(item.어초종류);
         amount.add(Number(item.어초확인수량));
         y.add(Number(item.설치년도));
+
+        $("#list").append(
+            "<div class='fish_item'>"+
+            "<span class='num'>"+item.연번+"</span>"+
+            "<span class='fyear'>"+item.설치년도+"</span>"+
+            "<span class='ftype'>"+item.어초종류+"</span>"+
+            "<span class='famount'>"+item.어초확인수량+"</span>"+
+            "<span class='flocation'>"+item.지역명+"</span></div>"
+
+
+        );
+
+
+
     });
     fish_kind = Array.from(kind);
     fish_amount = Array.from(amount).sort(function(a,b){return a-b;});
@@ -30,20 +44,64 @@ $(async function(){
     year = Array.from(y);
 
 
-    make_checkbox(year, "#install_year","year");
-    make_checkbox(fish_amount, "#fish_amount","amount");
-    make_checkbox(fish_kind, "#fish_kind","kind");
+    make_checkbox(year, "#install_year","year"); //설치년도
+    make_checkbox(fish_amount, "#fish_amount","amount"); //어초수량
+    make_checkbox(fish_kind, "#fish_kind","kind"); // 어초종류
 
-    console.log(fish_amount);
+    $("input[type=checkbox]").change( search );
+    
 
-    // let st = new Set(["김승겸","김선향","송은선","신상수","임민지","김선향"]);
-    // st.add("안태균");
-    // st.delete("송은선");
-    // st.has("신상수"); // 셋 안에 값이 존재하면 true 없으면 false
-    // st.size;//  셋의 크기
-    // st.clear();// 셋 비우기
-    // console.log(st);
+
+
 });
+
+function search() {
+
+    let kind = new Array();
+    let amount = new Array();
+    let iyear = new Array();
+
+    $("input[name='year']:checked").each(function() {
+            iyear.push($(this).val());
+    });
+
+    $("input[name='amount']:checked").each(function() {
+        amount.push($(this).val());
+    });
+
+    $("input[name='kind']:checked").each(function() {
+        kind.push($(this).val());
+    });
+   
+    $(".fish_item").filter(function(){
+        var isShow = true;
+        var idx = $(this).index();
+
+        if (kind.length != 0 && isShow) {
+            if (kind.indexOf(fish[idx].어초종류) == -1) isShow = false;
+        }
+
+        if (amount.length != 0 && isShow) {
+            if (Number(fish[idx].어초확인수량) >= Number(Math.min(...amount))) isShow;
+            else isShow = false;
+        }
+
+        if (iyear.length != 0 && isShow) {
+            if (iyear.indexOf(fish[idx].설치년도) == -1) isShow = false;
+        }
+
+        $(this).toggle(isShow);
+    });
+}
+
+
+
+
+
+
+
+
+
 
 function make_checkbox(arr, id, name){
     $.each(arr,function(i,data){

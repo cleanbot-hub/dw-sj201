@@ -36,3 +36,16 @@
 .chk{
     display:inline-block;
 }
+
+#title{
+    width:100%;
+    margin:10px 0;
+
+}
+#title span,#list span{display:inline-block; text-align: center;}
+
+.num{width:100px;}
+.fyear{width:150px;}
+.ftype{width:200px;}
+.famount{width:100px;}
+.flocation{width:425px;}
