@@ -6,7 +6,7 @@ $(document).ready(async function () {
     draw(data_list);
 
     // 체크박스나 라디오 버튼의 상태 변경 시 검색 함수 호출
-    $("input[type=checkbox], input[type=radio]").change(function () {
+    $("input[type=checkbox]").change(function () {
         search();
     });
 
