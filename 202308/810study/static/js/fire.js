@@ -29,6 +29,19 @@ $(async function () {
     });
 
   var ctx = $("#graph")[0].getContext("2d");
+
+  ctx.strokeRect(1200,50,200,60);
+  ctx.moveTo(1230,70);
+  ctx.lineTo(1290,70);
+  ctx.stroke();
+    var grd=ctx.createLinearGradient(1230,85,60,15);
+    grd.addColorStop(0,"#FF6347");
+    grd.addColorStop(1,"#008080");
+    ctx.fillStyle=grd; 
+  ctx.fillRect(1230,85,60,15);
+  ctx.fillText("환자수",1300,73);
+  ctx.fillText("출동건수",1300,95);
+
   var keys=Object.keys(fire_stat);
   var oldx=oldy=0;
   var oldtext=0;
