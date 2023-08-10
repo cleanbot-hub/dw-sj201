@@ -34,8 +34,9 @@ $(async function () {
   ctx.moveTo(1230,70);
   ctx.lineTo(1290,70);
   ctx.stroke();
-    var grd=ctx.createLinearGradient(1230,85,60,15);
+    var grd=ctx.createLinearGradient(1230,85,1290,100);
     grd.addColorStop(0,"#FF6347");
+    grd.addColorStop(0.5,"#FFd700");
     grd.addColorStop(1,"#008080");
     ctx.fillStyle=grd; 
   ctx.fillRect(1230,85,60,15);
