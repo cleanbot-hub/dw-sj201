@@ -36,6 +36,10 @@ $(async function(){
     });
     console.log(tmp_data);
         
+    var ctx = $("#love")[0].getContext("2d");
+    
+
+
 
     });
 
