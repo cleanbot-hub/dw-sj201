@@ -15,20 +15,23 @@ async function getData(){
 $(async function(){
     data = await getData();
     var y= new Set();
-    var oldMonth={m:0,d:0}; // 이전 월이 몇월 , 몇일인지 기억 
+    var oldDay={y:0,m:1,d:0}; // 이전 월이 몇월 , 몇일인지 기억 
     $.each(data,function(i,item){
         var date = item.날짜.split("-"); // 각 데이터의 날짜를 기준으로 분리 배열
         y.add(date[0]); // 년도 만 저장 
         keyIn(date);
-        if(oldMonth != Number(date[1])) { //월이 변경 되었을 경우 
-            
+        if(oldDay.m != Number(date[1])) { //월이 변경 되었을 경우 
+            tmp_data[oldDay.y][oldDay.m].평균기온 = tmp_data[oldDay.y][oldDay.m].평균기온/oldDay.d;
+            tmp_data[oldDay.y][oldDay.m].최저기온 = tmp_data[oldDay.y][oldDay.m].최저기온/oldDay.d;
+            tmp_data[oldDay.y][oldDay.m].최고기온 = tmp_data[oldDay.y][oldDay.m].최고기온/oldDay.d;
 
         }
         tmp_data[date[0]][Number(date[1])].평균기온 += item.평균기온c;
         tmp_data[date[0]][Number(date[1])].최저기온 += item.최저기온c;
         tmp_data[date[0]][Number(date[1])].최고기온 += item.최고기온c;
-        oldMonth.m=Number(date[1]);
-        oldMonth.d=Number(date[2]);
+        oldDay.y=date[0];
+        oldDay.m=Number(date[1]);
+        oldDay.d=Number(date[2]);
 
     });
     console.log(tmp_data);
