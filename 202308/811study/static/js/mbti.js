@@ -17,8 +17,47 @@ $(async function(){
     $("#result_bt").click(result);
     $("#result_box").click(function(){
         $(this).toggle();
-    })
+    });
+
+    draw_GO();
+
 });
+function draw_GO(){
+    var ctx = $("#mbti")[0].getContext("2d");
+    var keys = Object.keys(data);
+
+    
+    $.each(keys,function(i,k){
+        draw_text(i,k,ctx);
+        draw_rect(i,k,ctx,keys);
+    });
+}
+
+function draw_rect(i,k,ctx,keys){
+ 
+    $.each(keys,function(a,b){
+
+    
+        ctx.fillStyle=color[data[k][b] -1];
+        ctx.fillRect(50+50*a,60+50*i,50,50);
+        ctx.strokeRect(50+50*a,60+50*i,50,50);
+    })
+}
+
+
+
+
+
+function draw_text(i,k,ctx){
+    ctx.fillStyle="#000";
+    ctx.font="15px Arial";
+    ctx.fillText(k,60+50*i,50);
+    ctx.fillText(k,10,90+50*i);
+}
+
+
+
+
 
 function result(){
 
