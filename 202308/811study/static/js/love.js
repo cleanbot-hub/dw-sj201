@@ -23,6 +23,7 @@ $(async function(){
         tmp_data[date[0]][Number(date[1])].평균기온 += item.평균기온c;
         tmp_data[date[0]][Number(date[1])].최저기온 += item.최저기온c;
         tmp_data[date[0]][Number(date[1])].최고기온 += item.최고기온c;
+        
 
     });
     console.log(tmp_data);
