@@ -11,19 +11,24 @@ async function getData(){
 
 }
 
+// 어떤것을 가장 빨리 찾아내는 방법은 그것이 아닌 다른 것을 찾기 시작하는 것이다 .
 $(async function(){
     data = await getData();
     var y= new Set();
-
+    var oldMonth={m:0,d:0}; // 이전 월이 몇월 , 몇일인지 기억 
     $.each(data,function(i,item){
         var date = item.날짜.split("-"); // 각 데이터의 날짜를 기준으로 분리 배열
         y.add(date[0]); // 년도 만 저장 
         keyIn(date);
+        if(oldMonth != Number(date[1])) { //월이 변경 되었을 경우 
+            
 
+        }
         tmp_data[date[0]][Number(date[1])].평균기온 += item.평균기온c;
         tmp_data[date[0]][Number(date[1])].최저기온 += item.최저기온c;
         tmp_data[date[0]][Number(date[1])].최고기온 += item.최고기온c;
-        
+        oldMonth.m=Number(date[1]);
+        oldMonth.d=Number(date[2]);
 
     });
     console.log(tmp_data);
