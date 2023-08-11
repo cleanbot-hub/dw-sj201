@@ -9,3 +9,11 @@
     height: 700px;
     box-shadow: 1px 1px 5px #aaa;
 }
+
+#spring,#summer,#fall,#winter{
+    width:1000px;
+    height: 500px;
+    box-shadow: 1px 1px 5px #aaa;
+    margin-bottom: 20px;
+
+}

@@ -34,18 +34,43 @@ $(async function(){
         oldDay.d=Number(date[2]);
 
     });
+
+
     console.log(tmp_data);
         
-    var ctx = $("#love")[0].getContext("2d");
+ 
 
 
-    // 범례 
-        make_legend(ctx);
+    // 그래프 그리기
+        draw("spring",[3,4,5]);
+        draw("summer",[6,7,8]);
+        draw("fall",[9,10,11]);
+        draw("winter",[12,1,2]);
 
     });
 
-    function make_legend(ctx){
+    function draw(id,month){ // 각 계절 마다 월에 맞춰서 캔버스에 그리기 
+        var ctx = $("#"+id)[0].getContext("2d");
         
+        
+        //범례 
+        make_legend(id,ctx);
+
+
+    }
+
+
+
+
+
+
+    function make_legend(id,ctx){
+
+        // 제목 
+        ctx.font="20px Arial";
+        ctx.fillText(id,100,30);
+        ctx.strokeStyle="#000"; // 테두리 설정 
+        ctx.strokeRect(200,10,600,60); // 상자 그리기 
 
 
     }
