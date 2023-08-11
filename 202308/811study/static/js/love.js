@@ -37,11 +37,20 @@ $(async function(){
     console.log(tmp_data);
         
     var ctx = $("#love")[0].getContext("2d");
-    
 
 
+    // 범례 
+        make_legend(ctx);
 
     });
+
+    function make_legend(ctx){
+        
+
+
+    }
+
+
 
 
     function keyIn(날짜){
