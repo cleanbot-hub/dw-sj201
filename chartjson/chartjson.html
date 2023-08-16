@@ -75,14 +75,7 @@
               data: combinedData,
               backgroundColor: color,
             },
-            {
-              label: lineLabel,
-              data: lineData,
-              borderColor: lineColor,
-              backgroundColor: "transparent",
-              fill: false,
-              type: "line", // Set the chart type to line
-            },
+
             {
               label: "출동건수",
               data: fireDepartments.map((f) => fire_stat[f].출동건수),
