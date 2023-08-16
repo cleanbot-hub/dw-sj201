@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart Example</title>
+  <!-- Include jQuery and Chart.js libraries -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <style>
+    #wrap {
+      width: 800px;
+      height: 800px;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <canvas id="combinedChart" width="800" height="800"></canvas>
+  </div>
+  <script>
+    let data = []; // JSON 데이터를 저장할 변수
+    let fire_stat = new Object(); // 소방서별 통계 데이터 저장 객체
+    let color = ["#FF6347", "#FFD700", "#7CFC00", "#008080", "#0000FF",
+      "#BA55D3", "#D2691E", "#B0C4DE", "#FF4500", "#228B22", "#FFD700", "#7CFC00", "#008080"
+    ];
+
+    let color1 = ["#008080", "#7CFC00", "#FFD700", "#228B22", "#FF4500", "#B0C4DE", "#D2691E", "#BA55D3", "#0000FF", "#008080", "#7CFC00", "#FFD700", "#FF6347"];
+
+    // 데이터 가져오는 함수
+    async function getData() {
+      var temp = await fetch("./traffic.json").then((r) => r.json());
+      return temp.body.items;
+    }
+
+    // Chart.js를 사용한 주요 함수
+    $(async function () {
+      data = await getData();
+      var total = 0;
+      var bike = 0;
+
+      $.each(data, function (i, item) {
+        total += Number(item.gutCo);
+        bike += item.rlifAcdAsmCdNm === "오토바이사고" ? Number(item.gutCo) : 0;
+
+        if (item.rsacGutFsttOgidNm in fire_stat) {
+          fire_stat[item.rsacGutFsttOgidNm].출동건수 += item.gutCo;
+          fire_stat[item.rsacGutFsttOgidNm].환자수 += item.trnfPcnt;
+        } else {
+          fire_stat[item.rsacGutFsttOgidNm] = {
+            출동건수: Number(item.gutCo),
+            환자수: Number(item.trnfPcnt),
+          };
+        }
+      });
+
+      var fireDepartments = Object.keys(fire_stat);
+      var combinedData = fireDepartments.map((f) => {
+        return fire_stat[f].출동건수 + fire_stat[f].환자수;
+      });
+
+      var lineData = fireDepartments.map((f) => fire_stat[f].출동건수 + fire_stat[f].환자수); // Replace with the appropriate data for your line chart
+      var lineLabel = "통계 (Line)"; // Replace with your desired label for the line chart
+      var lineColor = "#FFA500"; // Replace with your desired color for the line chart
+
+      // 출동건수와 이송환자수를 합친 막대 그래프 생성
+      var combinedCtx = document.getElementById("combinedChart").getContext("2d");
+      new Chart(combinedCtx, {
+        type: "bar",
+        data: {
+          labels: fireDepartments,
+          datasets: [
+            {
+              label: "통계",
+              data: combinedData,
+              backgroundColor: color,
+            },
+            {
+              label: lineLabel,
+              data: lineData,
+              borderColor: lineColor,
+              backgroundColor: "transparent",
+              fill: false,
+              type: "line", // Set the chart type to line
+            },
+            {
+              label: "출동건수",
+              data: fireDepartments.map((f) => fire_stat[f].출동건수),
+              backgroundColor: "red",
+              fill: true,
+            },
+            {
+              label: "이송환자수",
+              data: fireDepartments.map((f) => fire_stat[f].환자수),
+              backgroundColor: color1,
+              fill: true,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+          plugins: {
+            legend: {
+              position: 'right',
+            },
+          },
+        },
+      });
+    });
+  </script>
+</body>
+</html>
