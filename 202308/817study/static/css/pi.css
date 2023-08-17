@@ -59,5 +59,16 @@
     border-radius: 5px; font-size: 17px;
 }
 
+#chart_board{
+    display:flex;
+    justify-content: space-evenly;
+    column-gap: 10px;
+}
+
+#chart1 ,
+#chart2{
+    width:600px; height: 600px;
+    
+}
 
 
