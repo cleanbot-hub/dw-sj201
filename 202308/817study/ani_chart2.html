@@ -9,12 +9,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0-beta/dist/chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
 
-
+<style>
+    #wrap{
+        width:800px;
+        height: 800px;
+        margin:0 auto;
+    }
+</style>
 
 </head>
 <body>
+        <div id="wrap">
         <canvas id="ani" ></canvas>
-</body>
+        </div>
+    </body>
 </html>
 
 <script>
@@ -33,6 +41,7 @@ var chart = new Chart(ctx, {
     type: "line",
     data: {
         datasets: [{
+            label:"이야",
             data: data,
             borderColor: "LightCoral",
             borderWidth: 1,
