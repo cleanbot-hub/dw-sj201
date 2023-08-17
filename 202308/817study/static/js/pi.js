@@ -5,6 +5,9 @@ const category = [
 let ctx1 = "", ctx2 = "", pi1 = '', pi2 = '';
 const income = []; // 수입 머니 저장 배열
 const expen = []; // 지출 머니 저장 배열 
+const expen2=[(Math.floor(Math.random()*100))*1000,(Math.floor(Math.random()*100))*1000,
+    (Math.floor(Math.random()*100))*1000];
+
 
 $(function () { // 시작
     ctx1 = $("#pi1")[0]; // 첫 번째 캔버스
@@ -64,6 +67,7 @@ function expen_chart() {
 
 function income_pi() {
     pi1 = new Chart(ctx1, {
+        plugins:[ChartDataLabels],
         type: "pie",
         data: {
             labels: category[0],
@@ -80,33 +84,80 @@ function income_pi() {
                 ],
                 borderAlign:"center",
                 borderWidth:0,
+                borderColor:"black",
+                borderDash:[5,5], // [선의 길이 , 선의 간격 ]
+                borderDashOffset:2, // 테두리 갯수를 지정 
+                rotation:45,
             }]
-        }
+        },
+        options:{
+            pieceLabel:{
+                render:function(d){return d.label},
+                segment:true,
+                fontColor:"red",
+                position:"inside"
+            },
+
+           plugins:{
+            datalabels:{
+                formatter:function(value,context){
+                    var idx = context.dataIndex;
+                    var lb = context.chart.data.labels[idx];
+                    
+                    var total = context.chart.getDatasetMeta(0).total;
+
+                    return Math.round(value/total*100)+"%";
+                },
+                color:"red",
+                align:"end",
+                anchor:"end",
+                font:{
+                    size:"15px",
+                }
+            },
+            },
+        
+           }
+        
+                
+            
+    
+           
     });
 }
 
 function expen_pi() {
     pi2 = new Chart(ctx2, {
-        type: "pie",
+        type: "doughnut",
         data: {
-            labels: category[1],
-            datasets: [{
-                label: "지출",
-                data: expen,
-                backgroundColor: [
-                    "green",
-                    "red",
-                    "blue",
-                    "skyblue",
-                    "cyan",
-                    "orange",
-                    "darkred"
-                ],
-                borderAlign:"inner",
-                borderWidth:0,
-            }]
+            labels: category[1].slice(0, 4), // Labels for the first dataset
+            datasets: [
+                {
+                    data: expen.slice(0, 4),
+                    backgroundColor: [
+                        "green",
+                        "red",
+                        "blue",
+                        "skyblue"
+                    ]
+                },
+                {
+                    data: expen2,
+                    label:category[1].slice(4,7),
+                    backgroundColor: [
+                        "cyan",
+                        "orange",
+                        "purple"
+                    ]
+                }
+            ]
+        },
+        options: {
+            plugins: {
+                autocolors: {
+                    mode: "data"
+                }
+            }
         }
     });
 }
-
-
