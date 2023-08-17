@@ -66,8 +66,17 @@ function income_pi(){
         data:{
             labels:category[0],
             datasets:[{
+                label:"수입",
                 data:income,
-                
+                backgroundColor:[
+                    "green",
+                    "red",
+                    "blue",
+                    "skyblue",
+                    "cyan",
+                    "orange",
+
+                ]
             }]
         }
 
