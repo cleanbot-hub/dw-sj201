@@ -10,13 +10,14 @@
 
 #wrap h1{
     padding:20px 0;
+    border-bottom: 1px solid black;
 }
 
 
 #data_input{
     width:100%;
     position: relative;
-
+    padding:10px;
 }
 #data_input .labels{
     display:inline-block;
@@ -31,5 +32,34 @@
     color:white;
     font-weight: 800;
 }
+
+
+#data_input .input_wrap{
+    display:flex; align-items: center; justify-content: center;
+    padding:10px 0;
+}
+
+
+.category .money{
+    width:150px; height: 25px; 
+    border-color: darkmagenta;
+    border-radius: 5px;
+    padding:0 5px;
+}
+
+.money{
+    outline: none;
+    border:1px solid darkmagenta;
+}
+
+
+.bt{
+    height: 25px; padding:0 20px;
+    background:darkolivegreen; color:azure; border:0;
+    border-radius: 5px; font-size: 17px;
+}
+
+
+
 
 
