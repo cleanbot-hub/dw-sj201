@@ -11,6 +11,7 @@
     #wrap {
       width: 800px;
       height: 800px;
+      margin:0 auto;
     }
   </style>
 </head>
@@ -59,8 +60,8 @@
         return fire_stat[f].출동건수 + fire_stat[f].환자수;
       });
 
-      var lineData = fireDepartments.map((f) => fire_stat[f].출동건수 + fire_stat[f].환자수); // Replace with the appropriate data for your line chart
-      var lineLabel = "통계 (Line)"; // Replace with your desired label for the line chart
+      var lineData = fireDepartments.map((f) => fire_stat[f].환자수); // Replace with the appropriate data for your line chart
+      var lineLabel = "이송환자수 (Line)"; // Replace with your desired label for the line chart
       var lineColor = "#FFA500"; // Replace with your desired color for the line chart
 
       // 출동건수와 이송환자수를 합친 막대 그래프 생성
@@ -75,7 +76,6 @@
               data: combinedData,
               backgroundColor: color,
             },
-
             {
               label: "출동건수",
               data: fireDepartments.map((f) => fire_stat[f].출동건수),
@@ -87,6 +87,14 @@
               data: fireDepartments.map((f) => fire_stat[f].환자수),
               backgroundColor: color1,
               fill: true,
+            },
+            {
+              label: lineLabel,
+              data: lineData,
+              borderColor: lineColor,
+              backgroundColor: "transparent",
+              fill: false,
+              type: "line", // Set the chart type to line
             },
           ],
         },
