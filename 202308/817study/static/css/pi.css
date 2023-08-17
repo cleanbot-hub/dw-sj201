@@ -34,9 +34,9 @@
 }
 
 
-#data_input .input_wrap{
+.input_wrap{
     display:flex; align-items: center; justify-content: center;
-    padding:10px 0;
+    padding:10px 0; column-gap: 10px;
 }
 
 
@@ -58,8 +58,6 @@
     background:darkolivegreen; color:azure; border:0;
     border-radius: 5px; font-size: 17px;
 }
-
-
 
 
 
