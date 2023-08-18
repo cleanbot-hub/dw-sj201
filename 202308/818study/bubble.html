@@ -28,8 +28,39 @@
 
 
 <script>
+    const data =[];
+    for(var i=0; i<=23; i++){
+        data.push( {x :i, y:Math.floor(Math.random()*101) ,
+             r: Math.floor(Math.random()*20)+1} );
+    }
+
+    // 버블 차트는 세가지의 값으로 표현 하는 차트이다 . 
+    // x 축에 사용 될 값 , y추겡 사용 될 값 , 원의 크기를 표현 하는 값 
+    //  동물원에 1년동안 방문자들에 대해 차트를 만든다면 
+    // x 축에는 월별 표기 , y축에는 10대 20대 30대 40대 50대 60대 70대 ,
+    // 원의 크기는 해당연령의수를 사용하면 1년 중 어느 달에 몇살의 방문자들이 
+    // 많은 가 볼 수 있다 . 또는 세포의 분포도 , 인구 분포도 , 화학작용에 따른 결과 등등등
 
 
+
+
+
+
+    const ctx=$("#bubble")[0];
+    new Chart(ctx,{
+        type:"bubble",
+        data:{
+            datasets:[{
+                label:"변화",
+                data:data,
+                backgroundColor:function(context){
+                    var 인덱스 = context.dataIndex;
+                    console.log(context.chart.getDatasetMeta(0));
+                },
+
+            }]
+        }
+    })
 
 
 
