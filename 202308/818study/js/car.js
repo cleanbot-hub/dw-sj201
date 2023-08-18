@@ -12,62 +12,85 @@ $( async function(){
     await getData();
     const ctx = $("#car")[0];
 
- var fuel = Object.keys(data);
+    var fuel = Object.keys(data);
     var year = Object.keys(data[types[0]]);
-
+    // var color=["SpringGreen","DarkTurquoise","DodgerBlue","Orange","LightCoral"];
+    // var dataset=[];
+    // $.each(fuel,function(i,t){
+    //     dataset.push( {
+    //         label:t,
+    //         data:data[t],
+    //         borderColor:color[i],
+    //         backgroundColor:color[i],
+    //     })
+    // })
     
     new Chart(ctx,{
         type:"line",
         data:{
             labels:year,
-            datasets:
+            datasets:   //dataset
             [
                 {
                     label:fuel[0],
-                    data:data[fuel[0]],
+                    data:Object.values(data[fuel[0]]),
                     borderColor:"DarkTurquoise",
                     backgroundColor:"DarkTurquoise",
-                    yAxisID:"하이브리드",
-                    fill:false
+                    yAxisID:fuel[0]
+                    
                 },
                 {
                     label:fuel[1],
                     data:data[fuel[1]],
                     borderColor:"DodgerBlue",
                     backgroundColor:"DodgerBlue",
-                    yAxisID:"수소",
-                    fill:false
+                    yAxisID:"전기"
                 },
                 {
                     label:fuel[2],
                     data:data[fuel[2]],
                     borderColor:"Orange",
                     backgroundColor:"Orange",
-                    yAxisID:"경유",
-                    fill:false
+                    yAxisID:"하이브리드"
                 },
                 {
                     label:fuel[3],
                     data:data[fuel[3]],
                     borderColor:"LightCoral",
                     backgroundColor:"LightCoral",
-                    yAxisID:"휘발유",
-                    fill:false
+                    yAxisID:"휘발유"
                 },
                 {
                     label:fuel[4],
                     data:data[fuel[4]],
                     borderColor:"SpringGreen",
                     backgroundColor:"SpringGreen",
-                    yAxisID:"전기",
-                    fill:false
+                    yAxisID:"경유"
                 },
             ]
         },
         options:{
             // plugins:{legend:{labels:{font:{size:20}}}},
             scales:{
-               
+                "수소":{
+                    min:500,
+                    max:7000,
+                    ticks:{color:"DarkTurquoise"}
+                    ,position:"right"
+                },
+                "전기":{ min:11000,
+                    max:51000,
+                    ticks:{color:"DodgerBlue"},position:"right"
+                },
+                "하이브리드":{min:140000,
+                    max:310000,ticks:{color:"orange"},position:"right"
+                },
+                "휘발유":{min:2700000,
+                    max:3100000,ticks:{color:"LightCoral"},position:"left"},
+                "경유":{min:1450000,
+                        max:1500000,ticks:{color:"SpringGreen"},position:"left"}
+                    
+                // x:{ticks:{font:{size:20}}}
             }
         }
     });
