@@ -10,20 +10,28 @@ async function getData() {
 
 $(async function () {
   await getData(); // 데이터 가져오기 및 정제 함수 호출
-    const ctx =$("#car")[0]; 
+  const ctx = $("#car")[0];
 
-    new Chart(ctx,{
-        type:"line",
-        data:{
-            datasets:[
-                {
-                    
-                }
-            ]
-        },
-    })
-
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: Object.keys(data[types[0]]).map(Number), //
+      datasets: types.map((type, index) => ({
+        label: type,
+        data: Object.values(data[type]),
+        backgroundColor: getColor(index),
+        borderColor: getColor(index),
+        fill: false,
+      })),
+    },
+ 
+  });
 });
+
+function getColor(index) {
+  const colors = ["red", "blue", "green", "purple", "orange"];
+  return colors[index % colors.length];
+}
 
 function refine(temp) {
   // JSON 데이터 정제 함수
