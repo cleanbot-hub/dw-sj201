@@ -55,7 +55,10 @@
                 data:data,
                 backgroundColor:function(context){
                     var 인덱스 = context.dataIndex;
-                    console.log(context.chart.getDatasetMeta(0));
+                    var r = context.chart.getDatasetMeta(0)._dataset.data[인덱스].r;
+
+                    return r<=5 ? "#0000FF" : r<=10? "#339933" :r<=15? "#993399":"#66FF66";
+                    console.log();
                 },
 
             }]
