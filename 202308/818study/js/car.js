@@ -10,6 +10,19 @@ async function getData() {
 
 $(async function () {
   await getData(); // 데이터 가져오기 및 정제 함수 호출
+    const ctx =$("#car")[0]; 
+
+    new Chart(ctx,{
+        type:"line",
+        data:{
+            datasets:[
+                {
+                    
+                }
+            ]
+        },
+    })
+
 });
 
 function refine(temp) {
