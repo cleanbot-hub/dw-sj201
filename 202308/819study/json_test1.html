@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0-beta/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
+    <style>
+       /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-box input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.input-box button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+#content {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#content th, #content td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+#search_results {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search_results p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#search_results ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+#search_results li {
+    margin-bottom: 5px;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 600px) {
+    .input-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .input-box input[type="text"] {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .input-box button {
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+</style>    
+
+
+
+
+
+</head>
+<body>
+    
+    
+    
+    <div class="input-box">
+        <input type="text"  id="keyword" name="keyword">
+        <button id="bt">검색</button>
+        </div>
+    
+    <div id="list">
+        <table id="content">
+            <thead>
+               
+            </thead>
+            <tbody id="state_detail">
+                
+            </tbody>
+        </table>
+        <div id="search_results"></div>
+    </div>
+    
+
+   
+
+
+</body>
+</html>
+
+<script>
+
+$(document).ready(function () {
+
+$.getJSON("./data/test2.json", function (data) {
+
+    var keys = Object.keys(data);
+
+    // JSON 데이터로 #content 테이블 채우기
+    $.each(keys, function (index, key) {
+        $("#state_detail").append(
+            "<tr>" +
+            "<td>" + key + "</td>" + // 식당 이름
+            "<td>" + data[key] + "</td>" + // 식당 데이터 (메뉴 또는 다른 정보)
+            "</tr>"
+        );
+    });
+
+    // 검색 버튼에 클릭 이벤트 리스너 추가
+    $("#bt").click(function () {
+            var searchTerm = $("#keyword").val().toLowerCase();
+            var searchResults = [];
+
+            // Loop through the keys and check for matching restaurant names
+            $.each(keys, function (index, key) {
+                var restaurantName = key.toLowerCase();
+                if (restaurantName.includes(searchTerm)) {
+                    searchResults.push(data[key]);
+                }
+            });
+
+            // Display search results
+            var searchResultsHtml = "<p>검색 결과:</p><ul>";
+            $.each(searchResults, function (index, result) {
+                searchResultsHtml += "<li>" + result + "</li>";
+            });
+            searchResultsHtml += "</ul>";
+
+            $("#search_results").html(searchResultsHtml);
+        });
+    });
+});
+
+
+
+
+
+
+
+</script>

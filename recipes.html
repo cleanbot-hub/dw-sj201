@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>레시피 공유 웹앱</title>
+
+<style>
+
+    /* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 헤더 스타일 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-buttons button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* 메인 콘텐츠 스타일 */
+.recipe-list {
+    flex: 3;
+    padding: 20px;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+</style>
+
+</head>
+<body>
+    <header>
+        <div class="logo">음식 레시피</div>
+        <div class="search">
+            <input type="text" placeholder="레시피 검색">
+            <button>검색</button>
+        </div>
+        <div class="auth-buttons">
+            <button>로그인</button>
+            <button>가입</button>
+        </div>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <h2>카테고리</h2>
+            <ul>
+                <li>전체</li>
+                <li>한식</li>
+                <li>양식</li>
+                <li>중식</li>
+                <li>일식</li>
+            </ul>
+        </aside>
+        <section class="recipe-list">
+            <!-- 레시피 카드들이 여기에 들어갈 예정 -->
+        </section>
+    </main>
+    <footer>
+        <div class="pagination">
+            <button>이전</button>
+            <span>페이지 1/5</span>
+            <button>다음</button>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

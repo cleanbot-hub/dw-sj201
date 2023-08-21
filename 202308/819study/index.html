@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0-beta/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
+    <style>
+        *{box-sizing: border-box;}
+        .input_box{width:80%;min-width:300px;max-width:800px;margin:0 auto;}
+        .result{width:90%;min-width:500px;max-width:800px;margin:30px auto;}
+        #search{width:100%;height:25px; padding:3px 10px;}
+        .result th,.result td{border:1px solid #aaa;}
+        .result table{border-collapse: collapse;width:100%;}
+        .result td:nth-child(even){background:#ddd;}
+    </style>
+    </head>
+<body>
+    <div class="input_box">
+        <input type="text" id="search">
+    </div>
+    <div class="result">
+        <table>
+            <thead><th>식당명</th><th>메뉴</th></thead>
+            <tbody id="list"></tbody>
+        </table>
+    </div>
+</body>
+
+
+
+
+
+
+
+</html>
+<script>
+
+
+$.getJSON("./data/test2.json", function(data) {
+    var keys = Object.keys(data);
+
+    // console.log(keys);
+    // console.log(data);
+
+    $.each(keys, function(index, key) {
+        $("#list").append("<tr class='data_row'><td class='name'>" + key + "</td><td class='menu'>" + data[key] + "</td></tr>");
+    });
+});
+   
+
+    $("#search").on("keyup",function(){
+        var search = $(this).val();
+        $("#list>tr").filter(function(idx){
+            var f=$(this).children(".menu").text().indexOf(search) > -1;
+            $(this).toggle(f);
+        })
+    })
+
+
+
+    
+
+
+
+        
+        
+  
+        
+
+   
+
+
+
+
+</script>

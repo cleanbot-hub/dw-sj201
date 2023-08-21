@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0-beta/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-autocolors"></script>
+<style>
+    #wrap{
+        width:500px;
+       margin: 0 auto;
+   
+      
+    }
+ #content{
+    width:500px; border-collapse: collapse;
+    
+ }
+ #content th{border:1px solid black;}
+ #content td{border: 1px solid black;}
+
+
+.input_box{
+    padding:30px;
+    width:150px;
+    height: 150px;
+    margin:0 auto;
+    display: flex;
+}
+#bt{
+    width:50px;
+    height: 50px;
+    
+  
+}
+
+#state_detail{
+    text-align: center;
+}
+
+#keyword{
+    width:100px;
+    height: 55px;
+}
+
+
+
+</style>
+</head>
+<body>
+    
+    <div id="wrap">
+        <div class="input_box">
+        <input type="text"  id="keyword" name="keyword">
+        <button id="bt">검색</button>
+        </div>
+    
+        <div id="list">
+            <table id="content">
+                <thead>
+                    <th>이름</th><th>현재상태</th>
+                </thead>
+                <tbody id="state_detail">
+
+                </tbody>
+            </table>
+
+        </div>
+    
+    
+    </div>
+
+
+</body>
+</html>
+
+
+
+<script>
+
+
+
+
+
+$.getJSON("./data/test.json", function(data) {
+    var keys = Object.keys(data);
+
+    // console.log(keys);
+    // console.log(data);
+
+    $.each(keys, function(index, key) {
+        $("#state_detail").append("<tr class='data_row'><td class='name'>" + key + "</td><td>" + data[key] + "</td></tr>");
+    
+    
+    
+    
+    });
+
+    
+
+
+
+
+
+
+
+});
+   
+
+                $("#bt").click(function(){
+        
+        var word = $("#keyword").val(); 
+       
+        // input 태그에 입력 한 text 가 포함 되어 있는 또는 일치하는 text를 tbody 에서 찾아야 한다
+        // 찾아서 tr만 화면에 표시 , 나머지는 감추기를 해야 한다. 
+        // filter 함수를 사용한다 .
+        // filter ()의 () 안에는 태그 , 함수 , 선택자를 넣어 줄 수 있다 .
+
+        // filter 함수에 입력한 값과 일치하는 태그(요소)를 찾는다 
+        $("#state_detail>tr").filter(function(idx){
+
+           flag =  $(this).children(".name").text().indexOf(word) == -1;
+           $(this).toggle(flag); // filter를 통해 show , hide 를 적용 할 수 있지만 
+           // filter().show() , filter().hide(),filter().focus
+           // 위와 같이 사용 할 수 있지만 filter의 결과에 따라 동작 하기 때문에 
+           // filter().toggle() 정상적으로 동작 하지 않는다. 
+        
+        
+        
+        })
+        
+
+    });
+
+
+
+
+
+</script>
+<!-- 
+    json 은 자바스크립트 객체를 문서로 저장한 파일 형식이다.    
+    문서(파일)에 저장되려면 일반적으로 문자열 형식 이여야 한다 .
+    
+    자바스크립트의 객체는 key와 value로 이루어져 있다 .
+    {홍길동:"기분이좋다"}
+    홍길동은 key에 해당하고 
+    "기분이 좋다"는 value에 해당한다.
+
+    객체의 key는 데이터로서 활용보다는 참조의 역할이 강함 
+    데이터로서의 역할은 value를 사용함
+    key를 이용하여 value를 사용
+
+    사물함에 서로 다른 자물쇠가 있다면 ? 특정 사물함을 열기 위해서는 
+    그 사물함에 채워져있는 자물쇠에 맞는 키가 필요하다 .
+
+    올바른 , 알맞은 키를 사용해야 안에 내용물을 볼수 있다 .
+
+    자바스크립트의 객체에서 key 통해 value를 얻고자 한다면 
+    객체명.key 를 작성 해야 해당 key에 맞는 value를 얻을 수 있다 .
+
+    let 홍길동={어제:"우울",오늘:"좋음",내일:"행복"}
+    console.log(신상수.어제)
+    콘솔의 결과는 우울이다 .
+
+    자바스크립트의 객체를 
+    {"어제":"우울","오늘":"좋음","내일":"행복"}
+
+    json파일로 저장 하기 위해 문자열로 변환 한다 
+
+
+
+    객체의 key와 value 모두 문자열로 변환 된다. 단 숫자는 그냥 숫자로 
+
+
+    객체가 어떻게 생겼고 json에는 뭐가 저장 되는 지 ? 
+
+    json 을 만들어 보기 
+
+//json 파일 불러오기 
+//get JSON은 json 파일을 열어서 파일 안의 내용을 가져오기 위한 함수 이다 .
+// get JSON(파일경로 또는 url ,실행할 함수)
+// function (d) 여기서 d는 json 파일의 내용이 담겨져 있는 매개변수 이다.
+// d에 무엇이 들어 있는지 알고 싶다면 , 
+// console.log(d); 
+// d는 그냥 내가 만든 이름 일뿐 , 다른 이름으로 바꾸어도 된다 
+// console.log(d.key); < 
+
+// json 파일을 자바스크립트의 객체로 가져왔기 때문에 이후의 코드는 
+// 자바스크립트의 제어문 , 함수 등을 활용하면 된다. 
+// json 파일의 내용 전부 가져오는 건 어렵지 않다 .
+// 그럼 json 파일을 다룰 때 어려운게 무엇인가요 ? 
+
+
+
+    input 에 입력 하여 검색하기 만들기 하려면 뭐부터 해야 할까요 ?  
+
+    1. json 파일 내용 가져오기 
+    - getJSON과 같은 json파일 읽어 올수 있는 함수 사용 하기 
+    - json 파일 내용 잘가지고 왔는 지 확인 하기 
+
+    2. 가지고온 객체를 화면에 띄우기 
+    - 화면에 표시 하려면 json 데이터가 어떤 내용을 가지고 있는 지 확인하고 
+      그에 맞는 html 구성 해야 한다 .
+    지금 json내용은 key 부분이 이름이고, value 부분이 감정이니까 
+    화면에 표시될 내용은 두가지 뿐이다 . 
+    table 을 활용 할 것인지 div 를 활용 할 것인지 ul,ol,dl을 활용 할 것인지 
+    선택 해야 한다. 
+
+    어떤 것을 사용 해야 될지는 알아서 
+    많이 만들어 봐야 지금 데이터에는 어떤 태그 사용이 좋을지 알 수 있다 .
+    
+    사용자 입장에서 생각하고 판단 해야 된다 
+
+    3. 검색 기능 만들기 
+
+
+    검색은 어느 범위 까지 적용 할 것인지 정해야 한다 . 
+
+    모든 내용에 적용 할 것인지 아니면 특정 부분에만 적용  할 것인지 
+
+
+
+
+
+
+-->

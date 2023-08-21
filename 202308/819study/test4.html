@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <style>
+        * { box-sizing: border-box; }
+        #title {
+            width: 800px;
+            border: 2px solid #aaa; 
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+        #title b {
+            display: inline-block;
+        }
+        
+        #title, #list {
+            width: 1300px;
+            border: 2px solid #aaa; 
+            text-align: center;
+        }
+        
+        #list {
+            list-style-type: none;
+            padding: 0; 
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .a, .b { width: 20%; }
+        .c { width: 10%; }
+        .d { width: 35%; }
+        
+        #input_box {
+            width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        #list span {
+            display: inline-block;
+        }
+        
+        .item_list {
+            width: 1300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="input_box">
+        <input type="date" id="search" placeholder="검색할 날짜를 입력하세요.">
+        <input type="checkbox" name="weather" value="맑음">맑음
+        <input type="checkbox" name="weather" value="흐림">흐림
+        <input type="checkbox" name="weather" value="천둥">천둥
+      
+    </div>
+    <div id="title">
+        <b class="a">작성일</b><b class="b">제목</b><b class="c">날씨</b>
+        <b class="d">내용</b>
+    </div>
+    <ul id="list"></ul>
+    <script>
+          $.getJSON("./data/test4.json", function(data){
+            $.each(data.diary, function(i, item){
+                $("#list").append("<li class='list_item'><span class='a'>" + item.작성일 + "</span>" +
+                    "<span class='b'>" + item.제목 + "</span>" +
+                    "<span class='c'>" + item.날씨 + "</span>" +
+                    "<span class='d'>" + item.내용 + "</span>" +
+                    "</li>");
+            });
+        });
+
+        $("#search").change(function(){
+            var d = $(this).val().split("-").join("");
+            $(".list_item").filter(function(){
+                var isShow = $(this).text().indexOf(d) > -1;
+                $(this).toggle(isShow);
+            });
+        });
+
+        $("input[name=weather]").change(function(){
+            var selectedWeather = $("input[name=weather]:checked").map(function() {
+                return this.value;
+            }).get();
+            
+            if (selectedWeather.length === 0) {
+                $(".list_item").show();
+                return;
+            }
+
+            $(".list_item").each(function() {
+                var entryWeather = $(this).find(".c").text();
+                var isShow = selectedWeather.some(function(weather) {
+                    return entryWeather.includes(weather);
+                });
+                $(this).toggle(isShow);
+            });
+        });
+
+
+    </script>
+</body>
+</html>
