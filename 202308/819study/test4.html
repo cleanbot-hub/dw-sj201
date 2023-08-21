@@ -56,7 +56,6 @@
         <input type="checkbox" name="weather" value="맑음">맑음
         <input type="checkbox" name="weather" value="흐림">흐림
         <input type="checkbox" name="weather" value="천둥">천둥
-      
     </div>
     <div id="title">
         <b class="a">작성일</b><b class="b">제목</b><b class="c">날씨</b>
@@ -64,43 +63,52 @@
     </div>
     <ul id="list"></ul>
     <script>
-          $.getJSON("./data/test4.json", function(data){
-            $.each(data.diary, function(i, item){
-                $("#list").append("<li class='list_item'><span class='a'>" + item.작성일 + "</span>" +
-                    "<span class='b'>" + item.제목 + "</span>" +
-                    "<span class='c'>" + item.날씨 + "</span>" +
-                    "<span class='d'>" + item.내용 + "</span>" +
-                    "</li>");
-            });
+      // JSON 데이터를 가져와서 처리하는 부분
+$.getJSON("./data/test4.json", function(data){
+    // 가져온 데이터의 각 항목을 반복하며 리스트 아이템을 생성하고 화면에 표시
+    $.each(data.diary, function(i, item){
+        $("#list").append("<li class='list_item'><span class='a'>" + item.작성일 + "</span>" +
+            "<span class='b'>" + item.제목 + "</span>" +
+            "<span class='c'>" + item.날씨 + "</span>" +
+            "<span class='d'>" + item.내용 + "</span>" +
+            "</li>");
+    });
+});
+
+// 검색 날짜 입력 이벤트 처리
+$("#search").change(function(){
+    // 입력한 날짜를 문자열로 변환하고 '-' 문자 제거
+    var d = $(this).val().split("-").join("");
+    // 리스트 아이템 중 검색 날짜에 해당하는 것만 표시 또는 숨김
+    $(".list_item").filter(function(){
+        var isShow = $(this).text().indexOf(d) > -1;
+        $(this).toggle(isShow);
+    });
+});
+
+// 날씨 체크박스 변경 이벤트 처리
+$("input[name=weather]").change(function(){
+    // 선택된 날씨 체크박스의 값을 배열로 가져오기
+    var selectedWeather = $("input[name=weather]:checked").map(function() {
+        return this.value;
+    }).get();
+    
+    // 선택된 날씨가 없을 경우 모든 리스트 아이템을 표시하고 종료
+    if (selectedWeather.length === 0) {
+        $(".list_item").show();
+        return;
+    }
+
+    // 각 리스트 아이템을 반복하며 선택한 날씨에 해당하는 것만 표시 또는 숨김
+    $(".list_item").each(function() {
+        var entryWeather = $(this).find(".c").text();
+        // 선택한 날씨 중 하나라도 포함되어 있는지 검사하여 표시 여부 결정
+        var isShow = selectedWeather.some(function(weather) {
+            return entryWeather.includes(weather);
         });
-
-        $("#search").change(function(){
-            var d = $(this).val().split("-").join("");
-            $(".list_item").filter(function(){
-                var isShow = $(this).text().indexOf(d) > -1;
-                $(this).toggle(isShow);
-            });
-        });
-
-        $("input[name=weather]").change(function(){
-            var selectedWeather = $("input[name=weather]:checked").map(function() {
-                return this.value;
-            }).get();
-            
-            if (selectedWeather.length === 0) {
-                $(".list_item").show();
-                return;
-            }
-
-            $(".list_item").each(function() {
-                var entryWeather = $(this).find(".c").text();
-                var isShow = selectedWeather.some(function(weather) {
-                    return entryWeather.includes(weather);
-                });
-                $(this).toggle(isShow);
-            });
-        });
-
+        $(this).toggle(isShow);
+    });
+});
 
     </script>
 </body>
