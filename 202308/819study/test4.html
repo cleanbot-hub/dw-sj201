@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * { box-sizing: border-box; }
         #title {
@@ -48,6 +49,12 @@
         .item_list {
             width: 1300px;
         }
+
+        #chart{
+            width:400px;
+            height: 400px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +69,10 @@
         <b class="d">내용</b>
     </div>
     <ul id="list"></ul>
+
+    <div id="chart">
+    <canvas id="pieChart" width="400" height="400"></canvas>
+</div>
     <script>
       // JSON 데이터를 가져와서 처리하는 부분
 $.getJSON("./data/test4.json", function(data){
@@ -75,19 +86,36 @@ $.getJSON("./data/test4.json", function(data){
     });
 });
 
-// 검색 날짜 입력 이벤트 처리
-$("#search").change(function(){
-    // 입력한 날짜를 문자열로 변환하고 '-' 문자 제거
-    var d = $(this).val().split("-").join("");
-    // 리스트 아이템 중 검색 날짜에 해당하는 것만 표시 또는 숨김
-    $(".list_item").filter(function(){
-        var isShow = $(this).text().indexOf(d) > -1;
-        $(this).toggle(isShow);
+var pieChartInstance;
+function updatePieChart(data) {
+    var ctx = document.getElementById("pieChart").getContext("2d");
+
+    // Destroy the existing pie chart instance if it exists
+    if (pieChartInstance) {
+        pieChartInstance.destroy();
+    }
+
+    pieChartInstance = new Chart(ctx, {
+        type: "pie",
+        data: {
+            labels: Object.keys(data),
+            datasets: [
+                {
+                    data: Object.values(data),
+                    backgroundColor: [
+                        "rgb(255, 99, 132)",
+                        "rgb(54, 162, 235)",
+                        "rgb(255, 205, 86)",
+              // Add more colors as needed
+            ],
+          },
+        ],
+      },
     });
-});
+  }
 
 // 날씨 체크박스 변경 이벤트 처리
-$("input[name=weather]").change(function(){
+$("input[name=weather]").on("input", function () {
     // 선택된 날씨 체크박스의 값을 배열로 가져오기
     var selectedWeather = $("input[name=weather]:checked").map(function() {
         return this.value;
@@ -108,7 +136,64 @@ $("input[name=weather]").change(function(){
         });
         $(this).toggle(isShow);
     });
+
+    // 파이 차트 데이터를 업데이트
+    var weatherCount = {};
+
+    // 각 날씨 유형의 발생 횟수 카운트
+    $(".list_item:visible").each(function () {
+        var entryWeather = $(this).find(".c").text();
+        if (weatherCount.hasOwnProperty(entryWeather)) {
+            weatherCount[entryWeather]++;
+        } else {
+            weatherCount[entryWeather] = 1;
+        }
+    });
+
+    // 파이 차트 업데이트 함수 호출
+    updatePieChart(weatherCount);
 });
+
+// 검색 날짜 입력 이벤트 처리
+$("#search").change(function(){
+    // 입력한 날짜를 문자열로 변환하고 '-' 문자 제거
+    var d = $(this).val().split("-").join("");
+    // 리스트 아이템 중 검색 날짜에 해당하는 것만 표시 또는 숨김
+    $(".list_item").filter(function(){
+        var isShow = $(this).text().indexOf(d) > -1;
+        $(this).toggle(isShow);
+    });
+});
+
+// 날씨 체크박스 변경 이벤트 처리
+$("input[name=weather]").on("change", function () {
+    var selectedWeather = $("input[name=weather]:checked").map(function () {
+        return this.value;
+    }).get();
+
+    if (selectedWeather.length === 0) {
+        // Reset the pie chart by passing an empty object
+        updatePieChart({});
+        $(".list_item").show();
+        return;
+    }
+
+    // 각 리스트 아이템을 반복하며 선택한 날씨에 해당하는 것만 표시 또는 숨김
+    $(".list_item").each(function() {
+        var entryWeather = $(this).find(".c").text();
+        // 선택한 날씨 중 하나라도 포함되어 있는지 검사하여 표시 여부 결정
+        var isShow = selectedWeather.some(function(weather) {
+            return entryWeather.includes(weather);
+        });
+        $(this).toggle(isShow);
+    });
+
+    });
+
+
+
+  
+
 
     </script>
 </body>
