@@ -7,54 +7,40 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        * { box-sizing: border-box; }
-        #title {
-            width: 800px;
-            border: 2px solid #aaa; 
-            text-align: center;
-            margin: 0 auto;
-        }
-        
-        #title b {
-            display: inline-block;
-        }
-        
-        #title, #list {
-            width: 1300px;
-            border: 2px solid #aaa; 
-            text-align: center;
-        }
-        
-        #list {
-            list-style-type: none;
-            padding: 0; 
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .a, .b { width: 20%; }
-        .c { width: 10%; }
-        .d { width: 35%; }
-        
-        #input_box {
-            width: 700px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        #list span {
-            display: inline-block;
-        }
-        
-        .item_list {
-            width: 1300px;
-        }
+   #title, #list, #input_box {
+    width: 100%; /* Make these sections take up full width */
+    max-width: 100%; /* Limit maximum width to the device width */
+}
 
-        #chart{
-            width:400px;
-            height: 400px;
-            margin: 0 auto;
-        }
+.a, .b, .c, .d {
+    width: 100%; /* Make the columns take full width on smaller screens */
+}
+
+#chart {
+    width: 100%; /* Make the chart take full width */
+    max-width: 400px; /* Limit maximum width for the chart */
+}
+
+/* Add some margin to separate elements */
+.list_item {
+    margin-bottom: 10px;
+}
+
+/* Apply these styles for screens with max-width 600px (typical mobile devices) */
+@media (max-width: 600px) {
+    #title b, #list, .a, .b, .c, .d, #chart {
+        width: auto; /* Allow elements to take the necessary width */
+        max-width: 100%; /* Limit maximum width for certain elements */
+    }
+
+    #title b {
+        display: block; /* Display column labels vertically */
+    }
+
+    #chart {
+        margin: 20px auto; /* Add space around the chart */
+    }
+}
     </style>
 </head>
 <body>
