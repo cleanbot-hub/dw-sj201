@@ -1,0 +1,50 @@
+*{
+    padding: 0; margin: 0; box-sizing: border-box;
+}
+
+
+#wrap{
+
+    width:1200px;
+    height: 300px;
+    margin:0 auto;
+    padding:20px;
+}
+#search_wrap{
+    width:600px;
+    margin: 0 auto;
+}
+
+
+#minTall,#maxTall,#minEyes,#maxEyes{
+    width:30px;
+    
+}
+
+.search_input{
+    display:flex;
+    flex-direction: column;
+    width:600px;
+}
+.word_box{
+    width:600px;
+    
+}
+.search_detail{
+    width:600px;
+    margin: 0 auto;
+    display:flex;
+    gap: 20px;
+    
+}
+
+#detail_bt{
+    width:283px;
+}
+#word{
+    width:283px;
+}
+
+.i{
+    font-size: 17px;
+}
