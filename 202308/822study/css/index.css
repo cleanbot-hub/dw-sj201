@@ -1,50 +1,126 @@
-*{
-    padding: 0; margin: 0; box-sizing: border-box;
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
 }
 
-
-#wrap{
-
-    width:1200px;
-    height: 300px;
-    margin:0 auto;
-    padding:20px;
-}
-#search_wrap{
-    width:600px;
+#wrap {
+    max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-
-#minTall,#maxTall,#minEyes,#maxEyes{
-    width:30px;
-    
+#main_title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-.search_input{
+#search_wrap {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.search_input {
+    width:500px;
+    display: flex;
+}
+
+.word_box {
+    position: relative;
+}
+
+#word {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.bi-search-heart {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+#detail_bt {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#detail_bt:hover {
+    background-color: #0056b3;
+}
+
+.search_detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tall_range,
+.eyes_range,
+.class_select {
+    flex: 1;
+    padding: 10px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#list_wrap {
     display:flex;
-    flex-direction: column;
-    width:600px;
-}
-.word_box{
-    width:600px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     
-}
-.search_detail{
-    width:600px;
-    margin: 0 auto;
-    display:flex;
-    gap: 20px;
     
 }
 
-#detail_bt{
-    width:283px;
-}
-#word{
-    width:283px;
+
+.dt{
+    list-style-type: none;
+  
+    
 }
 
-.i{
-    font-size: 17px;
+
+
+.info{
+    width:150px;
+    height: 150px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;   
 }
+
+
+
+
