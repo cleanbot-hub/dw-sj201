@@ -114,9 +114,7 @@ span{
 .categoryText{display:inline-block; width:20%;padding:3px 10px; border-right:1px solid #aaa;}
 .moneyText{display:inline-block; text-align:right;width:20%;padding:3px 10px; border-right:1px solid #aaa;}
 .detailText{display:inline-block; width:60%;padding:3px 10px;}
-.detail{
 
-}
 .detail:nth-child(even){
     background:#ddd;
 }
