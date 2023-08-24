@@ -86,6 +86,6 @@ ul{list-style-type: none;}
 border:1px solid rgb(195, 243, 212);}
 #mychart{
     display:flex;
-    width:500px;
-    height:400px;
+    width:600px;
+    height:600px;
 }
