@@ -137,8 +137,8 @@ span{
 }
 
 #chartContainer{
+    display: flex;
     padding:20px;
-  
     margin:0 auto;
     width:400px;
     height: 400px;
