@@ -7,7 +7,7 @@
 #wrap{
     width:100%;
     max-width:1000px;
-    min-width:700px;
+    min-width:20%;
     margin:0 auto;
 }
 .sideclose{/*side  접혀있는 모습  */
@@ -57,11 +57,12 @@
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width:1000px;
+    width:100%;
     padding-left:100px;
+    min-width: 20%;
 }
 #main_left, #main_right {
-    width:600px;
+    width:100%;
     padding: 20px;
     margin: 0 auto;
     
@@ -78,7 +79,7 @@ ul {
 }
 
 .list { 
-    width: 300px;
+    width: 100%;
     border:  1px solid black;
     border-radius: 9px;
     margin: 0 auto;
@@ -137,11 +138,13 @@ span{
 }
 
 #chartContainer{
-    display: flex;
+
     padding:20px;
     margin:0 auto;
     width:400px;
     height: 400px;
 }
+
+
 
 
