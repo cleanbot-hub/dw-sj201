@@ -58,8 +58,9 @@
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width:100%;
-    padding-left:100px;
-    min-width: 20%;
+   
+ 
+  
 }
 #main_left, #main_right {
     width:100%;
@@ -79,12 +80,10 @@ ul {
 }
 
 .list { 
-    width: 100%;
+    width: 50%;
     border:  1px solid black;
     border-radius: 9px;
-    margin: 0 auto;
-    
-    
+    margin: 0 auto;  
 }
 
 
@@ -146,6 +145,24 @@ span{
     height: 400px;
 }
 
+#expenditures{
+width:490px;
+}
+
+#incomes{
+width:490px;
+}
+
+@media screen and (max-width:1600px){
+    .sideactive{
+        margin-left:300px;
+    }
+}
 
 
-
+@media (max-width: 500px) {
+    #main {
+        flex-direction: column;
+        
+    }
+}
