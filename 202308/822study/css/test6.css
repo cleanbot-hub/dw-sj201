@@ -90,7 +90,8 @@ ul {
 
 
 span{
-    width:300px;
+    width:50%;
+    height: 100%;
     display: inline-block;
     margin: 10px;
 }
