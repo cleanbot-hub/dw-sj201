@@ -1,0 +1,24 @@
+#board_container{
+    display:grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(7,calc(1000px / 9));
+
+}
+.pan{display:flex; align-items: end;}
+/* .top{grid-area:top;}
+.sideR{grid-area:r;}
+.sideL{grid-area:l;}
+.bottom{grid-area:bottom;}
+ */
+
+ .center{
+    background:url(../image/main.png) center no-repeat;
+    background-size:cover;
+    grid-area: center;
+ }
+
+
+ .location_name{
+    background:#222845; width:100%; color:#fff; text-align: center; 
+    padding:5px 0; border-right:1px solid #aaa;
+ }
