@@ -43,15 +43,18 @@
     }
 </style>
 <script>
- $("#reg").click(function(){
 
- })
-$("#add").click(function(){
+    $(function(){
+        $("#reg").click(function(){
+
+                    })
+    $("#add").click(function(){
     var top=Number($(this).css("top").split("px")[0]);
     $(this).css("top",$(this).offset().top+40+"px");
-    $("#people").append("");
-})
-
+    $("#people").append('<input type="text" class="name">');
+    $(".name").last().focus();
+        })
+    });
 </script>
 
 </head>
