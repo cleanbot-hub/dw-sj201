@@ -12,6 +12,12 @@ $(function(){
     initBoard();
     darw();
     $("#setBt").click(setOpen);
+    t=setInterval(() => {
+        if(gamer.length>0){
+            console.log(gamer);
+            clearInterval(t);
+        }
+    },50);
 });
 
 

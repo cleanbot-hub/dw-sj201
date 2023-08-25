@@ -1,3 +1,44 @@
+#items{
+   position: absolute;
+   top:50%; left:50%;
+   transform: translate(-50%,0);
+   height: 300px;
+}
+
+#items #dice_bt{
+   position: relative;
+   top: 70%;
+   background:lawngreen;
+   bottom:0;left:50%;transform: translate(-50%,0);
+   padding:5px 30px; font-size: 25px; font-weight: 800;
+   border:0; border-radius: 5px
+}
+
+
+#dice_wrap{
+   position: relative;
+   width:100px;
+   height: 100px;
+   margin:0 auto;
+   perspective: 700px;
+
+}
+
+#dice_wrap:after{
+   position: absolute;
+   left:50%;
+   bottom:-60px;
+   transform: translate(-50%);
+   display:block;
+   content: ""; width:120px;
+   height: 10px;
+   filter: blur(10px);
+   background:rgb(0,0,0,0);
+}
+
+
+
+
 #board_container{
     display:grid;
     grid-template-columns: repeat(9,1fr);

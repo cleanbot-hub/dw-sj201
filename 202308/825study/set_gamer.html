@@ -45,9 +45,15 @@
 <script>
 
     $(function(){
-        $("#reg").click(function(){
+        $("#reg").click(function(){ 
+
+            $(".name").each(function(idx){
+                opener.gamer.push({ [$(this).val()]:(idx+1)})
+            })
+                window.close();
 
                     })
+                    
     $("#add").click(function(){
     var top=Number($(this).css("top").split("px")[0]);
     $(this).css("top",$(this).offset().top+40+"px");
