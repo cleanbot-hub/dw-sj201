@@ -44,3 +44,8 @@ function draw(){
 
 }
 
+
+function setOpen(){
+    var child = window.open("set_gamer.html",'참가자설정',
+    'width=300,height=300,top=400,left=750');
+}

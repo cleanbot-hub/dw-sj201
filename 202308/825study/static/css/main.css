@@ -27,4 +27,14 @@
     width:100%;
     position: relative;
 }
+#setBt{
+    background:darkkhaki;
+    color:white;
+    font-size:20px;
+    
+    border: 0; border-radius: 5px;
+    padding:5px 20px;
+    position: absolute;
+    left:5%; top:30px;
+}
 

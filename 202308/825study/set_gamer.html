@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    #wrap{
+        width:300px;
+        margin:0 auto;
+        position: relative;
+    }
+    #reg{
+        width:200px;
+        font-size:17px;
+        background:#222845;
+        color:#fff;
+        border:0;
+        border-radius: 5px;
+        padding:5px 0;
+    }
+
+    #peolple{
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        position: relative;
+        row-gap:7px;
+        align-items: center;
+    }
+    #people input[type=text]{
+        width:70%; padding:2px 5px;
+        outline: none; font-size:17px; height: 25px;
+    }
+    #add{
+        position: absolute;
+        right:10%;
+        height: 27px;
+        border:0; border-radius: 5px; background: lightcoral;
+        padding:3px 10px;
+
+    }
+</style>
+<script>
+
+</script>
+
+</head>
+<body>
+    <div id="wrap">
+        <button id="reg">등록</button>
+        <div id="people">
+            <button id="add">+</button>
+            <input type="text" class="name">
+        </div>
+    </div>
+</body>
+</html>

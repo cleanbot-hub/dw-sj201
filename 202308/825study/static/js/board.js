@@ -6,12 +6,12 @@ const board_img=["김세정.jpeg","김태리.jpeg","김태희.jpeg","문근영.j
 "박신혜.jpeg","이유비.jpeg","김소연.jpeg"]
 
 const board=[];
-const 
+const gamer=[]; // 참가자 정보 저장
 $(function(){
         for(var i=0; i<28;){board.push(0);}    
     initBoard();
     darw();
-
+    $("#setBt").click(setOpen);
 });
 
 
