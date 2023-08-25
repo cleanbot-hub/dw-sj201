@@ -2,7 +2,7 @@ function initBoard(){
 // 페이지 구성 요소 초기화 
     $(".pan").each(function(){
         var idx = Number($(this).data("idx"));
-        $(this).css("background","url(./static/image/"+board_img[idx]);
+        $(this).css("background","url(./image/"+board_img[idx]);
         $(this).css("background-size","cover");
         $(this).append("<div class='location_name'>"+(board_img[idx].split(".")[0])+"</div>");
     })
@@ -48,4 +48,9 @@ function draw(){
 function setOpen(){
     var child = window.open("set_gamer.html",'참가자설정',
     'width=300,height=300,top=400,left=750');
+}
+
+
+function dice_turn(){
+        $(".dice").css('animation','turn 3s linear infinite');
 }

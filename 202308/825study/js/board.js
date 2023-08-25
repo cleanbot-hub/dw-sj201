@@ -12,9 +12,13 @@ $(function(){
     initBoard();
     darw();
     $("#setBt").click(setOpen);
+    $("#dice_bt").click(dice_turn);
+
     t=setInterval(() => {
         if(gamer.length>0){
-            console.log(gamer);
+            // console.log(gamer);
+        $("#dice_bt").attr('disabled',false);
+
             clearInterval(t);
         }
     },50);
