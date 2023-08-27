@@ -6,22 +6,24 @@ const board_img=["김세정.jpeg","김태리.jpeg","김태희.jpeg","문근영.j
 "박신혜.jpeg","이유비.jpeg","김소연.jpeg"]
 
 const board=[];
-const gamer=[]; // 참가자 정보 저장
+var gamer=[]; // 참가자 정보 저장 
+
 $(function(){
-        for(var i=0; i<28;){board.push(0);}    
+    for(var i=0; i<28; i++){ board.push(0);}
     initBoard();
-    darw();
+    draw();
     $("#setBt").click(setOpen);
     $("#dice_bt").click(dice_turn);
-
-    t=setInterval(() => {
+    
+    
+    t=setInterval(() => { // 참가자 등록 완료될때까지  감시 하기
         if(gamer.length>0){
-            // console.log(gamer);
-        $("#dice_bt").attr('disabled',false);
-
+            //console.log(gamer);
+            $("#dice_bt").attr('disabled',false);
+            draw();  // 참가수 만큼 말 그리기
             clearInterval(t);
         }
-    },50);
+    }, 50);
 });
 
 

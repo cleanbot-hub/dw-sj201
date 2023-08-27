@@ -1,35 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Grandiflora+One&display=swap');
-
-
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&family=Grandiflora+One&family=Noto+Sans+KR:wght@100&display=swap');
-
-/* font-family: 'Grandiflora One', serif; font-family: 'Noto Sans KR', sans-serif; */
-
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR&display=swap');
+/*
+font-family: 'Black Han Sans', sans-serif;
+font-family: 'Noto Sans KR', sans-serif;
+*/
 *{
     padding:0;
     margin:0;
-    box-sizing:border-box;
-    font-family: 'Grandiflora One', serif;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
 }
-#wrap{width:1400px;margin:0 auto;}
-#wrap .main_title{
-    width:100%;
-    padding: 20px 0;
-    font-size: 30px;
-    border-radius: 2px double #aaa;
-    text-align: center;
+#wrap{
+    width:1400px;
     margin:0 auto;
 }
-#board_wrap{width:100%;margin-top:30px;position:relative;}
+#wrap .main_title{
+    width:300px;
+    padding:20px 0;
+    text-align: center;
+    font-size:30px; border-bottom:5px double #aaa;
+    margin:0 auto;
+    font-family: 'Black Han Sans', sans-serif;
+}
+#board_wrap{
+    margin-top:30px;
+    width:100%;
+    position:relative;
+}
 #setBt{
-    background:#590209;
-    color:white;
-    font-size: 20px;
-    border:1px solid white;
-    border-radius: 5px;
+    background:#222845;
+    color:#fff;    font-size:30px;
+    font-family: 'Black Han Sans', sans-serif;
+    border:0; border-radius: 5px;
     padding:5px 20px;
-    font-family: 'Noto Sans KR', sans-serif;
-    left:5%;
-    top:30px;
-    position: absolute;
+    position:absolute;
+    left:5%; top:30px;
 }
