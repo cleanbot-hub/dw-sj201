@@ -4,10 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>230828</title>
+    <script src="./js/main.js"></script>
 <script src="./js/mdtest.js"></script>
-<script src="./js/main.js"></script>
+
+
+<script> 
+function a(){ console.log("함수 a")}
+</script>
+
+<script> 
+    window.onload=function(){a();}
+    </script>
+
+<script src="./js/mymodule.js"></script>
+
+
+
+
+
+
 </head>
 <body>
-    
+
+
 </body>
 </html>
+
+<!--
+    자바스크립트 모듈화 
+    모듈이란 코드들의 묶음 , 집합체 이다 . 
+    import , export 로 구현한다 .
+
+    기능별로 모듈을 구분해서 작성한다. 
+    모듈을 사용 하면 좋은점 
+
+    - 유지보수 용이 , 재사용 , 네임스페이스 
+    -> 유지보수 용이 : 프로그램 수정에서 필요한 모듈만 수정 함으로써 최소한의 작업으로 유지보수가 가능하다.
+    -> 네임스페이스 : 전역변수는 어디에서든 접근이 가능 하기 때문에, 코드를 보다 쉽게 만들어 줄 수 있게 된다 . 
+    하지만 프로그램의 규모가 커지면 디버깅을 어렵게 만들기 때문에 모듈을 사용하여 private 공간을 만들어 사용하면 
+    디버깅을 어렵지 않게 만들수 있다 .
+    
+    -> 재사용 : 기능적 부분을 모듈화 시켜놓으면 어디서나 필요한 곳에서 import 를 통해 쉽게 사용 할 수 있다 .
+
+
+    export 를 통해 내보낼 대상을 설정한다 . 
+    export 에는 function , class , 변수를 내보낼 수 있다 .
+    export function a() { }
+    export const a=100;
+    여러개를 export 하고자 할 때는 export {a,b,c}
+    export 대상이 하나 일 경우에 import statement outside a module 에러가 발생한다 .
+    기본 export 가 지정 되지 않아서 발생 하는 에러이다, 
+    export default 를 해주어야 한다 
+
+
+
+
+    import 를 통해 외부에서 가져올수 있다. 
+    import {외부파일의 함수, 변수 , class 명} from '모듈파일명.js'
+
+    import{ a} from 'mymodule.js'
+    import {a as mainA} from 'mymodule.js'
+
+    as 를 이용하여 이름을 변경 할수 잇따 . 
+ 
+
+    다른 자바스크립트 파일의 함수나 변수를 가져다 사용 할 수 있다.
+    A.js의 함수를 B.js에서 사용 할 수 있다.
+    원리는 A와 B 모두 하나의 html에 포함 되서 동작 하기 때문에 
+    실제 동작에서는 하나의 파일안에서 실행이 된다. script  태그가 
+    두개가 나누어진 것 뿐이다. 
+    두개 이상의 js 파일로 나누어 구성을 해도 순차적으로 실행 이기 때문에 
+    코드의 순서를 파악하고 작성 해야 한다 .
+
+
+    자바스크립트 파일을 여러개로 나누어 작성하는 이유는 목적별,용도별,타입별로 
+    구분하기 위해서 나누어 작성한다.
+
+    하나의 js 파일로 만들어 사용하면 수정,추가에 시간이 많이 소요 될 수 있다 .
+    여러개로 나누어 주면 목적 , 용도 등에 따라 해당 파일만 열어서 수정 ,추가 하면 된다 .
+
+-->
